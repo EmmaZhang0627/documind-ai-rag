@@ -1,14 +1,18 @@
 from pathlib import Path
 from uuid import uuid4
+import logging
+
 from app.services.chunker import split_pages_into_chunks
-from app.services.embedding import get_embedding
-from app.services.vector_db import add_chunks_to_db
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from app.dependencies.rag_dependencies import get_rag_service
+from app.services.errors import ServiceConfigurationError
+from app.services.rag import RAGService
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from fastapi.concurrency import run_in_threadpool
 from openai import OpenAIError
 import fitz
 
 router = APIRouter(prefix="/api/documents", tags=["documents"])
+logger = logging.getLogger(__name__)
 
 UPLOAD_DIR = Path("uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
@@ -36,7 +40,10 @@ async def upload_document(file: UploadFile = File(...)):
     }
 
 @router.post("/parse-pdf")
-async def parse_pdf(file: UploadFile = File(...)):
+async def parse_pdf(
+    file: UploadFile = File(...),
+    rag_service: RAGService = Depends(get_rag_service),
+):
 
     # 1. 只允许 PDF
     if file.content_type != "application/pdf":
@@ -86,17 +93,26 @@ async def parse_pdf(file: UploadFile = File(...)):
         document_id=document_id,
         source_file=file.filename,
     )
-    for chunk in chunks:
-        try:
-            chunk["embedding"] = await run_in_threadpool(get_embedding, chunk["content"])
-        except OpenAIError as error:
-            raise HTTPException(
-                status_code=502,
-                detail=f"OpenAI embedding failed: {error.__class__.__name__}",
-            ) from error
+    try:
+        await run_in_threadpool(rag_service.ingest_document, chunks)
+    except ServiceConfigurationError as error:
+        doc.close()
+        raise HTTPException(status_code=503, detail=str(error)) from error
+    except OpenAIError as error:
+        doc.close()
+        raise HTTPException(
+            status_code=502,
+            detail=f"OpenAI embedding failed: {error.__class__.__name__}",
+        ) from error
+    except Exception as error:
+        doc.close()
+        logger.exception("document_ingestion_failed")
+        raise HTTPException(
+            status_code=500,
+            detail="Document ingestion failed.",
+        ) from error
 
-    add_chunks_to_db(chunks)
-    print("chunks added to Chroma")
+    print("chunks added to vector store")
     chunks_preview = [
         {key: value for key, value in chunk.items() if key != "embedding"}
         for chunk in chunks[:3]
