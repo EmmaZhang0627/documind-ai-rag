@@ -52,9 +52,11 @@ class RAGTrace(TypedDict):
 
 
 class RAGResponse(TypedDict):
+    trace_id: str
     answer: str
     sources: list[ChunkMetadata]
     trace: RAGTrace
+    status: str
 
 
 class VectorStore(Protocol):

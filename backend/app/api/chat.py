@@ -26,6 +26,7 @@ class SourceMetadata(BaseModel):
 
 
 class ChatResponse(BaseModel):
+    trace_id: str
     question: str
     answer: str
     sources: list[SourceMetadata]
@@ -55,9 +56,10 @@ def chat(
         ) from error
 
     return ChatResponse(
+        trace_id=result["trace_id"],
         question=request.question,
         answer=result["answer"],
         sources=result["sources"],
         trace=result["trace"],
-        status="answered",
+        status=result["status"],
     )
