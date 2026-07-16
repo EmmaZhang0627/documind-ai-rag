@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-07-15T14:51:34.778174+00:00",
+  "case_count": 2,
+  "passed_count": 0,
+  "failed_count": 2,
+  "results": [
+    {
+      "case_id": "case_001_grounded_placeholder",
+      "question": "Replace this with a question that should be answered from your uploaded evaluation PDF.",
+      "expected_behavior": "answer_with_sources",
+      "actual_status": "error",
+      "passed": false,
+      "failed_checks": [
+        "rag_service_error:ModuleNotFoundError:No module named 'rank_bm25'"
+      ],
+      "trace_id": null,
+      "top_sources": []
+    },
+    {
+      "case_id": "case_002_unrelated_refusal",
+      "question": "What is the CEO's birthday on Mars?",
+      "expected_behavior": "low_confidence_refusal",
+      "actual_status": "error",
+      "passed": false,
+      "failed_checks": [
+        "rag_service_error:ModuleNotFoundError:No module named 'rank_bm25'"
+      ],
+      "trace_id": null,
+      "top_sources": []
+    }
+  ]
+}
