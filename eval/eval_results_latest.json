@@ -1,8 +1,16 @@
 {
-  "generated_at": "2026-07-15T14:51:34.778174+00:00",
-  "case_count": 2,
-  "passed_count": 0,
-  "failed_count": 2,
+  "generated_at": "2026-07-17T08:40:24.411959+00:00",
+  "summary": {
+    "total_cases": 2,
+    "passed_cases": 0,
+    "failed_cases": 2,
+    "pass_rate": 0.0,
+    "retrieval_hit_rate": 0.0,
+    "source_accuracy_rate": 0.0,
+    "average_keyword_coverage": 0.0,
+    "refusal_accuracy_rate": 0.0,
+    "citation_presence_rate": 0.0
+  },
   "results": [
     {
       "case_id": "case_001_grounded_placeholder",
@@ -11,9 +19,23 @@
       "actual_status": "error",
       "passed": false,
       "failed_checks": [
-        "rag_service_error:ModuleNotFoundError:No module named 'rank_bm25'"
+        "rag_service_error:AuthenticationError:Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-WN1Rw***************************************LTKr. You can find your API key at https://platform.openai.com/account/api-keys.', '"
       ],
       "trace_id": null,
+      "metrics": {
+        "retrieval_hit": false,
+        "source_accuracy": false,
+        "keyword_coverage": {
+          "status": "applicable",
+          "matched_keywords": [],
+          "missing_keywords": [
+            "replace-with-real-keyword"
+          ],
+          "keyword_coverage_ratio": 0.0
+        },
+        "refusal_accuracy": false,
+        "citation_presence": false
+      },
       "top_sources": []
     },
     {
@@ -23,9 +45,21 @@
       "actual_status": "error",
       "passed": false,
       "failed_checks": [
-        "rag_service_error:ModuleNotFoundError:No module named 'rank_bm25'"
+        "rag_service_error:AuthenticationError:Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-WN1Rw***************************************LTKr. You can find your API key at https://platform.openai.com/account/api-keys.', '"
       ],
       "trace_id": null,
+      "metrics": {
+        "retrieval_hit": "not_applicable",
+        "source_accuracy": "not_applicable",
+        "keyword_coverage": {
+          "status": "not_applicable",
+          "matched_keywords": [],
+          "missing_keywords": [],
+          "keyword_coverage_ratio": null
+        },
+        "refusal_accuracy": false,
+        "citation_presence": "not_applicable"
+      },
       "top_sources": []
     }
   ]

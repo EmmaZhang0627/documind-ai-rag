@@ -11,6 +11,7 @@ EVAL_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = EVAL_DIR.parent
 CASES_PATH = EVAL_DIR / "documind_eval_cases.json"
 RESULTS_PATH = EVAL_DIR / "eval_results_latest.json"
+NOT_APPLICABLE = "not_applicable"
 
 ANSWERED_STATUSES = {"answered", "success"}
 LOW_CONFIDENCE_STATUSES = {
@@ -51,73 +52,195 @@ def get_source_value(source: Any, key: str) -> Any:
     return getattr(source, key, None)
 
 
-def source_matches(
+def has_expected_source_fields(
+    expected_source_file: str | None,
+    expected_page_number: int | None,
+) -> bool:
+    return expected_source_file is not None or expected_page_number is not None
+
+
+def source_matches_expectation(
+    source: Any,
+    expected_source_file: str | None,
+    expected_page_number: int | None,
+) -> bool:
+    if expected_source_file is not None:
+        if get_source_value(source, "source_file") != expected_source_file:
+            return False
+
+    if expected_page_number is not None:
+        if get_source_value(source, "page_number") != expected_page_number:
+            return False
+
+    return True
+
+
+def compute_retrieval_hit(
     sources: list[Any],
     expected_source_file: str | None,
     expected_page_number: int | None,
-) -> list[str]:
-    failed_checks: list[str] = []
+) -> bool | str:
+    if not has_expected_source_fields(expected_source_file, expected_page_number):
+        return NOT_APPLICABLE
 
-    if expected_source_file is not None:
-        if not any(
-            get_source_value(source, "source_file") == expected_source_file
-            for source in sources
-        ):
-            failed_checks.append(
-                f"expected_source_file_not_found:{expected_source_file}"
-            )
-
-    if expected_page_number is not None:
-        if not any(
-            get_source_value(source, "page_number") == expected_page_number
-            for source in sources
-        ):
-            failed_checks.append(
-                f"expected_page_number_not_found:{expected_page_number}"
-            )
-
-    return failed_checks
+    return any(
+        source_matches_expectation(
+            source,
+            expected_source_file=expected_source_file,
+            expected_page_number=expected_page_number,
+        )
+        for source in sources
+    )
 
 
-def evaluate_result(case: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
-    expected_behavior = case.get("expected_behavior")
+def compute_source_accuracy(
+    sources: list[Any],
+    expected_source_file: str | None,
+    expected_page_number: int | None,
+) -> bool | str:
+    if not has_expected_source_fields(expected_source_file, expected_page_number):
+        return NOT_APPLICABLE
+
+    if not sources:
+        return False
+
+    return all(
+        source_matches_expectation(
+            source,
+            expected_source_file=expected_source_file,
+            expected_page_number=expected_page_number,
+        )
+        for source in sources
+    )
+
+
+def compute_keyword_coverage(
+    answer: str,
+    expected_keywords: list[str],
+) -> dict[str, Any]:
+    if not expected_keywords:
+        return {
+            "status": NOT_APPLICABLE,
+            "matched_keywords": [],
+            "missing_keywords": [],
+            "keyword_coverage_ratio": None,
+        }
+
+    normalized_answer = normalize_text(answer)
+    matched_keywords = [
+        keyword
+        for keyword in expected_keywords
+        if normalize_text(keyword) in normalized_answer
+    ]
+    missing_keywords = [
+        keyword
+        for keyword in expected_keywords
+        if normalize_text(keyword) not in normalized_answer
+    ]
+
+    return {
+        "status": "applicable",
+        "matched_keywords": matched_keywords,
+        "missing_keywords": missing_keywords,
+        "keyword_coverage_ratio": len(matched_keywords) / len(expected_keywords),
+    }
+
+
+def compute_refusal_accuracy(
+    actual_status: str | None,
+    expected_behavior: str | None,
+) -> bool:
+    if expected_behavior == "low_confidence_refusal":
+        return actual_status in LOW_CONFIDENCE_STATUSES
+
+    if expected_behavior == "answer_with_sources":
+        return actual_status in ANSWERED_STATUSES
+
+    return False
+
+
+def compute_citation_presence(
+    sources: list[Any],
+    expected_behavior: str | None,
+) -> bool | str:
+    if expected_behavior == "answer_with_sources":
+        return bool(sources)
+
+    if expected_behavior == "low_confidence_refusal":
+        return NOT_APPLICABLE
+
+    return False
+
+
+def compute_metrics(case: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
     expected_keywords = case.get("expected_keywords") or []
     expected_source_file = case.get("expected_source_file")
     expected_page_number = case.get("expected_page_number")
+    expected_behavior = case.get("expected_behavior")
 
-    actual_status = response.get("status")
     answer = response.get("answer") or ""
     sources = response.get("sources") or []
+    actual_status = response.get("status")
+
+    return {
+        "retrieval_hit": compute_retrieval_hit(
+            sources,
+            expected_source_file=expected_source_file,
+            expected_page_number=expected_page_number,
+        ),
+        "source_accuracy": compute_source_accuracy(
+            sources,
+            expected_source_file=expected_source_file,
+            expected_page_number=expected_page_number,
+        ),
+        "keyword_coverage": compute_keyword_coverage(
+            answer,
+            expected_keywords=expected_keywords,
+        ),
+        "refusal_accuracy": compute_refusal_accuracy(
+            actual_status,
+            expected_behavior=expected_behavior,
+        ),
+        "citation_presence": compute_citation_presence(
+            sources,
+            expected_behavior=expected_behavior,
+        ),
+    }
+
+
+def build_failed_checks(
+    case: dict[str, Any],
+    response: dict[str, Any],
+    metrics: dict[str, Any],
+) -> list[str]:
+    expected_behavior = case.get("expected_behavior")
+    actual_status = response.get("status")
     failed_checks: list[str] = []
 
     if expected_behavior == "answer_with_sources":
-        if actual_status not in ANSWERED_STATUSES:
+        if metrics["refusal_accuracy"] is False:
             failed_checks.append(
                 f"expected_answered_status_got:{actual_status}"
             )
-        if not sources:
+
+        if metrics["citation_presence"] is False:
             failed_checks.append("expected_sources_not_empty")
 
-        normalized_answer = normalize_text(answer)
-        missing_keywords = [
-            keyword
-            for keyword in expected_keywords
-            if normalize_text(keyword) not in normalized_answer
-        ]
-        if missing_keywords:
-            failed_checks.append(
-                "missing_expected_keywords:" + ",".join(missing_keywords)
-            )
+        keyword_coverage = metrics["keyword_coverage"]
+        if keyword_coverage["status"] != NOT_APPLICABLE:
+            missing_keywords = keyword_coverage["missing_keywords"]
+            if missing_keywords:
+                failed_checks.append(
+                    "missing_expected_keywords:" + ",".join(missing_keywords)
+                )
 
-        failed_checks.extend(
-            source_matches(
-                sources,
-                expected_source_file=expected_source_file,
-                expected_page_number=expected_page_number,
-            )
-        )
+        if metrics["retrieval_hit"] is False:
+            failed_checks.append("expected_retrieval_hit_missing")
+
+        if metrics["source_accuracy"] is False:
+            failed_checks.append("expected_source_accuracy_mismatch")
     elif expected_behavior == "low_confidence_refusal":
-        if actual_status not in LOW_CONFIDENCE_STATUSES:
+        if metrics["refusal_accuracy"] is False:
             failed_checks.append(
                 f"expected_low_confidence_status_got:{actual_status}"
             )
@@ -129,6 +252,61 @@ def evaluate_result(case: dict[str, Any], response: dict[str, Any]) -> dict[str,
     else:
         failed_checks.append(f"unknown_expected_behavior:{expected_behavior}")
 
+    return failed_checks
+
+
+def metric_rate(results: list[dict[str, Any]], metric_name: str) -> float | None:
+    applicable_values = [
+        result["metrics"][metric_name]
+        for result in results
+        if result["metrics"][metric_name] != NOT_APPLICABLE
+    ]
+
+    if not applicable_values:
+        return None
+
+    return sum(1 for value in applicable_values if value is True) / len(
+        applicable_values
+    )
+
+
+def average_keyword_coverage(results: list[dict[str, Any]]) -> float | None:
+    ratios = [
+        result["metrics"]["keyword_coverage"]["keyword_coverage_ratio"]
+        for result in results
+        if result["metrics"]["keyword_coverage"]["status"] != NOT_APPLICABLE
+    ]
+
+    if not ratios:
+        return None
+
+    return sum(ratios) / len(ratios)
+
+
+def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
+    passed_cases = sum(1 for result in results if result["passed"])
+    total_cases = len(results)
+
+    return {
+        "total_cases": total_cases,
+        "passed_cases": passed_cases,
+        "failed_cases": total_cases - passed_cases,
+        "pass_rate": passed_cases / total_cases if total_cases else 0.0,
+        "retrieval_hit_rate": metric_rate(results, "retrieval_hit"),
+        "source_accuracy_rate": metric_rate(results, "source_accuracy"),
+        "average_keyword_coverage": average_keyword_coverage(results),
+        "refusal_accuracy_rate": metric_rate(results, "refusal_accuracy"),
+        "citation_presence_rate": metric_rate(results, "citation_presence"),
+    }
+
+
+def evaluate_result(case: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
+    expected_behavior = case.get("expected_behavior")
+    actual_status = response.get("status")
+    sources = response.get("sources") or []
+    metrics = compute_metrics(case, response)
+    failed_checks = build_failed_checks(case, response, metrics)
+
     return {
         "case_id": case.get("id"),
         "question": case.get("question"),
@@ -137,11 +315,20 @@ def evaluate_result(case: dict[str, Any], response: dict[str, Any]) -> dict[str,
         "passed": len(failed_checks) == 0,
         "failed_checks": failed_checks,
         "trace_id": response.get("trace_id"),
+        "metrics": metrics,
         "top_sources": sources[:3],
     }
 
 
 def build_error_result(case: dict[str, Any], error: Exception) -> dict[str, Any]:
+    response = {
+        "status": "error",
+        "answer": "",
+        "sources": [],
+        "trace_id": None,
+    }
+    metrics = compute_metrics(case, response)
+
     return {
         "case_id": case.get("id"),
         "question": case.get("question"),
@@ -152,12 +339,13 @@ def build_error_result(case: dict[str, Any], error: Exception) -> dict[str, Any]
             f"rag_service_error:{error.__class__.__name__}:{str(error)[:200]}"
         ],
         "trace_id": None,
+        "metrics": metrics,
         "top_sources": [],
     }
 
 
 def write_results(results: dict[str, Any], path: Path = RESULTS_PATH) -> None:
-    with path.open("w", encoding="utf-8") as file:
+    with path.open("w", encoding="utf-8", newline="\n") as file:
         json.dump(results, file, ensure_ascii=False, indent=2, default=str)
         file.write("\n")
 
@@ -184,22 +372,20 @@ def run_eval() -> int:
         except Exception as error:
             results.append(build_error_result(case, error))
 
-    passed_count = sum(1 for result in results if result["passed"])
+    summary = build_summary(results)
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "case_count": len(results),
-        "passed_count": passed_count,
-        "failed_count": len(results) - passed_count,
+        "summary": summary,
         "results": results,
     }
     write_results(output)
 
     print(
-        f"Eval complete: {passed_count}/{len(results)} passed. "
+        f"Eval complete: {summary['passed_cases']}/{summary['total_cases']} passed. "
         f"Results written to {RESULTS_PATH}"
     )
 
-    return 0 if passed_count == len(results) else 1
+    return 0 if summary["passed_cases"] == summary["total_cases"] else 1
 
 
 if __name__ == "__main__":
