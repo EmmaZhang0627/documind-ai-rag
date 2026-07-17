@@ -147,6 +147,7 @@ Each case includes:
 - `question`
 - `expected_behavior`
 - `expected_keywords`
+- `expected_evidence_keywords`
 - `expected_source_file`
 - `expected_page_number`
 - `notes`
@@ -166,6 +167,7 @@ Example:
   "question": "What is the CEO's birthday on Mars?",
   "expected_behavior": "low_confidence_refusal",
   "expected_keywords": [],
+  "expected_evidence_keywords": [],
   "expected_source_file": null,
   "expected_page_number": null,
   "notes": "Unrelated question should be refused by the confidence gate."
@@ -194,6 +196,7 @@ For `answer_with_sources`, it checks:
 - status indicates answered / success
 - sources are not empty
 - expected keywords appear when provided
+- expected evidence keywords appear in cited source snippets when provided
 - expected source file matches when provided
 - expected page number matches when provided
 
@@ -226,6 +229,35 @@ Each case result contains a `metrics` object:
 - `citation_presence`: true when `answer_with_sources` cases return at least
   one source. Low-confidence refusal cases do not require citations, so this
   metric is `not_applicable` for those cases.
+- `citation_correctness`: checks whether expected evidence keywords appear in
+  the combined cited source snippets. It reports
+  `expected_evidence_keywords`, `matched_evidence_keywords`,
+  `missing_evidence_keywords`, `evidence_coverage_ratio`, and
+  `citation_correctness_passed`. It is `not_applicable` for refusal cases or
+  cases without expected evidence keywords.
+
+Citation presence alone is not enough because a response can include a citation
+that points to the wrong chunk or to a weakly related page. That is false
+grounding: the answer looks grounded because it has a source, but the cited text
+does not actually support the claim. DocuMind keeps this check lightweight by
+returning a short `source_snippet` with each cited source and matching expected
+evidence phrases against those snippets.
+
+Example source object:
+
+```json
+{
+  "document_id": "policy.pdf",
+  "source_file": "policy.pdf",
+  "page_number": 2,
+  "chunk_index": 4,
+  "source_snippet": "Manager approval is required before refunds can be processed. The approval window is 3 days."
+}
+```
+
+This is still a rule-based keyword check. It can miss paraphrases, synonyms, and
+subtle contradictions. Future versions can add LLM-as-judge, RAGAS
+faithfulness, or domain-expert review for deeper semantic evaluation.
 
 The output JSON has this shape:
 
@@ -241,7 +273,8 @@ The output JSON has this shape:
     "source_accuracy_rate": 1.0,
     "average_keyword_coverage": 0.75,
     "refusal_accuracy_rate": 1.0,
-    "citation_presence_rate": 1.0
+    "citation_presence_rate": 1.0,
+    "citation_correctness_rate": 1.0
   },
   "results": [
     {
@@ -262,7 +295,14 @@ The output JSON has this shape:
           "keyword_coverage_ratio": 1.0
         },
         "refusal_accuracy": true,
-        "citation_presence": true
+        "citation_presence": true,
+        "citation_correctness": {
+          "expected_evidence_keywords": ["manager approval", "3 days"],
+          "matched_evidence_keywords": ["manager approval", "3 days"],
+          "missing_evidence_keywords": [],
+          "evidence_coverage_ratio": 1.0,
+          "citation_correctness_passed": true
+        }
       },
       "top_sources": []
     }
@@ -322,6 +362,7 @@ The metrics make those failures more specific:
 - retrieval regressions lower `retrieval_hit_rate`
 - citation regressions lower `citation_presence_rate` or
   `source_accuracy_rate`
+- false-grounding regressions lower `citation_correctness_rate`
 - answer-content regressions lower `average_keyword_coverage`
 - refusal or confidence-threshold regressions lower `refusal_accuracy_rate`
 

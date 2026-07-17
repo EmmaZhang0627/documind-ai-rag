@@ -6,6 +6,9 @@
     "expected_keywords": [
       "replace-with-real-keyword"
     ],
+    "expected_evidence_keywords": [
+      "replace-with-real-evidence-keyword"
+    ],
     "expected_source_file": "replace-with-real-file.pdf",
     "expected_page_number": 1,
     "notes": "Placeholder grounded case. Update this after choosing a stable evaluation document."
@@ -15,6 +18,7 @@
     "question": "What is the CEO's birthday on Mars?",
     "expected_behavior": "low_confidence_refusal",
     "expected_keywords": [],
+    "expected_evidence_keywords": [],
     "expected_source_file": null,
     "expected_page_number": null,
     "notes": "Unrelated question should be refused by the confidence gate."

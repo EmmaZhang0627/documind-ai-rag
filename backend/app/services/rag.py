@@ -6,7 +6,13 @@ from app.observability.trace_logger import write_trace
 from app.observability.trace_models import RAGTraceRecord, TraceCandidate
 from app.services.embedding_service import EmbeddingService
 from app.services.llm_service import LLMService
-from app.services.rag_types import Candidate, Chunk, RAGResponse, RAGTrace
+from app.services.rag_types import (
+    Candidate,
+    Chunk,
+    ChunkMetadata,
+    RAGResponse,
+    RAGTrace,
+)
 from app.services.rerank_service import RerankService
 from app.services.retrieval_service import RetrievalService
 from app.services.vector_db import is_confident
@@ -17,6 +23,7 @@ ANSWER_TOP_K = 3
 CONFIDENCE_THRESHOLD = 0.6
 RETRIEVAL_TOP_K = 10
 MAX_TRACE_SNIPPET_LENGTH = 240
+MAX_SOURCE_SNIPPET_LENGTH = 400
 
 
 class RAGService:
@@ -107,6 +114,16 @@ class RAGService:
             )
 
         return trace_candidate
+
+    def _candidate_to_source(self, candidate: Candidate) -> ChunkMetadata:
+        metadata = candidate["metadata"].copy()
+        document = candidate.get("document", "")
+        if document:
+            metadata["source_snippet"] = " ".join(document.split())[
+                :MAX_SOURCE_SNIPPET_LENGTH
+            ]
+
+        return metadata
 
     def _build_observability_trace(
         self,
@@ -249,7 +266,10 @@ class RAGService:
             return {
                 "trace_id": trace_id,
                 "answer": answer,
-                "sources": [chunk["metadata"] for chunk in top_chunks],
+                "sources": [
+                    self._candidate_to_source(chunk)
+                    for chunk in top_chunks
+                ],
                 "trace": trace,
                 "status": "answered",
             }

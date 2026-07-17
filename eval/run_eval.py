@@ -12,6 +12,15 @@ PROJECT_ROOT = EVAL_DIR.parent
 CASES_PATH = EVAL_DIR / "documind_eval_cases.json"
 RESULTS_PATH = EVAL_DIR / "eval_results_latest.json"
 NOT_APPLICABLE = "not_applicable"
+CITATION_CORRECTNESS_THRESHOLD = 1.0
+SOURCE_EVIDENCE_TEXT_KEYS = (
+    "source_snippet",
+    "snippet",
+    "chunk_text",
+    "content",
+    "text",
+    "document",
+)
 
 ANSWERED_STATUSES = {"answered", "success"}
 LOW_CONFIDENCE_STATUSES = {
@@ -172,8 +181,68 @@ def compute_citation_presence(
     return False
 
 
+def get_source_evidence_text(source: Any) -> str:
+    evidence_parts: list[str] = []
+    for key in SOURCE_EVIDENCE_TEXT_KEYS:
+        value = get_source_value(source, key)
+        if isinstance(value, str) and value:
+            evidence_parts.append(value)
+
+    return " ".join(evidence_parts)
+
+
+def compute_citation_correctness(
+    sources: list[Any],
+    expected_behavior: str | None,
+    expected_evidence_keywords: list[str],
+) -> dict[str, Any]:
+    if expected_behavior == "low_confidence_refusal":
+        return {
+            "expected_evidence_keywords": expected_evidence_keywords,
+            "matched_evidence_keywords": [],
+            "missing_evidence_keywords": [],
+            "evidence_coverage_ratio": None,
+            "citation_correctness_passed": NOT_APPLICABLE,
+        }
+
+    if not expected_evidence_keywords:
+        return {
+            "expected_evidence_keywords": [],
+            "matched_evidence_keywords": [],
+            "missing_evidence_keywords": [],
+            "evidence_coverage_ratio": None,
+            "citation_correctness_passed": NOT_APPLICABLE,
+        }
+
+    combined_evidence = normalize_text(
+        " ".join(get_source_evidence_text(source) for source in sources)
+    )
+    matched_keywords = [
+        keyword
+        for keyword in expected_evidence_keywords
+        if normalize_text(keyword) in combined_evidence
+    ]
+    missing_keywords = [
+        keyword
+        for keyword in expected_evidence_keywords
+        if normalize_text(keyword) not in combined_evidence
+    ]
+    coverage_ratio = len(matched_keywords) / len(expected_evidence_keywords)
+
+    return {
+        "expected_evidence_keywords": expected_evidence_keywords,
+        "matched_evidence_keywords": matched_keywords,
+        "missing_evidence_keywords": missing_keywords,
+        "evidence_coverage_ratio": coverage_ratio,
+        "citation_correctness_passed": (
+            coverage_ratio >= CITATION_CORRECTNESS_THRESHOLD
+        ),
+    }
+
+
 def compute_metrics(case: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
     expected_keywords = case.get("expected_keywords") or []
+    expected_evidence_keywords = case.get("expected_evidence_keywords") or []
     expected_source_file = case.get("expected_source_file")
     expected_page_number = case.get("expected_page_number")
     expected_behavior = case.get("expected_behavior")
@@ -204,6 +273,11 @@ def compute_metrics(case: dict[str, Any], response: dict[str, Any]) -> dict[str,
         "citation_presence": compute_citation_presence(
             sources,
             expected_behavior=expected_behavior,
+        ),
+        "citation_correctness": compute_citation_correctness(
+            sources,
+            expected_behavior=expected_behavior,
+            expected_evidence_keywords=expected_evidence_keywords,
         ),
     }
 
@@ -239,6 +313,10 @@ def build_failed_checks(
 
         if metrics["source_accuracy"] is False:
             failed_checks.append("expected_source_accuracy_mismatch")
+
+        citation_correctness = metrics["citation_correctness"]
+        if citation_correctness["citation_correctness_passed"] is False:
+            failed_checks.append("citation_correctness_failed")
     elif expected_behavior == "low_confidence_refusal":
         if metrics["refusal_accuracy"] is False:
             failed_checks.append(
@@ -283,6 +361,26 @@ def average_keyword_coverage(results: list[dict[str, Any]]) -> float | None:
     return sum(ratios) / len(ratios)
 
 
+def citation_correctness_rate(results: list[dict[str, Any]]) -> float | None:
+    applicable_values = [
+        result["metrics"]["citation_correctness"][
+            "citation_correctness_passed"
+        ]
+        for result in results
+        if result["metrics"]["citation_correctness"][
+            "citation_correctness_passed"
+        ]
+        != NOT_APPLICABLE
+    ]
+
+    if not applicable_values:
+        return None
+
+    return sum(1 for value in applicable_values if value is True) / len(
+        applicable_values
+    )
+
+
 def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
     passed_cases = sum(1 for result in results if result["passed"])
     total_cases = len(results)
@@ -297,6 +395,7 @@ def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
         "average_keyword_coverage": average_keyword_coverage(results),
         "refusal_accuracy_rate": metric_rate(results, "refusal_accuracy"),
         "citation_presence_rate": metric_rate(results, "citation_presence"),
+        "citation_correctness_rate": citation_correctness_rate(results),
     }
 
 

@@ -27,6 +27,7 @@ Edit `eval/documind_eval_cases.json` and add a new object:
   "question": "What does the document say about the refund policy?",
   "expected_behavior": "answer_with_sources",
   "expected_keywords": ["refund", "policy"],
+  "expected_evidence_keywords": ["refund policy", "manager approval"],
   "expected_source_file": "policy.pdf",
   "expected_page_number": 2,
   "notes": "Grounded question from the policy document."
@@ -55,6 +56,7 @@ The output file contains:
 - `average_keyword_coverage`
 - `refusal_accuracy_rate`
 - `citation_presence_rate`
+- `citation_correctness_rate`
 
 Each item in `results` includes:
 
@@ -79,6 +81,9 @@ The `metrics` object includes:
 - `refusal_accuracy`: whether the response status matches the expected behavior.
 - `citation_presence`: whether answer-with-sources cases returned citations.
   Refusal cases do not require citations.
+- `citation_correctness`: whether `expected_evidence_keywords` appear in the
+  returned source snippets. This catches false grounding, where a response has a
+  citation but the cited text does not actually support the answer.
 
 `not_applicable` metric values are excluded from aggregate denominators.
 
@@ -88,13 +93,19 @@ A regression failure means a case that used to pass now fails. Common examples:
 - A grounded question returns no sources.
 - Expected keywords disappear from the answer.
 - Expected `source_file` or `page_number` is no longer cited.
+- Expected evidence keywords are missing from returned `source_snippet` values.
 - An unrelated question no longer returns `low_confidence`.
 
 Use `failed_checks` as the quick failure label, then use `metrics` to see which
 quality dimension moved. For example, `retrieval_hit=false` points to retrieval
 or indexing, while `citation_presence=false` means the final answer did not
-return citations.
+return citations. If `citation_correctness=false`, inspect `top_sources` and
+check whether the short snippets actually support the expected answer.
 
 The `trace_id` can be used with `logs/rag_traces.jsonl` or
 `GET /api/traces/latest` to inspect retrieval, rerank, confidence, and LLM
 behavior for that case.
+
+Citation correctness is intentionally lightweight. It uses keyword or phrase
+matching against cited snippets rather than RAGAS or an LLM judge, so it is
+cheap and local but will not catch every semantic mismatch.

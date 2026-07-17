@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T08:40:24.411959+00:00",
+  "generated_at": "2026-07-17T09:19:55.624456+00:00",
   "summary": {
     "total_cases": 2,
     "passed_cases": 0,
@@ -9,7 +9,8 @@
     "source_accuracy_rate": 0.0,
     "average_keyword_coverage": 0.0,
     "refusal_accuracy_rate": 0.0,
-    "citation_presence_rate": 0.0
+    "citation_presence_rate": 0.0,
+    "citation_correctness_rate": 0.0
   },
   "results": [
     {
@@ -19,7 +20,7 @@
       "actual_status": "error",
       "passed": false,
       "failed_checks": [
-        "rag_service_error:AuthenticationError:Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-WN1Rw***************************************LTKr. You can find your API key at https://platform.openai.com/account/api-keys.', '"
+        "rag_service_error:APIConnectionError:Connection error."
       ],
       "trace_id": null,
       "metrics": {
@@ -34,7 +35,18 @@
           "keyword_coverage_ratio": 0.0
         },
         "refusal_accuracy": false,
-        "citation_presence": false
+        "citation_presence": false,
+        "citation_correctness": {
+          "expected_evidence_keywords": [
+            "replace-with-real-evidence-keyword"
+          ],
+          "matched_evidence_keywords": [],
+          "missing_evidence_keywords": [
+            "replace-with-real-evidence-keyword"
+          ],
+          "evidence_coverage_ratio": 0.0,
+          "citation_correctness_passed": false
+        }
       },
       "top_sources": []
     },
@@ -45,7 +57,7 @@
       "actual_status": "error",
       "passed": false,
       "failed_checks": [
-        "rag_service_error:AuthenticationError:Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-WN1Rw***************************************LTKr. You can find your API key at https://platform.openai.com/account/api-keys.', '"
+        "rag_service_error:APIConnectionError:Connection error."
       ],
       "trace_id": null,
       "metrics": {
@@ -58,7 +70,14 @@
           "keyword_coverage_ratio": null
         },
         "refusal_accuracy": false,
-        "citation_presence": "not_applicable"
+        "citation_presence": "not_applicable",
+        "citation_correctness": {
+          "expected_evidence_keywords": [],
+          "matched_evidence_keywords": [],
+          "missing_evidence_keywords": [],
+          "evidence_coverage_ratio": null,
+          "citation_correctness_passed": "not_applicable"
+        }
       },
       "top_sources": []
     }

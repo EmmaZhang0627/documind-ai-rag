@@ -7,6 +7,7 @@ class ChunkMetadata(TypedDict):
     source_file: str
     chunk_index: int
     page_number: int | None
+    source_snippet: NotRequired[str]
 
 
 class Chunk(TypedDict):

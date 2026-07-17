@@ -23,6 +23,7 @@ class SourceMetadata(BaseModel):
     source_file: str | None = None
     page_number: int | None = None
     chunk_index: int | None = None
+    source_snippet: str | None = None
 
 
 class ChatResponse(BaseModel):
