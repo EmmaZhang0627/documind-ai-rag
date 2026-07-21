@@ -33,6 +33,7 @@ class ChatResponse(BaseModel):
     sources: list[SourceMetadata]
     trace: dict[str, Any]
     status: str
+    fallback_reason: str | None = None
 
 
 @router.post("", response_model=ChatResponse)
@@ -63,4 +64,5 @@ def chat(
         sources=result["sources"],
         trace=result["trace"],
         status=result["status"],
+        fallback_reason=result.get("fallback_reason"),
     )

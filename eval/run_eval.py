@@ -28,6 +28,15 @@ LOW_CONFIDENCE_STATUSES = {
     "refused",
     "insufficient_evidence",
 }
+EXPECTED_BEHAVIOR_STATUSES = {
+    "answer_with_sources": ANSWERED_STATUSES,
+    "low_confidence_refusal": LOW_CONFIDENCE_STATUSES,
+    "insufficient_evidence": {"insufficient_evidence"},
+    "conflicting_sources": {"conflicting_sources"},
+    "out_of_scope": {"out_of_scope", "human_review_required"},
+    "human_review_required": {"human_review_required", "out_of_scope"},
+    "sensitive_input_detected": {"sensitive_input_detected"},
+}
 
 
 def load_cases(path: Path = CASES_PATH) -> list[dict[str, Any]]:
@@ -158,12 +167,14 @@ def compute_keyword_coverage(
 def compute_refusal_accuracy(
     actual_status: str | None,
     expected_behavior: str | None,
+    expected_status: str | None = None,
 ) -> bool:
-    if expected_behavior == "low_confidence_refusal":
-        return actual_status in LOW_CONFIDENCE_STATUSES
+    if expected_status is not None:
+        return actual_status == expected_status
 
-    if expected_behavior == "answer_with_sources":
-        return actual_status in ANSWERED_STATUSES
+    expected_statuses = EXPECTED_BEHAVIOR_STATUSES.get(expected_behavior or "")
+    if expected_statuses is not None:
+        return actual_status in expected_statuses
 
     return False
 
@@ -175,7 +186,7 @@ def compute_citation_presence(
     if expected_behavior == "answer_with_sources":
         return bool(sources)
 
-    if expected_behavior == "low_confidence_refusal":
+    if expected_behavior != "answer_with_sources":
         return NOT_APPLICABLE
 
     return False
@@ -196,7 +207,7 @@ def compute_citation_correctness(
     expected_behavior: str | None,
     expected_evidence_keywords: list[str],
 ) -> dict[str, Any]:
-    if expected_behavior == "low_confidence_refusal":
+    if expected_behavior != "answer_with_sources":
         return {
             "expected_evidence_keywords": expected_evidence_keywords,
             "matched_evidence_keywords": [],
@@ -246,6 +257,7 @@ def compute_metrics(case: dict[str, Any], response: dict[str, Any]) -> dict[str,
     expected_source_file = case.get("expected_source_file")
     expected_page_number = case.get("expected_page_number")
     expected_behavior = case.get("expected_behavior")
+    expected_status = case.get("expected_status")
 
     answer = response.get("answer") or ""
     sources = response.get("sources") or []
@@ -269,6 +281,7 @@ def compute_metrics(case: dict[str, Any], response: dict[str, Any]) -> dict[str,
         "refusal_accuracy": compute_refusal_accuracy(
             actual_status,
             expected_behavior=expected_behavior,
+            expected_status=expected_status,
         ),
         "citation_presence": compute_citation_presence(
             sources,
@@ -288,7 +301,9 @@ def build_failed_checks(
     metrics: dict[str, Any],
 ) -> list[str]:
     expected_behavior = case.get("expected_behavior")
+    expected_fallback_reason = case.get("expected_fallback_reason")
     actual_status = response.get("status")
+    actual_fallback_reason = response.get("fallback_reason")
     failed_checks: list[str] = []
 
     if expected_behavior == "answer_with_sources":
@@ -327,8 +342,19 @@ def build_failed_checks(
         decision = trace.get("decision") if isinstance(trace, dict) else {}
         if isinstance(decision, dict) and decision.get("passed_gate") is True:
             failed_checks.append("confidence_gate_unexpectedly_passed")
+    elif expected_behavior in EXPECTED_BEHAVIOR_STATUSES:
+        if metrics["refusal_accuracy"] is False:
+            failed_checks.append(
+                f"expected_fallback_status_got:{actual_status}"
+            )
     else:
         failed_checks.append(f"unknown_expected_behavior:{expected_behavior}")
+
+    if expected_fallback_reason is not None:
+        if actual_fallback_reason != expected_fallback_reason:
+            failed_checks.append(
+                f"expected_fallback_reason_got:{actual_fallback_reason}"
+            )
 
     return failed_checks
 
@@ -411,6 +437,7 @@ def evaluate_result(case: dict[str, Any], response: dict[str, Any]) -> dict[str,
         "question": case.get("question"),
         "expected_behavior": expected_behavior,
         "actual_status": actual_status,
+        "fallback_reason": response.get("fallback_reason"),
         "passed": len(failed_checks) == 0,
         "failed_checks": failed_checks,
         "trace_id": response.get("trace_id"),
@@ -425,6 +452,7 @@ def build_error_result(case: dict[str, Any], error: Exception) -> dict[str, Any]
         "answer": "",
         "sources": [],
         "trace_id": None,
+        "fallback_reason": "error",
     }
     metrics = compute_metrics(case, response)
 
@@ -433,6 +461,7 @@ def build_error_result(case: dict[str, Any], error: Exception) -> dict[str, Any]
         "question": case.get("question"),
         "expected_behavior": case.get("expected_behavior"),
         "actual_status": "error",
+        "fallback_reason": "error",
         "passed": False,
         "failed_checks": [
             f"rag_service_error:{error.__class__.__name__}:{str(error)[:200]}"

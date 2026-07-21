@@ -1,5 +1,17 @@
 from collections.abc import Callable
-from typing import NotRequired, Protocol, TypedDict
+from typing import Literal, NotRequired, Protocol, TypedDict
+
+
+RAGStatus = Literal[
+    "answered",
+    "low_confidence",
+    "insufficient_evidence",
+    "conflicting_sources",
+    "out_of_scope",
+    "sensitive_input_detected",
+    "human_review_required",
+    "error",
+]
 
 
 class ChunkMetadata(TypedDict):
@@ -42,6 +54,11 @@ class RerankTrace(TypedDict):
 
 class DecisionTrace(TypedDict):
     passed_gate: bool | None
+    fallback_reason: NotRequired[str | None]
+    fallback_status: NotRequired[RAGStatus | None]
+    sensitive_input_detected: NotRequired[bool]
+    out_of_scope_detected: NotRequired[bool]
+    conflict_detected: NotRequired[bool]
 
 
 class RAGTrace(TypedDict):
@@ -57,7 +74,8 @@ class RAGResponse(TypedDict):
     answer: str
     sources: list[ChunkMetadata]
     trace: RAGTrace
-    status: str
+    status: RAGStatus
+    fallback_reason: NotRequired[str | None]
 
 
 class VectorStore(Protocol):

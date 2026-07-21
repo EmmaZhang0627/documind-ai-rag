@@ -146,6 +146,8 @@ Each case includes:
 - `id`
 - `question`
 - `expected_behavior`
+- `expected_status`
+- `expected_fallback_reason`
 - `expected_keywords`
 - `expected_evidence_keywords`
 - `expected_source_file`
@@ -204,6 +206,10 @@ For `low_confidence_refusal`, it checks:
 
 - status indicates low confidence / refused / insufficient evidence
 - confidence gate did not unexpectedly pass when that signal is available
+
+Responsible fallback cases also check expected fallback statuses such as
+`human_review_required` and `sensitive_input_detected`, plus
+`fallback_reason` when the case provides one.
 
 Phase 4 introduced these checks as pass/fail regression guards. Phase 5 keeps
 that behavior and adds named metrics so failures are easier to diagnose and
@@ -329,6 +335,12 @@ eval/eval_results_latest.json
 
 If the command exits with a non-zero status, open the JSON and inspect
 `failed_checks`, `metrics`, and `trace_id`.
+
+Responsible fallback behavior is documented in:
+
+```text
+docs/responsible_fallback.md
+```
 
 ## How Evaluation Prevents Regressions
 

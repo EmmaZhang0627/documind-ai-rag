@@ -1,8 +1,26 @@
 from typing import Literal, NotRequired, TypedDict
 
 
-ConfidenceDecision = Literal["confident", "low_confidence", "error"]
-FinalStatus = Literal["answered", "low_confidence", "error"]
+ConfidenceDecision = Literal[
+    "confident",
+    "low_confidence",
+    "insufficient_evidence",
+    "human_review_required",
+    "out_of_scope",
+    "sensitive_input_detected",
+    "conflicting_sources",
+    "error",
+]
+FinalStatus = Literal[
+    "answered",
+    "low_confidence",
+    "insufficient_evidence",
+    "conflicting_sources",
+    "out_of_scope",
+    "sensitive_input_detected",
+    "human_review_required",
+    "error",
+]
 
 
 class TraceCandidate(TypedDict, total=False):
@@ -30,4 +48,9 @@ class RAGTraceRecord(TypedDict):
     confidence_decision: ConfidenceDecision
     llm_called: bool
     final_status: FinalStatus
+    fallback_reason: str | None
+    fallback_status: FinalStatus | None
+    sensitive_input_detected: bool
+    out_of_scope_detected: bool
+    conflict_detected: bool
     error_message: str | None

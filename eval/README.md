@@ -26,6 +26,7 @@ Edit `eval/documind_eval_cases.json` and add a new object:
   "id": "case_003_policy_question",
   "question": "What does the document say about the refund policy?",
   "expected_behavior": "answer_with_sources",
+  "expected_status": "answered",
   "expected_keywords": ["refund", "policy"],
   "expected_evidence_keywords": ["refund policy", "manager approval"],
   "expected_source_file": "policy.pdf",
@@ -37,6 +38,24 @@ Edit `eval/documind_eval_cases.json` and add a new object:
 Use `answer_with_sources` when the question should be answered from the indexed
 documents. Use `low_confidence_refusal` when the system should refuse because
 the documents do not contain enough evidence.
+
+Responsible fallback cases can use `expected_behavior`, `expected_status`, and
+`expected_fallback_reason`:
+
+```json
+{
+  "id": "case_004_sensitive_input_detected",
+  "question": "My API key is sk-... Can you check this document?",
+  "expected_behavior": "sensitive_input_detected",
+  "expected_status": "sensitive_input_detected",
+  "expected_fallback_reason": "sensitive_input_detected",
+  "expected_keywords": [],
+  "expected_evidence_keywords": [],
+  "expected_source_file": null,
+  "expected_page_number": null,
+  "notes": "Sensitive secrets should be rejected before embedding or LLM calls."
+}
+```
 
 ## Interpret Results
 
@@ -64,6 +83,7 @@ Each item in `results` includes:
 - `question`
 - `expected_behavior`
 - `actual_status`
+- `fallback_reason`
 - `passed`
 - `failed_checks`
 - `trace_id`
