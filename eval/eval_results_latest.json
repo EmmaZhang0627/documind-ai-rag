@@ -1,147 +1,550 @@
 {
-  "generated_at": "2026-07-17T09:55:49.550321+00:00",
+  "generated_at": "2026-07-21T10:02:41.678183+00:00",
+  "fixture": {
+    "document_id": "64e0a564-4456-4e36-b661-232579e3a8cb",
+    "fixture_pdf": "Study Plan - MSc Computer Science.pdf",
+    "fixture_path": "D:\\HuaweiMoveData\\Users\\Emma\\Desktop\\codex-career\\documind\\documind-ai-rag\\eval\\fixtures\\Study Plan - MSc Computer Science.pdf",
+    "page_count": 1,
+    "chunk_count": 3
+  },
   "summary": {
-    "total_cases": 4,
-    "passed_cases": 2,
-    "failed_cases": 2,
-    "pass_rate": 0.5,
-    "retrieval_hit_rate": 0.0,
-    "source_accuracy_rate": 0.0,
-    "average_keyword_coverage": 0.0,
-    "refusal_accuracy_rate": 0.5,
-    "citation_presence_rate": 0.0,
-    "citation_correctness_rate": 0.0
+    "total_cases": 5,
+    "passed_cases": 5,
+    "failed_cases": 0,
+    "source_hit_count": 2,
+    "source_applicable_count": 2,
+    "page_hit_count": 2,
+    "page_applicable_count": 2,
+    "evidence_keyword_match_count": 2,
+    "evidence_keyword_applicable_count": 2,
+    "answer_keyword_match_count": 2,
+    "answer_keyword_applicable_count": 2,
+    "fallback_correctness_count": 3,
+    "fallback_applicable_count": 3
   },
   "results": [
     {
-      "case_id": "case_001_grounded_placeholder",
-      "question": "Replace this with a question that should be answered from your uploaded evaluation PDF.",
-      "expected_behavior": "answer_with_sources",
-      "actual_status": "error",
-      "fallback_reason": "error",
-      "passed": false,
-      "failed_checks": [
-        "rag_service_error:APIConnectionError:Connection error."
-      ],
-      "trace_id": null,
-      "metrics": {
-        "retrieval_hit": false,
-        "source_accuracy": false,
-        "keyword_coverage": {
-          "status": "applicable",
-          "matched_keywords": [],
-          "missing_keywords": [
-            "replace-with-real-keyword"
-          ],
-          "keyword_coverage_ratio": 0.0
+      "case_id": "case_001_study_plan_duration",
+      "question": "What is the indicative study duration for the MSc Computer Science programme?",
+      "expected_status": "answered",
+      "actual_status": "answered",
+      "fallback_reason": null,
+      "returned_sources": [
+        {
+          "document_id": "64e0a564-4456-4e36-b661-232579e3a8cb",
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
         },
-        "refusal_accuracy": false,
-        "citation_presence": false,
-        "citation_correctness": {
-          "expected_evidence_keywords": [
-            "replace-with-real-evidence-keyword"
-          ],
-          "matched_evidence_keywords": [],
-          "missing_evidence_keywords": [
-            "replace-with-real-evidence-keyword"
-          ],
-          "evidence_coverage_ratio": 0.0,
-          "citation_correctness_passed": false
+        {
+          "document_id": "64e0a564-4456-4e36-b661-232579e3a8cb",
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "chunk_index": 2,
+          "page_number": 1,
+          "source_snippet": "e. • If you take a break from your studies or need to undertake reassessment it will not be possible to adhere to the indicative study duration of 24 months. • The maximum period allowed for you to complete your programme is 72 months (6 years) calculated from the start date of your earliest enrolment."
+        },
+        {
+          "document_id": "64e0a564-4456-4e36-b661-232579e3a8cb",
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "chunk_index": 1,
+          "page_number": 1,
+          "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
+        }
+      ],
+      "retrieved_page_numbers": [
+        1
+      ],
+      "checks": {
+        "status": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_status": "answered",
+            "actual_status": "answered"
+          }
+        },
+        "fallback": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_fallback_reason": null,
+            "actual_fallback_reason": null
+          }
+        },
+        "source_match": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+            "returned_source_files": [
+              "Study Plan - MSc Computer Science.pdf",
+              "Study Plan - MSc Computer Science.pdf",
+              "Study Plan - MSc Computer Science.pdf"
+            ]
+          }
+        },
+        "page_match": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_page_numbers": [
+              1
+            ],
+            "retrieved_page_numbers": [
+              1
+            ]
+          }
+        },
+        "evidence_keywords": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_keywords": [
+              "Indicative Study Duration",
+              "24 Months"
+            ],
+            "matched_keywords": [
+              "Indicative Study Duration",
+              "24 Months"
+            ],
+            "missing_keywords": []
+          }
+        },
+        "answer_keywords": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_keywords": [
+              "24",
+              "months"
+            ],
+            "matched_keywords": [
+              "24",
+              "months"
+            ],
+            "missing_keywords": []
+          }
         }
       },
-      "top_sources": []
+      "passed": true,
+      "failed_checks": [],
+      "trace_id": "071169df-26e9-4661-9af1-00cb44c75800",
+      "retrieval_trace": {
+        "trace_id": "071169df-26e9-4661-9af1-00cb44c75800",
+        "query": "What is the indicative study duration for the MSc Computer Science programme?",
+        "retrieval": {
+          "top1_score": 0.7400286357473452,
+          "top_k_scores": [
+            0.7400286357473452,
+            0.710521448595959,
+            0.5262165226912846
+          ]
+        },
+        "rerank": {
+          "enabled": true,
+          "improvement": 7.860762341730682
+        },
+        "decision": {
+          "passed_gate": true,
+          "fallback_reason": null,
+          "fallback_status": null,
+          "sensitive_input_detected": false,
+          "out_of_scope_detected": false,
+          "conflict_detected": false
+        }
+      },
+      "answer": "The indicative study duration for the MSc Computer Science programme is 24 months."
     },
     {
-      "case_id": "case_002_unrelated_refusal",
+      "case_id": "case_002_study_plan_final_module",
+      "question": "What is the final module in the MSc Computer Science study plan?",
+      "expected_status": "answered",
+      "actual_status": "answered",
+      "fallback_reason": null,
+      "returned_sources": [
+        {
+          "document_id": "64e0a564-4456-4e36-b661-232579e3a8cb",
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
+        },
+        {
+          "document_id": "64e0a564-4456-4e36-b661-232579e3a8cb",
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "chunk_index": 1,
+          "page_number": 1,
+          "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
+        },
+        {
+          "document_id": "64e0a564-4456-4e36-b661-232579e3a8cb",
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "chunk_index": 2,
+          "page_number": 1,
+          "source_snippet": "e. • If you take a break from your studies or need to undertake reassessment it will not be possible to adhere to the indicative study duration of 24 months. • The maximum period allowed for you to complete your programme is 72 months (6 years) calculated from the start date of your earliest enrolment."
+        }
+      ],
+      "retrieved_page_numbers": [
+        1
+      ],
+      "checks": {
+        "status": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_status": "answered",
+            "actual_status": "answered"
+          }
+        },
+        "fallback": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_fallback_reason": null,
+            "actual_fallback_reason": null
+          }
+        },
+        "source_match": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+            "returned_source_files": [
+              "Study Plan - MSc Computer Science.pdf",
+              "Study Plan - MSc Computer Science.pdf",
+              "Study Plan - MSc Computer Science.pdf"
+            ]
+          }
+        },
+        "page_match": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_page_numbers": [
+              1
+            ],
+            "retrieved_page_numbers": [
+              1
+            ]
+          }
+        },
+        "evidence_keywords": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_keywords": [
+              "Final Module",
+              "Computer Science Capstone Project"
+            ],
+            "matched_keywords": [
+              "Final Module",
+              "Computer Science Capstone Project"
+            ],
+            "missing_keywords": []
+          }
+        },
+        "answer_keywords": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_keywords": [
+              "Computer Science Capstone Project"
+            ],
+            "matched_keywords": [
+              "Computer Science Capstone Project"
+            ],
+            "missing_keywords": []
+          }
+        }
+      },
+      "passed": true,
+      "failed_checks": [],
+      "trace_id": "7992bfca-98be-43b5-b8bd-a373c7f7bf36",
+      "retrieval_trace": {
+        "trace_id": "7992bfca-98be-43b5-b8bd-a373c7f7bf36",
+        "query": "What is the final module in the MSc Computer Science study plan?",
+        "retrieval": {
+          "top1_score": 0.6908751877083767,
+          "top_k_scores": [
+            0.6908751877083767,
+            0.5416970048514377,
+            0.2879996778973163
+          ]
+        },
+        "rerank": {
+          "enabled": true,
+          "improvement": 2.2842048255667695
+        },
+        "decision": {
+          "passed_gate": true,
+          "fallback_reason": null,
+          "fallback_status": null,
+          "sensitive_input_detected": false,
+          "out_of_scope_detected": false,
+          "conflict_detected": false
+        }
+      },
+      "answer": "The final module in the MSc Computer Science study plan is the \"Computer Science Capstone Project,\" which is worth 60 credits and has a duration of 32 weeks."
+    },
+    {
+      "case_id": "case_003_unrelated_refusal",
       "question": "What is the CEO's birthday on Mars?",
-      "expected_behavior": "low_confidence_refusal",
-      "actual_status": "error",
-      "fallback_reason": "error",
-      "passed": false,
-      "failed_checks": [
-        "rag_service_error:APIConnectionError:Connection error."
-      ],
-      "trace_id": null,
-      "metrics": {
-        "retrieval_hit": "not_applicable",
-        "source_accuracy": "not_applicable",
-        "keyword_coverage": {
-          "status": "not_applicable",
-          "matched_keywords": [],
-          "missing_keywords": [],
-          "keyword_coverage_ratio": null
+      "expected_status": "low_confidence",
+      "actual_status": "low_confidence",
+      "fallback_reason": "low_confidence",
+      "returned_sources": [],
+      "retrieved_page_numbers": [],
+      "checks": {
+        "status": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_status": "low_confidence",
+            "actual_status": "low_confidence"
+          }
         },
-        "refusal_accuracy": false,
-        "citation_presence": "not_applicable",
-        "citation_correctness": {
-          "expected_evidence_keywords": [],
-          "matched_evidence_keywords": [],
-          "missing_evidence_keywords": [],
-          "evidence_coverage_ratio": null,
-          "citation_correctness_passed": "not_applicable"
+        "fallback": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_fallback_reason": "low_confidence",
+            "actual_fallback_reason": "low_confidence"
+          }
+        },
+        "source_match": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_source_file": null,
+            "returned_source_files": []
+          }
+        },
+        "page_match": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_page_numbers": [],
+            "retrieved_page_numbers": []
+          }
+        },
+        "evidence_keywords": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_keywords": [],
+            "matched_keywords": [],
+            "missing_keywords": []
+          }
+        },
+        "answer_keywords": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_keywords": [],
+            "matched_keywords": [],
+            "missing_keywords": []
+          }
         }
       },
-      "top_sources": []
+      "passed": true,
+      "failed_checks": [],
+      "trace_id": "ebce64f1-ccaa-41f4-a503-7572712da52e",
+      "retrieval_trace": {
+        "trace_id": "ebce64f1-ccaa-41f4-a503-7572712da52e",
+        "query": "What is the CEO's birthday on Mars?",
+        "retrieval": {
+          "top1_score": 0.3619307625343438,
+          "top_k_scores": [
+            0.3619307625343438,
+            0.07968755033473512,
+            0.04976661461220458
+          ]
+        },
+        "rerank": {
+          "enabled": true,
+          "improvement": -11.712229644065106
+        },
+        "decision": {
+          "passed_gate": false,
+          "fallback_reason": "low_confidence",
+          "fallback_status": "low_confidence",
+          "sensitive_input_detected": false,
+          "out_of_scope_detected": false,
+          "conflict_detected": false
+        }
+      },
+      "answer": "There is not enough evidence in the indexed documents to answer this question reliably."
     },
     {
-      "case_id": "case_003_final_decision_human_review",
+      "case_id": "case_004_final_decision_human_review",
       "question": "Should we approve this customer loan approval request?",
-      "expected_behavior": "human_review_required",
+      "expected_status": "human_review_required",
       "actual_status": "human_review_required",
       "fallback_reason": "out_of_scope_decision_request",
-      "passed": true,
-      "failed_checks": [],
-      "trace_id": "1bdad9e9-a32f-4769-842e-bbf8d78fc704",
-      "metrics": {
-        "retrieval_hit": "not_applicable",
-        "source_accuracy": "not_applicable",
-        "keyword_coverage": {
-          "status": "not_applicable",
-          "matched_keywords": [],
-          "missing_keywords": [],
-          "keyword_coverage_ratio": null
+      "returned_sources": [],
+      "retrieved_page_numbers": [],
+      "checks": {
+        "status": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_status": "human_review_required",
+            "actual_status": "human_review_required"
+          }
         },
-        "refusal_accuracy": true,
-        "citation_presence": "not_applicable",
-        "citation_correctness": {
-          "expected_evidence_keywords": [],
-          "matched_evidence_keywords": [],
-          "missing_evidence_keywords": [],
-          "evidence_coverage_ratio": null,
-          "citation_correctness_passed": "not_applicable"
+        "fallback": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_fallback_reason": "out_of_scope_decision_request",
+            "actual_fallback_reason": "out_of_scope_decision_request"
+          }
+        },
+        "source_match": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_source_file": null,
+            "returned_source_files": []
+          }
+        },
+        "page_match": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_page_numbers": [],
+            "retrieved_page_numbers": []
+          }
+        },
+        "evidence_keywords": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_keywords": [],
+            "matched_keywords": [],
+            "missing_keywords": []
+          }
+        },
+        "answer_keywords": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_keywords": [],
+            "matched_keywords": [],
+            "missing_keywords": []
+          }
         }
       },
-      "top_sources": []
+      "passed": true,
+      "failed_checks": [],
+      "trace_id": "5a5e5e91-b0b5-424e-8c0a-190d35087cb4",
+      "retrieval_trace": {
+        "trace_id": "5a5e5e91-b0b5-424e-8c0a-190d35087cb4",
+        "query": "Should we approve this customer loan approval request?",
+        "retrieval": {
+          "top1_score": 0.0,
+          "top_k_scores": []
+        },
+        "rerank": {
+          "enabled": false,
+          "improvement": 0.0
+        },
+        "decision": {
+          "passed_gate": null,
+          "fallback_reason": "out_of_scope_decision_request",
+          "fallback_status": "human_review_required",
+          "sensitive_input_detected": false,
+          "out_of_scope_detected": true,
+          "conflict_detected": false
+        }
+      },
+      "answer": "I can retrieve relevant document guidance, but I cannot make final business, risk, approval, loan, or compliance decisions. Please route this to a qualified human reviewer."
     },
     {
-      "case_id": "case_004_sensitive_input_detected",
-      "question": "My API key is sk-1234567890abcdefghijklmnopqrstuvwxyz. Can you check this document?",
-      "expected_behavior": "sensitive_input_detected",
+      "case_id": "case_005_sensitive_input_detected",
+      "question": "My token is token=abcdefghijklmnopqrstuvwxyz123456. Can you check this document?",
+      "expected_status": "sensitive_input_detected",
       "actual_status": "sensitive_input_detected",
       "fallback_reason": "sensitive_input_detected",
-      "passed": true,
-      "failed_checks": [],
-      "trace_id": "e225be39-51bc-4142-9585-b1ae342cf16a",
-      "metrics": {
-        "retrieval_hit": "not_applicable",
-        "source_accuracy": "not_applicable",
-        "keyword_coverage": {
-          "status": "not_applicable",
-          "matched_keywords": [],
-          "missing_keywords": [],
-          "keyword_coverage_ratio": null
+      "returned_sources": [],
+      "retrieved_page_numbers": [],
+      "checks": {
+        "status": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_status": "sensitive_input_detected",
+            "actual_status": "sensitive_input_detected"
+          }
         },
-        "refusal_accuracy": true,
-        "citation_presence": "not_applicable",
-        "citation_correctness": {
-          "expected_evidence_keywords": [],
-          "matched_evidence_keywords": [],
-          "missing_evidence_keywords": [],
-          "evidence_coverage_ratio": null,
-          "citation_correctness_passed": "not_applicable"
+        "fallback": {
+          "applicable": true,
+          "passed": true,
+          "details": {
+            "expected_fallback_reason": "sensitive_input_detected",
+            "actual_fallback_reason": "sensitive_input_detected"
+          }
+        },
+        "source_match": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_source_file": null,
+            "returned_source_files": []
+          }
+        },
+        "page_match": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_page_numbers": [],
+            "retrieved_page_numbers": []
+          }
+        },
+        "evidence_keywords": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_keywords": [],
+            "matched_keywords": [],
+            "missing_keywords": []
+          }
+        },
+        "answer_keywords": {
+          "applicable": false,
+          "passed": "not_applicable",
+          "details": {
+            "expected_keywords": [],
+            "matched_keywords": [],
+            "missing_keywords": []
+          }
         }
       },
-      "top_sources": []
+      "passed": true,
+      "failed_checks": [],
+      "trace_id": "11c444b3-d84b-49da-af7e-09dc1a05586f",
+      "retrieval_trace": {
+        "trace_id": "11c444b3-d84b-49da-af7e-09dc1a05586f",
+        "query": "My token is token=abcdefghijklmnopqrstuvwxyz123456. Can you check this document?",
+        "retrieval": {
+          "top1_score": 0.0,
+          "top_k_scores": []
+        },
+        "rerank": {
+          "enabled": false,
+          "improvement": 0.0
+        },
+        "decision": {
+          "passed_gate": null,
+          "fallback_reason": "sensitive_input_detected",
+          "fallback_status": "sensitive_input_detected",
+          "sensitive_input_detected": true,
+          "out_of_scope_detected": false,
+          "conflict_detected": false
+        }
+      },
+      "answer": "Sensitive information was detected. Please remove or redact personal identifiers, account numbers, API keys, tokens, or secrets before retrying."
     }
   ]
 }

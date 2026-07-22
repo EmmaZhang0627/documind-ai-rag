@@ -1,18 +1,20 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from uuid import uuid4
 
 
 EVAL_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = EVAL_DIR.parent
+FIXTURES_DIR = EVAL_DIR / "fixtures"
 CASES_PATH = EVAL_DIR / "documind_eval_cases.json"
 RESULTS_PATH = EVAL_DIR / "eval_results_latest.json"
 NOT_APPLICABLE = "not_applicable"
-CITATION_CORRECTNESS_THRESHOLD = 1.0
 SOURCE_EVIDENCE_TEXT_KEYS = (
     "source_snippet",
     "snippet",
@@ -21,22 +23,11 @@ SOURCE_EVIDENCE_TEXT_KEYS = (
     "text",
     "document",
 )
+SECRET_PATTERN = re.compile(r"sk-[A-Za-z0-9_*.-]+")
 
-ANSWERED_STATUSES = {"answered", "success"}
-LOW_CONFIDENCE_STATUSES = {
-    "low_confidence",
-    "refused",
-    "insufficient_evidence",
-}
-EXPECTED_BEHAVIOR_STATUSES = {
-    "answer_with_sources": ANSWERED_STATUSES,
-    "low_confidence_refusal": LOW_CONFIDENCE_STATUSES,
-    "insufficient_evidence": {"insufficient_evidence"},
-    "conflicting_sources": {"conflicting_sources"},
-    "out_of_scope": {"out_of_scope", "human_review_required"},
-    "human_review_required": {"human_review_required", "out_of_scope"},
-    "sensitive_input_detected": {"sensitive_input_detected"},
-}
+
+def sanitize_error_message(message: str) -> str:
+    return SECRET_PATTERN.sub("sk-***redacted***", message)
 
 
 def load_cases(path: Path = CASES_PATH) -> list[dict[str, Any]]:
@@ -49,18 +40,99 @@ def load_cases(path: Path = CASES_PATH) -> list[dict[str, Any]]:
     return cases
 
 
-def load_rag_service():
+def discover_fixture_pdf(fixtures_dir: Path = FIXTURES_DIR) -> Path:
+    if not fixtures_dir.exists():
+        raise FileNotFoundError(
+            f"Fixture directory is required but does not exist: {fixtures_dir}"
+        )
+
+    pdf_paths = sorted(fixtures_dir.glob("*.pdf"))
+    if not pdf_paths:
+        raise FileNotFoundError(
+            f"At least one fixture PDF is required under: {fixtures_dir}"
+        )
+
+    if len(pdf_paths) > 1:
+        names = ", ".join(path.name for path in pdf_paths)
+        raise ValueError(
+            "Expected exactly one fixture PDF for repeatable evaluation; "
+            f"found {len(pdf_paths)}: {names}"
+        )
+
+    return pdf_paths[0]
+
+
+def ensure_backend_import_path() -> None:
     backend_path = PROJECT_ROOT / "backend"
     if str(backend_path) not in sys.path:
         sys.path.insert(0, str(backend_path))
+
+
+def load_rag_service():
+    ensure_backend_import_path()
 
     from app.dependencies.rag_dependencies import get_rag_service
 
     return get_rag_service()
 
 
+def clear_eval_process_vector_store() -> None:
+    ensure_backend_import_path()
+
+    from app.services.vector_db import clear_vector_store
+
+    clear_vector_store()
+
+
+def extract_pdf_pages(pdf_path: Path) -> list[dict[str, Any]]:
+    import fitz
+
+    doc = fitz.open(pdf_path)
+    try:
+        pages: list[dict[str, Any]] = []
+        for page_index, page in enumerate(doc):
+            page_text = page.get_text()
+            if page_text.strip():
+                pages.append({
+                    "page_number": page_index + 1,
+                    "text": page_text,
+                })
+
+        return pages
+    finally:
+        doc.close()
+
+
+def ingest_fixture_pdf(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
+    ensure_backend_import_path()
+
+    from app.services.chunker import split_pages_into_chunks
+
+    pages = extract_pdf_pages(fixture_pdf)
+    document_id = str(uuid4())
+    chunks = split_pages_into_chunks(
+        pages=pages,
+        document_id=document_id,
+        source_file=fixture_pdf.name,
+    )
+    rag_service.ingest_document(chunks)
+
+    return {
+        "document_id": document_id,
+        "fixture_pdf": fixture_pdf.name,
+        "fixture_path": str(fixture_pdf),
+        "page_count": len(pages),
+        "chunk_count": len(chunks),
+    }
+
+
+def prepare_eval_index(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
+    clear_eval_process_vector_store()
+    return ingest_fixture_pdf(rag_service, fixture_pdf)
+
+
 def normalize_text(value: str) -> str:
-    return value.lower()
+    return value.casefold()
 
 
 def get_source_value(source: Any, key: str) -> Any:
@@ -70,126 +142,40 @@ def get_source_value(source: Any, key: str) -> Any:
     return getattr(source, key, None)
 
 
-def has_expected_source_fields(
-    expected_source_file: str | None,
-    expected_page_number: int | None,
-) -> bool:
-    return expected_source_file is not None or expected_page_number is not None
+def get_expected_page_numbers(case: dict[str, Any]) -> list[int]:
+    value = case.get("expected_page_numbers")
+    if value is None and case.get("expected_page_number") is not None:
+        value = [case["expected_page_number"]]
 
+    if value is None:
+        return []
 
-def source_matches_expectation(
-    source: Any,
-    expected_source_file: str | None,
-    expected_page_number: int | None,
-) -> bool:
-    if expected_source_file is not None:
-        if get_source_value(source, "source_file") != expected_source_file:
-            return False
-
-    if expected_page_number is not None:
-        if get_source_value(source, "page_number") != expected_page_number:
-            return False
-
-    return True
-
-
-def compute_retrieval_hit(
-    sources: list[Any],
-    expected_source_file: str | None,
-    expected_page_number: int | None,
-) -> bool | str:
-    if not has_expected_source_fields(expected_source_file, expected_page_number):
-        return NOT_APPLICABLE
-
-    return any(
-        source_matches_expectation(
-            source,
-            expected_source_file=expected_source_file,
-            expected_page_number=expected_page_number,
+    if not isinstance(value, list):
+        raise ValueError(
+            f"Case {case.get('id')} expected_page_numbers must be a list."
         )
-        for source in sources
-    )
+
+    return [int(page_number) for page_number in value]
 
 
-def compute_source_accuracy(
-    sources: list[Any],
-    expected_source_file: str | None,
-    expected_page_number: int | None,
-) -> bool | str:
-    if not has_expected_source_fields(expected_source_file, expected_page_number):
-        return NOT_APPLICABLE
+def get_retrieved_page_numbers(sources: list[Any]) -> list[int]:
+    page_numbers: set[int] = set()
+    for source in sources:
+        page_number = get_source_value(source, "page_number")
+        if page_number is not None:
+            page_numbers.add(int(page_number))
 
-    if not sources:
-        return False
-
-    return all(
-        source_matches_expectation(
-            source,
-            expected_source_file=expected_source_file,
-            expected_page_number=expected_page_number,
-        )
-        for source in sources
-    )
+    return sorted(page_numbers)
 
 
-def compute_keyword_coverage(
-    answer: str,
-    expected_keywords: list[str],
-) -> dict[str, Any]:
-    if not expected_keywords:
-        return {
-            "status": NOT_APPLICABLE,
-            "matched_keywords": [],
-            "missing_keywords": [],
-            "keyword_coverage_ratio": None,
-        }
+def get_source_files(sources: list[Any]) -> list[str]:
+    source_files: list[str] = []
+    for source in sources:
+        source_file = get_source_value(source, "source_file")
+        if isinstance(source_file, str):
+            source_files.append(source_file)
 
-    normalized_answer = normalize_text(answer)
-    matched_keywords = [
-        keyword
-        for keyword in expected_keywords
-        if normalize_text(keyword) in normalized_answer
-    ]
-    missing_keywords = [
-        keyword
-        for keyword in expected_keywords
-        if normalize_text(keyword) not in normalized_answer
-    ]
-
-    return {
-        "status": "applicable",
-        "matched_keywords": matched_keywords,
-        "missing_keywords": missing_keywords,
-        "keyword_coverage_ratio": len(matched_keywords) / len(expected_keywords),
-    }
-
-
-def compute_refusal_accuracy(
-    actual_status: str | None,
-    expected_behavior: str | None,
-    expected_status: str | None = None,
-) -> bool:
-    if expected_status is not None:
-        return actual_status == expected_status
-
-    expected_statuses = EXPECTED_BEHAVIOR_STATUSES.get(expected_behavior or "")
-    if expected_statuses is not None:
-        return actual_status in expected_statuses
-
-    return False
-
-
-def compute_citation_presence(
-    sources: list[Any],
-    expected_behavior: str | None,
-) -> bool | str:
-    if expected_behavior == "answer_with_sources":
-        return bool(sources)
-
-    if expected_behavior != "answer_with_sources":
-        return NOT_APPLICABLE
-
-    return False
+    return source_files
 
 
 def get_source_evidence_text(source: Any) -> str:
@@ -202,247 +188,182 @@ def get_source_evidence_text(source: Any) -> str:
     return " ".join(evidence_parts)
 
 
-def compute_citation_correctness(
-    sources: list[Any],
-    expected_behavior: str | None,
-    expected_evidence_keywords: list[str],
+def match_keywords(text: str, expected_keywords: list[str]) -> dict[str, Any]:
+    if not expected_keywords:
+        return {
+            "applicable": False,
+            "passed": NOT_APPLICABLE,
+            "matched": [],
+            "missing": [],
+        }
+
+    normalized_text = normalize_text(text)
+    matched = [
+        keyword
+        for keyword in expected_keywords
+        if normalize_text(keyword) in normalized_text
+    ]
+    missing = [
+        keyword
+        for keyword in expected_keywords
+        if normalize_text(keyword) not in normalized_text
+    ]
+
+    return {
+        "applicable": True,
+        "passed": not missing,
+        "matched": matched,
+        "missing": missing,
+    }
+
+
+def build_check_result(
+    applicable: bool,
+    passed: bool | str,
+    details: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    if expected_behavior != "answer_with_sources":
-        return {
-            "expected_evidence_keywords": expected_evidence_keywords,
-            "matched_evidence_keywords": [],
-            "missing_evidence_keywords": [],
-            "evidence_coverage_ratio": None,
-            "citation_correctness_passed": NOT_APPLICABLE,
-        }
-
-    if not expected_evidence_keywords:
-        return {
-            "expected_evidence_keywords": [],
-            "matched_evidence_keywords": [],
-            "missing_evidence_keywords": [],
-            "evidence_coverage_ratio": None,
-            "citation_correctness_passed": NOT_APPLICABLE,
-        }
-
-    combined_evidence = normalize_text(
-        " ".join(get_source_evidence_text(source) for source in sources)
-    )
-    matched_keywords = [
-        keyword
-        for keyword in expected_evidence_keywords
-        if normalize_text(keyword) in combined_evidence
-    ]
-    missing_keywords = [
-        keyword
-        for keyword in expected_evidence_keywords
-        if normalize_text(keyword) not in combined_evidence
-    ]
-    coverage_ratio = len(matched_keywords) / len(expected_evidence_keywords)
-
     return {
-        "expected_evidence_keywords": expected_evidence_keywords,
-        "matched_evidence_keywords": matched_keywords,
-        "missing_evidence_keywords": missing_keywords,
-        "evidence_coverage_ratio": coverage_ratio,
-        "citation_correctness_passed": (
-            coverage_ratio >= CITATION_CORRECTNESS_THRESHOLD
-        ),
+        "applicable": applicable,
+        "passed": passed,
+        "details": details or {},
     }
 
 
-def compute_metrics(case: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
-    expected_keywords = case.get("expected_keywords") or []
-    expected_evidence_keywords = case.get("expected_evidence_keywords") or []
-    expected_source_file = case.get("expected_source_file")
-    expected_page_number = case.get("expected_page_number")
-    expected_behavior = case.get("expected_behavior")
-    expected_status = case.get("expected_status")
-
-    answer = response.get("answer") or ""
-    sources = response.get("sources") or []
-    actual_status = response.get("status")
-
-    return {
-        "retrieval_hit": compute_retrieval_hit(
-            sources,
-            expected_source_file=expected_source_file,
-            expected_page_number=expected_page_number,
-        ),
-        "source_accuracy": compute_source_accuracy(
-            sources,
-            expected_source_file=expected_source_file,
-            expected_page_number=expected_page_number,
-        ),
-        "keyword_coverage": compute_keyword_coverage(
-            answer,
-            expected_keywords=expected_keywords,
-        ),
-        "refusal_accuracy": compute_refusal_accuracy(
-            actual_status,
-            expected_behavior=expected_behavior,
-            expected_status=expected_status,
-        ),
-        "citation_presence": compute_citation_presence(
-            sources,
-            expected_behavior=expected_behavior,
-        ),
-        "citation_correctness": compute_citation_correctness(
-            sources,
-            expected_behavior=expected_behavior,
-            expected_evidence_keywords=expected_evidence_keywords,
-        ),
-    }
-
-
-def build_failed_checks(
+def compute_checks(
     case: dict[str, Any],
     response: dict[str, Any],
-    metrics: dict[str, Any],
-) -> list[str]:
-    expected_behavior = case.get("expected_behavior")
-    expected_fallback_reason = case.get("expected_fallback_reason")
+) -> dict[str, Any]:
+    sources = response.get("sources") or []
+    answer = response.get("answer") or ""
     actual_status = response.get("status")
     actual_fallback_reason = response.get("fallback_reason")
-    failed_checks: list[str] = []
+    expected_status = case.get("expected_status")
+    expected_source_file = case.get("expected_source_file")
+    expected_page_numbers = get_expected_page_numbers(case)
+    expected_evidence_keywords = case.get("expected_evidence_keywords") or []
+    expected_answer_keywords = case.get("expected_answer_keywords") or []
+    expected_fallback_reason = case.get("expected_fallback_reason")
 
-    if expected_behavior == "answer_with_sources":
-        if metrics["refusal_accuracy"] is False:
-            failed_checks.append(
-                f"expected_answered_status_got:{actual_status}"
-            )
+    source_files = get_source_files(sources)
+    retrieved_page_numbers = get_retrieved_page_numbers(sources)
+    source_evidence_text = " ".join(
+        get_source_evidence_text(source) for source in sources
+    )
+    evidence_keyword_result = match_keywords(
+        source_evidence_text,
+        expected_evidence_keywords,
+    )
+    answer_keyword_result = match_keywords(answer, expected_answer_keywords)
+    fallback_applicable = (
+        expected_fallback_reason is not None
+        or (
+            expected_status is not None
+            and expected_status != "answered"
+        )
+    )
 
-        if metrics["citation_presence"] is False:
-            failed_checks.append("expected_sources_not_empty")
-
-        keyword_coverage = metrics["keyword_coverage"]
-        if keyword_coverage["status"] != NOT_APPLICABLE:
-            missing_keywords = keyword_coverage["missing_keywords"]
-            if missing_keywords:
-                failed_checks.append(
-                    "missing_expected_keywords:" + ",".join(missing_keywords)
+    return {
+        "status": build_check_result(
+            applicable=expected_status is not None,
+            passed=actual_status == expected_status
+            if expected_status is not None
+            else NOT_APPLICABLE,
+            details={
+                "expected_status": expected_status,
+                "actual_status": actual_status,
+            },
+        ),
+        "fallback": build_check_result(
+            applicable=fallback_applicable,
+            passed=(
+                actual_status == expected_status
+                and (
+                    expected_fallback_reason is None
+                    or actual_fallback_reason == expected_fallback_reason
                 )
-
-        if metrics["retrieval_hit"] is False:
-            failed_checks.append("expected_retrieval_hit_missing")
-
-        if metrics["source_accuracy"] is False:
-            failed_checks.append("expected_source_accuracy_mismatch")
-
-        citation_correctness = metrics["citation_correctness"]
-        if citation_correctness["citation_correctness_passed"] is False:
-            failed_checks.append("citation_correctness_failed")
-    elif expected_behavior == "low_confidence_refusal":
-        if metrics["refusal_accuracy"] is False:
-            failed_checks.append(
-                f"expected_low_confidence_status_got:{actual_status}"
             )
-
-        trace = response.get("trace") or {}
-        decision = trace.get("decision") if isinstance(trace, dict) else {}
-        if isinstance(decision, dict) and decision.get("passed_gate") is True:
-            failed_checks.append("confidence_gate_unexpectedly_passed")
-    elif expected_behavior in EXPECTED_BEHAVIOR_STATUSES:
-        if metrics["refusal_accuracy"] is False:
-            failed_checks.append(
-                f"expected_fallback_status_got:{actual_status}"
+            if fallback_applicable
+            else NOT_APPLICABLE,
+            details={
+                "expected_fallback_reason": expected_fallback_reason,
+                "actual_fallback_reason": actual_fallback_reason,
+            },
+        ),
+        "source_match": build_check_result(
+            applicable=expected_source_file is not None,
+            passed=expected_source_file in source_files
+            if expected_source_file is not None
+            else NOT_APPLICABLE,
+            details={
+                "expected_source_file": expected_source_file,
+                "returned_source_files": source_files,
+            },
+        ),
+        "page_match": build_check_result(
+            applicable=bool(expected_page_numbers),
+            passed=all(
+                page_number in retrieved_page_numbers
+                for page_number in expected_page_numbers
             )
-    else:
-        failed_checks.append(f"unknown_expected_behavior:{expected_behavior}")
+            if expected_page_numbers
+            else NOT_APPLICABLE,
+            details={
+                "expected_page_numbers": expected_page_numbers,
+                "retrieved_page_numbers": retrieved_page_numbers,
+            },
+        ),
+        "evidence_keywords": build_check_result(
+            applicable=evidence_keyword_result["applicable"],
+            passed=evidence_keyword_result["passed"],
+            details={
+                "expected_keywords": expected_evidence_keywords,
+                "matched_keywords": evidence_keyword_result["matched"],
+                "missing_keywords": evidence_keyword_result["missing"],
+            },
+        ),
+        "answer_keywords": build_check_result(
+            applicable=answer_keyword_result["applicable"],
+            passed=answer_keyword_result["passed"],
+            details={
+                "expected_keywords": expected_answer_keywords,
+                "matched_keywords": answer_keyword_result["matched"],
+                "missing_keywords": answer_keyword_result["missing"],
+            },
+        ),
+    }
 
-    if expected_fallback_reason is not None:
-        if actual_fallback_reason != expected_fallback_reason:
-            failed_checks.append(
-                f"expected_fallback_reason_got:{actual_fallback_reason}"
-            )
+
+def build_failed_checks(checks: dict[str, Any]) -> list[str]:
+    failed_checks: list[str] = []
+    for check_name, check_result in checks.items():
+        if check_result["applicable"] and check_result["passed"] is not True:
+            failed_checks.append(check_name)
 
     return failed_checks
 
 
-def metric_rate(results: list[dict[str, Any]], metric_name: str) -> float | None:
-    applicable_values = [
-        result["metrics"][metric_name]
-        for result in results
-        if result["metrics"][metric_name] != NOT_APPLICABLE
-    ]
-
-    if not applicable_values:
-        return None
-
-    return sum(1 for value in applicable_values if value is True) / len(
-        applicable_values
-    )
-
-
-def average_keyword_coverage(results: list[dict[str, Any]]) -> float | None:
-    ratios = [
-        result["metrics"]["keyword_coverage"]["keyword_coverage_ratio"]
-        for result in results
-        if result["metrics"]["keyword_coverage"]["status"] != NOT_APPLICABLE
-    ]
-
-    if not ratios:
-        return None
-
-    return sum(ratios) / len(ratios)
-
-
-def citation_correctness_rate(results: list[dict[str, Any]]) -> float | None:
-    applicable_values = [
-        result["metrics"]["citation_correctness"][
-            "citation_correctness_passed"
-        ]
-        for result in results
-        if result["metrics"]["citation_correctness"][
-            "citation_correctness_passed"
-        ]
-        != NOT_APPLICABLE
-    ]
-
-    if not applicable_values:
-        return None
-
-    return sum(1 for value in applicable_values if value is True) / len(
-        applicable_values
-    )
-
-
-def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
-    passed_cases = sum(1 for result in results if result["passed"])
-    total_cases = len(results)
-
-    return {
-        "total_cases": total_cases,
-        "passed_cases": passed_cases,
-        "failed_cases": total_cases - passed_cases,
-        "pass_rate": passed_cases / total_cases if total_cases else 0.0,
-        "retrieval_hit_rate": metric_rate(results, "retrieval_hit"),
-        "source_accuracy_rate": metric_rate(results, "source_accuracy"),
-        "average_keyword_coverage": average_keyword_coverage(results),
-        "refusal_accuracy_rate": metric_rate(results, "refusal_accuracy"),
-        "citation_presence_rate": metric_rate(results, "citation_presence"),
-        "citation_correctness_rate": citation_correctness_rate(results),
-    }
-
-
-def evaluate_result(case: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
-    expected_behavior = case.get("expected_behavior")
-    actual_status = response.get("status")
+def evaluate_result(
+    case: dict[str, Any],
+    response: dict[str, Any],
+) -> dict[str, Any]:
     sources = response.get("sources") or []
-    metrics = compute_metrics(case, response)
-    failed_checks = build_failed_checks(case, response, metrics)
+    checks = compute_checks(case, response)
+    failed_checks = build_failed_checks(checks)
 
     return {
         "case_id": case.get("id"),
         "question": case.get("question"),
-        "expected_behavior": expected_behavior,
-        "actual_status": actual_status,
+        "expected_status": case.get("expected_status"),
+        "actual_status": response.get("status"),
         "fallback_reason": response.get("fallback_reason"),
-        "passed": len(failed_checks) == 0,
+        "returned_sources": sources,
+        "retrieved_page_numbers": get_retrieved_page_numbers(sources),
+        "checks": checks,
+        "passed": not failed_checks,
         "failed_checks": failed_checks,
         "trace_id": response.get("trace_id"),
-        "metrics": metrics,
-        "top_sources": sources[:3],
+        "retrieval_trace": response.get("trace"),
+        "answer": response.get("answer"),
     }
 
 
@@ -453,22 +374,77 @@ def build_error_result(case: dict[str, Any], error: Exception) -> dict[str, Any]
         "sources": [],
         "trace_id": None,
         "fallback_reason": "error",
+        "trace": {},
     }
-    metrics = compute_metrics(case, response)
+    checks = compute_checks(case, response)
+    failed_checks = build_failed_checks(checks)
+    failed_checks.append(f"rag_service_error:{error.__class__.__name__}")
 
     return {
         "case_id": case.get("id"),
         "question": case.get("question"),
-        "expected_behavior": case.get("expected_behavior"),
+        "expected_status": case.get("expected_status"),
         "actual_status": "error",
         "fallback_reason": "error",
+        "returned_sources": [],
+        "retrieved_page_numbers": [],
+        "checks": checks,
         "passed": False,
-        "failed_checks": [
-            f"rag_service_error:{error.__class__.__name__}:{str(error)[:200]}"
-        ],
+        "failed_checks": failed_checks,
         "trace_id": None,
-        "metrics": metrics,
-        "top_sources": [],
+        "retrieval_trace": {},
+        "answer": "",
+        "error_message": sanitize_error_message(str(error))[:300],
+    }
+
+
+def count_passed_check(results: list[dict[str, Any]], check_name: str) -> int:
+    return sum(
+        1
+        for result in results
+        if result["checks"][check_name]["applicable"]
+        and result["checks"][check_name]["passed"] is True
+    )
+
+
+def count_applicable_check(results: list[dict[str, Any]], check_name: str) -> int:
+    return sum(
+        1
+        for result in results
+        if result["checks"][check_name]["applicable"]
+    )
+
+
+def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
+    total_cases = len(results)
+    passed_cases = sum(1 for result in results if result["passed"])
+
+    return {
+        "total_cases": total_cases,
+        "passed_cases": passed_cases,
+        "failed_cases": total_cases - passed_cases,
+        "source_hit_count": count_passed_check(results, "source_match"),
+        "source_applicable_count": count_applicable_check(results, "source_match"),
+        "page_hit_count": count_passed_check(results, "page_match"),
+        "page_applicable_count": count_applicable_check(results, "page_match"),
+        "evidence_keyword_match_count": count_passed_check(
+            results,
+            "evidence_keywords",
+        ),
+        "evidence_keyword_applicable_count": count_applicable_check(
+            results,
+            "evidence_keywords",
+        ),
+        "answer_keyword_match_count": count_passed_check(
+            results,
+            "answer_keywords",
+        ),
+        "answer_keyword_applicable_count": count_applicable_check(
+            results,
+            "answer_keywords",
+        ),
+        "fallback_correctness_count": count_passed_check(results, "fallback"),
+        "fallback_applicable_count": count_applicable_check(results, "fallback"),
     }
 
 
@@ -478,24 +454,79 @@ def write_results(results: dict[str, Any], path: Path = RESULTS_PATH) -> None:
         file.write("\n")
 
 
+def print_summary(summary: dict[str, Any]) -> None:
+    print("Eval complete")
+    print(f"Total cases: {summary['total_cases']}")
+    print(f"Passed cases: {summary['passed_cases']}")
+    print(f"Failed cases: {summary['failed_cases']}")
+    print(
+        "Source hits: "
+        f"{summary['source_hit_count']}/"
+        f"{summary['source_applicable_count']}"
+    )
+    print(
+        "Page hits: "
+        f"{summary['page_hit_count']}/"
+        f"{summary['page_applicable_count']}"
+    )
+    print(
+        "Fallback correctness: "
+        f"{summary['fallback_correctness_count']}/"
+        f"{summary['fallback_applicable_count']}"
+    )
+    print(f"Results written to: {RESULTS_PATH}")
+
+
+def build_setup_error_output(
+    cases: list[dict[str, Any]],
+    error: Exception,
+    fixture_pdf: Path | None,
+) -> dict[str, Any]:
+    results = [build_error_result(case, error) for case in cases]
+    summary = build_summary(results)
+
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "fixture": {
+            "fixture_pdf": fixture_pdf.name if fixture_pdf is not None else None,
+            "fixture_path": str(fixture_pdf) if fixture_pdf is not None else None,
+        },
+        "setup_error": {
+            "type": error.__class__.__name__,
+            "message": sanitize_error_message(str(error))[:500],
+        },
+        "summary": summary,
+        "results": results,
+    }
+
+
 def run_eval() -> int:
     cases = load_cases()
-    results: list[dict[str, Any]] = []
+    fixture_pdf: Path | None = None
 
     try:
+        fixture_pdf = discover_fixture_pdf()
         rag_service = load_rag_service()
-        service_error: Exception | None = None
+        indexing = prepare_eval_index(rag_service, fixture_pdf)
     except Exception as error:
-        rag_service = None
-        service_error = error
+        output = build_setup_error_output(cases, error, fixture_pdf)
+        write_results(output)
+        print_summary(output["summary"])
+        print(
+            "Setup failed: "
+            f"{error.__class__.__name__}: "
+            f"{sanitize_error_message(str(error))[:200]}"
+        )
+        return 1
+
+    results: list[dict[str, Any]] = []
 
     for case in cases:
-        if service_error is not None or rag_service is None:
-            results.append(build_error_result(case, service_error))
-            continue
-
         try:
-            response = rag_service.ask(case["question"])
+            response = rag_service.ask(
+                case["question"],
+                top_k=case.get("top_k"),
+            )
             results.append(evaluate_result(case, response))
         except Exception as error:
             results.append(build_error_result(case, error))
@@ -503,17 +534,14 @@ def run_eval() -> int:
     summary = build_summary(results)
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "fixture": indexing,
         "summary": summary,
         "results": results,
     }
     write_results(output)
+    print_summary(summary)
 
-    print(
-        f"Eval complete: {summary['passed_cases']}/{summary['total_cases']} passed. "
-        f"Results written to {RESULTS_PATH}"
-    )
-
-    return 0 if summary["passed_cases"] == summary["total_cases"] else 1
+    return 0 if summary["failed_cases"] == 0 else 1
 
 
 if __name__ == "__main__":

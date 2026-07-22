@@ -1,131 +1,163 @@
 # DocuMind RAG Evaluation
 
-This folder contains a lightweight local regression runner for the RAG pipeline.
+This folder contains a lightweight local regression runner for the DocuMind RAG
+pipeline. It does not use RAGAS, pytest, LangChain, LangGraph, a database, or
+CI.
 
-It does not use RAGAS, a database, or CI. It imports the existing `RAGService`
-through the dependency provider and runs a small list of questions against it.
+## Why The Eval Ingests A Fixture First
+
+DocuMind currently stores indexed chunks, embeddings, and BM25 state in
+process-local memory. A document uploaded through the running FastAPI backend is
+therefore visible only to that backend process.
+
+`eval/run_eval.py` runs as a separate Python process, so it must build its own
+retrieval state before asking questions. The runner now:
+
+1. clears only the current eval process's in-memory vector store;
+2. loads the fixture PDF from `eval/fixtures`;
+3. extracts text page by page using the same behavior as `POST /api/documents/parse-pdf`;
+4. chunks pages with `split_pages_into_chunks()`;
+5. ingests chunks through `RAGService.ingest_document()`;
+6. runs the cases with `RAGService.ask()`;
+7. writes detailed JSON results to `eval/eval_results_latest.json`.
+
+It does not delete uploaded PDFs, logs, environment files, or user data.
+
+## Fixture PDF
+
+Put exactly one stable evaluation PDF in:
+
+```text
+eval/fixtures/
+```
+
+The runner discovers the actual `.pdf` filename from that directory. Do not
+reference a made-up filename in cases. If no PDF exists, the runner stops. If
+more than one PDF exists, the runner stops so the evaluation remains
+repeatable.
+
+Current fixture:
+
+```text
+eval/fixtures/Study Plan - MSc Computer Science.pdf
+```
+
+## Environment Variables
+
+Grounded evaluation cases use the existing production embedding and answer
+generation path, so the same backend environment is required:
+
+```text
+OPENAI_API_KEY
+```
+
+Optional variables are read by the normal backend settings:
+
+```text
+EMBEDDING_MODEL_NAME
+CHAT_MODEL_NAME
+OPENAI_TIMEOUT_SECONDS
+RETRIEVAL_TOP_K_DEFAULT
+ANSWER_TOP_K_DEFAULT
+CONFIDENCE_THRESHOLD
+EMBEDDING_SCORE_WEIGHT
+BM25_SCORE_WEIGHT
+RERANKER_ENABLED
+RERANKER_MODEL_NAME
+```
+
+Do not commit or print real API key values.
 
 ## Run
 
-```bash
-python eval/run_eval.py
+From the project root, prefer the backend virtual environment:
+
+```powershell
+backend\.venv\Scripts\python.exe eval\run_eval.py
 ```
 
-The runner writes the latest result to:
+The runner writes:
 
 ```text
 eval/eval_results_latest.json
 ```
 
-## Add A Case
+If setup fails before cases can run, for example because the fixture is missing
+or the OpenAI embedding call fails, the runner still writes a structured result
+with `setup_error`, failed case records, and redacted error text.
 
-Edit `eval/documind_eval_cases.json` and add a new object:
+It also prints a concise terminal summary:
+
+- total cases
+- passed cases
+- failed cases
+- source hit count
+- page hit count
+- fallback correctness count
+
+## Case Schema
+
+Grounded cases should use this simple format:
 
 ```json
 {
-  "id": "case_003_policy_question",
-  "question": "What does the document say about the refund policy?",
-  "expected_behavior": "answer_with_sources",
+  "id": "case_001_study_plan_duration",
+  "question": "What is the indicative study duration for the MSc Computer Science programme?",
   "expected_status": "answered",
-  "expected_keywords": ["refund", "policy"],
-  "expected_evidence_keywords": ["refund policy", "manager approval"],
-  "expected_source_file": "policy.pdf",
-  "expected_page_number": 2,
-  "notes": "Grounded question from the policy document."
+  "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+  "expected_page_numbers": [1],
+  "expected_evidence_keywords": ["Indicative Study Duration", "24 Months"],
+  "expected_answer_keywords": ["24", "months"],
+  "top_k": 3,
+  "notes": "Grounded case from the evaluation fixture PDF."
 }
 ```
 
-Use `answer_with_sources` when the question should be answered from the indexed
-documents. Use `low_confidence_refusal` when the system should refuse because
-the documents do not contain enough evidence.
-
-Responsible fallback cases can use `expected_behavior`, `expected_status`, and
-`expected_fallback_reason`:
+Fallback cases may omit source, page, evidence, and answer expectations:
 
 ```json
 {
-  "id": "case_004_sensitive_input_detected",
-  "question": "My API key is sk-... Can you check this document?",
-  "expected_behavior": "sensitive_input_detected",
-  "expected_status": "sensitive_input_detected",
-  "expected_fallback_reason": "sensitive_input_detected",
-  "expected_keywords": [],
-  "expected_evidence_keywords": [],
-  "expected_source_file": null,
-  "expected_page_number": null,
-  "notes": "Sensitive secrets should be rejected before embedding or LLM calls."
+  "id": "case_003_unrelated_refusal",
+  "question": "What is the CEO's birthday on Mars?",
+  "expected_status": "low_confidence",
+  "expected_fallback_reason": "low_confidence",
+  "top_k": 3,
+  "notes": "Unrelated question should be refused by the confidence gate."
 }
 ```
 
-## Interpret Results
+## Checks
 
-The output file contains:
+Each case result records:
 
-- `summary`
-- `results`
+- `actual_status`: status returned by `RAGService.ask()`.
+- `fallback_reason`: fallback reason returned by the RAG service, if any.
+- `returned_sources`: source metadata returned by the RAG service.
+- `retrieved_page_numbers`: unique page numbers from returned sources.
+- `checks.status`: whether `actual_status` equals `expected_status`.
+- `checks.fallback`: whether fallback status and expected fallback reason match.
+- `checks.source_match`: whether the expected PDF filename appears in sources.
+- `checks.page_match`: whether all expected page numbers appear in sources.
+- `checks.evidence_keywords`: whether expected evidence keywords appear in returned source snippets.
+- `checks.answer_keywords`: whether expected answer keywords appear in the LLM answer.
+- `passed`: true only when all applicable checks pass.
+- `trace_id`: trace ID from the RAG response.
+- `retrieval_trace`: in-response trace with retrieval, rerank, and decision data.
+  If setup failed before retrieval, this is empty.
 
-`summary` includes:
+Keyword matching is case-insensitive. The eval does not require exact LLM answer
+string equality.
 
-- `total_cases`
-- `passed_cases`
-- `failed_cases`
-- `pass_rate`
-- `retrieval_hit_rate`
-- `source_accuracy_rate`
-- `average_keyword_coverage`
-- `refusal_accuracy_rate`
-- `citation_presence_rate`
-- `citation_correctness_rate`
+## Interpreting Failures
 
-Each item in `results` includes:
+Use `failed_checks` as the quick label:
 
-- `case_id`
-- `question`
-- `expected_behavior`
-- `actual_status`
-- `fallback_reason`
-- `passed`
-- `failed_checks`
-- `trace_id`
-- `metrics`
-- `top_sources`
+- `status`: response status changed.
+- `fallback`: refusal or fallback behavior changed.
+- `source_match`: the expected fixture file was not cited.
+- `page_match`: the expected page was not cited.
+- `evidence_keywords`: returned source snippets no longer contain expected supporting evidence.
+- `answer_keywords`: the answer no longer contains expected answer terms.
 
-The `metrics` object includes:
-
-- `retrieval_hit`: whether the expected source file and/or page appeared in
-  returned sources. Cases without expected source fields are `not_applicable`.
-- `source_accuracy`: whether the final returned sources match the expected
-  source fields when those fields are provided.
-- `keyword_coverage`: matched keywords, missing keywords, and coverage ratio.
-  Cases with no expected keywords are `not_applicable`.
-- `refusal_accuracy`: whether the response status matches the expected behavior.
-- `citation_presence`: whether answer-with-sources cases returned citations.
-  Refusal cases do not require citations.
-- `citation_correctness`: whether `expected_evidence_keywords` appear in the
-  returned source snippets. This catches false grounding, where a response has a
-  citation but the cited text does not actually support the answer.
-
-`not_applicable` metric values are excluded from aggregate denominators.
-
-A regression failure means a case that used to pass now fails. Common examples:
-
-- A grounded question no longer returns `answered`.
-- A grounded question returns no sources.
-- Expected keywords disappear from the answer.
-- Expected `source_file` or `page_number` is no longer cited.
-- Expected evidence keywords are missing from returned `source_snippet` values.
-- An unrelated question no longer returns `low_confidence`.
-
-Use `failed_checks` as the quick failure label, then use `metrics` to see which
-quality dimension moved. For example, `retrieval_hit=false` points to retrieval
-or indexing, while `citation_presence=false` means the final answer did not
-return citations. If `citation_correctness=false`, inspect `top_sources` and
-check whether the short snippets actually support the expected answer.
-
-The `trace_id` can be used with `logs/rag_traces.jsonl` or
-`GET /api/traces/latest` to inspect retrieval, rerank, confidence, and LLM
-behavior for that case.
-
-Citation correctness is intentionally lightweight. It uses keyword or phrase
-matching against cited snippets rather than RAGAS or an LLM judge, so it is
-cheap and local but will not catch every semantic mismatch.
+These checks are intentionally lightweight. They are useful for a repeatable
+baseline, but they do not prove full semantic correctness.
