@@ -86,11 +86,7 @@ class RAGService:
     ) -> RAGTrace:
         before_rerank_score = candidates[0]["retrieval_score"] if candidates else 0.0
         top_results = ranked[:top_k]
-        top1_score = (
-            top_results[0].get("score", top_results[0]["retrieval_score"])
-            if top_results
-            else 0.0
-        )
+        confidence_score = top_results[0]["retrieval_score"] if top_results else 0.0
         rerank_enabled = (
             top_results[0].get("rerank_enabled", False)
             if top_results
@@ -109,16 +105,21 @@ class RAGService:
             },
             "rerank": {
                 "enabled": rerank_enabled,
-                "improvement": top1_score - before_rerank_score,
+                "improvement": confidence_score - before_rerank_score,
             },
             "decision": {
                 "passed_gate": None,
+                "confidence_score": confidence_score,
             },
         }
 
-    def _candidate_to_trace(self, candidate: Candidate) -> TraceCandidate:
+    def _candidate_to_trace(
+        self,
+        candidate: Candidate,
+        selected: bool = False,
+    ) -> TraceCandidate:
         metadata = candidate["metadata"]
-        final_score = candidate.get("score", candidate["retrieval_score"])
+        retrieval_score = candidate["retrieval_score"]
         trace_candidate: TraceCandidate = {
             "document_id": metadata.get("document_id"),
             "source_file": metadata.get("source_file"),
@@ -126,8 +127,14 @@ class RAGService:
             "chunk_index": metadata.get("chunk_index"),
             "embedding_score": candidate.get("embedding_score"),
             "bm25_score": candidate.get("bm25_score"),
-            "final_score": final_score,
+            "retrieval_score": retrieval_score,
+            # Retained for compatibility; final_score now always means retrieval_score.
+            "final_score": retrieval_score,
+            "rerank_enabled": candidate.get("rerank_enabled", False),
         }
+
+        if selected:
+            trace_candidate["confidence_score"] = retrieval_score
 
         if "rerank_score" in candidate:
             trace_candidate["rerank_score"] = candidate.get("rerank_score")
@@ -211,7 +218,7 @@ class RAGService:
         candidates: list[Candidate],
         ranked: list[Candidate],
         answer_top_k: int,
-        top1_score: float,
+        confidence_score: float,
         status: RAGStatus,
         fallback_reason: str,
         answer: str,
@@ -235,7 +242,7 @@ class RAGService:
             candidates=candidates,
             ranked=ranked,
             answer_top_k=answer_top_k,
-            top1_score=top1_score,
+            confidence_score=confidence_score,
             confidence_decision=status,
             llm_called=False,
             final_status=status,
@@ -263,7 +270,7 @@ class RAGService:
         candidates: list[Candidate],
         ranked: list[Candidate],
         answer_top_k: int,
-        top1_score: float,
+        confidence_score: float,
         confidence_decision: str,
         llm_called: bool,
         final_status: str,
@@ -282,11 +289,13 @@ class RAGService:
             "retrieval_top_k": retrieval_top_k,
             "retrieved_candidate_count": len(candidates),
             "top_candidates": [
-                self._candidate_to_trace(candidate)
-                for candidate in ranked[:answer_top_k]
+                self._candidate_to_trace(candidate, selected=index == 0)
+                for index, candidate in enumerate(ranked[:answer_top_k])
             ],
             "confidence_threshold": self.confidence_threshold,
-            "top1_score": top1_score,
+            # Retained for compatibility; top1_score now aliases confidence_score.
+            "top1_score": confidence_score,
+            "confidence_score": confidence_score,
             "confidence_decision": confidence_decision,
             "llm_called": llm_called,
             "final_status": final_status,
@@ -306,7 +315,7 @@ class RAGService:
         candidates: list[Candidate],
         ranked: list[Candidate],
         answer_top_k: int,
-        top1_score: float,
+        confidence_score: float,
         confidence_decision: str,
         llm_called: bool,
         final_status: str,
@@ -325,7 +334,7 @@ class RAGService:
                 candidates=candidates,
                 ranked=ranked,
                 answer_top_k=answer_top_k,
-                top1_score=top1_score,
+                confidence_score=confidence_score,
                 confidence_decision=confidence_decision,
                 llm_called=llm_called,
                 final_status=final_status,
@@ -345,7 +354,7 @@ class RAGService:
         candidates: list[Candidate] = []
         ranked: list[Candidate] = []
         top_chunks: list[Candidate] = []
-        top1_score = 0.0
+        confidence_score = 0.0
         llm_called = False
         sensitive_input_detected = False
         out_of_scope_detected = False
@@ -373,7 +382,7 @@ class RAGService:
                     candidates=candidates,
                     ranked=ranked,
                     answer_top_k=answer_top_k,
-                    top1_score=top1_score,
+                    confidence_score=confidence_score,
                     status="sensitive_input_detected",
                     fallback_reason="sensitive_input_detected",
                     answer=(
@@ -402,7 +411,7 @@ class RAGService:
                     candidates=candidates,
                     ranked=ranked,
                     answer_top_k=answer_top_k,
-                    top1_score=top1_score,
+                    confidence_score=confidence_score,
                     status="human_review_required",
                     fallback_reason="out_of_scope_decision_request",
                     answer=(
@@ -423,10 +432,8 @@ class RAGService:
             )
             ranked = self.reranker.rerank(query, candidates)
             top_chunks = ranked[:answer_top_k]
-            top1_score = (
-                top_chunks[0].get("score", top_chunks[0]["retrieval_score"])
-                if top_chunks
-                else 0.0
+            confidence_score = (
+                top_chunks[0]["retrieval_score"] if top_chunks else 0.0
             )
             trace = self._build_trace(
                 trace_id,
@@ -436,7 +443,7 @@ class RAGService:
                 top_k=answer_top_k,
             )
             passed_gate = is_confident(
-                top1_score,
+                confidence_score,
                 threshold=self.confidence_threshold,
             )
             trace["decision"]["passed_gate"] = passed_gate
@@ -452,7 +459,7 @@ class RAGService:
                     candidates=candidates,
                     ranked=ranked,
                     answer_top_k=answer_top_k,
-                    top1_score=top1_score,
+                    confidence_score=confidence_score,
                     status="conflicting_sources",
                     fallback_reason="conflicting_sources",
                     answer=(
@@ -478,7 +485,7 @@ class RAGService:
                     candidates=candidates,
                     ranked=ranked,
                     answer_top_k=answer_top_k,
-                    top1_score=top1_score,
+                    confidence_score=confidence_score,
                     status="insufficient_evidence",
                     fallback_reason="insufficient_evidence",
                     answer=(
@@ -499,7 +506,7 @@ class RAGService:
                     candidates=candidates,
                     ranked=ranked,
                     answer_top_k=answer_top_k,
-                    top1_score=top1_score,
+                    confidence_score=confidence_score,
                     status="low_confidence",
                     fallback_reason="low_confidence",
                     answer=(
@@ -530,7 +537,7 @@ class RAGService:
                 candidates=candidates,
                 ranked=ranked,
                 answer_top_k=answer_top_k,
-                top1_score=top1_score,
+                confidence_score=confidence_score,
                 confidence_decision="confident",
                 llm_called=True,
                 final_status="answered",
@@ -559,7 +566,7 @@ class RAGService:
                 candidates=candidates,
                 ranked=ranked,
                 answer_top_k=answer_top_k,
-                top1_score=top1_score,
+                confidence_score=confidence_score,
                 confidence_decision="error",
                 llm_called=llm_called,
                 final_status="error",

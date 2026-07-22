@@ -161,11 +161,19 @@ Cross-encoders are often more precise than first-stage retrieval because they ev
 
 However, local Windows environments can have PyTorch / model-loading issues. For that reason, reranking has fallback behavior:
 
+The score fields have separate meanings:
+
 ```text
-if cross-encoder unavailable:
-    use retrieval_score as rerank_score
-    sort by retrieval_score
+retrieval_score = weighted hybrid embedding/BM25 score
+rerank_score = raw CrossEncoder relevance score, only when reranking runs
+confidence_score = selected top candidate's retrieval_score
 ```
+
+When the CrossEncoder is active, candidates are sorted by `rerank_score` while
+their original `retrieval_score` values are preserved. When it is disabled,
+unavailable, or prediction fails, candidates are sorted by `retrieval_score`,
+`rerank_enabled` is `false`, and `rerank_score` is `null`. A retrieval score is
+not copied into the rerank field because the two values have different meanings.
 
 This keeps the API available even when the optional reranker is unavailable.
 
@@ -176,16 +184,23 @@ Trade-off:
 
 ## 8. Confidence Gate
 
-After ranking, DocuMind checks the top candidate score against a confidence threshold.
+After ranking, DocuMind selects the top-ranked candidate and checks its stable
+hybrid retrieval score against the confidence threshold:
 
 ```text
-if top1_score >= confidence_threshold:
+selected_candidate = ranked_candidates[0]
+confidence_score = selected_candidate.retrieval_score
+
+if confidence_score >= confidence_threshold:
     answer
 else:
     refuse
 ```
 
 The goal is to prevent the LLM from answering when retrieval evidence is weak.
+Reranking controls which candidate is selected, but its raw score does not pass
+through the confidence gate. This remains the design until reranker calibration
+is supported by enough evaluation data.
 
 Low-confidence behavior:
 

@@ -38,8 +38,7 @@ class Candidate(TypedDict):
     bm25_score: float
     retrieval_score: float
     rerank_enabled: NotRequired[bool]
-    rerank_score: NotRequired[float]
-    score: NotRequired[float]
+    rerank_score: NotRequired[float | None]
 
 
 class RetrievalTrace(TypedDict):
@@ -54,6 +53,7 @@ class RerankTrace(TypedDict):
 
 class DecisionTrace(TypedDict):
     passed_gate: bool | None
+    confidence_score: NotRequired[float]
     fallback_reason: NotRequired[str | None]
     fallback_status: NotRequired[RAGStatus | None]
     sensitive_input_detected: NotRequired[bool]

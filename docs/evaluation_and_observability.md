@@ -79,16 +79,36 @@ Each trace record includes:
 - scores:
   - `embedding_score`
   - `bm25_score`
-  - `final_score`
+  - `retrieval_score`
   - `rerank_score`
+- `rerank_enabled`
 - `confidence_threshold`
 - `top1_score`
+- `confidence_score`
 - `confidence_decision`
 - `llm_called`
 - `final_status`
 - `error_message`
 
 Long document text is not logged. If snippets are logged, they are capped to a short length to reduce noise and avoid exposing too much content.
+
+Score semantics are intentionally distinct:
+
+- `retrieval_score` is the weighted hybrid embedding/BM25 score and is preserved
+  through reranking.
+- `rerank_score` is the raw CrossEncoder score when reranking succeeds; it is
+  `null` when reranking is disabled or falls back.
+- `confidence_score` exists on the selected top candidate and equals that
+  candidate's `retrieval_score`.
+- `rerank_enabled` shows whether CrossEncoder scores determined ordering.
+- legacy `final_score` and `top1_score` fields are retained in JSONL logs for
+  compatibility and now consistently alias the hybrid retrieval-based confidence
+  score.
+
+Reranking therefore controls ordering, while confidence gating uses the selected
+candidate's hybrid retrieval score. Raw CrossEncoder scores are not normalized or
+treated as probabilities. They will not be used for confidence until calibration
+is backed by sufficient evaluation data.
 
 ## Low-Confidence Request Logging
 

@@ -86,12 +86,10 @@ def _get_reranker():
 
 def _fallback_rerank(candidates: list):
     for item in candidates:
-        score = item["retrieval_score"]
         item["rerank_enabled"] = False
-        item["rerank_score"] = score
-        item["score"] = score
+        item["rerank_score"] = None
 
-    return sorted(candidates, key=lambda item: item["rerank_score"], reverse=True)
+    return sorted(candidates, key=lambda item: item["retrieval_score"], reverse=True)
 
 
 def rerank(query_text: str, candidates: list):
@@ -113,7 +111,6 @@ def rerank(query_text: str, candidates: list):
     for index, item in enumerate(candidates):
         item["rerank_enabled"] = True
         item["rerank_score"] = float(scores[index])
-        item["score"] = item["rerank_score"]
 
     return sorted(candidates, key=lambda item: item["rerank_score"], reverse=True)
 
@@ -191,8 +188,8 @@ def search(query_embedding, query_text: str = "", top_k=3):
 
     reranked_results = rerank(query_text, before_rerank_results)
     top_results = reranked_results[:top_k]
-    top1_score = top_results[0]["score"] if top_results else 0.0
-    rerank_improvement = top1_score - before_rerank_score
+    confidence_score = top_results[0]["retrieval_score"] if top_results else 0.0
+    rerank_improvement = confidence_score - before_rerank_score
     rerank_enabled = top_results[0].get("rerank_enabled", False) if top_results else False
 
     trace = {
@@ -220,11 +217,14 @@ def search(query_embedding, query_text: str = "", top_k=3):
         "trace": trace,
         "documents": [[item["document"] for item in top_results]],
         "metadatas": [[item["metadata"] for item in top_results]],
-        "scores": [[item["score"] for item in top_results]],
+        # Legacy search callers receive stable hybrid retrieval scores here.
+        "scores": [[item["retrieval_score"] for item in top_results]],
+        "retrieval_scores": [[item["retrieval_score"] for item in top_results]],
         "rerank_scores": [[item["rerank_score"] for item in top_results]],
         "embedding_scores": [[item["embedding_score"] for item in top_results]],
         "bm25_scores": [[item["bm25_score"] for item in top_results]],
-        "top1_score": top1_score,
+        "top1_score": confidence_score,
+        "confidence_score": confidence_score,
     }
 
 

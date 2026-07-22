@@ -30,8 +30,11 @@ class TraceCandidate(TypedDict, total=False):
     chunk_index: int | None
     embedding_score: float | None
     bm25_score: float | None
+    retrieval_score: float | None
     final_score: float | None
     rerank_score: NotRequired[float | None]
+    confidence_score: NotRequired[float | None]
+    rerank_enabled: NotRequired[bool]
     snippet: NotRequired[str]
 
 
@@ -45,6 +48,7 @@ class RAGTraceRecord(TypedDict):
     top_candidates: list[TraceCandidate]
     confidence_threshold: float
     top1_score: float
+    confidence_score: float
     confidence_decision: ConfidenceDecision
     llm_called: bool
     final_status: FinalStatus
