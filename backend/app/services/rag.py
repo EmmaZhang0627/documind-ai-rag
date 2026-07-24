@@ -76,6 +76,20 @@ class RAGService:
 
         self.retriever.add(chunks)
 
+    def _retrieve_and_rank(
+        self,
+        query: str,
+        retrieval_top_k: int,
+    ) -> tuple[list[Candidate], list[Candidate]]:
+        query_embedding = self.embedder.embed(query)
+        candidates = self.retriever.retrieve(
+            query_embedding,
+            query,
+            top_k=retrieval_top_k,
+        )
+        ranked = self.reranker.rerank(query, candidates)
+        return candidates, ranked
+
     def _build_trace(
         self,
         trace_id: str,
@@ -347,7 +361,12 @@ class RAGService:
             )
         )
 
-    def ask(self, query: str, top_k: int | None = None) -> RAGResponse:
+    def ask(
+        self,
+        query: str,
+        top_k: int | None = None,
+        _evaluation_candidate_sink: list[Candidate] | None = None,
+    ) -> RAGResponse:
         trace_id = str(uuid4())
         answer_top_k = max(1, top_k or self.answer_top_k_default)
         retrieval_top_k = max(self.retrieval_top_k_default, answer_top_k)
@@ -424,13 +443,12 @@ class RAGService:
                     conflict_detected=False,
                 )
 
-            query_embedding = self.embedder.embed(query)
-            candidates = self.retriever.retrieve(
-                query_embedding,
+            candidates, ranked = self._retrieve_and_rank(
                 query,
-                top_k=retrieval_top_k,
+                retrieval_top_k,
             )
-            ranked = self.reranker.rerank(query, candidates)
+            if _evaluation_candidate_sink is not None:
+                _evaluation_candidate_sink.extend(ranked)
             top_chunks = ranked[:answer_top_k]
             confidence_score = (
                 top_chunks[0]["retrieval_score"] if top_chunks else 0.0

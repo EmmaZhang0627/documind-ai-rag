@@ -213,12 +213,12 @@ It:
 5. computes explicit RAG quality metrics
 6. writes results to `eval/eval_results_latest.json`
 
-For `answer_with_sources`, it checks:
+For grounded answer cases, the runner checks:
 
 - status indicates answered / success
 - sources are not empty
 - expected keywords appear when provided
-- expected evidence keywords appear in cited source snippets when provided
+- expected evidence keywords appear in full internal retrieved chunks
 - expected source file matches when provided
 - expected page number matches when provided
 
@@ -265,9 +265,19 @@ Each case result contains a `metrics` object:
 Citation presence alone is not enough because a response can include a citation
 that points to the wrong chunk or to a weakly related page. That is false
 grounding: the answer looks grounded because it has a source, but the cited text
-does not actually support the claim. DocuMind keeps this check lightweight by
-returning a short `source_snippet` with each cited source and matching expected
-evidence phrases against those snippets.
+does not actually support the claim.
+
+`source_snippet` is a presentation field, not a complete evidence record. It is
+intentionally truncated to keep API responses compact and to reduce document
+exposure. Evaluation must not treat absence from this preview as absence from the
+retrieved chunk.
+
+The self-contained runner supplies an evaluation-only in-process candidate sink
+to `RAGService.ask`. The same retrieval and reranking pass used for the answer
+places ranked candidates in that local sink. Full text is used only for matching
+and is not added to `/api/chat`, public source objects, or the evaluation result
+JSON. Results retain candidate metadata, scores, matched keywords, and rank so
+failures remain explainable without publishing complete document text.
 
 Example source object:
 
@@ -282,7 +292,47 @@ Example source object:
 ```
 
 This is still a rule-based keyword check. It can miss paraphrases, synonyms, and
-subtle contradictions. Future versions can add LLM-as-judge, RAGAS
+subtle contradictions. Future versions can add calibrated semantic evaluation
+without changing the public source response.
+
+## Layered Failure Evaluation
+
+An end-to-end failure does not necessarily mean retrieval failed. Each grounded
+case records independent layers:
+
+- `source_match`: expected source exists in the internal candidate set.
+- `page_match`: expected page exists in the internal candidate set.
+- `full_evidence_match`: expected evidence exists in full candidate text.
+- `retrieval_pass`: source, page, and full evidence checks all pass.
+- `evidence_rank`: first ranked candidate containing all expected evidence
+  keywords; `null` means no single retrieved candidate contains them.
+- `confidence_pass`: returned answer/fallback behavior matches the case after
+  confidence gating.
+- `generation_pass`: when an answer is generated, its expected answer keywords
+  are present.
+- `overall_pass`: retrieval, expected confidence behavior, and applicable
+  generation checks pass. `evidence_rank` remains visible as ranking quality
+  information; a lower-ranked evidence chunk does not fail an otherwise correct
+  top-k answer by itself.
+
+Failure stages are assigned in causal order:
+
+```text
+evidence absent from candidate set       -> retrieval_failure
+evidence present below rank 1            -> ranking_failure
+rank 1 evidence rejected by gate         -> confidence_failure
+gate passes but answer keywords are wrong -> generation_failure
+system is correct but the check is wrong -> expectation_or_evaluation_failure
+evaluation cannot be prepared or run     -> setup_error
+```
+
+For example, `evidence_rank = 3` means retrieval found the supporting chunk, but
+two other candidates were ranked above it. If that ordering causes the system to
+reject or answer incorrectly, it is a ranking failure rather than a retrieval
+miss. If the top-k context still produces the expected answer, the case can pass
+while retaining rank 3 as a comparison signal. A low-confidence response with
+`evidence_rank = 1` is a confidence failure because the correct evidence was
+already selected.
 faithfulness, or domain-expert review for deeper semantic evaluation.
 
 The output JSON has this shape:

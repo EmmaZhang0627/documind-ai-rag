@@ -15,14 +15,6 @@ FIXTURES_DIR = EVAL_DIR / "fixtures"
 CASES_PATH = EVAL_DIR / "documind_eval_cases.json"
 RESULTS_PATH = EVAL_DIR / "eval_results_latest.json"
 NOT_APPLICABLE = "not_applicable"
-SOURCE_EVIDENCE_TEXT_KEYS = (
-    "source_snippet",
-    "snippet",
-    "chunk_text",
-    "content",
-    "text",
-    "document",
-)
 SECRET_PATTERN = re.compile(r"sk-[A-Za-z0-9_*.-]+")
 
 
@@ -132,7 +124,7 @@ def prepare_eval_index(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
 
 
 def normalize_text(value: str) -> str:
-    return value.casefold()
+    return " ".join(value.casefold().split())
 
 
 def get_source_value(source: Any, key: str) -> Any:
@@ -178,16 +170,6 @@ def get_source_files(sources: list[Any]) -> list[str]:
     return source_files
 
 
-def get_source_evidence_text(source: Any) -> str:
-    evidence_parts: list[str] = []
-    for key in SOURCE_EVIDENCE_TEXT_KEYS:
-        value = get_source_value(source, key)
-        if isinstance(value, str) and value:
-            evidence_parts.append(value)
-
-    return " ".join(evidence_parts)
-
-
 def match_keywords(text: str, expected_keywords: list[str]) -> dict[str, Any]:
     if not expected_keywords:
         return {
@@ -229,11 +211,74 @@ def build_check_result(
     }
 
 
+def is_grounded_case(case: dict[str, Any]) -> bool:
+    return bool(
+        case.get("expected_source_file")
+        or get_expected_page_numbers(case)
+        or case.get("expected_evidence_keywords")
+    )
+
+
+def candidate_metadata(candidate: dict[str, Any]) -> dict[str, Any]:
+    return candidate.get("metadata") or {}
+
+
+def summarize_candidates(
+    candidates: list[dict[str, Any]],
+    expected_keywords: list[str],
+) -> list[dict[str, Any]]:
+    summaries: list[dict[str, Any]] = []
+    for rank, candidate in enumerate(candidates, start=1):
+        metadata = candidate_metadata(candidate)
+        keyword_result = match_keywords(
+            candidate.get("document", ""),
+            expected_keywords,
+        )
+        summaries.append({
+            "rank": rank,
+            "document_id": metadata.get("document_id"),
+            "source_file": metadata.get("source_file"),
+            "page_number": metadata.get("page_number"),
+            "chunk_index": metadata.get("chunk_index"),
+            "embedding_score": candidate.get("embedding_score"),
+            "bm25_score": candidate.get("bm25_score"),
+            "retrieval_score": candidate.get("retrieval_score"),
+            "rerank_score": candidate.get("rerank_score"),
+            "rerank_enabled": candidate.get("rerank_enabled", False),
+            "matched_evidence_keywords": keyword_result["matched"],
+            "contains_all_expected_evidence": (
+                keyword_result["passed"]
+                if keyword_result["applicable"]
+                else NOT_APPLICABLE
+            ),
+        })
+
+    return summaries
+
+
+def find_evidence_rank(
+    candidates: list[dict[str, Any]],
+    expected_keywords: list[str],
+) -> int | None:
+    if not expected_keywords:
+        return None
+
+    for rank, candidate in enumerate(candidates, start=1):
+        keyword_result = match_keywords(
+            candidate.get("document", ""),
+            expected_keywords,
+        )
+        if keyword_result["passed"] is True:
+            return rank
+
+    return None
+
+
 def compute_checks(
     case: dict[str, Any],
     response: dict[str, Any],
+    ranked_candidates: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    sources = response.get("sources") or []
     answer = response.get("answer") or ""
     actual_status = response.get("status")
     actual_fallback_reason = response.get("fallback_reason")
@@ -244,13 +289,16 @@ def compute_checks(
     expected_answer_keywords = case.get("expected_answer_keywords") or []
     expected_fallback_reason = case.get("expected_fallback_reason")
 
-    source_files = get_source_files(sources)
-    retrieved_page_numbers = get_retrieved_page_numbers(sources)
-    source_evidence_text = " ".join(
-        get_source_evidence_text(source) for source in sources
+    candidate_metadatas = [
+        candidate_metadata(candidate) for candidate in ranked_candidates
+    ]
+    source_files = get_source_files(candidate_metadatas)
+    retrieved_page_numbers = get_retrieved_page_numbers(candidate_metadatas)
+    full_evidence_text = " ".join(
+        candidate.get("document", "") for candidate in ranked_candidates
     )
     evidence_keyword_result = match_keywords(
-        source_evidence_text,
+        full_evidence_text,
         expected_evidence_keywords,
     )
     answer_keyword_result = match_keywords(answer, expected_answer_keywords)
@@ -312,7 +360,7 @@ def compute_checks(
                 "retrieved_page_numbers": retrieved_page_numbers,
             },
         ),
-        "evidence_keywords": build_check_result(
+        "full_evidence_match": build_check_result(
             applicable=evidence_keyword_result["applicable"],
             passed=evidence_keyword_result["passed"],
             details={
@@ -322,8 +370,15 @@ def compute_checks(
             },
         ),
         "answer_keywords": build_check_result(
-            applicable=answer_keyword_result["applicable"],
-            passed=answer_keyword_result["passed"],
+            applicable=(
+                actual_status == "answered"
+                and answer_keyword_result["applicable"]
+            ),
+            passed=(
+                answer_keyword_result["passed"]
+                if actual_status == "answered"
+                else NOT_APPLICABLE
+            ),
             details={
                 "expected_keywords": expected_answer_keywords,
                 "matched_keywords": answer_keyword_result["matched"],
@@ -345,21 +400,88 @@ def build_failed_checks(checks: dict[str, Any]) -> list[str]:
 def evaluate_result(
     case: dict[str, Any],
     response: dict[str, Any],
+    ranked_candidates: list[dict[str, Any]],
 ) -> dict[str, Any]:
     sources = response.get("sources") or []
-    checks = compute_checks(case, response)
+    checks = compute_checks(case, response, ranked_candidates)
+    grounded = is_grounded_case(case)
+    expected_evidence_keywords = case.get("expected_evidence_keywords") or []
+    evidence_rank = find_evidence_rank(
+        ranked_candidates,
+        expected_evidence_keywords,
+    )
+    source_pass = checks["source_match"]["passed"] is True
+    page_pass = checks["page_match"]["passed"] is True
+    evidence_pass = checks["full_evidence_match"]["passed"] is True
+    retrieval_pass = (
+        source_pass and page_pass and evidence_pass
+        if grounded
+        else NOT_APPLICABLE
+    )
+    confidence_pass = (
+        checks["status"]["passed"] is True
+        and (
+            checks["fallback"]["passed"] is True
+            if checks["fallback"]["applicable"]
+            else True
+        )
+    )
+    generation_applicable = response.get("status") == "answered"
+    generation_pass: bool | str = (
+        checks["answer_keywords"]["passed"]
+        if generation_applicable
+        else NOT_APPLICABLE
+    )
+
+    if grounded:
+        overall_pass = (
+            retrieval_pass is True
+            and confidence_pass
+            and generation_pass is True
+        )
+    else:
+        overall_pass = confidence_pass
+
+    if grounded and retrieval_pass is not True:
+        failure_stage = "retrieval_failure"
+    elif grounded and evidence_rank != 1 and not confidence_pass:
+        failure_stage = "ranking_failure"
+    elif not confidence_pass:
+        failure_stage = (
+            "confidence_failure"
+            if grounded
+            else "expectation_or_evaluation_failure"
+        )
+    elif generation_pass is False:
+        failure_stage = "generation_failure"
+    elif not overall_pass:
+        failure_stage = "expectation_or_evaluation_failure"
+    else:
+        failure_stage = None
+
     failed_checks = build_failed_checks(checks)
 
     return {
         "case_id": case.get("id"),
+        "category": case.get("category"),
         "question": case.get("question"),
         "expected_status": case.get("expected_status"),
         "actual_status": response.get("status"),
         "fallback_reason": response.get("fallback_reason"),
         "returned_sources": sources,
         "retrieved_page_numbers": get_retrieved_page_numbers(sources),
+        "retrieved_candidates": summarize_candidates(
+            ranked_candidates,
+            expected_evidence_keywords,
+        ),
         "checks": checks,
-        "passed": not failed_checks,
+        "retrieval_pass": retrieval_pass,
+        "evidence_rank": evidence_rank,
+        "confidence_pass": confidence_pass,
+        "generation_pass": generation_pass,
+        "overall_pass": overall_pass,
+        "failure_stage": failure_stage,
+        "passed": overall_pass,
         "failed_checks": failed_checks,
         "trace_id": response.get("trace_id"),
         "retrieval_trace": response.get("trace"),
@@ -376,19 +498,27 @@ def build_error_result(case: dict[str, Any], error: Exception) -> dict[str, Any]
         "fallback_reason": "error",
         "trace": {},
     }
-    checks = compute_checks(case, response)
+    checks = compute_checks(case, response, [])
     failed_checks = build_failed_checks(checks)
     failed_checks.append(f"rag_service_error:{error.__class__.__name__}")
 
     return {
         "case_id": case.get("id"),
+        "category": case.get("category"),
         "question": case.get("question"),
         "expected_status": case.get("expected_status"),
         "actual_status": "error",
         "fallback_reason": "error",
         "returned_sources": [],
         "retrieved_page_numbers": [],
+        "retrieved_candidates": [],
         "checks": checks,
+        "retrieval_pass": False if is_grounded_case(case) else NOT_APPLICABLE,
+        "evidence_rank": None,
+        "confidence_pass": False,
+        "generation_pass": NOT_APPLICABLE,
+        "overall_pass": False,
+        "failure_stage": "setup_error",
         "passed": False,
         "failed_checks": failed_checks,
         "trace_id": None,
@@ -418,6 +548,26 @@ def count_applicable_check(results: list[dict[str, Any]], check_name: str) -> in
 def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
     total_cases = len(results)
     passed_cases = sum(1 for result in results if result["passed"])
+    category_results: dict[str, dict[str, int]] = {}
+    failure_stage_counts: dict[str, int] = {}
+
+    for result in results:
+        category = result.get("category") or "uncategorized"
+        category_summary = category_results.setdefault(
+            category,
+            {"total": 0, "passed": 0, "failed": 0},
+        )
+        category_summary["total"] += 1
+        if result["passed"]:
+            category_summary["passed"] += 1
+        else:
+            category_summary["failed"] += 1
+
+        failure_stage = result.get("failure_stage")
+        if failure_stage:
+            failure_stage_counts[failure_stage] = (
+                failure_stage_counts.get(failure_stage, 0) + 1
+            )
 
     return {
         "total_cases": total_cases,
@@ -429,11 +579,11 @@ def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
         "page_applicable_count": count_applicable_check(results, "page_match"),
         "evidence_keyword_match_count": count_passed_check(
             results,
-            "evidence_keywords",
+            "full_evidence_match",
         ),
         "evidence_keyword_applicable_count": count_applicable_check(
             results,
-            "evidence_keywords",
+            "full_evidence_match",
         ),
         "answer_keyword_match_count": count_passed_check(
             results,
@@ -445,6 +595,8 @@ def build_summary(results: list[dict[str, Any]]) -> dict[str, Any]:
         ),
         "fallback_correctness_count": count_passed_check(results, "fallback"),
         "fallback_applicable_count": count_applicable_check(results, "fallback"),
+        "category_results": category_results,
+        "failure_stage_counts": failure_stage_counts,
     }
 
 
@@ -474,6 +626,7 @@ def print_summary(summary: dict[str, Any]) -> None:
         f"{summary['fallback_correctness_count']}/"
         f"{summary['fallback_applicable_count']}"
     )
+    print(f"Failure stages: {summary['failure_stage_counts']}")
     print(f"Results written to: {RESULTS_PATH}")
 
 
@@ -523,11 +676,17 @@ def run_eval() -> int:
 
     for case in cases:
         try:
+            ranked_candidates: list[dict[str, Any]] = []
             response = rag_service.ask(
                 case["question"],
                 top_k=case.get("top_k"),
+                _evaluation_candidate_sink=(
+                    ranked_candidates if is_grounded_case(case) else None
+                ),
             )
-            results.append(evaluate_result(case, response))
+            results.append(
+                evaluate_result(case, response, ranked_candidates)
+            )
         except Exception as error:
             results.append(build_error_result(case, error))
 
