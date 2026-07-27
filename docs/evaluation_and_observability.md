@@ -333,7 +333,80 @@ miss. If the top-k context still produces the expected answer, the case can pass
 while retaining rank 3 as a comparison signal. A low-confidence response with
 `evidence_rank = 1` is a confidence failure because the correct evidence was
 already selected.
-faithfulness, or domain-expert review for deeper semantic evaluation.
+
+## Retrieval Strategy Comparison
+
+`eval/run_retrieval_comparison.py` evaluates retrieval and ranking separately
+from confidence gating and answer generation. It uses the same fixed fixture,
+production page extraction, chunking, embedding service, in-memory ingestion,
+hybrid formula, and CrossEncoder as the end-to-end runner, but it does not call
+the confidence gate or LLM.
+
+The three evaluation-only strategies are:
+
+```text
+vector_only
+  order the candidate pool by embedding_score
+
+hybrid
+  order by:
+  embedding_score_weight * embedding_score
+  + bm25_score_weight * normalized_bm25_score
+
+hybrid_rerank
+  start with the hybrid candidate pool
+  then order with the configured CrossEncoder rerank_score
+```
+
+No retrieval mode is added to the public API, and production defaults are not
+changed.
+
+### Retrieval Metrics
+
+- **Top-1 Evidence Hit**: the first candidate contains all expected evidence
+  keywords.
+- **Hit@K**: at least one of the first K candidates contains the expected
+  evidence. For example, Hit@3 means the evidence is available to a top-3
+  context builder even if it is not ranked first.
+- **Reciprocal Rank**: `1 / evidence_rank`. Rank 1 contributes `1.0`, rank 2
+  contributes `0.5`, rank 3 contributes about `0.333`, and missing evidence
+  contributes `0`.
+- **MRR**: the mean reciprocal rank across all grounded cases. It rewards
+  strategies that place correct evidence nearer the top.
+- **Average Evidence Rank When Found**: average rank over cases where evidence
+  was found; missing cases are reported separately rather than silently removed.
+
+Source-file and page-number hit rates are weak comparison metrics for the current
+fixture because it contains only one document and one page. A strategy can return
+the wrong chunk while still matching both source and page. Full-text evidence
+keywords and evidence rank provide the meaningful signal for this baseline.
+
+### Reranking Effect
+
+For each case, the runner compares hybrid evidence rank with CrossEncoder
+reranked evidence rank:
+
+```text
+reranked rank is lower  -> improved
+same rank               -> unchanged
+reranked rank is higher -> worsened
+evidence absent         -> evidence_not_found
+```
+
+This comparison reveals both reranking gains and regressions. A higher aggregate
+MRR does not guarantee every question improved, so worsened cases must be
+inspected individually.
+
+The retrieval comparison and end-to-end evaluation answer different questions:
+
+```text
+retrieval comparison:
+  Did a strategy find and rank the correct evidence?
+
+end-to-end evaluation:
+  After retrieval, did confidence, context construction, generation,
+  citations, and fallback behavior produce the expected user outcome?
+```
 
 The output JSON has this shape:
 

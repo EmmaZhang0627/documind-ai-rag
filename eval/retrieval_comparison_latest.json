@@ -1,0 +1,2845 @@
+{
+  "generated_at": "2026-07-24T09:27:16.619217+00:00",
+  "fixture": {
+    "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+    "fixture_pdf": "Study Plan - MSc Computer Science.pdf",
+    "fixture_path": "D:\\HuaweiMoveData\\Users\\Emma\\Desktop\\codex-career\\documind\\documind-ai-rag\\eval\\fixtures\\Study Plan - MSc Computer Science.pdf",
+    "page_count": 1,
+    "chunk_count": 3
+  },
+  "configuration": {
+    "grounded_case_count": 11,
+    "retrieval_top_k": 10,
+    "embedding_score_weight": 0.7,
+    "bm25_score_weight": 0.3,
+    "reranker_enabled": true,
+    "reranker_model_name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "strategy_definitions": {
+      "vector_only": "Candidates ordered by embedding_score only.",
+      "hybrid": "Candidates ordered by the configured weighted embedding_score and normalized bm25_score.",
+      "hybrid_rerank": "Hybrid candidate pool reordered by the configured CrossEncoder, with production fallback preserved."
+    }
+  },
+  "aggregate_metrics": {
+    "vector_only": {
+      "grounded_case_count": 11,
+      "top_1_evidence_hit_count": 8,
+      "top_1_evidence_hit_rate": 0.7272727272727273,
+      "hit_at_2_count": 11,
+      "hit_at_2_rate": 1.0,
+      "hit_at_3_count": 11,
+      "hit_at_3_rate": 1.0,
+      "mrr": 0.8636363636363636,
+      "average_evidence_rank_when_found": 1.2727272727272727,
+      "evidence_not_found_count": 0
+    },
+    "hybrid": {
+      "grounded_case_count": 11,
+      "top_1_evidence_hit_count": 7,
+      "top_1_evidence_hit_rate": 0.6363636363636364,
+      "hit_at_2_count": 11,
+      "hit_at_2_rate": 1.0,
+      "hit_at_3_count": 11,
+      "hit_at_3_rate": 1.0,
+      "mrr": 0.8181818181818182,
+      "average_evidence_rank_when_found": 1.3636363636363635,
+      "evidence_not_found_count": 0
+    },
+    "hybrid_rerank": {
+      "grounded_case_count": 11,
+      "top_1_evidence_hit_count": 9,
+      "top_1_evidence_hit_rate": 0.8181818181818182,
+      "hit_at_2_count": 10,
+      "hit_at_2_rate": 0.9090909090909091,
+      "hit_at_3_count": 11,
+      "hit_at_3_rate": 1.0,
+      "mrr": 0.893939393939394,
+      "average_evidence_rank_when_found": 1.2727272727272727,
+      "evidence_not_found_count": 0
+    }
+  },
+  "per_case_results": [
+    {
+      "case_id": "case_001_study_plan_duration",
+      "category": "direct_factual",
+      "question": "What is the indicative study duration for the MSc Computer Science programme?",
+      "expected_evidence_keywords": [
+        "Indicative Study Duration",
+        "24 Months"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.6559685926913846,
+            "bm25_score": 0.8378114457066327,
+            "retrieval_score": 0.710521448595959,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Indicative Study Duration",
+              "24 Months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.6559685926913846,
+              "bm25_score": 0.8378114457066327,
+              "retrieval_score": 0.710521448595959,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration",
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.6460166838078795,
+              "bm25_score": 0.2466828134192302,
+              "retrieval_score": 0.5262165226912846,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.6286123367819219,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.7400286357473452,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration",
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": true
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.6286123367819219,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.7400286357473452,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Indicative Study Duration",
+              "24 Months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.6286123367819219,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.7400286357473452,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration",
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.6559685926913846,
+              "bm25_score": 0.8378114457066327,
+              "retrieval_score": 0.710521448595959,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration",
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.6460166838078795,
+              "bm25_score": 0.2466828134192302,
+              "retrieval_score": 0.5262165226912846,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.6559685926913846,
+            "bm25_score": 0.8378114457066327,
+            "retrieval_score": 0.710521448595959,
+            "rerank_score": 8.600790977478027,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "Indicative Study Duration",
+              "24 Months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.6559685926913846,
+              "bm25_score": 0.8378114457066327,
+              "retrieval_score": 0.710521448595959,
+              "rerank_score": 8.600790977478027,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration",
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.6286123367819219,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.7400286357473452,
+              "rerank_score": 5.709634304046631,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration",
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.6460166838078795,
+              "bm25_score": 0.2466828134192302,
+              "retrieval_score": 0.5262165226912846,
+              "rerank_score": 4.412628173828125,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Indicative Study Duration"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_002_study_plan_final_module",
+      "category": "direct_factual",
+      "question": "What is the final module in the MSc Computer Science study plan?",
+      "expected_evidence_keywords": [
+        "Final Module",
+        "Computer Science Capstone Project"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "Final Module",
+            "Computer Science Capstone Project"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.5923294684930474,
+            "bm25_score": 0.42355458968768184,
+            "retrieval_score": 0.5416970048514377,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Final Module",
+              "Computer Science Capstone Project"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5923294684930474,
+              "bm25_score": 0.42355458968768184,
+              "retrieval_score": 0.5416970048514377,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Final Module",
+                "Computer Science Capstone Project"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.558393125297681,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6908751877083767,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.37409641063869437,
+              "bm25_score": 0.08710730150076745,
+              "retrieval_score": 0.2879996778973163,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "Final Module",
+            "Computer Science Capstone Project"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.558393125297681,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6908751877083767,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.558393125297681,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6908751877083767,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5923294684930474,
+              "bm25_score": 0.42355458968768184,
+              "retrieval_score": 0.5416970048514377,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Final Module",
+                "Computer Science Capstone Project"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.37409641063869437,
+              "bm25_score": 0.08710730150076745,
+              "retrieval_score": 0.2879996778973163,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "Final Module",
+            "Computer Science Capstone Project"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.558393125297681,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6908751877083767,
+            "rerank_score": 2.9750800132751465,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.558393125297681,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6908751877083767,
+              "rerank_score": 2.9750800132751465,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5923294684930474,
+              "bm25_score": 0.42355458968768184,
+              "retrieval_score": 0.5416970048514377,
+              "rerank_score": 1.2910183668136597,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Final Module",
+                "Computer Science Capstone Project"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.37409641063869437,
+              "bm25_score": 0.08710730150076745,
+              "retrieval_score": 0.2879996778973163,
+              "rerank_score": -11.056418418884277,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_006_programme_credits",
+      "category": "direct_factual",
+      "question": "How many credits is the MSc Computer Science programme worth in total?",
+      "expected_evidence_keywords": [
+        "Credits",
+        "180"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.552493363296696,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6867453543076871,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Credits",
+              "180"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.552493363296696,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6867453543076871,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Credits",
+                "180"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5125328469461521,
+              "bm25_score": 0.048818558097721766,
+              "retrieval_score": 0.373418560291623,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.38984726479040205,
+              "bm25_score": 0.04380256532475303,
+              "retrieval_score": 0.2860338549507073,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.552493363296696,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6867453543076871,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Credits",
+              "180"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.552493363296696,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6867453543076871,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Credits",
+                "180"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5125328469461521,
+              "bm25_score": 0.048818558097721766,
+              "retrieval_score": 0.373418560291623,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.38984726479040205,
+              "bm25_score": 0.04380256532475303,
+              "retrieval_score": 0.2860338549507073,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.552493363296696,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6867453543076871,
+            "rerank_score": 2.015554666519165,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "Credits",
+              "180"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.552493363296696,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6867453543076871,
+              "rerank_score": 2.015554666519165,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Credits",
+                "180"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5125328469461521,
+              "bm25_score": 0.048818558097721766,
+              "retrieval_score": 0.373418560291623,
+              "rerank_score": -10.62234878540039,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.38984726479040205,
+              "bm25_score": 0.04380256532475303,
+              "retrieval_score": 0.2860338549507073,
+              "rerank_score": -10.901766777038574,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_007_capstone_duration",
+      "category": "direct_factual",
+      "question": "How long does the Computer Science Capstone Project last?",
+      "expected_evidence_keywords": [
+        "Computer Science Capstone Project",
+        "32 weeks"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.5911276443898863,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.7137893510729203,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5911276443898863,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.7137893510729203,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Computer Science Capstone Project",
+                "32 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.40673594271163144,
+              "bm25_score": 0.10012827081614244,
+              "retrieval_score": 0.3147536411429847,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.3548299708287519,
+              "bm25_score": 0.04118771367643228,
+              "retrieval_score": 0.260737293683056,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.5911276443898863,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.7137893510729203,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5911276443898863,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.7137893510729203,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Computer Science Capstone Project",
+                "32 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.40673594271163144,
+              "bm25_score": 0.10012827081614244,
+              "retrieval_score": 0.3147536411429847,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.3548299708287519,
+              "bm25_score": 0.04118771367643228,
+              "retrieval_score": 0.260737293683056,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.5911276443898863,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.7137893510729203,
+            "rerank_score": 6.774222373962402,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5911276443898863,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.7137893510729203,
+              "rerank_score": 6.774222373962402,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Computer Science Capstone Project",
+                "32 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.40673594271163144,
+              "bm25_score": 0.10012827081614244,
+              "retrieval_score": 0.3147536411429847,
+              "rerank_score": -1.325561285018921,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.3548299708287519,
+              "bm25_score": 0.04118771367643228,
+              "retrieval_score": 0.260737293683056,
+              "rerank_score": -3.2011618614196777,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_008_latest_completion_window",
+      "category": "semantic_paraphrase",
+      "question": "How much time does a student have at most to finish after their earliest enrolment begins?",
+      "expected_evidence_keywords": [
+        "maximum period",
+        "72 months",
+        "earliest enrolment"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "earliest enrolment"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.6107654976975108,
+            "bm25_score": 0.7292201185903983,
+            "retrieval_score": 0.646301883965377,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "maximum period",
+              "72 months",
+              "earliest enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.6107654976975108,
+              "bm25_score": 0.7292201185903983,
+              "retrieval_score": 0.646301883965377,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "maximum period",
+                "72 months",
+                "earliest enrolment"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.49568331336189697,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6469783193533278,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3902534401020758,
+              "bm25_score": 0.02100815301096408,
+              "retrieval_score": 0.27947985397474223,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "earliest enrolment"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.49568331336189697,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6469783193533278,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.49568331336189697,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6469783193533278,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.6107654976975108,
+              "bm25_score": 0.7292201185903983,
+              "retrieval_score": 0.646301883965377,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "maximum period",
+                "72 months",
+                "earliest enrolment"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3902534401020758,
+              "bm25_score": 0.02100815301096408,
+              "retrieval_score": 0.27947985397474223,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "earliest enrolment"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.6107654976975108,
+            "bm25_score": 0.7292201185903983,
+            "retrieval_score": 0.646301883965377,
+            "rerank_score": 5.207954406738281,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "maximum period",
+              "72 months",
+              "earliest enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.6107654976975108,
+              "bm25_score": 0.7292201185903983,
+              "retrieval_score": 0.646301883965377,
+              "rerank_score": 5.207954406738281,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "maximum period",
+                "72 months",
+                "earliest enrolment"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.49568331336189697,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6469783193533278,
+              "rerank_score": -2.900519609451294,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3902534401020758,
+              "bm25_score": 0.02100815301096408,
+              "retrieval_score": 0.27947985397474223,
+              "rerank_score": -9.5428466796875,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_009_enrolment_team",
+      "category": "semantic_paraphrase",
+      "question": "Which team is responsible for placing learners onto each module?",
+      "expected_evidence_keywords": [
+        "Student Support Team",
+        "manage your enrolment"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.44049004263661445,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.60834302984563,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Student Support Team",
+              "manage your enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.44049004263661445,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.60834302984563,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Student Support Team",
+                "manage your enrolment"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3895897827323487,
+              "bm25_score": 0.0,
+              "retrieval_score": 0.27271284791264405,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.2770272512351928,
+              "bm25_score": 0.5683471985756715,
+              "retrieval_score": 0.3644232354373364,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.44049004263661445,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.60834302984563,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Student Support Team",
+              "manage your enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.44049004263661445,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.60834302984563,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Student Support Team",
+                "manage your enrolment"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.2770272512351928,
+              "bm25_score": 0.5683471985756715,
+              "retrieval_score": 0.3644232354373364,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3895897827323487,
+              "bm25_score": 0.0,
+              "retrieval_score": 0.27271284791264405,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.44049004263661445,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.60834302984563,
+            "rerank_score": 0.45364242792129517,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "Student Support Team",
+              "manage your enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.44049004263661445,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.60834302984563,
+              "rerank_score": 0.45364242792129517,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Student Support Team",
+                "manage your enrolment"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3895897827323487,
+              "bm25_score": 0.0,
+              "retrieval_score": 0.27271284791264405,
+              "rerank_score": -8.723214149475098,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.2770272512351928,
+              "bm25_score": 0.5683471985756715,
+              "retrieval_score": 0.3644232354373364,
+              "rerank_score": -11.273247718811035,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_010_pause_or_retake_timeline",
+      "category": "semantic_paraphrase",
+      "question": "Can a learner still keep to the two-year schedule after pausing their studies or retaking work?",
+      "expected_evidence_keywords": [
+        "break from your studies",
+        "reassessment",
+        "24 months"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.5618072105263732,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6932650473684612,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "break from your studies",
+              "reassessment",
+              "24 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.5618072105263732,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6932650473684612,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "break from your studies",
+                "reassessment",
+                "24 months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.4203127388876888,
+              "bm25_score": 0.757600054587248,
+              "retrieval_score": 0.5214989335975565,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "break from your studies",
+                "reassessment"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.33832311770580514,
+              "bm25_score": 0.3001183905980747,
+              "retrieval_score": 0.326861699573486,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "24 months"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.5618072105263732,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6932650473684612,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "break from your studies",
+              "reassessment",
+              "24 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.5618072105263732,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6932650473684612,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "break from your studies",
+                "reassessment",
+                "24 months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.4203127388876888,
+              "bm25_score": 0.757600054587248,
+              "retrieval_score": 0.5214989335975565,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "break from your studies",
+                "reassessment"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.33832311770580514,
+              "bm25_score": 0.3001183905980747,
+              "retrieval_score": 0.326861699573486,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "24 months"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.5618072105263732,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6932650473684612,
+            "rerank_score": -0.9749889969825745,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "break from your studies",
+              "reassessment",
+              "24 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.5618072105263732,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6932650473684612,
+              "rerank_score": -0.9749889969825745,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "break from your studies",
+                "reassessment",
+                "24 months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.4203127388876888,
+              "bm25_score": 0.757600054587248,
+              "retrieval_score": 0.5214989335975565,
+              "rerank_score": -9.009685516357422,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "break from your studies",
+                "reassessment"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.33832311770580514,
+              "bm25_score": 0.3001183905980747,
+              "retrieval_score": 0.326861699573486,
+              "rerank_score": -10.470074653625488,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "24 months"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_011_robotics_elective",
+      "category": "keyword_exact_term",
+      "question": "Is Robotics listed as an elective module?",
+      "expected_evidence_keywords": [
+        "Choose one Elective Module",
+        "Robotics"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.3794506872427702,
+            "bm25_score": 0.09696104771698771,
+            "retrieval_score": 0.29470379538503544,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.3794506872427702,
+              "bm25_score": 0.09696104771698771,
+              "retrieval_score": 0.29470379538503544,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3535758650856549,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5475031055599584,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module",
+                "Robotics"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.14984222442076683,
+              "bm25_score": 0.05418923185616638,
+              "retrieval_score": 0.1211463266513867,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.3535758650856549,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.5475031055599584,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3535758650856549,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5475031055599584,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module",
+                "Robotics"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.3794506872427702,
+              "bm25_score": 0.09696104771698771,
+              "retrieval_score": 0.29470379538503544,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.14984222442076683,
+              "bm25_score": 0.05418923185616638,
+              "retrieval_score": 0.1211463266513867,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.3535758650856549,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.5475031055599584,
+            "rerank_score": 0.6192709803581238,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.3535758650856549,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5475031055599584,
+              "rerank_score": 0.6192709803581238,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module",
+                "Robotics"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.3794506872427702,
+              "bm25_score": 0.09696104771698771,
+              "retrieval_score": 0.29470379538503544,
+              "rerank_score": -3.9994518756866455,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.14984222442076683,
+              "bm25_score": 0.05418923185616638,
+              "retrieval_score": 0.1211463266513867,
+              "rerank_score": -11.386151313781738,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_012_networks_module_details",
+      "category": "keyword_exact_term",
+      "question": "How many credits and how many weeks are assigned to Networks and Web Technology?",
+      "expected_evidence_keywords": [
+        "Networks and Web Technology",
+        "15",
+        "8 weeks"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.5410442174848776,
+            "bm25_score": 0.08447145204797578,
+            "retrieval_score": 0.40407238785380706,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5410442174848776,
+              "bm25_score": 0.08447145204797578,
+              "retrieval_score": 0.40407238785380706,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.44145237866047876,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6090166650623351,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Networks and Web Technology",
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.30197785241712094,
+              "bm25_score": 0.0246817585773945,
+              "retrieval_score": 0.218789024265203,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.44145237866047876,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6090166650623351,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.44145237866047876,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6090166650623351,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "Networks and Web Technology",
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5410442174848776,
+              "bm25_score": 0.08447145204797578,
+              "retrieval_score": 0.40407238785380706,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.30197785241712094,
+              "bm25_score": 0.0246817585773945,
+              "retrieval_score": 0.218789024265203,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 0,
+            "embedding_score": 0.44145237866047876,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.6090166650623351,
+            "rerank_score": 1.8335474729537964,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.44145237866047876,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.6090166650623351,
+              "rerank_score": 1.8335474729537964,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "Networks and Web Technology",
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.5410442174848776,
+              "bm25_score": 0.08447145204797578,
+              "retrieval_score": 0.40407238785380706,
+              "rerank_score": -5.96108341217041,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.30197785241712094,
+              "bm25_score": 0.0246817585773945,
+              "retrieval_score": 0.218789024265203,
+              "rerank_score": -10.696145057678223,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_013_duration_assumptions",
+      "category": "contextual",
+      "question": "What assumptions must hold for the stated two-year study estimate?",
+      "expected_evidence_keywords": [
+        "module availability",
+        "consecutively"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "module availability",
+            "consecutively"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.3893859421890012,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.5725701595323007,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.3893859421890012,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5725701595323007,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.32011617492770433,
+              "bm25_score": 0.08212280110006659,
+              "retrieval_score": 0.248718162779413,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "module availability",
+                "consecutively"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.2836205267159221,
+              "bm25_score": 0.0844371531708019,
+              "retrieval_score": 0.223865514652386,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "module availability",
+            "consecutively"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.3893859421890012,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.5725701595323007,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.3893859421890012,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5725701595323007,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.32011617492770433,
+              "bm25_score": 0.08212280110006659,
+              "retrieval_score": 0.248718162779413,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "module availability",
+                "consecutively"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.2836205267159221,
+              "bm25_score": 0.0844371531708019,
+              "retrieval_score": 0.223865514652386,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "module availability",
+            "consecutively"
+          ],
+          "evidence_rank": 3,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.3893859421890012,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.5725701595323007,
+            "rerank_score": -6.6602582931518555,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": false,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.3333333333333333,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.3893859421890012,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5725701595323007,
+              "rerank_score": -6.6602582931518555,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.2836205267159221,
+              "bm25_score": 0.0844371531708019,
+              "retrieval_score": 0.223865514652386,
+              "rerank_score": -11.178262710571289,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.32011617492770433,
+              "bm25_score": 0.08212280110006659,
+              "retrieval_score": 0.248718162779413,
+              "rerank_score": -11.19478988647461,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "module availability",
+                "consecutively"
+              ],
+              "contains_all_expected_evidence": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "case_014_indicative_vs_maximum_duration",
+      "category": "contextual",
+      "question": "How do the usual study timeline and the absolute completion limit differ?",
+      "expected_evidence_keywords": [
+        "24 Months",
+        "maximum period",
+        "72 months"
+      ],
+      "strategies": {
+        "vector_only": {
+          "expected_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.4783474035610062,
+            "bm25_score": 0.81774530137028,
+            "retrieval_score": 0.5801667729037883,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [
+              "24 Months",
+              "maximum period",
+              "72 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.4783474035610062,
+              "bm25_score": 0.81774530137028,
+              "retrieval_score": 0.5801667729037883,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "24 Months",
+                "maximum period",
+                "72 months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.42094422290311456,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5946609560321802,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.34816541169998244,
+              "bm25_score": 0.9279666293465844,
+              "retrieval_score": 0.522105776993963,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid": {
+          "expected_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "evidence_rank": 2,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 1,
+            "embedding_score": 0.42094422290311456,
+            "bm25_score": 1.0,
+            "retrieval_score": 0.5946609560321802,
+            "rerank_score": null,
+            "rerank_enabled": false,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "evidence_in_top_1": false,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 0.5,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.42094422290311456,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5946609560321802,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.4783474035610062,
+              "bm25_score": 0.81774530137028,
+              "retrieval_score": 0.5801667729037883,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "24 Months",
+                "maximum period",
+                "72 months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.34816541169998244,
+              "bm25_score": 0.9279666293465844,
+              "retrieval_score": 0.522105776993963,
+              "rerank_score": null,
+              "rerank_enabled": false,
+              "matched_evidence_keywords": [
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_rerank": {
+          "expected_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "evidence_rank": 1,
+          "top_candidate": {
+            "rank": 1,
+            "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+            "source_file": "Study Plan - MSc Computer Science.pdf",
+            "page_number": 1,
+            "chunk_index": 2,
+            "embedding_score": 0.4783474035610062,
+            "bm25_score": 0.81774530137028,
+            "retrieval_score": 0.5801667729037883,
+            "rerank_score": -2.3921988010406494,
+            "rerank_enabled": true,
+            "matched_evidence_keywords": [
+              "24 Months",
+              "maximum period",
+              "72 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "evidence_in_top_1": true,
+          "evidence_in_top_2": true,
+          "evidence_in_top_3": true,
+          "reciprocal_rank": 1.0,
+          "evidence_not_found": false,
+          "ranked_candidates": [
+            {
+              "rank": 1,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 2,
+              "embedding_score": 0.4783474035610062,
+              "bm25_score": 0.81774530137028,
+              "retrieval_score": 0.5801667729037883,
+              "rerank_score": -2.3921988010406494,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "24 Months",
+                "maximum period",
+                "72 months"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 1,
+              "embedding_score": 0.42094422290311456,
+              "bm25_score": 1.0,
+              "retrieval_score": 0.5946609560321802,
+              "rerank_score": -10.344366073608398,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [],
+              "contains_all_expected_evidence": false
+            },
+            {
+              "rank": 3,
+              "document_id": "e232e5ba-e950-4ff3-b9b4-690af674d9a0",
+              "source_file": "Study Plan - MSc Computer Science.pdf",
+              "page_number": 1,
+              "chunk_index": 0,
+              "embedding_score": 0.34816541169998244,
+              "bm25_score": 0.9279666293465844,
+              "retrieval_score": 0.522105776993963,
+              "rerank_score": -10.696416854858398,
+              "rerank_enabled": true,
+              "matched_evidence_keywords": [
+                "24 Months"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rerank_effect_analysis": {
+    "counts": {
+      "improved": 2,
+      "unchanged": 8,
+      "worsened": 1,
+      "evidence_not_found": 0
+    },
+    "cases": [
+      {
+        "case_id": "case_001_study_plan_duration",
+        "category": "direct_factual",
+        "hybrid_evidence_rank": 1,
+        "reranked_evidence_rank": 1,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_002_study_plan_final_module",
+        "category": "direct_factual",
+        "hybrid_evidence_rank": 2,
+        "reranked_evidence_rank": 2,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_006_programme_credits",
+        "category": "direct_factual",
+        "hybrid_evidence_rank": 1,
+        "reranked_evidence_rank": 1,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_007_capstone_duration",
+        "category": "direct_factual",
+        "hybrid_evidence_rank": 1,
+        "reranked_evidence_rank": 1,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_008_latest_completion_window",
+        "category": "semantic_paraphrase",
+        "hybrid_evidence_rank": 2,
+        "reranked_evidence_rank": 1,
+        "effect": "improved"
+      },
+      {
+        "case_id": "case_009_enrolment_team",
+        "category": "semantic_paraphrase",
+        "hybrid_evidence_rank": 1,
+        "reranked_evidence_rank": 1,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_010_pause_or_retake_timeline",
+        "category": "semantic_paraphrase",
+        "hybrid_evidence_rank": 1,
+        "reranked_evidence_rank": 1,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_011_robotics_elective",
+        "category": "keyword_exact_term",
+        "hybrid_evidence_rank": 1,
+        "reranked_evidence_rank": 1,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_012_networks_module_details",
+        "category": "keyword_exact_term",
+        "hybrid_evidence_rank": 1,
+        "reranked_evidence_rank": 1,
+        "effect": "unchanged"
+      },
+      {
+        "case_id": "case_013_duration_assumptions",
+        "category": "contextual",
+        "hybrid_evidence_rank": 2,
+        "reranked_evidence_rank": 3,
+        "effect": "worsened"
+      },
+      {
+        "case_id": "case_014_indicative_vs_maximum_duration",
+        "category": "contextual",
+        "hybrid_evidence_rank": 2,
+        "reranked_evidence_rank": 1,
+        "effect": "improved"
+      }
+    ]
+  }
+}
