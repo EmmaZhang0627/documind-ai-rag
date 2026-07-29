@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -63,17 +64,19 @@ def ensure_backend_import_path() -> None:
 def load_rag_service():
     ensure_backend_import_path()
 
-    from app.dependencies.rag_dependencies import get_rag_service
+    from app.config.settings import AppSettings
+    from app.dependencies.rag_dependencies import build_rag_service
 
-    return get_rag_service()
+    settings = replace(
+        AppSettings.from_env(),
+        chroma_persist_directory=str(EVAL_DIR / ".chroma"),
+        chroma_collection_name="documind_eval_chunks",
+    )
+    return build_rag_service(settings)
 
 
-def clear_eval_process_vector_store() -> None:
-    ensure_backend_import_path()
-
-    from app.services.vector_db import clear_vector_store
-
-    clear_vector_store()
+def clear_eval_vector_store(rag_service: Any) -> None:
+    rag_service.retriever.clear()
 
 
 def extract_pdf_pages(pdf_path: Path) -> list[dict[str, Any]]:
@@ -119,7 +122,7 @@ def ingest_fixture_pdf(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
 
 
 def prepare_eval_index(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
-    clear_eval_process_vector_store()
+    clear_eval_vector_store(rag_service)
     return ingest_fixture_pdf(rag_service, fixture_pdf)
 
 

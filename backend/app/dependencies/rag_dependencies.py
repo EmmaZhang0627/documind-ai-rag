@@ -17,8 +17,10 @@ def get_settings() -> AppSettings:
 
 @lru_cache
 def _build_rag_service() -> RAGService:
-    settings = get_settings()
+    return build_rag_service(get_settings())
 
+
+def build_rag_service(settings: AppSettings) -> RAGService:
     configure_retrieval(
         embedding_weight=settings.embedding_score_weight,
         bm25_weight=settings.bm25_score_weight,
@@ -29,7 +31,25 @@ def _build_rag_service() -> RAGService:
     )
 
     embedding_service = EmbeddingService(create_openai_embedding_model(settings))
-    retrieval_service = RetrievalService(InMemoryVectorStore())
+    if settings.vector_store_backend == "chroma":
+        from app.services.chroma_vector_store import ChromaPersistentVectorStore
+
+        vector_store = ChromaPersistentVectorStore(
+            persist_directory=settings.chroma_persist_directory,
+            collection_name=settings.chroma_collection_name,
+            embedding_model_name=settings.embedding_model_name,
+            embedding_score_weight=settings.embedding_score_weight,
+            bm25_score_weight=settings.bm25_score_weight,
+        )
+    elif settings.vector_store_backend == "memory":
+        vector_store = InMemoryVectorStore()
+    else:
+        raise ValueError(
+            "Unsupported VECTOR_STORE_BACKEND: "
+            f"{settings.vector_store_backend!r}. Expected 'chroma' or 'memory'."
+        )
+
+    retrieval_service = RetrievalService(vector_store)
     rerank_service = RerankService(rerank)
     llm_service = LLMService(create_openai_llm(settings))
 

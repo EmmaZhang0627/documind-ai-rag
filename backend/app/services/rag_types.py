@@ -90,6 +90,12 @@ class VectorStore(Protocol):
     ) -> list[Candidate]:
         ...
 
+    def count(self) -> int:
+        ...
+
+    def clear(self) -> None:
+        ...
+
 
 EmbeddingModel = Callable[[str], list[float]]
 LLMModel = Callable[[str, str], str]

@@ -109,16 +109,40 @@ From the project root:
 
 ```powershell
 cd backend
-python -m venv .venv
+py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
+
+The tested Windows runtime is Python 3.11 with the current Microsoft Visual C++
+x64 Redistributable. Deep workspace paths can hit Windows path limits while
+installing Torch; use a shorter checkout or virtual-environment path if pip
+reports `WinError 206`.
 
 Set the required OpenAI key:
 
 ```powershell
 $env:OPENAI_API_KEY="your-api-key"
+$env:OPENAI_BASE_URL="https://www.dmxapi.cn/v1"
 ```
+
+The repository also loads `.env.local` from the project root. Use
+`OPENAI_API_KEY` for new configuration; the legacy `api_key` name remains
+temporarily supported for the existing local setup. DMXAPI tokens are tied to
+their issuing site, so a `.cn` token must use the `.cn` base URL.
+
+Vector storage defaults to a local persistent Chroma collection. Optional
+configuration:
+
+```powershell
+$env:VECTOR_STORE_BACKEND="chroma"
+$env:CHROMA_PERSIST_DIRECTORY="D:\path\to\documind-chroma"
+$env:CHROMA_COLLECTION_NAME="documind_chunks"
+```
+
+If the backend runs in Docker, mount `CHROMA_PERSIST_DIRECTORY` to a persistent
+volume so indexed documents survive container replacement. See
+`docs/vector_storage_architecture.md` for architecture and migration details.
 
 Start the backend:
 

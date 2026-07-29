@@ -1,5 +1,16 @@
 import os
 from dataclasses import dataclass
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+
+BACKEND_ROOT = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = BACKEND_ROOT.parent
+DEFAULT_CHROMA_PERSIST_DIRECTORY = str(BACKEND_ROOT / "data" / "chroma")
+DEFAULT_OPENAI_BASE_URL = "https://www.dmxapi.cn/v1"
+
+load_dotenv(PROJECT_ROOT / ".env.local", override=False)
 
 
 def _get_bool(name: str, default: bool) -> bool:
@@ -29,6 +40,7 @@ def _get_int(name: str, default: int) -> int:
 @dataclass(frozen=True)
 class AppSettings:
     openai_api_key: str | None = None
+    openai_base_url: str = DEFAULT_OPENAI_BASE_URL
     embedding_model_name: str = "text-embedding-3-small"
     chat_model_name: str = "gpt-4.1-mini"
     openai_timeout_seconds: float = 100.0
@@ -43,10 +55,21 @@ class AppSettings:
     reranker_enabled: bool = True
     reranker_model_name: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
+    vector_store_backend: str = "chroma"
+    chroma_persist_directory: str = DEFAULT_CHROMA_PERSIST_DIRECTORY
+    chroma_collection_name: str = "documind_chunks"
+
     @classmethod
     def from_env(cls) -> "AppSettings":
         return cls(
-            openai_api_key=os.getenv("OPENAI_API_KEY"),
+            openai_api_key=(
+                os.getenv("OPENAI_API_KEY")
+                or os.getenv("api_key")
+            ),
+            openai_base_url=os.getenv(
+                "OPENAI_BASE_URL",
+                cls.openai_base_url,
+            ).rstrip("/"),
             embedding_model_name=os.getenv(
                 "EMBEDDING_MODEL_NAME",
                 cls.embedding_model_name,
@@ -80,5 +103,17 @@ class AppSettings:
             reranker_model_name=os.getenv(
                 "RERANKER_MODEL_NAME",
                 cls.reranker_model_name,
+            ),
+            vector_store_backend=os.getenv(
+                "VECTOR_STORE_BACKEND",
+                cls.vector_store_backend,
+            ).strip().lower(),
+            chroma_persist_directory=os.getenv(
+                "CHROMA_PERSIST_DIRECTORY",
+                cls.chroma_persist_directory,
+            ),
+            chroma_collection_name=os.getenv(
+                "CHROMA_COLLECTION_NAME",
+                cls.chroma_collection_name,
             ),
         )

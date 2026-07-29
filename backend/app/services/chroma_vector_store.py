@@ -1,0 +1,220 @@
+from __future__ import annotations
+
+import logging
+from pathlib import Path
+from typing import Any
+
+import chromadb
+from rank_bm25 import BM25Okapi
+
+from app.services.rag_types import Candidate, Chunk
+
+
+logger = logging.getLogger(__name__)
+COLLECTION_SCHEMA_VERSION = 1
+
+
+def _tokenize(text: str) -> list[str]:
+    return text.lower().split()
+
+
+def _normalize_scores(scores: list[float]) -> list[float]:
+    if not scores:
+        return []
+
+    max_score = max(scores)
+    if max_score <= 0:
+        return [0.0 for _ in scores]
+
+    return [float(score) / float(max_score) for score in scores]
+
+
+class ChromaPersistentVectorStore:
+    """Persistent storage adapter that preserves DocuMind candidate semantics."""
+
+    def __init__(
+        self,
+        persist_directory: str,
+        collection_name: str,
+        embedding_model_name: str,
+        embedding_score_weight: float = 0.7,
+        bm25_score_weight: float = 0.3,
+    ) -> None:
+        self.persist_directory = Path(persist_directory).resolve()
+        self.persist_directory.mkdir(parents=True, exist_ok=True)
+        self.collection_name = collection_name
+        self.embedding_model_name = embedding_model_name
+        self.embedding_score_weight = embedding_score_weight
+        self.bm25_score_weight = bm25_score_weight
+
+        self.client = chromadb.PersistentClient(path=str(self.persist_directory))
+        self.collection = self.client.get_or_create_collection(
+            name=collection_name,
+            metadata={
+                "hnsw:space": "cosine",
+                "documind_schema_version": COLLECTION_SCHEMA_VERSION,
+                "embedding_model": embedding_model_name,
+            },
+            embedding_function=None,
+        )
+        self._validate_collection_identity()
+        self._corpus_ids: list[str] = []
+        self._corpus: list[str] = []
+        self._bm25_model: BM25Okapi | None = None
+        self._rebuild_bm25_index()
+
+    def _validate_collection_identity(self) -> None:
+        metadata = self.collection.metadata or {}
+        stored_model = metadata.get("embedding_model")
+        stored_schema_version = metadata.get("documind_schema_version")
+
+        if stored_model != self.embedding_model_name:
+            raise ValueError(
+                "Chroma collection embedding model mismatch: "
+                f"collection={stored_model!r}, configured={self.embedding_model_name!r}. "
+                "Use a new CHROMA_COLLECTION_NAME and re-index the documents."
+            )
+
+        if stored_schema_version != COLLECTION_SCHEMA_VERSION:
+            raise ValueError(
+                "Chroma collection schema mismatch: "
+                f"collection={stored_schema_version!r}, "
+                f"expected={COLLECTION_SCHEMA_VERSION!r}. "
+                "Use a new collection or run an explicit migration."
+            )
+
+    def _rebuild_bm25_index(self) -> None:
+        records = self.collection.get(include=["documents"])
+        self._corpus_ids = records.get("ids") or []
+        self._corpus = [
+            document or ""
+            for document in (records.get("documents") or [])
+        ]
+        tokenized_corpus = [_tokenize(document) for document in self._corpus]
+        self._bm25_model = (
+            BM25Okapi(tokenized_corpus)
+            if tokenized_corpus
+            else None
+        )
+
+    def add(self, chunks: list[Chunk]) -> None:
+        if not chunks:
+            return
+
+        ids: list[str] = []
+        embeddings: list[list[float]] = []
+        documents: list[str] = []
+        metadatas: list[dict[str, str | int | float | bool]] = []
+
+        for chunk in chunks:
+            embedding = chunk.get("embedding")
+            if embedding is None:
+                raise ValueError("Each chunk must contain an embedding before storage.")
+
+            source_file = chunk["source_file"]
+            content = chunk["content"]
+            metadata: dict[str, str | int | float | bool] = {
+                "document_id": chunk["document_id"],
+                "source_file": source_file,
+                "file_name": source_file,
+                "chunk_index": chunk["chunk_index"],
+                "text": content,
+            }
+            page_number = chunk.get("page_number")
+            if page_number is not None:
+                metadata["page_number"] = page_number
+
+            ids.append(f"{chunk['document_id']}:{chunk['chunk_index']}")
+            embeddings.append(embedding)
+            documents.append(content)
+            metadatas.append(metadata)
+
+        self.collection.upsert(
+            ids=ids,
+            embeddings=embeddings,
+            documents=documents,
+            metadatas=metadatas,
+        )
+        self._rebuild_bm25_index()
+        logger.info(
+            "chroma_chunks_upserted count=%s collection=%s total=%s",
+            len(chunks),
+            self.collection_name,
+            self.count(),
+        )
+
+    def _candidate_metadata(self, metadata: dict[str, Any] | None) -> dict[str, Any]:
+        stored = metadata or {}
+        return {
+            "document_id": stored.get("document_id"),
+            "source_file": stored.get("source_file") or stored.get("file_name"),
+            "chunk_index": stored.get("chunk_index"),
+            "page_number": stored.get("page_number"),
+        }
+
+    def search(
+        self,
+        query_embedding: list[float],
+        query_text: str,
+        top_k: int = 10,
+    ) -> list[Candidate]:
+        record_count = self.count()
+        if record_count == 0 or top_k <= 0:
+            return []
+
+        results = self.collection.query(
+            query_embeddings=[query_embedding],
+            n_results=record_count,
+            include=["documents", "metadatas", "distances"],
+        )
+        documents = (results.get("documents") or [[]])[0]
+        metadatas = (results.get("metadatas") or [[]])[0]
+        distances = (results.get("distances") or [[]])[0]
+
+        if self._bm25_model is not None and query_text.strip():
+            raw_bm25_scores = self._bm25_model.get_scores(_tokenize(query_text))
+            normalized_bm25_scores = _normalize_scores(
+                [float(score) for score in raw_bm25_scores]
+            )
+            bm25_by_document = {
+                record_id: normalized_bm25_scores[index]
+                for index, record_id in enumerate(self._corpus_ids)
+            }
+        else:
+            bm25_by_document = {}
+
+        result_ids = (results.get("ids") or [[]])[0]
+        candidates: list[Candidate] = []
+        for index, record_id in enumerate(result_ids):
+            document = documents[index] or ""
+            distance = float(distances[index])
+            embedding_score = 1.0 - distance
+            bm25_score = bm25_by_document.get(record_id, 0.0)
+            retrieval_score = (
+                self.embedding_score_weight * embedding_score
+                + self.bm25_score_weight * bm25_score
+            )
+            candidates.append({
+                "document": document,
+                "metadata": self._candidate_metadata(metadatas[index]),
+                "embedding_score": embedding_score,
+                "bm25_score": bm25_score,
+                "retrieval_score": retrieval_score,
+            })
+
+        candidates.sort(
+            key=lambda candidate: candidate["retrieval_score"],
+            reverse=True,
+        )
+        return candidates[:top_k]
+
+    def count(self) -> int:
+        return self.collection.count()
+
+    def clear(self) -> None:
+        records = self.collection.get(include=[])
+        ids = records.get("ids") or []
+        if ids:
+            self.collection.delete(ids=ids)
+        self._rebuild_bm25_index()
+        logger.info("chroma_collection_cleared collection=%s", self.collection_name)

@@ -222,9 +222,10 @@ def run_retrieval_comparison() -> int:
         query = case["question"]
         expected_keywords = case.get("expected_evidence_keywords") or []
         query_embedding = rag_service.embedder.embed(query)
-        all_candidates = vector_db.retrieve_candidates(
+        all_candidates = rag_service.retriever.retrieve(
             query_embedding,
             query,
+            top_k=rag_service.retriever.count(),
         )
 
         vector_candidates = sorted(

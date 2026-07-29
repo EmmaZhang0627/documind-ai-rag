@@ -1,19 +1,18 @@
 # DocuMind RAG Evaluation
 
 This folder contains a lightweight local regression runner for the DocuMind RAG
-pipeline. It does not use RAGAS, pytest, LangChain, LangGraph, a database, or
-CI.
+pipeline. It does not use RAGAS, pytest, LangChain, LangGraph, or CI.
 
 ## Why The Eval Ingests A Fixture First
 
-DocuMind currently stores indexed chunks, embeddings, and BM25 state in
-process-local memory. A document uploaded through the running FastAPI backend is
-therefore visible only to that backend process.
+DocuMind uses a persistent Chroma vector store. Evaluation uses a separate
+collection and persistence directory so resetting a fixture cannot delete
+normal development data.
 
 `eval/run_eval.py` runs as a separate Python process, so it must build its own
 retrieval state before asking questions. The runner now:
 
-1. clears only the current eval process's in-memory vector store;
+1. clears only the dedicated `documind_eval_chunks` collection;
 2. loads the fixture PDF from `eval/fixtures`;
 3. extracts text page by page using the same behavior as `POST /api/documents/parse-pdf`;
 4. chunks pages with `split_pages_into_chunks()`;
@@ -21,7 +20,9 @@ retrieval state before asking questions. The runner now:
 6. runs the cases with `RAGService.ask()`;
 7. writes detailed JSON results to `eval/eval_results_latest.json`.
 
-It does not delete uploaded PDFs, logs, environment files, or user data.
+Evaluation data is stored under `eval/.chroma`, which is ignored by Git. The
+runner does not delete the default application collection, uploaded PDFs, logs,
+environment files, or user data.
 
 ## Fixture PDF
 
@@ -49,6 +50,7 @@ generation path, so the same backend environment is required:
 
 ```text
 OPENAI_API_KEY
+OPENAI_BASE_URL
 ```
 
 Optional variables are read by the normal backend settings:
@@ -64,7 +66,11 @@ EMBEDDING_SCORE_WEIGHT
 BM25_SCORE_WEIGHT
 RERANKER_ENABLED
 RERANKER_MODEL_NAME
+VECTOR_STORE_BACKEND
 ```
+
+The runner overrides the Chroma path and collection name to keep evaluation
+isolated from normal application data.
 
 Do not commit or print real API key values.
 
