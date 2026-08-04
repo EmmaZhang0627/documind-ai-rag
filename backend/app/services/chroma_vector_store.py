@@ -29,6 +29,12 @@ def _normalize_scores(scores: list[float]) -> list[float]:
     return [float(score) / float(max_score) for score in scores]
 
 
+def _is_active_metadata(metadata: dict[str, Any] | None) -> bool:
+    stored = metadata or {}
+    status = stored.get("status") or stored.get("document_status")
+    return status is None or str(status).upper() == "ACTIVE"
+
+
 class ChromaPersistentVectorStore:
     """Persistent storage adapter that preserves DocuMind candidate semantics."""
 
@@ -84,12 +90,17 @@ class ChromaPersistentVectorStore:
             )
 
     def _rebuild_bm25_index(self) -> None:
-        records = self.collection.get(include=["documents"])
-        self._corpus_ids = records.get("ids") or []
-        self._corpus = [
-            document or ""
-            for document in (records.get("documents") or [])
+        records = self.collection.get(include=["documents", "metadatas"])
+        ids = records.get("ids") or []
+        documents = records.get("documents") or []
+        metadatas = records.get("metadatas") or []
+        active_records = [
+            (record_id, document or "")
+            for record_id, document, metadata in zip(ids, documents, metadatas)
+            if _is_active_metadata(metadata)
         ]
+        self._corpus_ids = [record_id for record_id, _ in active_records]
+        self._corpus = [document for _, document in active_records]
         tokenized_corpus = [_tokenize(document) for document in self._corpus]
         self._bm25_model = (
             BM25Okapi(tokenized_corpus)
@@ -113,18 +124,29 @@ class ChromaPersistentVectorStore:
 
             source_file = chunk["source_file"]
             content = chunk["content"]
+            version = chunk.get("version", "1")
+            status = str(chunk.get("status", "ACTIVE")).upper()
+            if status not in {"ACTIVE", "ARCHIVED"}:
+                raise ValueError("Document status must be ACTIVE or ARCHIVED.")
             metadata: dict[str, str | int | float | bool] = {
                 "document_id": chunk["document_id"],
                 "source_file": source_file,
-                "file_name": source_file,
+                "file_name": chunk.get("file_name", source_file),
+                "version": version,
+                "status": status,
                 "chunk_index": chunk["chunk_index"],
                 "text": content,
             }
+            created_time = chunk.get("created_time")
+            if created_time is not None:
+                metadata["created_time"] = created_time
             page_number = chunk.get("page_number")
             if page_number is not None:
                 metadata["page_number"] = page_number
 
-            ids.append(f"{chunk['document_id']}:{chunk['chunk_index']}")
+            ids.append(
+                f"{chunk['document_id']}:{version}:{chunk['chunk_index']}"
+            )
             embeddings.append(embedding)
             documents.append(content)
             metadatas.append(metadata)
@@ -148,6 +170,12 @@ class ChromaPersistentVectorStore:
         return {
             "document_id": stored.get("document_id"),
             "source_file": stored.get("source_file") or stored.get("file_name"),
+            "file_name": stored.get("file_name") or stored.get("source_file"),
+            "version": str(stored.get("version", "1")),
+            "status": str(
+                stored.get("status") or stored.get("document_status") or "ACTIVE"
+            ).upper(),
+            "created_time": stored.get("created_time"),
             "chunk_index": stored.get("chunk_index"),
             "page_number": stored.get("page_number"),
         }
@@ -186,6 +214,8 @@ class ChromaPersistentVectorStore:
         result_ids = (results.get("ids") or [[]])[0]
         candidates: list[Candidate] = []
         for index, record_id in enumerate(result_ids):
+            if not _is_active_metadata(metadatas[index]):
+                continue
             document = documents[index] or ""
             distance = float(distances[index])
             embedding_score = 1.0 - distance

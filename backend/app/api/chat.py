@@ -21,6 +21,10 @@ class ChatRequest(BaseModel):
 class SourceMetadata(BaseModel):
     document_id: str | None = None
     source_file: str | None = None
+    file_name: str | None = None
+    version: str | None = None
+    status: str | None = None
+    created_time: str | None = None
     page_number: int | None = None
     chunk_index: int | None = None
     source_snippet: str | None = None

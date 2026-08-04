@@ -137,6 +137,10 @@ class RAGService:
         trace_candidate: TraceCandidate = {
             "document_id": metadata.get("document_id"),
             "source_file": metadata.get("source_file"),
+            "file_name": metadata.get("file_name"),
+            "version": metadata.get("version"),
+            "status": metadata.get("status"),
+            "created_time": metadata.get("created_time"),
             "page_number": metadata.get("page_number"),
             "chunk_index": metadata.get("chunk_index"),
             "embedding_score": candidate.get("embedding_score"),
@@ -190,7 +194,9 @@ class RAGService:
 
         for candidate in candidates:
             metadata = candidate["metadata"]
-            status = str(metadata.get("document_status", "")).lower()
+            status = str(
+                metadata.get("status") or metadata.get("document_status") or ""
+            ).lower()
             if status in INACTIVE_DOCUMENT_STATUSES:
                 return True
 
@@ -204,8 +210,6 @@ class RAGService:
         if len(versions) > 1 and active_source_count > 1:
             return True
 
-        # Current chunk metadata does not include version/effective_date/status.
-        # Keep this conservative until richer source metadata exists.
         return False
 
     def _annotate_trace_decision(

@@ -109,11 +109,15 @@ def ingest_fixture_pdf(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
         pages=pages,
         document_id=document_id,
         source_file=fixture_pdf.name,
+        version="1",
+        status="ACTIVE",
     )
     rag_service.ingest_document(chunks)
 
     return {
         "document_id": document_id,
+        "version": "1",
+        "status": "ACTIVE",
         "fixture_pdf": fixture_pdf.name,
         "fixture_path": str(fixture_pdf),
         "page_count": len(pages),

@@ -1,12 +1,13 @@
 from pathlib import Path
 from uuid import uuid4
 import logging
+from datetime import datetime, timezone
 
 from app.services.chunker import split_pages_into_chunks
 from app.dependencies.rag_dependencies import get_rag_service
 from app.services.errors import ServiceConfigurationError
 from app.services.rag import RAGService
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from fastapi.concurrency import run_in_threadpool
 from openai import OpenAIError
 import fitz
@@ -42,12 +43,29 @@ async def upload_document(file: UploadFile = File(...)):
 @router.post("/parse-pdf")
 async def parse_pdf(
     file: UploadFile = File(...),
+    document_id: str | None = Form(default=None),
+    version: str = Form(default="1"),
+    status: str = Form(default="ACTIVE"),
     rag_service: RAGService = Depends(get_rag_service),
 ):
 
     # 1. 只允许 PDF
     if file.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="Only PDF allowed")
+
+    normalized_status = status.strip().upper()
+    if normalized_status not in {"ACTIVE", "ARCHIVED"}:
+        raise HTTPException(
+            status_code=422,
+            detail="Document status must be ACTIVE or ARCHIVED.",
+        )
+    normalized_version = version.strip()
+    if not normalized_version:
+        raise HTTPException(status_code=422, detail="Document version is required.")
+    resolved_document_id = document_id.strip() if document_id else str(uuid4())
+    if not resolved_document_id:
+        raise HTTPException(status_code=422, detail="Document ID cannot be empty.")
+    created_time = datetime.now(timezone.utc).isoformat()
 
     # 2. 读取文件
     content = await file.read()
@@ -85,13 +103,16 @@ async def parse_pdf(
 
         full_text += page_text
 
-    document_id = str(uuid4())
+    document_id = resolved_document_id
 
     # 6. 按页切块，使每个 chunk 保留 page_number
     chunks = split_pages_into_chunks(
         pages=pages,
         document_id=document_id,
         source_file=file.filename,
+        version=normalized_version,
+        status=normalized_status,
+        created_time=created_time,
     )
     try:
         await run_in_threadpool(rag_service.ingest_document, chunks)
@@ -122,6 +143,10 @@ async def parse_pdf(
     return {
         "document_id": document_id,
         "source_file": file.filename,
+        "file_name": file.filename,
+        "version": normalized_version,
+        "document_status": normalized_status,
+        "created_time": created_time,
         "text_preview": full_text[:1500],
         "page_count": len(pages),
         "chunk_count": len(chunks),

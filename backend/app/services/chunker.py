@@ -1,3 +1,21 @@
+from datetime import datetime, timezone
+
+
+def _document_metadata(
+    source_file: str,
+    version: str,
+    status: str,
+    created_time: str | None,
+) -> dict[str, str]:
+    return {
+        "source_file": source_file,
+        "file_name": source_file,
+        "version": version,
+        "status": status,
+        "created_time": created_time or datetime.now(timezone.utc).isoformat(),
+    }
+
+
 def split_text_into_chunks(
     text: str,
     document_id: str,
@@ -5,8 +23,14 @@ def split_text_into_chunks(
     page_number: int,
     chunk_size: int = 800,
     overlap: int = 100,
+    version: str = "1",
+    status: str = "ACTIVE",
+    created_time: str | None = None,
 ):
     chunks = []
+    document_metadata = _document_metadata(
+        source_file, version, status, created_time
+    )
 
     start = 0
     text_length = len(text)
@@ -19,7 +43,7 @@ def split_text_into_chunks(
             "document_id": document_id,
             "chunk_index": len(chunks),
             "content": chunk_text,
-            "source_file": source_file,
+            **document_metadata,
             "page_number": page_number,
             "start_char": start,
             "end_char": min(end, text_length),
@@ -36,8 +60,14 @@ def split_pages_into_chunks(
     source_file: str,
     chunk_size: int = 800,
     overlap: int = 100,
+    version: str = "1",
+    status: str = "ACTIVE",
+    created_time: str | None = None,
 ):
     chunks = []
+    document_metadata = _document_metadata(
+        source_file, version, status, created_time
+    )
     global_chunk_index = 0
     for page in pages:
         page_number = page["page_number"]
@@ -56,7 +86,7 @@ def split_pages_into_chunks(
                     "document_id": document_id,
                     "chunk_index": global_chunk_index,
                     "content": chunk_text,
-                    "source_file": source_file,
+                    **document_metadata,
                     "page_number": page_number,
                     "start_char": start,
                     "end_char": min(end, text_length),

@@ -8,6 +8,7 @@ logger = logging.getLogger(__name__)
 
 vector_store = []
 corpus = []
+corpus_ids = []
 bm25_model = None
 reranker = None
 reranker_load_error = None
@@ -59,6 +60,11 @@ def _normalize_scores(scores):
         return [0.0 for _ in scores]
 
     return [float(score) / float(max_score) for score in scores]
+
+
+def _is_active_metadata(metadata):
+    status = metadata.get("status") or metadata.get("document_status")
+    return status is None or str(status).upper() == "ACTIVE"
 
 
 def _get_reranker():
@@ -116,27 +122,51 @@ def rerank(query_text: str, candidates: list):
 
 
 def _rebuild_bm25_index():
-    global bm25_model
+    global bm25_model, corpus, corpus_ids
 
+    active_items = [
+        item for item in vector_store if _is_active_metadata(item["metadata"])
+    ]
+    corpus_ids = [item["id"] for item in active_items]
+    corpus = [item["document"] for item in active_items]
     tokenized_corpus = [_tokenize(document) for document in corpus]
     bm25_model = BM25Okapi(tokenized_corpus) if tokenized_corpus else None
 
 
 def add_chunks_to_db(chunks):
     for chunk in chunks:
-        vector_store.append({
-            "id": f"{chunk['document_id']}_{chunk['chunk_index']}",
+        version = chunk.get("version", "1")
+        status = str(chunk.get("status", "ACTIVE")).upper()
+        if status not in {"ACTIVE", "ARCHIVED"}:
+            raise ValueError("Document status must be ACTIVE or ARCHIVED.")
+        record_id = f"{chunk['document_id']}:{version}:{chunk['chunk_index']}"
+        record = {
+            "id": record_id,
             "embedding": chunk["embedding"],
             "document": chunk["content"],
             "metadata": {
                 "document_id": chunk["document_id"],
                 "source_file": chunk["source_file"],
+                "file_name": chunk.get("file_name", chunk["source_file"]),
+                "version": version,
+                "status": status,
+                "created_time": chunk.get("created_time"),
                 "chunk_index": chunk["chunk_index"],
                 "page_number": chunk.get("page_number"),
             },
-        })
-        corpus.append(chunk["content"])
-
+        }
+        existing_index = next(
+            (
+                index
+                for index, item in enumerate(vector_store)
+                if item["id"] == record_id
+            ),
+            None,
+        )
+        if existing_index is None:
+            vector_store.append(record)
+        else:
+            vector_store[existing_index] = record
     _rebuild_bm25_index()
     print(f"Added {len(chunks)} chunks. Total in memory: {len(vector_store)}")
 
@@ -146,16 +176,23 @@ def retrieve_candidates(query_embedding, query_text: str = ""):
     if bm25_model is not None and query_text.strip():
         bm25_scores = _normalize_scores(bm25_model.get_scores(_tokenize(query_text)))
     else:
-        bm25_scores = [0.0 for _ in vector_store]
+        bm25_scores = [0.0 for _ in corpus_ids]
+
+    bm25_by_document = {
+        record_id: float(bm25_scores[index])
+        for index, record_id in enumerate(corpus_ids)
+    }
 
     candidates = []
 
     for index, item in enumerate(vector_store):
+        if not _is_active_metadata(item["metadata"]):
+            continue
         embedding_score = _cosine_similarity(
             query_embedding,
             item["embedding"],
         )
-        bm25_score = bm25_scores[index] if index < len(bm25_scores) else 0.0
+        bm25_score = bm25_by_document.get(item["id"], 0.0)
         retrieval_score = (
             embedding_score_weight * embedding_score
             + bm25_score_weight * bm25_score
@@ -237,5 +274,6 @@ def clear_vector_store():
 
     vector_store.clear()
     corpus.clear()
+    corpus_ids.clear()
     bm25_model = None
     print("In-memory vector store cleared.")

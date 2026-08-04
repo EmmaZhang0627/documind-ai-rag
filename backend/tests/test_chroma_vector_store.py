@@ -132,6 +132,123 @@ class ChromaPersistentVectorStoreTest(unittest.TestCase):
 
             self._stop_store(store)
 
+    def test_active_document_can_be_retrieved(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            store = self._build_store(directory)
+            store.add([{
+                "document_id": "policy",
+                "version": "2",
+                "status": "ACTIVE",
+                "created_time": "2026-08-02T00:00:00+00:00",
+                "chunk_index": 0,
+                "source_file": "Credit_Policy_v2.pdf",
+                "file_name": "Credit_Policy_v2.pdf",
+                "page_number": 1,
+                "content": "The active credit policy applies now.",
+                "embedding": [1.0, 0.0, 0.0],
+            }])
+
+            results = store.search([1.0, 0.0, 0.0], "active policy", top_k=3)
+
+            self.assertEqual(len(results), 1)
+            self.assertEqual(results[0]["metadata"]["status"], "ACTIVE")
+            self.assertEqual(results[0]["metadata"]["version"], "2")
+            self._stop_store(store)
+
+    def test_archived_document_is_stored_but_excluded(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            store = self._build_store(directory)
+            store.add([{
+                "document_id": "policy",
+                "version": "1",
+                "status": "ARCHIVED",
+                "created_time": "2026-08-01T00:00:00+00:00",
+                "chunk_index": 0,
+                "source_file": "Credit_Policy_v1.pdf",
+                "page_number": 1,
+                "content": "The archived credit policy must not be used.",
+                "embedding": [1.0, 0.0, 0.0],
+            }])
+
+            self.assertEqual(store.count(), 1)
+            self.assertEqual(
+                store.search([1.0, 0.0, 0.0], "archived policy", top_k=3),
+                [],
+            )
+            self._stop_store(store)
+
+    def test_two_versions_can_coexist_and_only_active_is_retrieved(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            store = self._build_store(directory)
+            base_chunk = {
+                "document_id": "credit-policy",
+                "chunk_index": 0,
+                "page_number": 1,
+                "embedding": [1.0, 0.0, 0.0],
+            }
+            store.add([
+                {
+                    **base_chunk,
+                    "version": "1",
+                    "status": "ARCHIVED",
+                    "source_file": "Credit_Policy_v1.pdf",
+                    "content": "Version one is retained for audit.",
+                },
+                {
+                    **base_chunk,
+                    "version": "2",
+                    "status": "ACTIVE",
+                    "source_file": "Credit_Policy_v2.pdf",
+                    "content": "Version two is the current policy.",
+                },
+            ])
+            self.assertEqual(store.count(), 2)
+            self.assertEqual(
+                store._corpus_ids,
+                ["credit-policy:2:0"],
+            )
+            self._stop_store(store)
+
+            restarted_store = self._build_store(directory)
+            results = restarted_store.search(
+                [1.0, 0.0, 0.0], "credit policy", top_k=3
+            )
+
+            self.assertEqual(restarted_store.count(), 2)
+            self.assertEqual(len(results), 1)
+            self.assertEqual(results[0]["metadata"]["version"], "2")
+            self.assertEqual(
+                results[0]["metadata"]["source_file"],
+                "Credit_Policy_v2.pdf",
+            )
+            self._stop_store(restarted_store)
+
+    def test_legacy_record_without_status_remains_retrievable(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            first_store = self._build_store(directory)
+            first_store.collection.upsert(
+                ids=["legacy-document:0"],
+                embeddings=[[1.0, 0.0, 0.0]],
+                documents=["Legacy records remain active for compatibility."],
+                metadatas=[{
+                    "document_id": "legacy-document",
+                    "source_file": "legacy.pdf",
+                    "chunk_index": 0,
+                }],
+            )
+            self._stop_store(first_store)
+
+            second_store = self._build_store(directory)
+            results = second_store.search(
+                [1.0, 0.0, 0.0], "legacy compatibility", top_k=1
+            )
+
+            self.assertEqual(len(results), 1)
+            self.assertEqual(results[0]["metadata"]["status"], "ACTIVE")
+            self.assertEqual(results[0]["metadata"]["version"], "1")
+            self.assertIsNone(results[0]["metadata"]["created_time"])
+            self._stop_store(second_store)
+
 
 if __name__ == "__main__":
     unittest.main()

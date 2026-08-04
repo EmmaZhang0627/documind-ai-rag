@@ -26,6 +26,10 @@ FinalStatus = Literal[
 class TraceCandidate(TypedDict, total=False):
     document_id: str | None
     source_file: str | None
+    file_name: str | None
+    version: str | None
+    status: str | None
+    created_time: str | None
     page_number: int | None
     chunk_index: int | None
     embedding_score: float | None

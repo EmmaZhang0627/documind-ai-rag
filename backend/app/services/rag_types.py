@@ -13,12 +13,18 @@ RAGStatus = Literal[
     "error",
 ]
 
+DocumentStatus = Literal["ACTIVE", "ARCHIVED"]
+
 
 class ChunkMetadata(TypedDict):
     document_id: str
     source_file: str
     chunk_index: int
     page_number: int | None
+    file_name: NotRequired[str]
+    version: NotRequired[str]
+    status: NotRequired[DocumentStatus]
+    created_time: NotRequired[str | None]
     source_snippet: NotRequired[str]
 
 
@@ -28,6 +34,10 @@ class Chunk(TypedDict):
     source_file: str
     page_number: int | None
     content: str
+    file_name: NotRequired[str]
+    version: NotRequired[str]
+    status: NotRequired[DocumentStatus]
+    created_time: NotRequired[str]
     embedding: NotRequired[list[float]]
 
 
