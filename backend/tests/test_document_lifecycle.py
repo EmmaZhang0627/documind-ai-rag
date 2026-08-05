@@ -29,6 +29,7 @@ class DocumentLifecycleTest(unittest.TestCase):
             version="2",
             status="ACTIVE",
             created_time="2026-08-02T00:00:00+00:00",
+            file_hash="fixture-hash",
         )
 
         self.assertGreater(len(chunks), 1)
@@ -37,6 +38,7 @@ class DocumentLifecycleTest(unittest.TestCase):
             self.assertEqual(chunk["version"], "2")
             self.assertEqual(chunk["status"], "ACTIVE")
             self.assertEqual(chunk["file_name"], "Policy_v2.pdf")
+            self.assertEqual(chunk["file_hash"], "fixture-hash")
             self.assertEqual(
                 chunk["created_time"], "2026-08-02T00:00:00+00:00"
             )

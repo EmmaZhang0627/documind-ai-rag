@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import hashlib
 from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
@@ -104,6 +105,7 @@ def ingest_fixture_pdf(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
     from app.services.chunker import split_pages_into_chunks
 
     pages = extract_pdf_pages(fixture_pdf)
+    file_hash = hashlib.sha256(fixture_pdf.read_bytes()).hexdigest()
     document_id = str(uuid4())
     chunks = split_pages_into_chunks(
         pages=pages,
@@ -111,6 +113,7 @@ def ingest_fixture_pdf(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
         source_file=fixture_pdf.name,
         version="1",
         status="ACTIVE",
+        file_hash=file_hash,
     )
     rag_service.ingest_document(chunks)
 
@@ -118,6 +121,7 @@ def ingest_fixture_pdf(rag_service: Any, fixture_pdf: Path) -> dict[str, Any]:
         "document_id": document_id,
         "version": "1",
         "status": "ACTIVE",
+        "file_hash": file_hash,
         "fixture_pdf": fixture_pdf.name,
         "fixture_path": str(fixture_pdf),
         "page_count": len(pages),

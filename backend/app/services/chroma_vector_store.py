@@ -7,7 +7,7 @@ from typing import Any
 import chromadb
 from rank_bm25 import BM25Okapi
 
-from app.services.rag_types import Candidate, Chunk
+from app.services.rag_types import Candidate, Chunk, StoredDocumentIdentity
 
 
 logger = logging.getLogger(__name__)
@@ -140,6 +140,9 @@ class ChromaPersistentVectorStore:
             created_time = chunk.get("created_time")
             if created_time is not None:
                 metadata["created_time"] = created_time
+            file_hash = chunk.get("file_hash")
+            if file_hash is not None:
+                metadata["file_hash"] = file_hash
             page_number = chunk.get("page_number")
             if page_number is not None:
                 metadata["page_number"] = page_number
@@ -176,6 +179,7 @@ class ChromaPersistentVectorStore:
                 stored.get("status") or stored.get("document_status") or "ACTIVE"
             ).upper(),
             "created_time": stored.get("created_time"),
+            "file_hash": stored.get("file_hash"),
             "chunk_index": stored.get("chunk_index"),
             "page_number": stored.get("page_number"),
         }
@@ -237,6 +241,60 @@ class ChromaPersistentVectorStore:
             reverse=True,
         )
         return candidates[:top_k]
+
+    def _stored_document_identity(
+        self,
+        metadata: dict[str, Any] | None,
+    ) -> StoredDocumentIdentity | None:
+        stored = metadata or {}
+        document_id = stored.get("document_id")
+        if not document_id:
+            return None
+
+        return {
+            "document_id": str(document_id),
+            "version": str(stored.get("version", "1")),
+            "status": str(
+                stored.get("status") or stored.get("document_status") or "ACTIVE"
+            ).upper(),
+            "file_hash": stored.get("file_hash"),
+            "file_name": str(
+                stored.get("file_name") or stored.get("source_file") or ""
+            ),
+            "created_time": stored.get("created_time"),
+        }
+
+    def _find_document(
+        self,
+        where: dict[str, Any],
+    ) -> StoredDocumentIdentity | None:
+        records = self.collection.get(
+            where=where,
+            limit=1,
+            include=["metadatas"],
+        )
+        metadatas = records.get("metadatas") or []
+        if not metadatas:
+            return None
+        return self._stored_document_identity(metadatas[0])
+
+    def find_by_file_hash(
+        self,
+        file_hash: str,
+    ) -> StoredDocumentIdentity | None:
+        return self._find_document({"file_hash": file_hash})
+
+    def find_by_document_version(
+        self,
+        document_id: str,
+        version: str,
+    ) -> StoredDocumentIdentity | None:
+        return self._find_document({
+            "$and": [
+                {"document_id": document_id},
+                {"version": version},
+            ]
+        })
 
     def count(self) -> int:
         return self.collection.count()

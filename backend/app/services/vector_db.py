@@ -151,6 +151,7 @@ def add_chunks_to_db(chunks):
                 "version": version,
                 "status": status,
                 "created_time": chunk.get("created_time"),
+                "file_hash": chunk.get("file_hash"),
                 "chunk_index": chunk["chunk_index"],
                 "page_number": chunk.get("page_number"),
             },

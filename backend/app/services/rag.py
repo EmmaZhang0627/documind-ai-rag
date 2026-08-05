@@ -11,6 +11,7 @@ from app.services.rag_types import (
     Candidate,
     Chunk,
     ChunkMetadata,
+    IngestionDecision,
     RAGResponse,
     RAGTrace,
     RAGStatus,
@@ -75,6 +76,32 @@ class RAGService:
             chunk["embedding"] = self.embedder.embed(chunk["content"])
 
         self.retriever.add(chunks)
+
+    def check_document_ingestion(
+        self,
+        file_hash: str,
+        document_id: str | None,
+        version: str,
+    ) -> IngestionDecision:
+        existing_hash = self.retriever.find_by_file_hash(file_hash)
+        if existing_hash is not None:
+            return {
+                "result": "duplicate",
+                "existing_document": existing_hash,
+            }
+
+        if document_id is not None:
+            existing_version = self.retriever.find_by_document_version(
+                document_id,
+                version,
+            )
+            if existing_version is not None:
+                return {
+                    "result": "version_conflict",
+                    "existing_document": existing_version,
+                }
+
+        return {"result": "indexed"}
 
     def _retrieve_and_rank(
         self,

@@ -12,6 +12,8 @@ if str(BACKEND_ROOT) not in sys.path:
     sys.path.insert(0, str(BACKEND_ROOT))
 
 from app.services.chroma_vector_store import ChromaPersistentVectorStore
+from app.services.rag import RAGService
+from app.services.retrieval_service import RetrievalService
 from chromadb.api.shared_system_client import SharedSystemClient
 
 
@@ -191,6 +193,7 @@ class ChromaPersistentVectorStoreTest(unittest.TestCase):
                     **base_chunk,
                     "version": "1",
                     "status": "ARCHIVED",
+                    "file_hash": "hash-version-1",
                     "source_file": "Credit_Policy_v1.pdf",
                     "content": "Version one is retained for audit.",
                 },
@@ -198,6 +201,7 @@ class ChromaPersistentVectorStoreTest(unittest.TestCase):
                     **base_chunk,
                     "version": "2",
                     "status": "ACTIVE",
+                    "file_hash": "hash-version-2",
                     "source_file": "Credit_Policy_v2.pdf",
                     "content": "Version two is the current policy.",
                 },
@@ -215,6 +219,20 @@ class ChromaPersistentVectorStoreTest(unittest.TestCase):
             )
 
             self.assertEqual(restarted_store.count(), 2)
+            by_hash = restarted_store.find_by_file_hash("hash-version-2")
+            by_version = restarted_store.find_by_document_version(
+                "credit-policy", "1"
+            )
+            self.assertIsNotNone(by_hash)
+            self.assertIsNotNone(by_version)
+            self.assertEqual(by_hash["version"], "2")
+            self.assertEqual(by_version["file_hash"], "hash-version-1")
+            rag_service = RAGService.__new__(RAGService)
+            rag_service.retriever = RetrievalService(restarted_store)
+            duplicate_decision = rag_service.check_document_ingestion(
+                "hash-version-2", None, "1"
+            )
+            self.assertEqual(duplicate_decision["result"], "duplicate")
             self.assertEqual(len(results), 1)
             self.assertEqual(results[0]["metadata"]["version"], "2")
             self.assertEqual(

@@ -14,6 +14,21 @@ RAGStatus = Literal[
 ]
 
 DocumentStatus = Literal["ACTIVE", "ARCHIVED"]
+IngestionResult = Literal["indexed", "duplicate", "version_conflict"]
+
+
+class StoredDocumentIdentity(TypedDict):
+    document_id: str
+    version: str
+    status: DocumentStatus
+    file_hash: str | None
+    file_name: str
+    created_time: str | None
+
+
+class IngestionDecision(TypedDict):
+    result: IngestionResult
+    existing_document: NotRequired[StoredDocumentIdentity]
 
 
 class ChunkMetadata(TypedDict):
@@ -25,6 +40,7 @@ class ChunkMetadata(TypedDict):
     version: NotRequired[str]
     status: NotRequired[DocumentStatus]
     created_time: NotRequired[str | None]
+    file_hash: NotRequired[str]
     source_snippet: NotRequired[str]
 
 
@@ -38,6 +54,7 @@ class Chunk(TypedDict):
     version: NotRequired[str]
     status: NotRequired[DocumentStatus]
     created_time: NotRequired[str]
+    file_hash: NotRequired[str]
     embedding: NotRequired[list[float]]
 
 
@@ -101,6 +118,19 @@ class VectorStore(Protocol):
         ...
 
     def count(self) -> int:
+        ...
+
+    def find_by_file_hash(
+        self,
+        file_hash: str,
+    ) -> StoredDocumentIdentity | None:
+        ...
+
+    def find_by_document_version(
+        self,
+        document_id: str,
+        version: str,
+    ) -> StoredDocumentIdentity | None:
         ...
 
     def clear(self) -> None:

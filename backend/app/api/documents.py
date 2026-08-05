@@ -1,6 +1,7 @@
 from pathlib import Path
 from uuid import uuid4
 import logging
+import hashlib
 from datetime import datetime, timezone
 
 from app.services.chunker import split_pages_into_chunks
@@ -9,6 +10,7 @@ from app.services.errors import ServiceConfigurationError
 from app.services.rag import RAGService
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from fastapi.concurrency import run_in_threadpool
+from fastapi.responses import JSONResponse
 from openai import OpenAIError
 import fitz
 
@@ -62,13 +64,58 @@ async def parse_pdf(
     normalized_version = version.strip()
     if not normalized_version:
         raise HTTPException(status_code=422, detail="Document version is required.")
-    resolved_document_id = document_id.strip() if document_id else str(uuid4())
-    if not resolved_document_id:
+    requested_document_id = document_id.strip() if document_id else None
+    if document_id is not None and not requested_document_id:
         raise HTTPException(status_code=422, detail="Document ID cannot be empty.")
-    created_time = datetime.now(timezone.utc).isoformat()
 
     # 2. 读取文件
     content = await file.read()
+    file_hash = hashlib.sha256(content).hexdigest()
+    try:
+        ingestion_decision = await run_in_threadpool(
+            rag_service.check_document_ingestion,
+            file_hash,
+            requested_document_id,
+            normalized_version,
+        )
+    except Exception as error:
+        logger.exception("document_duplicate_check_failed")
+        raise HTTPException(
+            status_code=500,
+            detail="Document duplicate check failed.",
+        ) from error
+
+    existing_document = ingestion_decision.get("existing_document")
+    if ingestion_decision["result"] == "duplicate" and existing_document:
+        return {
+            "document_id": existing_document["document_id"],
+            "source_file": existing_document["file_name"],
+            "file_name": existing_document["file_name"],
+            "version": existing_document["version"],
+            "document_status": existing_document["status"],
+            "created_time": existing_document["created_time"],
+            "file_hash": file_hash,
+            "ingestion_result": "duplicate",
+            "status": "duplicate",
+        }
+
+    if ingestion_decision["result"] == "version_conflict" and existing_document:
+        return JSONResponse(
+            status_code=409,
+            content={
+                "document_id": existing_document["document_id"],
+                "version": existing_document["version"],
+                "file_name": existing_document["file_name"],
+                "document_status": existing_document["status"],
+                "existing_file_hash": existing_document["file_hash"],
+                "incoming_file_hash": file_hash,
+                "ingestion_result": "version_conflict",
+                "status": "version_conflict",
+            },
+        )
+
+    resolved_document_id = requested_document_id or str(uuid4())
+    created_time = datetime.now(timezone.utc).isoformat()
 
     # 3. 临时保存（必须，否则 fitz 才能打开）
     temp_path = UPLOAD_DIR / f"{uuid4()}.pdf"
@@ -113,6 +160,7 @@ async def parse_pdf(
         version=normalized_version,
         status=normalized_status,
         created_time=created_time,
+        file_hash=file_hash,
     )
     try:
         await run_in_threadpool(rag_service.ingest_document, chunks)
@@ -147,6 +195,8 @@ async def parse_pdf(
         "version": normalized_version,
         "document_status": normalized_status,
         "created_time": created_time,
+        "file_hash": file_hash,
+        "ingestion_result": "indexed",
         "text_preview": full_text[:1500],
         "page_count": len(pages),
         "chunk_count": len(chunks),

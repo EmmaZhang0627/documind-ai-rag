@@ -6,14 +6,18 @@ def _document_metadata(
     version: str,
     status: str,
     created_time: str | None,
+    file_hash: str | None,
 ) -> dict[str, str]:
-    return {
+    metadata = {
         "source_file": source_file,
         "file_name": source_file,
         "version": version,
         "status": status,
         "created_time": created_time or datetime.now(timezone.utc).isoformat(),
     }
+    if file_hash is not None:
+        metadata["file_hash"] = file_hash
+    return metadata
 
 
 def split_text_into_chunks(
@@ -26,10 +30,11 @@ def split_text_into_chunks(
     version: str = "1",
     status: str = "ACTIVE",
     created_time: str | None = None,
+    file_hash: str | None = None,
 ):
     chunks = []
     document_metadata = _document_metadata(
-        source_file, version, status, created_time
+        source_file, version, status, created_time, file_hash
     )
 
     start = 0
@@ -63,10 +68,11 @@ def split_pages_into_chunks(
     version: str = "1",
     status: str = "ACTIVE",
     created_time: str | None = None,
+    file_hash: str | None = None,
 ):
     chunks = []
     document_metadata = _document_metadata(
-        source_file, version, status, created_time
+        source_file, version, status, created_time, file_hash
     )
     global_chunk_index = 0
     for page in pages:
