@@ -42,6 +42,44 @@ async def upload_document(file: UploadFile = File(...)):
         "status": "uploaded",
     }
 
+
+@router.post("/{document_id}/versions/{version}/archive")
+async def archive_document_version(
+    document_id: str,
+    version: str,
+    rag_service: RAGService = Depends(get_rag_service),
+):
+    normalized_document_id = document_id.strip()
+    normalized_version = version.strip()
+    if not normalized_document_id or not normalized_version:
+        raise HTTPException(
+            status_code=422,
+            detail="Document ID and version are required.",
+        )
+
+    try:
+        archived_chunk_count = await run_in_threadpool(
+            rag_service.archive_document_version,
+            normalized_document_id,
+            normalized_version,
+        )
+    except Exception as error:
+        logger.exception("document_archive_failed")
+        raise HTTPException(
+            status_code=500,
+            detail="Document archive failed.",
+        ) from error
+
+    if archived_chunk_count == 0:
+        raise HTTPException(status_code=404, detail="Document version not found.")
+
+    return {
+        "document_id": normalized_document_id,
+        "version": normalized_version,
+        "status": "ARCHIVED",
+        "archived_chunk_count": archived_chunk_count,
+    }
+
 @router.post("/parse-pdf")
 async def parse_pdf(
     file: UploadFile = File(...),

@@ -103,6 +103,13 @@ class RAGService:
 
         return {"result": "indexed"}
 
+    def archive_document_version(
+        self,
+        document_id: str,
+        version: str,
+    ) -> int:
+        return self.retriever.archive_document_version(document_id, version)
+
     def _retrieve_and_rank(
         self,
         query: str,

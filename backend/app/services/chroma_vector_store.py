@@ -296,6 +296,44 @@ class ChromaPersistentVectorStore:
             ]
         })
 
+    def archive_document_version(
+        self,
+        document_id: str,
+        version: str,
+    ) -> int:
+        records = self.collection.get(
+            where={"document_id": document_id},
+            include=["metadatas"],
+        )
+        ids = records.get("ids") or []
+        metadatas = records.get("metadatas") or []
+        matching_ids: list[str] = []
+        archived_metadatas: list[dict[str, str | int | float | bool]] = []
+
+        for record_id, metadata in zip(ids, metadatas):
+            stored = dict(metadata or {})
+            if str(stored.get("version", "1")) != version:
+                continue
+            stored["status"] = "ARCHIVED"
+            matching_ids.append(record_id)
+            archived_metadatas.append(stored)
+
+        if not matching_ids:
+            return 0
+
+        self.collection.update(
+            ids=matching_ids,
+            metadatas=archived_metadatas,
+        )
+        self._rebuild_bm25_index()
+        logger.info(
+            "chroma_document_version_archived document_id=%s version=%s chunks=%s",
+            document_id,
+            version,
+            len(matching_ids),
+        )
+        return len(matching_ids)
+
     def count(self) -> int:
         return self.collection.count()
 

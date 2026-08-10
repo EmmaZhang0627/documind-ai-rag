@@ -49,6 +49,36 @@ treated as `ACTIVE`, a missing version as `"1"`, and an unknown creation time as
 Archiving is therefore not deletion. `count()` includes archived chunks, while
 normal `search()` results do not.
 
+## State mutation
+
+The MVP supports one explicit transition for an existing document version:
+
+```text
+ACTIVE -> ARCHIVED
+```
+
+The API operation is:
+
+```text
+POST /api/documents/{document_id}/versions/{version}/archive
+```
+
+It updates every chunk whose logical document ID and version match, while
+preserving embeddings, documents, file hashes, page metadata, and all other
+stored fields. Other versions are not changed. Repeating the operation is
+idempotent: the version remains ARCHIVED and no records are created or deleted.
+
+After a successful metadata update, the VectorStore rebuilds its active-only
+BM25 corpus. This is required because BM25 is derived in-memory state; changing
+Chroma metadata alone would leave the old active corpus in memory until restart.
+
+The operation is implemented by both Chroma and the in-memory adapter behind
+the same VectorStore interface. A missing document version returns HTTP 404.
+
+Archive is used instead of delete because historical versions may be needed for
+audit, incident review, or explaining past decisions. Archive removes retrieval
+eligibility without destroying the underlying evidence.
+
 ## Version handling
 
 The upload endpoint accepts optional multipart values for `document_id`,
@@ -108,15 +138,19 @@ stronger future architecture but would be excessive for this local MVP.
 
 ## Verification results
 
-Verified on 2026-08-04 with Python 3.11.9 and the project-pinned Chroma
+Verified on 2026-08-05 with Python 3.11.9 and the project-pinned Chroma
 environment:
 
 - Python compilation passed;
-- backend unit tests passed: 11/11;
+- backend unit tests passed: 20/20;
 - score-semantics regression checks passed: 3/3;
 - dependency integrity check reported no broken requirements;
 - persistent lifecycle tests confirmed active retrieval, archived exclusion,
   version coexistence after store restart, and legacy metadata compatibility;
+- lifecycle mutation tests confirmed every chunk in the selected version was
+  archived, other versions remained ACTIVE, vectors/documents/file hashes were
+  preserved, BM25 was rebuilt, repeat archive calls were idempotent, and the
+  ARCHIVED state survived Chroma restart;
 - the full evaluation retained its previous baseline: 12/15 cases passed,
   source hits 11/11, page hits 11/11, and fallback correctness 4/4.
 
@@ -125,8 +159,8 @@ failures and one ranking failure. No thresholds or expectations were changed.
 
 ## Project evolution
 
-The next production step is a document registry with explicit status-update
-operations and an append-only lifecycle history. Later states can include
+The next production step is a document registry with an append-only lifecycle
+history. Later states can include
 `PENDING_REVIEW`, `APPROVED`, `REJECTED`, and `EXPIRED`, together with ownership,
 tenant permissions, approval workflow, human escalation, retention policy, and
 legal hold. A database transaction or outbox pattern would keep registry state
@@ -164,8 +198,9 @@ English:
 
 ## Remaining limitations
 
-- no endpoint yet changes an existing version from ACTIVE to ARCHIVED;
 - uploading without a stable `document_id` still creates a new logical document;
+- no actor, archive reason, `archived_time`, or append-only transition history;
+- only ACTIVE to ARCHIVED is supported; reactivation is intentionally absent;
 - no owner, tenant, approval actor, reason, or append-only state history;
 - no transaction coordinates document registry state with vector writes;
 - locally embedded Chroma remains a single-host persistence design;

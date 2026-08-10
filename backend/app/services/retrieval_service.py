@@ -6,6 +6,7 @@ from app.services.rag_types import (
 )
 from app.services.vector_db import (
     add_chunks_to_db,
+    archive_document_version as archive_in_memory_document_version,
     clear_vector_store,
     retrieve_candidates,
     vector_store,
@@ -72,6 +73,13 @@ class InMemoryVectorStore:
                 return self._stored_document_identity(metadata)
         return None
 
+    def archive_document_version(
+        self,
+        document_id: str,
+        version: str,
+    ) -> int:
+        return archive_in_memory_document_version(document_id, version)
+
     def clear(self) -> None:
         clear_vector_store()
 
@@ -106,6 +114,13 @@ class RetrievalService:
         version: str,
     ) -> StoredDocumentIdentity | None:
         return self.vector_store.find_by_document_version(document_id, version)
+
+    def archive_document_version(
+        self,
+        document_id: str,
+        version: str,
+    ) -> int:
+        return self.vector_store.archive_document_version(document_id, version)
 
     def clear(self) -> None:
         self.vector_store.clear()

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-04T07:50:35.859530+00:00",
+  "generated_at": "2026-08-05T09:19:02.300450+00:00",
   "fixture": {
-    "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+    "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
     "version": "1",
     "status": "ACTIVE",
     "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
@@ -76,36 +76,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
           "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
           "source_snippet": "e. • If you take a break from your studies or need to undertake reassessment it will not be possible to adhere to the indicative study duration of 24 months. • The maximum period allowed for you to complete your programme is 72 months (6 years) calculated from the start date of your earliest enrolment."
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
@@ -118,13 +118,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.6559569466443574,
+          "embedding_score": 0.6560225661152055,
           "bm25_score": 0.8378114457066327,
-          "retrieval_score": 0.7105132963630401,
+          "retrieval_score": 0.7105592299926335,
           "rerank_score": 8.600790023803711,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -135,13 +135,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.6286314512619314,
+          "embedding_score": 0.6280028166045628,
           "bm25_score": 1.0,
-          "retrieval_score": 0.740042015883352,
+          "retrieval_score": 0.7396019716231939,
           "rerank_score": 5.709632396697998,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -152,13 +152,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
-          "embedding_score": 0.6460304646745065,
+          "embedding_score": 0.6460609486679932,
           "bm25_score": 0.2466828134192302,
-          "retrieval_score": 0.5262261692979235,
+          "retrieval_score": 0.5262475080933643,
           "rerank_score": 4.412629127502441,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -247,25 +247,25 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "f84170a9-020f-40b2-8811-f720f2ba678a",
+      "trace_id": "aa38e42f-ef7f-4250-b03f-ea521e6996fe",
       "retrieval_trace": {
-        "trace_id": "f84170a9-020f-40b2-8811-f720f2ba678a",
+        "trace_id": "aa38e42f-ef7f-4250-b03f-ea521e6996fe",
         "query": "What is the indicative study duration for the MSc Computer Science programme?",
         "retrieval": {
-          "top1_score": 0.740042015883352,
+          "top1_score": 0.7396019716231939,
           "top_k_scores": [
-            0.740042015883352,
-            0.7105132963630401,
-            0.5262261692979235
+            0.7396019716231939,
+            0.7105592299926335,
+            0.5262475080933643
           ]
         },
         "rerank": {
           "enabled": true,
-          "improvement": -0.029528719520311886
+          "improvement": -0.02904274163056031
         },
         "decision": {
           "passed_gate": true,
-          "confidence_score": 0.7105132963630401,
+          "confidence_score": 0.7105592299926335,
           "fallback_reason": null,
           "fallback_status": null,
           "sensitive_input_detected": false,
@@ -284,36 +284,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
           "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
           "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
@@ -326,13 +326,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.5583930896514099,
+          "embedding_score": 0.5584633580510171,
           "bm25_score": 1.0,
-          "retrieval_score": 0.6908751627559868,
+          "retrieval_score": 0.6909243506357119,
           "rerank_score": 2.975078582763672,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -340,7 +340,7 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
@@ -357,13 +357,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.3740963867574152,
+          "embedding_score": 0.37342325361083795,
           "bm25_score": 0.08710730150076745,
-          "retrieval_score": 0.28799966118042086,
+          "retrieval_score": 0.2875284679778168,
           "rerank_score": -11.056417465209961,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -448,16 +448,16 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "1c607e51-005f-4b6d-9823-96c92a3eac9e",
+      "trace_id": "24ab2092-2f7b-41c1-af7e-b2457b735a58",
       "retrieval_trace": {
-        "trace_id": "1c607e51-005f-4b6d-9823-96c92a3eac9e",
+        "trace_id": "24ab2092-2f7b-41c1-af7e-b2457b735a58",
         "query": "What is the final module in the MSc Computer Science study plan?",
         "retrieval": {
-          "top1_score": 0.6908751627559868,
+          "top1_score": 0.6909243506357119,
           "top_k_scores": [
-            0.6908751627559868,
+            0.6909243506357119,
             0.5416969783825663,
-            0.28799966118042086
+            0.2875284679778168
           ]
         },
         "rerank": {
@@ -466,7 +466,7 @@
         },
         "decision": {
           "passed_gate": true,
-          "confidence_score": 0.6908751627559868,
+          "confidence_score": 0.6909243506357119,
           "fallback_reason": null,
           "fallback_status": null,
           "sensitive_input_detected": false,
@@ -474,7 +474,7 @@
           "conflict_detected": false
         }
       },
-      "answer": "The final module in the MSc Computer Science study plan is the \"Computer Science Capstone Project,\" which is worth 60 credits and has a duration of 32 weeks."
+      "answer": "The final module in the MSc Computer Science study plan is the \"Computer Science Capstone Project.\""
     },
     {
       "case_id": "case_003_unrelated_refusal",
@@ -546,16 +546,16 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "91f91ae5-a94f-42f7-94d3-d99032af38b2",
+      "trace_id": "5beea427-6269-47e7-82c6-a66c9dc888cd",
       "retrieval_trace": {
-        "trace_id": "91f91ae5-a94f-42f7-94d3-d99032af38b2",
+        "trace_id": "5beea427-6269-47e7-82c6-a66c9dc888cd",
         "query": "What is the CEO's birthday on Mars?",
         "retrieval": {
-          "top1_score": 0.3623568997122081,
+          "top1_score": 0.36193076425616116,
           "top_k_scores": [
-            0.3623568997122081,
-            0.08028862667561924,
-            0.0502299043569363
+            0.36193076425616116,
+            0.07936039266735899,
+            0.04981191368076431
           ]
         },
         "rerank": {
@@ -564,7 +564,7 @@
         },
         "decision": {
           "passed_gate": false,
-          "confidence_score": 0.3623568997122081,
+          "confidence_score": 0.36193076425616116,
           "fallback_reason": "low_confidence",
           "fallback_status": "low_confidence",
           "sensitive_input_detected": false,
@@ -644,9 +644,9 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "3f0798af-196e-45ee-91d9-b41ce7431f36",
+      "trace_id": "b6b30909-9a40-4e6b-bb16-bca3a8095283",
       "retrieval_trace": {
-        "trace_id": "3f0798af-196e-45ee-91d9-b41ce7431f36",
+        "trace_id": "b6b30909-9a40-4e6b-bb16-bca3a8095283",
         "query": "Should we approve this customer loan approval request?",
         "retrieval": {
           "top1_score": 0.0,
@@ -738,9 +738,9 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "dd132509-8fb5-45e4-ae6d-c94571176f86",
+      "trace_id": "e83290d9-3af5-432d-97b1-d7cae4adb9f4",
       "retrieval_trace": {
-        "trace_id": "dd132509-8fb5-45e4-ae6d-c94571176f86",
+        "trace_id": "e83290d9-3af5-432d-97b1-d7cae4adb9f4",
         "query": "My token is token=abcdefghijklmnopqrstuvwxyz123456. Can you check this document?",
         "retrieval": {
           "top1_score": 0.0,
@@ -771,36 +771,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
           "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
           "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
@@ -813,13 +813,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.5524933525963316,
+          "embedding_score": 0.5525331258457228,
           "bm25_score": 1.0,
-          "retrieval_score": 0.686745346817432,
+          "retrieval_score": 0.6867731880920059,
           "rerank_score": 2.015554666519165,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -830,13 +830,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
-          "embedding_score": 0.5125328370197192,
+          "embedding_score": 0.5125227180437671,
           "bm25_score": 0.048818558097721766,
-          "retrieval_score": 0.37341855334311996,
+          "retrieval_score": 0.3734114700599535,
           "rerank_score": -10.62234878540039,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -844,13 +844,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.38984725724007097,
+          "embedding_score": 0.3893052764243501,
           "bm25_score": 0.04380256532475303,
-          "retrieval_score": 0.2860338496654755,
+          "retrieval_score": 0.2856544630944709,
           "rerank_score": -10.901766777038574,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -937,16 +937,16 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "be45c3f7-d82b-442d-bcd5-1bb40a4eb3b6",
+      "trace_id": "cc9108f2-694b-4d7e-88bc-cc3ae022548e",
       "retrieval_trace": {
-        "trace_id": "be45c3f7-d82b-442d-bcd5-1bb40a4eb3b6",
+        "trace_id": "cc9108f2-694b-4d7e-88bc-cc3ae022548e",
         "query": "How many credits is the MSc Computer Science programme worth in total?",
         "retrieval": {
-          "top1_score": 0.686745346817432,
+          "top1_score": 0.6867731880920059,
           "top_k_scores": [
-            0.686745346817432,
-            0.37341855334311996,
-            0.2860338496654755
+            0.6867731880920059,
+            0.3734114700599535,
+            0.2856544630944709
           ]
         },
         "rerank": {
@@ -955,7 +955,7 @@
         },
         "decision": {
           "passed_gate": true,
-          "confidence_score": 0.686745346817432,
+          "confidence_score": 0.6867731880920059,
           "fallback_reason": null,
           "fallback_status": null,
           "sensitive_input_detected": false,
@@ -974,36 +974,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
           "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
           "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
@@ -1016,7 +1016,7 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
@@ -1033,13 +1033,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.406735966264442,
+          "embedding_score": 0.40678711683724034,
           "bm25_score": 0.10012827081614244,
-          "retrieval_score": 0.31475365762995205,
+          "retrieval_score": 0.31478946303091093,
           "rerank_score": -1.3255600929260254,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -1047,13 +1047,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.35482999137584925,
+          "embedding_score": 0.35446269581803336,
           "bm25_score": 0.04118771367643228,
-          "retrieval_score": 0.26073730806602413,
+          "retrieval_score": 0.26048020117555304,
           "rerank_score": -3.2011616230010986,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -1140,16 +1140,16 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "9e1800cc-5e5e-44a4-9663-568be0b065ad",
+      "trace_id": "e81b6914-6b78-4ba2-af2f-1ce0833efc7d",
       "retrieval_trace": {
-        "trace_id": "9e1800cc-5e5e-44a4-9663-568be0b065ad",
+        "trace_id": "e81b6914-6b78-4ba2-af2f-1ce0833efc7d",
         "query": "How long does the Computer Science Capstone Project last?",
         "retrieval": {
           "top1_score": 0.7137893750341717,
           "top_k_scores": [
             0.7137893750341717,
-            0.31475365762995205,
-            0.26073730806602413
+            0.31478946303091093,
+            0.26048020117555304
           ]
         },
         "rerank": {
@@ -1166,7 +1166,7 @@
           "conflict_detected": false
         }
       },
-      "answer": "The Computer Science Capstone Project lasts 32 weeks."
+      "answer": "The Computer Science Capstone Project lasts for 32 weeks."
     },
     {
       "case_id": "case_008_latest_completion_window",
@@ -1177,36 +1177,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
           "source_snippet": "e. • If you take a break from your studies or need to undertake reassessment it will not be possible to adhere to the indicative study duration of 24 months. • The maximum period allowed for you to complete your programme is 72 months (6 years) calculated from the start date of your earliest enrolment."
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
           "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
@@ -1219,13 +1219,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.6107965895495859,
+          "embedding_score": 0.6111819421496616,
           "bm25_score": 0.7292201185903983,
-          "retrieval_score": 0.6463236482618296,
+          "retrieval_score": 0.6465933950818825,
           "rerank_score": 5.207954406738281,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -1237,13 +1237,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
-          "embedding_score": 0.4956784698754185,
+          "embedding_score": 0.4956833181542173,
           "bm25_score": 1.0,
-          "retrieval_score": 0.646974928912793,
+          "retrieval_score": 0.6469783227079521,
           "rerank_score": -2.9005203247070312,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -1251,13 +1251,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.3902880711286336,
+          "embedding_score": 0.39026566226250003,
           "bm25_score": 0.02100815301096408,
-          "retrieval_score": 0.27950409569333273,
+          "retrieval_score": 0.27948840948703924,
           "rerank_score": -9.5428466796875,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -1346,25 +1346,25 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "351eb9cb-0ffa-4031-a5cc-5682b35927d3",
+      "trace_id": "d587a12e-32e1-4763-995f-8bbdf465853a",
       "retrieval_trace": {
-        "trace_id": "351eb9cb-0ffa-4031-a5cc-5682b35927d3",
+        "trace_id": "d587a12e-32e1-4763-995f-8bbdf465853a",
         "query": "How much time does a student have at most to finish after their earliest enrolment begins?",
         "retrieval": {
-          "top1_score": 0.646974928912793,
+          "top1_score": 0.6469783227079521,
           "top_k_scores": [
-            0.646974928912793,
-            0.6463236482618296,
-            0.27950409569333273
+            0.6469783227079521,
+            0.6465933950818825,
+            0.27948840948703924
           ]
         },
         "rerank": {
           "enabled": true,
-          "improvement": -0.0006512806509633151
+          "improvement": -0.00038492762606956443
         },
         "decision": {
           "passed_gate": true,
-          "confidence_score": 0.6463236482618296,
+          "confidence_score": 0.6465933950818825,
           "fallback_reason": null,
           "fallback_status": null,
           "sensitive_input_detected": false,
@@ -1372,7 +1372,7 @@
           "conflict_detected": false
         }
       },
-      "answer": "A student has a maximum period of 72 months (6 years) to complete their programme calculated from the start date of their earliest enrolment."
+      "answer": "The maximum period allowed for a student to complete their programme is 72 months (6 years) calculated from the start date of their earliest enrolment."
     },
     {
       "case_id": "case_009_enrolment_team",
@@ -1383,36 +1383,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
           "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
           "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
@@ -1425,7 +1425,7 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
@@ -1442,13 +1442,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.3895906468771806,
+          "embedding_score": 0.38971496958793017,
           "bm25_score": 0.0,
-          "retrieval_score": 0.27271345281402637,
+          "retrieval_score": 0.2728004787115511,
           "rerank_score": -8.723215103149414,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -1456,13 +1456,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.27702765544190877,
+          "embedding_score": 0.27696748275278493,
           "bm25_score": 0.5683471985756715,
-          "retrieval_score": 0.36442351838203757,
+          "retrieval_score": 0.3643813974996509,
           "rerank_score": -11.273247718811035,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -1547,16 +1547,16 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "c7ae3ddb-71f1-4931-8fd7-d656e51c85c8",
+      "trace_id": "2cd8b19c-295c-4729-b20e-57f3c4f8fc19",
       "retrieval_trace": {
-        "trace_id": "c7ae3ddb-71f1-4931-8fd7-d656e51c85c8",
+        "trace_id": "2cd8b19c-295c-4729-b20e-57f3c4f8fc19",
         "query": "Which team is responsible for placing learners onto each module?",
         "retrieval": {
           "top1_score": 0.608355628600168,
           "top_k_scores": [
             0.608355628600168,
-            0.36442351838203757,
-            0.27271345281402637
+            0.3643813974996509,
+            0.2728004787115511
           ]
         },
         "rerank": {
@@ -1584,36 +1584,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
           "source_snippet": "e. • If you take a break from your studies or need to undertake reassessment it will not be possible to adhere to the indicative study duration of 24 months. • The maximum period allowed for you to complete your programme is 72 months (6 years) calculated from the start date of your earliest enrolment."
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
           "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
@@ -1626,13 +1626,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.5618072310884332,
+          "embedding_score": 0.5620196453989108,
           "bm25_score": 1.0,
-          "retrieval_score": 0.6932650617619032,
+          "retrieval_score": 0.6934137517792376,
           "rerank_score": -0.9749899506568909,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -1644,7 +1644,7 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
@@ -1661,13 +1661,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.33832313008838066,
+          "embedding_score": 0.3383563038798162,
           "bm25_score": 0.3001183905980747,
-          "retrieval_score": 0.32686170824128885,
+          "retrieval_score": 0.3268849298952937,
           "rerank_score": -10.470075607299805,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -1760,16 +1760,16 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "1d00e94d-c25f-4a0b-a528-ce7b44b15533",
+      "trace_id": "ed7c47a1-ce02-461f-8a54-52f47c7fe861",
       "retrieval_trace": {
-        "trace_id": "1d00e94d-c25f-4a0b-a528-ce7b44b15533",
+        "trace_id": "ed7c47a1-ce02-461f-8a54-52f47c7fe861",
         "query": "Can a learner still keep to the two-year schedule after pausing their studies or retaking work?",
         "retrieval": {
-          "top1_score": 0.6932650617619032,
+          "top1_score": 0.6934137517792376,
           "top_k_scores": [
-            0.6932650617619032,
+            0.6934137517792376,
             0.521498944365925,
-            0.32686170824128885
+            0.3268849298952937
           ]
         },
         "rerank": {
@@ -1778,7 +1778,7 @@
         },
         "decision": {
           "passed_gate": true,
-          "confidence_score": 0.6932650617619032,
+          "confidence_score": 0.6934137517792376,
           "fallback_reason": null,
           "fallback_status": null,
           "sensitive_input_detected": false,
@@ -1786,7 +1786,7 @@
           "conflict_detected": false
         }
       },
-      "answer": "No, a learner cannot keep to the two-year (24 months) indicative study duration if they take a break from their studies or need to undertake reassessment. The document states that it will not be possible to adhere to the indicative study duration of 24 months in such cases."
+      "answer": "No, a learner cannot keep to the two-year (24 months) indicative study duration if they take a break from their studies or need to undertake reassessment. The document states that it will not be possible to adhere to the indicative study duration of 24 months under those circumstances."
     },
     {
       "case_id": "case_011_robotics_elective",
@@ -1800,13 +1800,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.35357884715910837,
+          "embedding_score": 0.35352884304182575,
           "bm25_score": 1.0,
-          "retrieval_score": 0.5475051930113758,
+          "retrieval_score": 0.547470190129278,
           "rerank_score": 0.6192710399627686,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -1817,13 +1817,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
-          "embedding_score": 0.3794716289874436,
+          "embedding_score": 0.3794507014295767,
           "bm25_score": 0.09696104771698771,
-          "retrieval_score": 0.29471845460630675,
+          "retrieval_score": 0.2947038053158,
           "rerank_score": -3.999452590942383,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -1833,13 +1833,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.14984788289842088,
+          "embedding_score": 0.1498070334571262,
           "bm25_score": 0.05418923185616638,
-          "retrieval_score": 0.12115028758574453,
+          "retrieval_score": 0.12112169297683825,
           "rerank_score": -11.386150360107422,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -1928,16 +1928,16 @@
       "failed_checks": [
         "status"
       ],
-      "trace_id": "9897d0a1-0d5e-4eca-b9b9-b45313edb565",
+      "trace_id": "4dd6bf32-691f-4be9-9162-39d287a6bb43",
       "retrieval_trace": {
-        "trace_id": "9897d0a1-0d5e-4eca-b9b9-b45313edb565",
+        "trace_id": "4dd6bf32-691f-4be9-9162-39d287a6bb43",
         "query": "Is Robotics listed as an elective module?",
         "retrieval": {
-          "top1_score": 0.5475051930113758,
+          "top1_score": 0.547470190129278,
           "top_k_scores": [
-            0.5475051930113758,
-            0.29471845460630675,
-            0.12115028758574453
+            0.547470190129278,
+            0.2947038053158,
+            0.12112169297683825
           ]
         },
         "rerank": {
@@ -1946,7 +1946,7 @@
         },
         "decision": {
           "passed_gate": false,
-          "confidence_score": 0.5475051930113758,
+          "confidence_score": 0.547470190129278,
           "fallback_reason": "low_confidence",
           "fallback_status": "low_confidence",
           "sensitive_input_detected": false,
@@ -1965,36 +1965,36 @@
       "fallback_reason": null,
       "returned_sources": [
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 0,
           "page_number": 1,
           "source_snippet": "University of Liverpool Online Programmes 1 of 1 online.liverpool.ac.uk Indicative Study Plan Programme Title MSc Computer Science Indicative Study Duration 24 Months* Credits 180 Modules to be studied: Module Title Credits Module Duration Global Trends in Computer Science 15 8 weeks Software Development in Practice 15 8 weeks Databases and Information Systems 15 8 weeks Networks and Web Technolog"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 1,
           "page_number": 1,
           "source_snippet": "8 weeks Choose one Elective Module from the following: Cloud Computing 15 8 weeks Data Visualisation and Warehousing 15 8 weeks Information Technology Leadership 15 8 weeks Security Risk Management 15 8 weeks Strategic Technology Management 15 8 weeks Technology Innovation and Change Management 15 8 weeks Final Module Computer Science Capstone Project 60 32 weeks *Important Notes: • The indicative"
         },
         {
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "file_name": "Study Plan - MSc Computer Science.pdf",
           "version": "1",
           "status": "ACTIVE",
-          "created_time": "2026-08-04T07:49:15.350865+00:00",
+          "created_time": "2026-08-05T09:16:43.762000+00:00",
           "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
           "chunk_index": 2,
           "page_number": 1,
@@ -2007,13 +2007,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.44145235620012935,
+          "embedding_score": 0.4414298389801987,
           "bm25_score": 1.0,
-          "retrieval_score": 0.6090166493400906,
+          "retrieval_score": 0.609000887286139,
           "rerank_score": 1.8335490226745605,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -2025,7 +2025,7 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
@@ -2042,13 +2042,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.3019778370529993,
+          "embedding_score": 0.30245685162231917,
           "bm25_score": 0.0246817585773945,
-          "retrieval_score": 0.21878901351031785,
+          "retrieval_score": 0.21912432370884177,
           "rerank_score": -10.696144104003906,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -2141,16 +2141,16 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "93d45c7c-d20b-4d75-a38f-8989e7cc850e",
+      "trace_id": "0b582581-8254-4a63-8889-6f26a864b0d9",
       "retrieval_trace": {
-        "trace_id": "93d45c7c-d20b-4d75-a38f-8989e7cc850e",
+        "trace_id": "0b582581-8254-4a63-8889-6f26a864b0d9",
         "query": "How many credits and how many weeks are assigned to Networks and Web Technology?",
         "retrieval": {
-          "top1_score": 0.6090166493400906,
+          "top1_score": 0.609000887286139,
           "top_k_scores": [
-            0.6090166493400906,
+            0.609000887286139,
             0.40407236858461765,
-            0.21878901351031785
+            0.21912432370884177
           ]
         },
         "rerank": {
@@ -2159,7 +2159,7 @@
         },
         "decision": {
           "passed_gate": true,
-          "confidence_score": 0.6090166493400906,
+          "confidence_score": 0.609000887286139,
           "fallback_reason": null,
           "fallback_status": null,
           "sensitive_input_detected": false,
@@ -2181,13 +2181,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.38938594948133387,
+          "embedding_score": 0.38856229302641,
           "bm25_score": 1.0,
-          "retrieval_score": 0.5725701646369337,
+          "retrieval_score": 0.571993605118487,
           "rerank_score": -6.660260200500488,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -2195,13 +2195,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.2836205320275038,
+          "embedding_score": 0.2835835634217727,
           "bm25_score": 0.0844371531708019,
-          "retrieval_score": 0.2238655183704932,
+          "retrieval_score": 0.22383964034648143,
           "rerank_score": -11.178262710571289,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -2209,13 +2209,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
-          "embedding_score": 0.3201161809227684,
+          "embedding_score": 0.32011461398461005,
           "bm25_score": 0.08212280110006659,
-          "retrieval_score": 0.24871816697595783,
+          "retrieval_score": 0.24871707011924699,
           "rerank_score": -11.194787979125977,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -2307,16 +2307,16 @@
       "failed_checks": [
         "status"
       ],
-      "trace_id": "43c7c02b-136c-4f53-b73b-b84b9f71d878",
+      "trace_id": "bb2f1806-fe2c-43bb-be12-04bf51c91ccf",
       "retrieval_trace": {
-        "trace_id": "43c7c02b-136c-4f53-b73b-b84b9f71d878",
+        "trace_id": "bb2f1806-fe2c-43bb-be12-04bf51c91ccf",
         "query": "What assumptions must hold for the stated two-year study estimate?",
         "retrieval": {
-          "top1_score": 0.5725701646369337,
+          "top1_score": 0.571993605118487,
           "top_k_scores": [
-            0.5725701646369337,
-            0.24871816697595783,
-            0.2238655183704932
+            0.571993605118487,
+            0.24871707011924699,
+            0.22383964034648143
           ]
         },
         "rerank": {
@@ -2325,7 +2325,7 @@
         },
         "decision": {
           "passed_gate": false,
-          "confidence_score": 0.5725701646369337,
+          "confidence_score": 0.571993605118487,
           "fallback_reason": "low_confidence",
           "fallback_status": "low_confidence",
           "sensitive_input_detected": false,
@@ -2347,13 +2347,13 @@
       "retrieved_candidates": [
         {
           "rank": 1,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 2,
-          "embedding_score": 0.478331975344812,
+          "embedding_score": 0.47744775170025144,
           "bm25_score": 0.81774530137028,
-          "retrieval_score": 0.5801559731524524,
+          "retrieval_score": 0.5795370166012599,
           "rerank_score": -2.3921985626220703,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -2365,13 +2365,13 @@
         },
         {
           "rank": 2,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 1,
-          "embedding_score": 0.4209323061820074,
+          "embedding_score": 0.4209442298005409,
           "bm25_score": 1.0,
-          "retrieval_score": 0.5946526143274051,
+          "retrieval_score": 0.5946609608603786,
           "rerank_score": -10.344366073608398,
           "rerank_enabled": true,
           "matched_evidence_keywords": [],
@@ -2379,13 +2379,13 @@
         },
         {
           "rank": 3,
-          "document_id": "faee49c8-48c2-4ab6-9b30-c40bfad605d9",
+          "document_id": "62583466-536c-4591-acf4-c8aa1bb972b3",
           "source_file": "Study Plan - MSc Computer Science.pdf",
           "page_number": 1,
           "chunk_index": 0,
-          "embedding_score": 0.3481469801803583,
+          "embedding_score": 0.34823716989725484,
           "bm25_score": 0.9279666293465844,
-          "retrieval_score": 0.522092874930226,
+          "retrieval_score": 0.5221560077320537,
           "rerank_score": -10.696416854858398,
           "rerank_enabled": true,
           "matched_evidence_keywords": [
@@ -2480,25 +2480,25 @@
       "failed_checks": [
         "status"
       ],
-      "trace_id": "04ba35bb-6c06-44f2-859d-024ad894afb1",
+      "trace_id": "dd66f5f5-7073-49db-88ae-257e100e71cc",
       "retrieval_trace": {
-        "trace_id": "04ba35bb-6c06-44f2-859d-024ad894afb1",
+        "trace_id": "dd66f5f5-7073-49db-88ae-257e100e71cc",
         "query": "How do the usual study timeline and the absolute completion limit differ?",
         "retrieval": {
-          "top1_score": 0.5946526143274051,
+          "top1_score": 0.5946609608603786,
           "top_k_scores": [
-            0.5946526143274051,
-            0.5801559731524524,
-            0.522092874930226
+            0.5946609608603786,
+            0.5795370166012599,
+            0.5221560077320537
           ]
         },
         "rerank": {
           "enabled": true,
-          "improvement": -0.014496641174952751
+          "improvement": -0.015123944259118671
         },
         "decision": {
           "passed_gate": false,
-          "confidence_score": 0.5801559731524524,
+          "confidence_score": 0.5795370166012599,
           "fallback_reason": "low_confidence",
           "fallback_status": "low_confidence",
           "sensitive_input_detected": false,
@@ -2578,15 +2578,15 @@
       "failure_stage": null,
       "passed": true,
       "failed_checks": [],
-      "trace_id": "0e66895f-342b-40ea-8484-1a6d4dc30afd",
+      "trace_id": "6d486241-be02-44e5-ae0c-95d83145e478",
       "retrieval_trace": {
-        "trace_id": "0e66895f-342b-40ea-8484-1a6d4dc30afd",
+        "trace_id": "6d486241-be02-44e5-ae0c-95d83145e478",
         "query": "What undergraduate degree is required for admission to this programme?",
         "retrieval": {
-          "top1_score": 0.5529111070384967,
+          "top1_score": 0.5529915448947276,
           "top_k_scores": [
-            0.5529111070384967,
-            0.2950401364096215,
+            0.5529915448947276,
+            0.2949829723328936,
             0.2768471321603119
           ]
         },
@@ -2596,7 +2596,7 @@
         },
         "decision": {
           "passed_gate": false,
-          "confidence_score": 0.5529111070384967,
+          "confidence_score": 0.5529915448947276,
           "fallback_reason": "low_confidence",
           "fallback_status": "low_confidence",
           "sensitive_input_detected": false,

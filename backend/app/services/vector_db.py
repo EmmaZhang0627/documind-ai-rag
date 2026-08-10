@@ -172,6 +172,22 @@ def add_chunks_to_db(chunks):
     print(f"Added {len(chunks)} chunks. Total in memory: {len(vector_store)}")
 
 
+def archive_document_version(document_id: str, version: str) -> int:
+    matched_count = 0
+    for item in vector_store:
+        metadata = item["metadata"]
+        if (
+            metadata.get("document_id") == document_id
+            and str(metadata.get("version", "1")) == version
+        ):
+            metadata["status"] = "ARCHIVED"
+            matched_count += 1
+
+    if matched_count:
+        _rebuild_bm25_index()
+    return matched_count
+
+
 def retrieve_candidates(query_embedding, query_text: str = ""):
     bm25_scores = []
     if bm25_model is not None and query_text.strip():

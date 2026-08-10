@@ -133,6 +133,13 @@ class VectorStore(Protocol):
     ) -> StoredDocumentIdentity | None:
         ...
 
+    def archive_document_version(
+        self,
+        document_id: str,
+        version: str,
+    ) -> int:
+        ...
+
     def clear(self) -> None:
         ...
 

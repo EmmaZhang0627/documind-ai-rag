@@ -267,6 +267,113 @@ class ChromaPersistentVectorStoreTest(unittest.TestCase):
             self.assertIsNone(results[0]["metadata"]["created_time"])
             self._stop_store(second_store)
 
+    def test_archive_updates_all_chunks_preserves_vectors_and_survives_restart(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            store = self._build_store(directory)
+            store.add([
+                {
+                    "document_id": "policy",
+                    "version": "1",
+                    "status": "ACTIVE",
+                    "file_hash": "hash-v1",
+                    "source_file": "Policy_v1.pdf",
+                    "chunk_index": 0,
+                    "page_number": 1,
+                    "content": "Old policy first chunk",
+                    "embedding": [1.0, 0.0, 0.0],
+                },
+                {
+                    "document_id": "policy",
+                    "version": "1",
+                    "status": "ACTIVE",
+                    "file_hash": "hash-v1",
+                    "source_file": "Policy_v1.pdf",
+                    "chunk_index": 1,
+                    "page_number": 2,
+                    "content": "Old policy second chunk",
+                    "embedding": [0.9, 0.1, 0.0],
+                },
+                {
+                    "document_id": "policy",
+                    "version": "2",
+                    "status": "ACTIVE",
+                    "file_hash": "hash-v2",
+                    "source_file": "Policy_v2.pdf",
+                    "chunk_index": 0,
+                    "page_number": 1,
+                    "content": "Current policy remains searchable",
+                    "embedding": [0.0, 1.0, 0.0],
+                },
+            ])
+            before = store.collection.get(
+                where={"document_id": "policy"},
+                include=["documents", "embeddings", "metadatas"],
+            )
+            before_by_id = {
+                record_id: {
+                    "document": before["documents"][index],
+                    "embedding": before["embeddings"][index].tolist(),
+                    "metadata": before["metadatas"][index],
+                }
+                for index, record_id in enumerate(before["ids"])
+            }
+
+            archived_count = store.archive_document_version("policy", "1")
+            after = store.collection.get(
+                where={"document_id": "policy"},
+                include=["documents", "embeddings", "metadatas"],
+            )
+            after_by_id = {
+                record_id: {
+                    "document": after["documents"][index],
+                    "embedding": after["embeddings"][index].tolist(),
+                    "metadata": after["metadatas"][index],
+                }
+                for index, record_id in enumerate(after["ids"])
+            }
+
+            self.assertEqual(archived_count, 2)
+            self.assertEqual(store.count(), 3)
+            self.assertEqual(store._corpus_ids, ["policy:2:0"])
+            for record_id in ("policy:1:0", "policy:1:1"):
+                self.assertEqual(
+                    after_by_id[record_id]["metadata"]["status"],
+                    "ARCHIVED",
+                )
+                self.assertEqual(
+                    after_by_id[record_id]["metadata"]["file_hash"],
+                    "hash-v1",
+                )
+                self.assertEqual(
+                    after_by_id[record_id]["document"],
+                    before_by_id[record_id]["document"],
+                )
+                self.assertEqual(
+                    after_by_id[record_id]["embedding"],
+                    before_by_id[record_id]["embedding"],
+                )
+            self.assertEqual(
+                after_by_id["policy:2:0"]["metadata"]["status"],
+                "ACTIVE",
+            )
+            self.assertEqual(store.archive_document_version("policy", "1"), 2)
+            self._stop_store(store)
+
+            restarted_store = self._build_store(directory)
+            archived_identity = restarted_store.find_by_document_version(
+                "policy", "1"
+            )
+            results = restarted_store.search(
+                [0.0, 1.0, 0.0], "current policy", top_k=3
+            )
+
+            self.assertEqual(archived_identity["status"], "ARCHIVED")
+            self.assertEqual(len(results), 1)
+            self.assertEqual(results[0]["metadata"]["version"], "2")
+            self._stop_store(restarted_store)
+
 
 if __name__ == "__main__":
     unittest.main()
