@@ -270,13 +270,22 @@ def summarize_candidates(
 def find_evidence_rank(
     candidates: list[dict[str, Any]],
     expected_keywords: list[str],
+    match_mode: str = "single_chunk",
 ) -> int | None:
     if not expected_keywords:
         return None
 
+    if match_mode not in {"single_chunk", "cumulative_chunks"}:
+        raise ValueError(f"Unsupported evidence_match_mode: {match_mode!r}.")
+
+    cumulative_text: list[str] = []
     for rank, candidate in enumerate(candidates, start=1):
+        candidate_text = candidate.get("document", "")
+        if match_mode == "cumulative_chunks":
+            cumulative_text.append(candidate_text)
+            candidate_text = " ".join(cumulative_text)
         keyword_result = match_keywords(
-            candidate.get("document", ""),
+            candidate_text,
             expected_keywords,
         )
         if keyword_result["passed"] is True:
@@ -417,9 +426,11 @@ def evaluate_result(
     checks = compute_checks(case, response, ranked_candidates)
     grounded = is_grounded_case(case)
     expected_evidence_keywords = case.get("expected_evidence_keywords") or []
+    evidence_match_mode = case.get("evidence_match_mode", "single_chunk")
     evidence_rank = find_evidence_rank(
         ranked_candidates,
         expected_evidence_keywords,
+        match_mode=evidence_match_mode,
     )
     source_pass = checks["source_match"]["passed"] is True
     page_pass = checks["page_match"]["passed"] is True
@@ -487,6 +498,7 @@ def evaluate_result(
         ),
         "checks": checks,
         "retrieval_pass": retrieval_pass,
+        "evidence_match_mode": evidence_match_mode,
         "evidence_rank": evidence_rank,
         "confidence_pass": confidence_pass,
         "generation_pass": generation_pass,

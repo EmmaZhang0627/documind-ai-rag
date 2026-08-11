@@ -55,12 +55,18 @@ def candidate_summary(
 def evaluate_strategy(
     ranked_candidates: list[dict[str, Any]],
     expected_keywords: list[str],
+    evidence_match_mode: str = "single_chunk",
 ) -> dict[str, Any]:
-    evidence_rank = find_evidence_rank(ranked_candidates, expected_keywords)
+    evidence_rank = find_evidence_rank(
+        ranked_candidates,
+        expected_keywords,
+        match_mode=evidence_match_mode,
+    )
     reciprocal_rank = 1.0 / evidence_rank if evidence_rank is not None else 0.0
 
     return {
         "expected_evidence_keywords": expected_keywords,
+        "evidence_match_mode": evidence_match_mode,
         "evidence_rank": evidence_rank,
         "top_candidate": candidate_summary(
             ranked_candidates[0] if ranked_candidates else None,
@@ -136,13 +142,37 @@ def classify_rerank_effect(
     hybrid_rank: int | None,
     reranked_rank: int | None,
 ) -> str:
-    if hybrid_rank is None or reranked_rank is None:
+    if hybrid_rank is None and reranked_rank is None:
         return "evidence_not_found"
+    if hybrid_rank is None:
+        return "improved"
+    if reranked_rank is None:
+        return "worsened"
     if reranked_rank < hybrid_rank:
         return "improved"
     if reranked_rank > hybrid_rank:
         return "worsened"
     return "unchanged"
+
+
+def build_category_metrics(
+    per_case_results: list[dict[str, Any]],
+) -> dict[str, dict[str, dict[str, Any]]]:
+    categories = sorted({result["category"] for result in per_case_results})
+    return {
+        category: {
+            strategy_name: aggregate_strategy(
+                [
+                    result
+                    for result in per_case_results
+                    if result["category"] == category
+                ],
+                strategy_name,
+            )
+            for strategy_name in STRATEGY_NAMES
+        }
+        for category in categories
+    }
 
 
 def build_rerank_effect_analysis(
@@ -179,6 +209,7 @@ def build_rerank_effect_analysis(
 
 def print_summary(
     aggregate_metrics: dict[str, dict[str, Any]],
+    category_metrics: dict[str, dict[str, dict[str, Any]]],
     rerank_effect_analysis: dict[str, Any],
     results_path: Path,
 ) -> None:
@@ -196,6 +227,18 @@ def print_summary(
             f"MRR={metrics['mrr']:.4f} "
             f"AvgRank={metrics['average_evidence_rank_when_found']}"
         )
+    print("Metrics by category")
+    for category, strategies in category_metrics.items():
+        print(f"  {category}")
+        for strategy_name in STRATEGY_NAMES:
+            metrics = strategies[strategy_name]
+            print(
+                f"    {strategy_name}: "
+                f"Top-1={metrics['top_1_evidence_hit_rate']:.4f} "
+                f"Hit@3={metrics['hit_at_3_rate']:.4f} "
+                f"MRR={metrics['mrr']:.4f} "
+                f"AvgRank={metrics['average_evidence_rank_when_found']}"
+            )
     counts = rerank_effect_analysis["counts"]
     print(
         "Rerank effects: "
@@ -221,6 +264,7 @@ def run_retrieval_comparison() -> int:
     for case in cases:
         query = case["question"]
         expected_keywords = case.get("expected_evidence_keywords") or []
+        evidence_match_mode = case.get("evidence_match_mode", "single_chunk")
         query_embedding = rag_service.embedder.embed(query)
         all_candidates = rag_service.retriever.retrieve(
             query_embedding,
@@ -243,31 +287,54 @@ def run_retrieval_comparison() -> int:
             deepcopy(hybrid_candidates),
         )
 
+        strategy_results = {
+            "vector_only": evaluate_strategy(
+                vector_candidates,
+                expected_keywords,
+                evidence_match_mode,
+            ),
+            "hybrid": evaluate_strategy(
+                hybrid_candidates,
+                expected_keywords,
+                evidence_match_mode,
+            ),
+            "hybrid_rerank": evaluate_strategy(
+                reranked_candidates,
+                expected_keywords,
+                evidence_match_mode,
+            ),
+        }
+
         per_case_results.append({
             "case_id": case.get("id"),
             "category": case.get("category"),
             "question": query,
             "expected_evidence_keywords": expected_keywords,
-            "strategies": {
-                "vector_only": evaluate_strategy(
-                    vector_candidates,
-                    expected_keywords,
-                ),
-                "hybrid": evaluate_strategy(
-                    hybrid_candidates,
-                    expected_keywords,
-                ),
-                "hybrid_rerank": evaluate_strategy(
-                    reranked_candidates,
-                    expected_keywords,
-                ),
+            "evidence_match_mode": evidence_match_mode,
+            "evidence_ranks": {
+                strategy_name: strategy_results[strategy_name]["evidence_rank"]
+                for strategy_name in STRATEGY_NAMES
             },
+            "hit_at_1": {
+                strategy_name: strategy_results[strategy_name]["evidence_in_top_1"]
+                for strategy_name in STRATEGY_NAMES
+            },
+            "hit_at_3": {
+                strategy_name: strategy_results[strategy_name]["evidence_in_top_3"]
+                for strategy_name in STRATEGY_NAMES
+            },
+            "reciprocal_rank": {
+                strategy_name: strategy_results[strategy_name]["reciprocal_rank"]
+                for strategy_name in STRATEGY_NAMES
+            },
+            "strategies": strategy_results,
         })
 
     aggregate_metrics = {
         strategy_name: aggregate_strategy(per_case_results, strategy_name)
         for strategy_name in STRATEGY_NAMES
     }
+    category_metrics = build_category_metrics(per_case_results)
     rerank_effect_analysis = build_rerank_effect_analysis(per_case_results)
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -292,6 +359,7 @@ def run_retrieval_comparison() -> int:
             },
         },
         "aggregate_metrics": aggregate_metrics,
+        "category_metrics": category_metrics,
         "per_case_results": per_case_results,
         "rerank_effect_analysis": rerank_effect_analysis,
     }
@@ -299,7 +367,12 @@ def run_retrieval_comparison() -> int:
         json.dump(output, file, ensure_ascii=False, indent=2, default=str)
         file.write("\n")
 
-    print_summary(aggregate_metrics, rerank_effect_analysis, RESULTS_PATH)
+    print_summary(
+        aggregate_metrics,
+        category_metrics,
+        rerank_effect_analysis,
+        RESULTS_PATH,
+    )
     return 0
 
 

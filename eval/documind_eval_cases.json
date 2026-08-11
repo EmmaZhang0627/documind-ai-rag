@@ -156,7 +156,7 @@
   },
   {
     "id": "case_013_duration_assumptions",
-    "category": "contextual",
+    "category": "hard_negative_similar_chunk",
     "question": "What assumptions must hold for the stated two-year study estimate?",
     "expected_status": "answered",
     "expected_source_file": "Study Plan - MSc Computer Science.pdf",
@@ -191,5 +191,162 @@
     "expected_fallback_reason": "low_confidence",
     "top_k": 3,
     "notes": "The study plan does not state admission or prior-degree requirements."
+  },
+  {
+    "id": "case_016_programme_title",
+    "category": "direct_factual",
+    "question": "What is the title of the programme shown in the indicative study plan?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Programme Title", "MSc Computer Science"],
+    "expected_answer_keywords": ["MSc Computer Science"],
+    "top_k": 3
+  },
+  {
+    "id": "case_017_capstone_length_paraphrase",
+    "category": "semantic_paraphrase",
+    "question": "Which part of the degree takes roughly eight months to complete?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Computer Science Capstone Project", "32 weeks"],
+    "expected_answer_keywords": ["Computer Science Capstone Project", "32", "weeks"],
+    "top_k": 3
+  },
+  {
+    "id": "case_018_where_start_dates_appear",
+    "category": "semantic_paraphrase",
+    "question": "Where should learners look to find out when their next classes begin?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Module start dates", "learning platform"],
+    "expected_answer_keywords": ["learning platform"],
+    "top_k": 3
+  },
+  {
+    "id": "case_019_multi_agent_module",
+    "category": "keyword_exact_term",
+    "question": "Is Multi-Agent Systems included in the study plan, and what are its credits and duration?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Multi-Agent Systems", "15", "8 weeks"],
+    "expected_answer_keywords": ["Multi-Agent Systems", "15", "8", "weeks"],
+    "top_k": 3
+  },
+  {
+    "id": "case_020_data_visualisation_module",
+    "category": "keyword_exact_term",
+    "question": "What credits and duration are listed for Data Visualisation and Warehousing?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Data Visualisation and Warehousing", "15", "8 weeks"],
+    "expected_answer_keywords": ["15", "8", "weeks"],
+    "top_k": 3
+  },
+  {
+    "id": "case_021_start_date_and_enrolment_process",
+    "category": "contextual",
+    "question": "How are module start dates communicated, and who handles placing the student onto a module?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Module start dates", "learning platform", "Student Support Team", "manage your enrolment"],
+    "expected_answer_keywords": ["learning platform", "Student Support Team"],
+    "top_k": 3
+  },
+  {
+    "id": "case_022_maximum_clock_start",
+    "category": "contextual",
+    "question": "From which event is the six-year completion allowance calculated?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["72 months", "start date", "earliest enrolment"],
+    "expected_answer_keywords": ["earliest enrolment"],
+    "top_k": 3
+  },
+  {
+    "id": "case_023_why_two_year_plan_can_fail",
+    "category": "contextual",
+    "question": "Which circumstances can make the advertised two-year timeline impossible to maintain?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["break from your studies", "reassessment", "not be possible", "24 months"],
+    "expected_answer_keywords": ["break", "reassessment"],
+    "top_k": 3
+  },
+  {
+    "id": "case_024_duration_exception_module",
+    "category": "hard_negative_similar_chunk",
+    "question": "Which module is the exception to the repeated eight-week module pattern, and how long does it take?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Computer Science Capstone Project", "32 weeks"],
+    "expected_answer_keywords": ["Computer Science Capstone Project", "32", "weeks"],
+    "top_k": 3
+  },
+  {
+    "id": "case_025_seventy_two_not_indicative",
+    "category": "hard_negative_similar_chunk",
+    "question": "Does the 72-month figure describe the normal study duration, or a different limit?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["maximum period", "72 months", "6 years"],
+    "expected_answer_keywords": ["maximum", "72", "months"],
+    "top_k": 3
+  },
+  {
+    "id": "case_026_second_elective_group",
+    "category": "hard_negative_similar_chunk",
+    "question": "Which elective group contains Security Risk Management and Technology Innovation and Change Management rather than Robotics?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Security Risk Management", "Technology Innovation and Change Management"],
+    "expected_answer_keywords": ["Security Risk Management", "Technology Innovation and Change Management"],
+    "top_k": 3
+  },
+  {
+    "id": "case_027_total_vs_capstone_credits",
+    "category": "multi_evidence",
+    "question": "How many credits are required for the full programme, and how many of those credits belong to the capstone project?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Credits", "180", "Computer Science Capstone Project", "60"],
+    "evidence_match_mode": "cumulative_chunks",
+    "expected_answer_keywords": ["180", "60"],
+    "top_k": 3
+  },
+  {
+    "id": "case_028_programme_timeline_and_limit",
+    "category": "multi_evidence",
+    "question": "Identify the programme, its indicative completion time, and its absolute completion limit.",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["MSc Computer Science", "24 Months", "maximum period", "72 months"],
+    "evidence_match_mode": "cumulative_chunks",
+    "expected_answer_keywords": ["MSc Computer Science", "24", "72", "months"],
+    "top_k": 3
+  },
+  {
+    "id": "case_029_support_and_completion_limit",
+    "category": "multi_evidence",
+    "question": "Who manages module enrolment, and what is the latest allowed programme completion period?",
+    "expected_status": "answered",
+    "expected_source_file": "Study Plan - MSc Computer Science.pdf",
+    "expected_page_numbers": [1],
+    "expected_evidence_keywords": ["Student Support Team", "manage your enrolment", "maximum period", "72 months"],
+    "evidence_match_mode": "cumulative_chunks",
+    "expected_answer_keywords": ["Student Support Team", "72", "months"],
+    "top_k": 3
   }
 ]
