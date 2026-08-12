@@ -1,0 +1,4747 @@
+{
+  "generated_at": "2026-08-11T08:55:01.422707+00:00",
+  "fixture": {
+    "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+    "version": "1",
+    "status": "ACTIVE",
+    "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
+    "fixture_pdf": "Study Plan - MSc Computer Science.pdf",
+    "fixture_path": "D:\\HuaweiMoveData\\Users\\Emma\\Desktop\\codex-career\\documind\\documind-ai-rag\\eval\\fixtures\\Study Plan - MSc Computer Science.pdf",
+    "page_count": 1,
+    "chunk_count": 3
+  },
+  "configuration": {
+    "grounded_case_count": 25,
+    "retrieval_top_k": 10,
+    "embedding_score_weight": 0.7,
+    "bm25_score_weight": 0.3,
+    "bm25_normalization": "query-local max normalization",
+    "effect_definition": {
+      "HELPFUL": "Hybrid evidence rank is better than Vector-only.",
+      "HARMFUL": "Hybrid evidence rank is worse than Vector-only.",
+      "NEUTRAL": "Hybrid evidence rank is unchanged from Vector-only.",
+      "EVIDENCE_NOT_FOUND": "Neither Vector-only nor Hybrid finds complete evidence."
+    }
+  },
+  "aggregate_analysis": {
+    "case_count": 25,
+    "effect_counts": {
+      "HELPFUL": 2,
+      "HARMFUL": 6,
+      "NEUTRAL": 17,
+      "EVIDENCE_NOT_FOUND": 0
+    },
+    "effect_percentages": {
+      "HELPFUL": 0.08,
+      "HARMFUL": 0.24,
+      "NEUTRAL": 0.68,
+      "EVIDENCE_NOT_FOUND": 0.0
+    },
+    "strategy_metrics": {
+      "vector_only": {
+        "case_count": 25,
+        "hit_at_1_count": 19,
+        "hit_at_1_rate": 0.76,
+        "hit_at_3_count": 25,
+        "hit_at_3_rate": 1.0,
+        "mrr": 0.8733333333333333,
+        "average_evidence_rank_when_found": 1.28,
+        "evidence_not_found_count": 0
+      },
+      "bm25_only": {
+        "case_count": 25,
+        "hit_at_1_count": 15,
+        "hit_at_1_rate": 0.6,
+        "hit_at_3_count": 25,
+        "hit_at_3_rate": 1.0,
+        "mrr": 0.76,
+        "average_evidence_rank_when_found": 1.64,
+        "evidence_not_found_count": 0
+      },
+      "hybrid": {
+        "case_count": 25,
+        "hit_at_1_count": 15,
+        "hit_at_1_rate": 0.6,
+        "hit_at_3_count": 25,
+        "hit_at_3_rate": 1.0,
+        "mrr": 0.7933333333333333,
+        "average_evidence_rank_when_found": 1.44,
+        "evidence_not_found_count": 0
+      }
+    },
+    "average_vector_evidence_rank_when_found": 1.28,
+    "average_bm25_evidence_rank_when_found": 1.64,
+    "average_hybrid_evidence_rank_when_found": 1.44,
+    "vector_evidence_not_found_count": 0,
+    "bm25_evidence_not_found_count": 0,
+    "hybrid_evidence_not_found_count": 0
+  },
+  "category_analysis": {
+    "contextual": {
+      "case_count": 4,
+      "effect_counts": {
+        "HELPFUL": 0,
+        "HARMFUL": 1,
+        "NEUTRAL": 3,
+        "EVIDENCE_NOT_FOUND": 0
+      },
+      "effect_percentages": {
+        "HELPFUL": 0.0,
+        "HARMFUL": 0.25,
+        "NEUTRAL": 0.75,
+        "EVIDENCE_NOT_FOUND": 0.0
+      },
+      "strategy_metrics": {
+        "vector_only": {
+          "case_count": 4,
+          "hit_at_1_count": 4,
+          "hit_at_1_rate": 1.0,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 1.0,
+          "average_evidence_rank_when_found": 1.0,
+          "evidence_not_found_count": 0
+        },
+        "bm25_only": {
+          "case_count": 4,
+          "hit_at_1_count": 3,
+          "hit_at_1_rate": 0.75,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.8333333333333334,
+          "average_evidence_rank_when_found": 1.5,
+          "evidence_not_found_count": 0
+        },
+        "hybrid": {
+          "case_count": 4,
+          "hit_at_1_count": 3,
+          "hit_at_1_rate": 0.75,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.875,
+          "average_evidence_rank_when_found": 1.25,
+          "evidence_not_found_count": 0
+        }
+      },
+      "average_vector_evidence_rank_when_found": 1.0,
+      "average_bm25_evidence_rank_when_found": 1.5,
+      "average_hybrid_evidence_rank_when_found": 1.25,
+      "vector_evidence_not_found_count": 0,
+      "bm25_evidence_not_found_count": 0,
+      "hybrid_evidence_not_found_count": 0
+    },
+    "direct_factual": {
+      "case_count": 5,
+      "effect_counts": {
+        "HELPFUL": 0,
+        "HARMFUL": 1,
+        "NEUTRAL": 4,
+        "EVIDENCE_NOT_FOUND": 0
+      },
+      "effect_percentages": {
+        "HELPFUL": 0.0,
+        "HARMFUL": 0.2,
+        "NEUTRAL": 0.8,
+        "EVIDENCE_NOT_FOUND": 0.0
+      },
+      "strategy_metrics": {
+        "vector_only": {
+          "case_count": 5,
+          "hit_at_1_count": 5,
+          "hit_at_1_rate": 1.0,
+          "hit_at_3_count": 5,
+          "hit_at_3_rate": 1.0,
+          "mrr": 1.0,
+          "average_evidence_rank_when_found": 1.0,
+          "evidence_not_found_count": 0
+        },
+        "bm25_only": {
+          "case_count": 5,
+          "hit_at_1_count": 4,
+          "hit_at_1_rate": 0.8,
+          "hit_at_3_count": 5,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.9,
+          "average_evidence_rank_when_found": 1.2,
+          "evidence_not_found_count": 0
+        },
+        "hybrid": {
+          "case_count": 5,
+          "hit_at_1_count": 4,
+          "hit_at_1_rate": 0.8,
+          "hit_at_3_count": 5,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.9,
+          "average_evidence_rank_when_found": 1.2,
+          "evidence_not_found_count": 0
+        }
+      },
+      "average_vector_evidence_rank_when_found": 1.0,
+      "average_bm25_evidence_rank_when_found": 1.2,
+      "average_hybrid_evidence_rank_when_found": 1.2,
+      "vector_evidence_not_found_count": 0,
+      "bm25_evidence_not_found_count": 0,
+      "hybrid_evidence_not_found_count": 0
+    },
+    "hard_negative_similar_chunk": {
+      "case_count": 4,
+      "effect_counts": {
+        "HELPFUL": 0,
+        "HARMFUL": 0,
+        "NEUTRAL": 4,
+        "EVIDENCE_NOT_FOUND": 0
+      },
+      "effect_percentages": {
+        "HELPFUL": 0.0,
+        "HARMFUL": 0.0,
+        "NEUTRAL": 1.0,
+        "EVIDENCE_NOT_FOUND": 0.0
+      },
+      "strategy_metrics": {
+        "vector_only": {
+          "case_count": 4,
+          "hit_at_1_count": 3,
+          "hit_at_1_rate": 0.75,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.875,
+          "average_evidence_rank_when_found": 1.25,
+          "evidence_not_found_count": 0
+        },
+        "bm25_only": {
+          "case_count": 4,
+          "hit_at_1_count": 3,
+          "hit_at_1_rate": 0.75,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.8333333333333334,
+          "average_evidence_rank_when_found": 1.5,
+          "evidence_not_found_count": 0
+        },
+        "hybrid": {
+          "case_count": 4,
+          "hit_at_1_count": 3,
+          "hit_at_1_rate": 0.75,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.875,
+          "average_evidence_rank_when_found": 1.25,
+          "evidence_not_found_count": 0
+        }
+      },
+      "average_vector_evidence_rank_when_found": 1.25,
+      "average_bm25_evidence_rank_when_found": 1.5,
+      "average_hybrid_evidence_rank_when_found": 1.25,
+      "vector_evidence_not_found_count": 0,
+      "bm25_evidence_not_found_count": 0,
+      "hybrid_evidence_not_found_count": 0
+    },
+    "keyword_exact_term": {
+      "case_count": 4,
+      "effect_counts": {
+        "HELPFUL": 2,
+        "HARMFUL": 1,
+        "NEUTRAL": 1,
+        "EVIDENCE_NOT_FOUND": 0
+      },
+      "effect_percentages": {
+        "HELPFUL": 0.5,
+        "HARMFUL": 0.25,
+        "NEUTRAL": 0.25,
+        "EVIDENCE_NOT_FOUND": 0.0
+      },
+      "strategy_metrics": {
+        "vector_only": {
+          "case_count": 4,
+          "hit_at_1_count": 2,
+          "hit_at_1_rate": 0.5,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.75,
+          "average_evidence_rank_when_found": 1.5,
+          "evidence_not_found_count": 0
+        },
+        "bm25_only": {
+          "case_count": 4,
+          "hit_at_1_count": 3,
+          "hit_at_1_rate": 0.75,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.8333333333333334,
+          "average_evidence_rank_when_found": 1.5,
+          "evidence_not_found_count": 0
+        },
+        "hybrid": {
+          "case_count": 4,
+          "hit_at_1_count": 3,
+          "hit_at_1_rate": 0.75,
+          "hit_at_3_count": 4,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.875,
+          "average_evidence_rank_when_found": 1.25,
+          "evidence_not_found_count": 0
+        }
+      },
+      "average_vector_evidence_rank_when_found": 1.5,
+      "average_bm25_evidence_rank_when_found": 1.5,
+      "average_hybrid_evidence_rank_when_found": 1.25,
+      "vector_evidence_not_found_count": 0,
+      "bm25_evidence_not_found_count": 0,
+      "hybrid_evidence_not_found_count": 0
+    },
+    "multi_evidence": {
+      "case_count": 3,
+      "effect_counts": {
+        "HELPFUL": 0,
+        "HARMFUL": 0,
+        "NEUTRAL": 3,
+        "EVIDENCE_NOT_FOUND": 0
+      },
+      "effect_percentages": {
+        "HELPFUL": 0.0,
+        "HARMFUL": 0.0,
+        "NEUTRAL": 1.0,
+        "EVIDENCE_NOT_FOUND": 0.0
+      },
+      "strategy_metrics": {
+        "vector_only": {
+          "case_count": 3,
+          "hit_at_1_count": 0,
+          "hit_at_1_rate": 0.0,
+          "hit_at_3_count": 3,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.4444444444444444,
+          "average_evidence_rank_when_found": 2.3333333333333335,
+          "evidence_not_found_count": 0
+        },
+        "bm25_only": {
+          "case_count": 3,
+          "hit_at_1_count": 0,
+          "hit_at_1_rate": 0.0,
+          "hit_at_3_count": 3,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.38888888888888884,
+          "average_evidence_rank_when_found": 2.6666666666666665,
+          "evidence_not_found_count": 0
+        },
+        "hybrid": {
+          "case_count": 3,
+          "hit_at_1_count": 0,
+          "hit_at_1_rate": 0.0,
+          "hit_at_3_count": 3,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.4444444444444444,
+          "average_evidence_rank_when_found": 2.3333333333333335,
+          "evidence_not_found_count": 0
+        }
+      },
+      "average_vector_evidence_rank_when_found": 2.3333333333333335,
+      "average_bm25_evidence_rank_when_found": 2.6666666666666665,
+      "average_hybrid_evidence_rank_when_found": 2.3333333333333335,
+      "vector_evidence_not_found_count": 0,
+      "bm25_evidence_not_found_count": 0,
+      "hybrid_evidence_not_found_count": 0
+    },
+    "semantic_paraphrase": {
+      "case_count": 5,
+      "effect_counts": {
+        "HELPFUL": 0,
+        "HARMFUL": 3,
+        "NEUTRAL": 2,
+        "EVIDENCE_NOT_FOUND": 0
+      },
+      "effect_percentages": {
+        "HELPFUL": 0.0,
+        "HARMFUL": 0.6,
+        "NEUTRAL": 0.4,
+        "EVIDENCE_NOT_FOUND": 0.0
+      },
+      "strategy_metrics": {
+        "vector_only": {
+          "case_count": 5,
+          "hit_at_1_count": 5,
+          "hit_at_1_rate": 1.0,
+          "hit_at_3_count": 5,
+          "hit_at_3_rate": 1.0,
+          "mrr": 1.0,
+          "average_evidence_rank_when_found": 1.0,
+          "evidence_not_found_count": 0
+        },
+        "bm25_only": {
+          "case_count": 5,
+          "hit_at_1_count": 2,
+          "hit_at_1_rate": 0.4,
+          "hit_at_3_count": 5,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.6666666666666667,
+          "average_evidence_rank_when_found": 1.8,
+          "evidence_not_found_count": 0
+        },
+        "hybrid": {
+          "case_count": 5,
+          "hit_at_1_count": 2,
+          "hit_at_1_rate": 0.4,
+          "hit_at_3_count": 5,
+          "hit_at_3_rate": 1.0,
+          "mrr": 0.7,
+          "average_evidence_rank_when_found": 1.6,
+          "evidence_not_found_count": 0
+        }
+      },
+      "average_vector_evidence_rank_when_found": 1.0,
+      "average_bm25_evidence_rank_when_found": 1.8,
+      "average_hybrid_evidence_rank_when_found": 1.6,
+      "vector_evidence_not_found_count": 0,
+      "bm25_evidence_not_found_count": 0,
+      "hybrid_evidence_not_found_count": 0
+    }
+  },
+  "per_case_analysis": [
+    {
+      "case_id": "case_001_study_plan_duration",
+      "category": "direct_factual",
+      "question": "What is the indicative study duration for the MSc Computer Science programme?",
+      "expected_evidence_keywords": [
+        "Indicative Study Duration",
+        "24 Months"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.6559813618659973,
+          "normalized_bm25_score": 0.8378114457066327,
+          "retrieval_score": 0.7105303870181878,
+          "matched_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.628624677658081,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7400372743606567,
+          "matched_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.628624677658081,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7400372743606567,
+          "matched_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.6559813618659973,
+          "normalized_bm25_score": 0.8378114457066327,
+          "retrieval_score": 0.7105303870181878,
+          "matched_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.628624677658081,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7400372743606567,
+          "matched_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.628624677658081,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7400372743606567,
+          "matched_evidence_keywords": [
+            "Indicative Study Duration",
+            "24 Months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.628624677658081,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.7400372743606567,
+            "matched_evidence_keywords": [
+              "Indicative Study Duration",
+              "24 Months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.6559813618659973,
+            "normalized_bm25_score": 0.8378114457066327,
+            "retrieval_score": 0.7105303870181878,
+            "matched_evidence_keywords": [
+              "Indicative Study Duration",
+              "24 Months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 3,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.6460320949554443,
+            "normalized_bm25_score": 0.2466828134192302,
+            "retrieval_score": 0.52622731049458,
+            "matched_evidence_keywords": [
+              "Indicative Study Duration"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.7400372743606567,
+        "top2_score": 0.7105303870181878,
+        "top1_minus_top2_margin": 0.029506887342468868
+      }
+    },
+    {
+      "case_id": "case_002_study_plan_final_module",
+      "category": "direct_factual",
+      "question": "What is the final module in the MSc Computer Science study plan?",
+      "expected_evidence_keywords": [
+        "Final Module",
+        "Computer Science Capstone Project"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 2,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "HARMFUL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": true,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5922666788101196,
+          "normalized_bm25_score": 0.42355458968768184,
+          "retrieval_score": 0.5416530520733882,
+          "matched_evidence_keywords": [
+            "Final Module",
+            "Computer Science Capstone Project"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5583593249320984,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6908515274524689,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5583593249320984,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6908515274524689,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5922666788101196,
+          "normalized_bm25_score": 0.42355458968768184,
+          "retrieval_score": 0.5416530520733882,
+          "matched_evidence_keywords": [
+            "Final Module",
+            "Computer Science Capstone Project"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5922666788101196,
+          "normalized_bm25_score": 0.42355458968768184,
+          "retrieval_score": 0.5416530520733882,
+          "matched_evidence_keywords": [
+            "Final Module",
+            "Computer Science Capstone Project"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5922666788101196,
+          "normalized_bm25_score": 0.42355458968768184,
+          "retrieval_score": 0.5416530520733882,
+          "matched_evidence_keywords": [
+            "Final Module",
+            "Computer Science Capstone Project"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5922666788101196,
+            "normalized_bm25_score": 0.42355458968768184,
+            "retrieval_score": 0.5416530520733882,
+            "matched_evidence_keywords": [
+              "Final Module",
+              "Computer Science Capstone Project"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6908515274524689,
+        "top2_score": 0.5416530520733882,
+        "top1_minus_top2_margin": 0.1491984753790807
+      }
+    },
+    {
+      "case_id": "case_006_programme_credits",
+      "category": "direct_factual",
+      "question": "How many credits is the MSc Computer Science programme worth in total?",
+      "expected_evidence_keywords": [
+        "Credits",
+        "180"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5524911284446716,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.68674378991127,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5524911284446716,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.68674378991127,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5524911284446716,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.68674378991127,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5524911284446716,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.68674378991127,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5524911284446716,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.68674378991127,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.5524911284446716,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.68674378991127,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.5524911284446716,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.68674378991127,
+            "matched_evidence_keywords": [
+              "Credits",
+              "180"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.68674378991127,
+        "top2_score": 0.37343740750576304,
+        "top1_minus_top2_margin": 0.313306382405507
+      }
+    },
+    {
+      "case_id": "case_007_capstone_duration",
+      "category": "direct_factual",
+      "question": "How long does the Computer Science Capstone Project last?",
+      "expected_evidence_keywords": [
+        "Computer Science Capstone Project",
+        "32 weeks"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5910918712615967,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7137643098831177,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5910918712615967,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7137643098831177,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5910918712615967,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7137643098831177,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5910918712615967,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7137643098831177,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5910918712615967,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7137643098831177,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5910918712615967,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.7137643098831177,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5910918712615967,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.7137643098831177,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.7137643098831177,
+        "top2_score": 0.31475348402003495,
+        "top1_minus_top2_margin": 0.39901082586308273
+      }
+    },
+    {
+      "case_id": "case_008_latest_completion_window",
+      "category": "semantic_paraphrase",
+      "question": "How much time does a student have at most to finish after their earliest enrolment begins?",
+      "expected_evidence_keywords": [
+        "maximum period",
+        "72 months",
+        "earliest enrolment"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 2,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "HARMFUL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": true,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.610795795917511,
+          "normalized_bm25_score": 0.7292201185903983,
+          "retrieval_score": 0.6463230927193772,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4957006573677063,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6469904601573944,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4957006573677063,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6469904601573944,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.610795795917511,
+          "normalized_bm25_score": 0.7292201185903983,
+          "retrieval_score": 0.6463230927193772,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.610795795917511,
+          "normalized_bm25_score": 0.7292201185903983,
+          "retrieval_score": 0.6463230927193772,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.610795795917511,
+          "normalized_bm25_score": 0.7292201185903983,
+          "retrieval_score": 0.6463230927193772,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.610795795917511,
+            "normalized_bm25_score": 0.7292201185903983,
+            "retrieval_score": 0.6463230927193772,
+            "matched_evidence_keywords": [
+              "maximum period",
+              "72 months",
+              "earliest enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6469904601573944,
+        "top2_score": 0.6463230927193772,
+        "top1_minus_top2_margin": 0.0006673674380172079
+      }
+    },
+    {
+      "case_id": "case_009_enrolment_team",
+      "category": "semantic_paraphrase",
+      "question": "Which team is responsible for placing learners onto each module?",
+      "expected_evidence_keywords": [
+        "Student Support Team",
+        "manage your enrolment"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4405413866043091,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6083789706230163,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4405413866043091,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6083789706230163,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4405413866043091,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6083789706230163,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4405413866043091,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6083789706230163,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4405413866043091,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6083789706230163,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4405413866043091,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6083789706230163,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.4405413866043091,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6083789706230163,
+            "matched_evidence_keywords": [
+              "Student Support Team",
+              "manage your enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6083789706230163,
+        "top2_score": 0.3644304522305536,
+        "top1_minus_top2_margin": 0.24394851839246268
+      }
+    },
+    {
+      "case_id": "case_010_pause_or_retake_timeline",
+      "category": "semantic_paraphrase",
+      "question": "Can a learner still keep to the two-year schedule after pausing their studies or retaking work?",
+      "expected_evidence_keywords": [
+        "break from your studies",
+        "reassessment",
+        "24 months"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617726445198059,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932408511638641,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617726445198059,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932408511638641,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617726445198059,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932408511638641,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617726445198059,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932408511638641,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617726445198059,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932408511638641,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617726445198059,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932408511638641,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.5617726445198059,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6932408511638641,
+            "matched_evidence_keywords": [
+              "break from your studies",
+              "reassessment",
+              "24 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.4203198552131653,
+            "normalized_bm25_score": 0.757600054587248,
+            "retrieval_score": 0.5215039150253901,
+            "matched_evidence_keywords": [
+              "break from your studies",
+              "reassessment"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          {
+            "rank": 3,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3382790684700012,
+            "normalized_bm25_score": 0.3001183905980747,
+            "retrieval_score": 0.32683086510842324,
+            "matched_evidence_keywords": [
+              "24 months"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6932408511638641,
+        "top2_score": 0.5215039150253901,
+        "top1_minus_top2_margin": 0.17173693613847407
+      }
+    },
+    {
+      "case_id": "case_011_robotics_elective",
+      "category": "keyword_exact_term",
+      "question": "Is Robotics listed as an elective module?",
+      "expected_evidence_keywords": [
+        "Choose one Elective Module",
+        "Robotics"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 2,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "HELPFUL",
+      "bm25_promoted_correct_candidate": true,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.3793955445289612,
+          "normalized_bm25_score": 0.09696104771698771,
+          "retrieval_score": 0.29466519548536907,
+          "matched_evidence_keywords": [
+            "Choose one Elective Module"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3535757064819336,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5475029945373535,
+          "matched_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3535757064819336,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5475029945373535,
+          "matched_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3535757064819336,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5475029945373535,
+          "matched_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3535757064819336,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5475029945373535,
+          "matched_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3535757064819336,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5475029945373535,
+          "matched_evidence_keywords": [
+            "Choose one Elective Module",
+            "Robotics"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3535757064819336,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5475029945373535,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.3793955445289612,
+            "normalized_bm25_score": 0.09696104771698771,
+            "retrieval_score": 0.29466519548536907,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.5475029945373535,
+        "top2_score": 0.29466519548536907,
+        "top1_minus_top2_margin": 0.25283779905198445
+      }
+    },
+    {
+      "case_id": "case_012_networks_module_details",
+      "category": "keyword_exact_term",
+      "question": "How many credits and how many weeks are assigned to Networks and Web Technology?",
+      "expected_evidence_keywords": [
+        "Networks and Web Technology",
+        "15",
+        "8 weeks"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 2,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "HELPFUL",
+      "bm25_promoted_correct_candidate": true,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5410194396972656,
+          "normalized_bm25_score": 0.08447145204797578,
+          "retrieval_score": 0.40405504340247866,
+          "matched_evidence_keywords": [
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4414519667625427,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.60901637673378,
+          "matched_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4414519667625427,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.60901637673378,
+          "matched_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4414519667625427,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.60901637673378,
+          "matched_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4414519667625427,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.60901637673378,
+          "matched_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4414519667625427,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.60901637673378,
+          "matched_evidence_keywords": [
+            "Networks and Web Technology",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.4414519667625427,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.60901637673378,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5410194396972656,
+            "normalized_bm25_score": 0.08447145204797578,
+            "retrieval_score": 0.40405504340247866,
+            "matched_evidence_keywords": [
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.60901637673378,
+        "top2_score": 0.40405504340247866,
+        "top1_minus_top2_margin": 0.2049613333313013
+      }
+    },
+    {
+      "case_id": "case_013_duration_assumptions",
+      "category": "hard_negative_similar_chunk",
+      "question": "What assumptions must hold for the stated two-year study estimate?",
+      "expected_evidence_keywords": [
+        "module availability",
+        "consecutively"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 2,
+      "bm25_evidence_rank": 3,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38938796520233154,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5725715756416321,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38938796520233154,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5725715756416321,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38938796520233154,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5725715756416321,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.3201856017112732,
+          "normalized_bm25_score": 0.08212280110006659,
+          "retrieval_score": 0.2487667615279112,
+          "matched_evidence_keywords": [
+            "module availability",
+            "consecutively"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.3201856017112732,
+          "normalized_bm25_score": 0.08212280110006659,
+          "retrieval_score": 0.2487667615279112,
+          "matched_evidence_keywords": [
+            "module availability",
+            "consecutively"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.3201856017112732,
+          "normalized_bm25_score": 0.08212280110006659,
+          "retrieval_score": 0.2487667615279112,
+          "matched_evidence_keywords": [
+            "module availability",
+            "consecutively"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.3201856017112732,
+            "normalized_bm25_score": 0.08212280110006659,
+            "retrieval_score": 0.2487667615279112,
+            "matched_evidence_keywords": [
+              "module availability",
+              "consecutively"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.5725715756416321,
+        "top2_score": 0.2487667615279112,
+        "top1_minus_top2_margin": 0.32380481411372086
+      }
+    },
+    {
+      "case_id": "case_014_indicative_vs_maximum_duration",
+      "category": "contextual",
+      "question": "How do the usual study timeline and the absolute completion limit differ?",
+      "expected_evidence_keywords": [
+        "24 Months",
+        "maximum period",
+        "72 months"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 3,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "HARMFUL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": true,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.47834205627441406,
+          "normalized_bm25_score": 0.81774530137028,
+          "retrieval_score": 0.5801630298031738,
+          "matched_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.42091047763824463,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5946373343467712,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.42091047763824463,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5946373343467712,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.47834205627441406,
+          "normalized_bm25_score": 0.81774530137028,
+          "retrieval_score": 0.5801630298031738,
+          "matched_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.47834205627441406,
+          "normalized_bm25_score": 0.81774530137028,
+          "retrieval_score": 0.5801630298031738,
+          "matched_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.47834205627441406,
+          "normalized_bm25_score": 0.81774530137028,
+          "retrieval_score": 0.5801630298031738,
+          "matched_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.47834205627441406,
+            "normalized_bm25_score": 0.81774530137028,
+            "retrieval_score": 0.5801630298031738,
+            "matched_evidence_keywords": [
+              "24 Months",
+              "maximum period",
+              "72 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 3,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3481350541114807,
+            "normalized_bm25_score": 0.9279666293465844,
+            "retrieval_score": 0.5220845266820118,
+            "matched_evidence_keywords": [
+              "24 Months"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.5946373343467712,
+        "top2_score": 0.5801630298031738,
+        "top1_minus_top2_margin": 0.014474304543597438
+      }
+    },
+    {
+      "case_id": "case_016_programme_title",
+      "category": "direct_factual",
+      "question": "What is the title of the programme shown in the indicative study plan?",
+      "expected_evidence_keywords": [
+        "Programme Title",
+        "MSc Computer Science"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4970012903213501,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.647900903224945,
+          "matched_evidence_keywords": [
+            "Programme Title",
+            "MSc Computer Science"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4970012903213501,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.647900903224945,
+          "matched_evidence_keywords": [
+            "Programme Title",
+            "MSc Computer Science"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4970012903213501,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.647900903224945,
+          "matched_evidence_keywords": [
+            "Programme Title",
+            "MSc Computer Science"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4970012903213501,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.647900903224945,
+          "matched_evidence_keywords": [
+            "Programme Title",
+            "MSc Computer Science"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4970012903213501,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.647900903224945,
+          "matched_evidence_keywords": [
+            "Programme Title",
+            "MSc Computer Science"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.4970012903213501,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.647900903224945,
+          "matched_evidence_keywords": [
+            "Programme Title",
+            "MSc Computer Science"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.4970012903213501,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.647900903224945,
+            "matched_evidence_keywords": [
+              "Programme Title",
+              "MSc Computer Science"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.647900903224945,
+        "top2_score": 0.34681979173728106,
+        "top1_minus_top2_margin": 0.3010811114876639
+      }
+    },
+    {
+      "case_id": "case_017_capstone_length_paraphrase",
+      "category": "semantic_paraphrase",
+      "question": "Which part of the degree takes roughly eight months to complete?",
+      "expected_evidence_keywords": [
+        "Computer Science Capstone Project",
+        "32 weeks"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 3,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "HARMFUL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": true,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.48065364360809326,
+          "normalized_bm25_score": 0.0886721888905603,
+          "retrieval_score": 0.36305920719283336,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.4753462076187134,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6327423453330994,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.4753462076187134,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6327423453330994,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.48065364360809326,
+          "normalized_bm25_score": 0.0886721888905603,
+          "retrieval_score": 0.36305920719283336,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.48065364360809326,
+          "normalized_bm25_score": 0.0886721888905603,
+          "retrieval_score": 0.36305920719283336,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.48065364360809326,
+          "normalized_bm25_score": 0.0886721888905603,
+          "retrieval_score": 0.36305920719283336,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.48065364360809326,
+            "normalized_bm25_score": 0.0886721888905603,
+            "retrieval_score": 0.36305920719283336,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6327423453330994,
+        "top2_score": 0.36305920719283336,
+        "top1_minus_top2_margin": 0.269683138140266
+      }
+    },
+    {
+      "case_id": "case_018_where_start_dates_appear",
+      "category": "semantic_paraphrase",
+      "question": "Where should learners look to find out when their next classes begin?",
+      "expected_evidence_keywords": [
+        "Module start dates",
+        "learning platform"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 2,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "HARMFUL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": true,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.35075318813323975,
+          "normalized_bm25_score": 0.6628118947248492,
+          "retrieval_score": 0.4443708001107226,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.3412281274795532,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5388596892356872,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.3412281274795532,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5388596892356872,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.35075318813323975,
+          "normalized_bm25_score": 0.6628118947248492,
+          "retrieval_score": 0.4443708001107226,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.35075318813323975,
+          "normalized_bm25_score": 0.6628118947248492,
+          "retrieval_score": 0.4443708001107226,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.35075318813323975,
+          "normalized_bm25_score": 0.6628118947248492,
+          "retrieval_score": 0.4443708001107226,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.35075318813323975,
+            "normalized_bm25_score": 0.6628118947248492,
+            "retrieval_score": 0.4443708001107226,
+            "matched_evidence_keywords": [
+              "Module start dates",
+              "learning platform"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.5388596892356872,
+        "top2_score": 0.4443708001107226,
+        "top1_minus_top2_margin": 0.09448888912496456
+      }
+    },
+    {
+      "case_id": "case_019_multi_agent_module",
+      "category": "keyword_exact_term",
+      "question": "Is Multi-Agent Systems included in the study plan, and what are its credits and duration?",
+      "expected_evidence_keywords": [
+        "Multi-Agent Systems",
+        "15",
+        "8 weeks"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.48475128412246704,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6393258988857269,
+          "matched_evidence_keywords": [
+            "Multi-Agent Systems",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.48475128412246704,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6393258988857269,
+          "matched_evidence_keywords": [
+            "Multi-Agent Systems",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.48475128412246704,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6393258988857269,
+          "matched_evidence_keywords": [
+            "Multi-Agent Systems",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.48475128412246704,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6393258988857269,
+          "matched_evidence_keywords": [
+            "Multi-Agent Systems",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.48475128412246704,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6393258988857269,
+          "matched_evidence_keywords": [
+            "Multi-Agent Systems",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.48475128412246704,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6393258988857269,
+          "matched_evidence_keywords": [
+            "Multi-Agent Systems",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.48475128412246704,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6393258988857269,
+            "matched_evidence_keywords": [
+              "Multi-Agent Systems",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.4311326742172241,
+            "normalized_bm25_score": 0.05412495818281592,
+            "retrieval_score": 0.3180303594069016,
+            "matched_evidence_keywords": [
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6393258988857269,
+        "top2_score": 0.3180303594069016,
+        "top1_minus_top2_margin": 0.3212955394788253
+      }
+    },
+    {
+      "case_id": "case_020_data_visualisation_module",
+      "category": "keyword_exact_term",
+      "question": "What credits and duration are listed for Data Visualisation and Warehousing?",
+      "expected_evidence_keywords": [
+        "Data Visualisation and Warehousing",
+        "15",
+        "8 weeks"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 3,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "HARMFUL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": true,
+      "bm25_did_not_materially_affect_ranking": false,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5021443963050842,
+          "normalized_bm25_score": 0.7088887992537074,
+          "retrieval_score": 0.5641677171896712,
+          "matched_evidence_keywords": [
+            "Data Visualisation and Warehousing",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.40714263916015625,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5849998474121094,
+          "matched_evidence_keywords": [
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.40714263916015625,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5849998474121094,
+          "matched_evidence_keywords": [
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5021443963050842,
+          "normalized_bm25_score": 0.7088887992537074,
+          "retrieval_score": 0.5641677171896712,
+          "matched_evidence_keywords": [
+            "Data Visualisation and Warehousing",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5021443963050842,
+          "normalized_bm25_score": 0.7088887992537074,
+          "retrieval_score": 0.5641677171896712,
+          "matched_evidence_keywords": [
+            "Data Visualisation and Warehousing",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5021443963050842,
+          "normalized_bm25_score": 0.7088887992537074,
+          "retrieval_score": 0.5641677171896712,
+          "matched_evidence_keywords": [
+            "Data Visualisation and Warehousing",
+            "15",
+            "8 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.40714263916015625,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5849998474121094,
+            "matched_evidence_keywords": [
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5021443963050842,
+            "normalized_bm25_score": 0.7088887992537074,
+            "retrieval_score": 0.5641677171896712,
+            "matched_evidence_keywords": [
+              "Data Visualisation and Warehousing",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.5849998474121094,
+        "top2_score": 0.5641677171896712,
+        "top1_minus_top2_margin": 0.02083213022243824
+      }
+    },
+    {
+      "case_id": "case_021_start_date_and_enrolment_process",
+      "category": "contextual",
+      "question": "How are module start dates communicated, and who handles placing the student onto a module?",
+      "expected_evidence_keywords": [
+        "Module start dates",
+        "learning platform",
+        "Student Support Team",
+        "manage your enrolment"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4844018816947937,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6390813171863556,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform",
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4844018816947937,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6390813171863556,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform",
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4844018816947937,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6390813171863556,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform",
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4844018816947937,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6390813171863556,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform",
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4844018816947937,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6390813171863556,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform",
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.4844018816947937,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6390813171863556,
+          "matched_evidence_keywords": [
+            "Module start dates",
+            "learning platform",
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.4844018816947937,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6390813171863556,
+            "matched_evidence_keywords": [
+              "Module start dates",
+              "learning platform",
+              "Student Support Team",
+              "manage your enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6390813171863556,
+        "top2_score": 0.2712006694819568,
+        "top1_minus_top2_margin": 0.3678806477043988
+      }
+    },
+    {
+      "case_id": "case_022_maximum_clock_start",
+      "category": "contextual",
+      "question": "From which event is the six-year completion allowance calculated?",
+      "expected_evidence_keywords": [
+        "72 months",
+        "start date",
+        "earliest enrolment"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38394033908843994,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.568758237361908,
+          "matched_evidence_keywords": [
+            "72 months",
+            "start date",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38394033908843994,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.568758237361908,
+          "matched_evidence_keywords": [
+            "72 months",
+            "start date",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38394033908843994,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.568758237361908,
+          "matched_evidence_keywords": [
+            "72 months",
+            "start date",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38394033908843994,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.568758237361908,
+          "matched_evidence_keywords": [
+            "72 months",
+            "start date",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38394033908843994,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.568758237361908,
+          "matched_evidence_keywords": [
+            "72 months",
+            "start date",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.38394033908843994,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.568758237361908,
+          "matched_evidence_keywords": [
+            "72 months",
+            "start date",
+            "earliest enrolment"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.38394033908843994,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.568758237361908,
+            "matched_evidence_keywords": [
+              "72 months",
+              "start date",
+              "earliest enrolment"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.3090938329696655,
+            "normalized_bm25_score": 0.9172417633692009,
+            "retrieval_score": 0.49153821208952614,
+            "matched_evidence_keywords": [
+              "start date"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.568758237361908,
+        "top2_score": 0.49153821208952614,
+        "top1_minus_top2_margin": 0.07722002527238186
+      }
+    },
+    {
+      "case_id": "case_023_why_two_year_plan_can_fail",
+      "category": "contextual",
+      "question": "Which circumstances can make the advertised two-year timeline impossible to maintain?",
+      "expected_evidence_keywords": [
+        "break from your studies",
+        "reassessment",
+        "not be possible",
+        "24 months"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.42364728450775146,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.596553099155426,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "not be possible",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.42364728450775146,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.596553099155426,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "not be possible",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.42364728450775146,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.596553099155426,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "not be possible",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.42364728450775146,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.596553099155426,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "not be possible",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.42364728450775146,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.596553099155426,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "not be possible",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.42364728450775146,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.596553099155426,
+          "matched_evidence_keywords": [
+            "break from your studies",
+            "reassessment",
+            "not be possible",
+            "24 months"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.42364728450775146,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.596553099155426,
+            "matched_evidence_keywords": [
+              "break from your studies",
+              "reassessment",
+              "not be possible",
+              "24 months"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.29730039834976196,
+            "normalized_bm25_score": 0.7899622472974583,
+            "retrieval_score": 0.4450989530340709,
+            "matched_evidence_keywords": [
+              "break from your studies",
+              "reassessment"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          {
+            "rank": 3,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.22966402769088745,
+            "normalized_bm25_score": 0.5893560771917796,
+            "retrieval_score": 0.33757164254115507,
+            "matched_evidence_keywords": [
+              "24 months"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.596553099155426,
+        "top2_score": 0.4450989530340709,
+        "top1_minus_top2_margin": 0.1514541461213551
+      }
+    },
+    {
+      "case_id": "case_024_duration_exception_module",
+      "category": "hard_negative_similar_chunk",
+      "question": "Which module is the exception to the repeated eight-week module pattern, and how long does it take?",
+      "expected_evidence_keywords": [
+        "Computer Science Capstone Project",
+        "32 weeks"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5577982068061829,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.690458744764328,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5577982068061829,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.690458744764328,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5577982068061829,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.690458744764328,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5577982068061829,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.690458744764328,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5577982068061829,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.690458744764328,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5577982068061829,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.690458744764328,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "32 weeks"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5577982068061829,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.690458744764328,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.690458744764328,
+        "top2_score": 0.5013059826927885,
+        "top1_minus_top2_margin": 0.18915276207153953
+      }
+    },
+    {
+      "case_id": "case_025_seventy_two_not_indicative",
+      "category": "hard_negative_similar_chunk",
+      "question": "Does the 72-month figure describe the normal study duration, or a different limit?",
+      "expected_evidence_keywords": [
+        "maximum period",
+        "72 months",
+        "6 years"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5664231777191162,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6964962244033813,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5664231777191162,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6964962244033813,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5664231777191162,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6964962244033813,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5664231777191162,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6964962244033813,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5664231777191162,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6964962244033813,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5664231777191162,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6964962244033813,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.5664231777191162,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6964962244033813,
+            "matched_evidence_keywords": [
+              "maximum period",
+              "72 months",
+              "6 years"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6964962244033813,
+        "top2_score": 0.5095619554791144,
+        "top1_minus_top2_margin": 0.1869342689242669
+      }
+    },
+    {
+      "case_id": "case_026_second_elective_group",
+      "category": "hard_negative_similar_chunk",
+      "question": "Which elective group contains Security Risk Management and Technology Innovation and Change Management rather than Robotics?",
+      "expected_evidence_keywords": [
+        "Security Risk Management",
+        "Technology Innovation and Change Management"
+      ],
+      "evidence_match_mode": "single_chunk",
+      "vector_evidence_rank": 1,
+      "bm25_evidence_rank": 1,
+      "hybrid_evidence_rank": 1,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.41142213344573975,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5879954934120177,
+          "matched_evidence_keywords": [
+            "Security Risk Management",
+            "Technology Innovation and Change Management"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.41142213344573975,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5879954934120177,
+          "matched_evidence_keywords": [
+            "Security Risk Management",
+            "Technology Innovation and Change Management"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.41142213344573975,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5879954934120177,
+          "matched_evidence_keywords": [
+            "Security Risk Management",
+            "Technology Innovation and Change Management"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.41142213344573975,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5879954934120177,
+          "matched_evidence_keywords": [
+            "Security Risk Management",
+            "Technology Innovation and Change Management"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.41142213344573975,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5879954934120177,
+          "matched_evidence_keywords": [
+            "Security Risk Management",
+            "Technology Innovation and Change Management"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.41142213344573975,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5879954934120177,
+          "matched_evidence_keywords": [
+            "Security Risk Management",
+            "Technology Innovation and Change Management"
+          ],
+          "contains_all_expected_evidence": true
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.41142213344573975,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5879954934120177,
+            "matched_evidence_keywords": [
+              "Security Risk Management",
+              "Technology Innovation and Change Management"
+            ],
+            "contains_all_expected_evidence": true
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.5879954934120177,
+        "top2_score": 0.2576506489572832,
+        "top1_minus_top2_margin": 0.33034484445473455
+      }
+    },
+    {
+      "case_id": "case_027_total_vs_capstone_credits",
+      "category": "multi_evidence",
+      "question": "How many credits are required for the full programme, and how many of those credits belong to the capstone project?",
+      "expected_evidence_keywords": [
+        "Credits",
+        "180",
+        "Computer Science Capstone Project",
+        "60"
+      ],
+      "evidence_match_mode": "cumulative_chunks",
+      "vector_evidence_rank": 2,
+      "bm25_evidence_rank": 3,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5275722742080688,
+          "normalized_bm25_score": 0.39474612199951775,
+          "retrieval_score": 0.4877244285455035,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "60"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3906850218772888,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5734795153141021,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3906850218772888,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5734795153141021,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.3906850218772888,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.5734795153141021,
+          "matched_evidence_keywords": [
+            "Credits",
+            "180"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5275722742080688,
+          "normalized_bm25_score": 0.39474612199951775,
+          "retrieval_score": 0.4877244285455035,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "60"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5275722742080688,
+          "normalized_bm25_score": 0.39474612199951775,
+          "retrieval_score": 0.4877244285455035,
+          "matched_evidence_keywords": [
+            "Computer Science Capstone Project",
+            "60"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3906850218772888,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5734795153141021,
+            "matched_evidence_keywords": [
+              "Credits",
+              "180"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5275722742080688,
+            "normalized_bm25_score": 0.39474612199951775,
+            "retrieval_score": 0.4877244285455035,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "60"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.5734795153141021,
+        "top2_score": 0.4877244285455035,
+        "top1_minus_top2_margin": 0.08575508676859861
+      }
+    },
+    {
+      "case_id": "case_028_programme_timeline_and_limit",
+      "category": "multi_evidence",
+      "question": "Identify the programme, its indicative completion time, and its absolute completion limit.",
+      "expected_evidence_keywords": [
+        "MSc Computer Science",
+        "24 Months",
+        "maximum period",
+        "72 months"
+      ],
+      "evidence_match_mode": "cumulative_chunks",
+      "vector_evidence_rank": 3,
+      "bm25_evidence_rank": 3,
+      "hybrid_evidence_rank": 3,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": true,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.48897820711135864,
+          "normalized_bm25_score": 0.7135456360221765,
+          "retrieval_score": 0.556348435784604,
+          "matched_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.44268667697906494,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6098806738853455,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.44268667697906494,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6098806738853455,
+          "matched_evidence_keywords": [],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 0,
+          "page_number": 1,
+          "embedding_score": 0.40158504247665405,
+          "normalized_bm25_score": 0.9862400856724057,
+          "retrieval_score": 0.5769815554353795,
+          "matched_evidence_keywords": [
+            "MSc Computer Science",
+            "24 Months"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.48897820711135864,
+          "normalized_bm25_score": 0.7135456360221765,
+          "retrieval_score": 0.556348435784604,
+          "matched_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 3,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.48897820711135864,
+          "normalized_bm25_score": 0.7135456360221765,
+          "retrieval_score": 0.556348435784604,
+          "matched_evidence_keywords": [
+            "24 Months",
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.40158504247665405,
+            "normalized_bm25_score": 0.9862400856724057,
+            "retrieval_score": 0.5769815554353795,
+            "matched_evidence_keywords": [
+              "MSc Computer Science",
+              "24 Months"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          {
+            "rank": 3,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.48897820711135864,
+            "normalized_bm25_score": 0.7135456360221765,
+            "retrieval_score": 0.556348435784604,
+            "matched_evidence_keywords": [
+              "24 Months",
+              "maximum period",
+              "72 months"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6098806738853455,
+        "top2_score": 0.5769815554353795,
+        "top1_minus_top2_margin": 0.03289911844996596
+      }
+    },
+    {
+      "case_id": "case_029_support_and_completion_limit",
+      "category": "multi_evidence",
+      "question": "Who manages module enrolment, and what is the latest allowed programme completion period?",
+      "expected_evidence_keywords": [
+        "Student Support Team",
+        "manage your enrolment",
+        "maximum period",
+        "72 months"
+      ],
+      "evidence_match_mode": "cumulative_chunks",
+      "vector_evidence_rank": 2,
+      "bm25_evidence_rank": 2,
+      "hybrid_evidence_rank": 2,
+      "bm25_effect": "NEUTRAL",
+      "bm25_promoted_correct_candidate": false,
+      "bm25_promoted_incorrect_candidate": false,
+      "bm25_did_not_materially_affect_ranking": true,
+      "vector_to_hybrid_top1_changed": false,
+      "candidate_diagnostics": {
+        "vector_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617399215698242,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932179450988769,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617399215698242,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932179450988769,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_top_1": {
+          "rank": 1,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 2,
+          "page_number": 1,
+          "embedding_score": 0.5617399215698242,
+          "normalized_bm25_score": 1.0,
+          "retrieval_score": 0.6932179450988769,
+          "matched_evidence_keywords": [
+            "maximum period",
+            "72 months"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "vector_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5587982535362244,
+          "normalized_bm25_score": 0.8285450003709107,
+          "retrieval_score": 0.6397222775866303,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "bm25_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5587982535362244,
+          "normalized_bm25_score": 0.8285450003709107,
+          "retrieval_score": 0.6397222775866303,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_evidence_completion_candidate": {
+          "rank": 2,
+          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "version": "1",
+          "chunk_index": 1,
+          "page_number": 1,
+          "embedding_score": 0.5587982535362244,
+          "normalized_bm25_score": 0.8285450003709107,
+          "retrieval_score": 0.6397222775866303,
+          "matched_evidence_keywords": [
+            "Student Support Team",
+            "manage your enrolment"
+          ],
+          "contains_all_expected_evidence": false
+        },
+        "hybrid_evidence_contributing_candidates": [
+          {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.5617399215698242,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6932179450988769,
+            "matched_evidence_keywords": [
+              "maximum period",
+              "72 months"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5587982535362244,
+            "normalized_bm25_score": 0.8285450003709107,
+            "retrieval_score": 0.6397222775866303,
+            "matched_evidence_keywords": [
+              "Student Support Team",
+              "manage your enrolment"
+            ],
+            "contains_all_expected_evidence": false
+          }
+        ]
+      },
+      "hybrid_score_margin": {
+        "top1_score": 0.6932179450988769,
+        "top2_score": 0.6397222775866303,
+        "top1_minus_top2_margin": 0.05349566751224666
+      }
+    }
+  ],
+  "focused_diagnostics": {
+    "hard_negative_cases": {
+      "case_013_duration_assumptions": {
+        "case_id": "case_013_duration_assumptions",
+        "category": "hard_negative_similar_chunk",
+        "question": "What assumptions must hold for the stated two-year study estimate?",
+        "expected_evidence_keywords": [
+          "module availability",
+          "consecutively"
+        ],
+        "evidence_match_mode": "single_chunk",
+        "vector_evidence_rank": 2,
+        "bm25_evidence_rank": 3,
+        "hybrid_evidence_rank": 2,
+        "bm25_effect": "NEUTRAL",
+        "bm25_promoted_correct_candidate": false,
+        "bm25_promoted_incorrect_candidate": false,
+        "bm25_did_not_materially_affect_ranking": true,
+        "vector_to_hybrid_top1_changed": false,
+        "candidate_diagnostics": {
+          "vector_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.38938796520233154,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5725715756416321,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "bm25_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.38938796520233154,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5725715756416321,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "hybrid_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.38938796520233154,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5725715756416321,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "vector_evidence_completion_candidate": {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.3201856017112732,
+            "normalized_bm25_score": 0.08212280110006659,
+            "retrieval_score": 0.2487667615279112,
+            "matched_evidence_keywords": [
+              "module availability",
+              "consecutively"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "bm25_evidence_completion_candidate": {
+            "rank": 3,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.3201856017112732,
+            "normalized_bm25_score": 0.08212280110006659,
+            "retrieval_score": 0.2487667615279112,
+            "matched_evidence_keywords": [
+              "module availability",
+              "consecutively"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_completion_candidate": {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.3201856017112732,
+            "normalized_bm25_score": 0.08212280110006659,
+            "retrieval_score": 0.2487667615279112,
+            "matched_evidence_keywords": [
+              "module availability",
+              "consecutively"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_contributing_candidates": [
+            {
+              "rank": 2,
+              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "version": "1",
+              "chunk_index": 1,
+              "page_number": 1,
+              "embedding_score": 0.3201856017112732,
+              "normalized_bm25_score": 0.08212280110006659,
+              "retrieval_score": 0.2487667615279112,
+              "matched_evidence_keywords": [
+                "module availability",
+                "consecutively"
+              ],
+              "contains_all_expected_evidence": true
+            }
+          ]
+        },
+        "hybrid_score_margin": {
+          "top1_score": 0.5725715756416321,
+          "top2_score": 0.2487667615279112,
+          "top1_minus_top2_margin": 0.32380481411372086
+        }
+      },
+      "case_017_capstone_length_paraphrase": {
+        "case_id": "case_017_capstone_length_paraphrase",
+        "category": "semantic_paraphrase",
+        "question": "Which part of the degree takes roughly eight months to complete?",
+        "expected_evidence_keywords": [
+          "Computer Science Capstone Project",
+          "32 weeks"
+        ],
+        "evidence_match_mode": "single_chunk",
+        "vector_evidence_rank": 1,
+        "bm25_evidence_rank": 3,
+        "hybrid_evidence_rank": 2,
+        "bm25_effect": "HARMFUL",
+        "bm25_promoted_correct_candidate": false,
+        "bm25_promoted_incorrect_candidate": true,
+        "bm25_did_not_materially_affect_ranking": false,
+        "vector_to_hybrid_top1_changed": true,
+        "candidate_diagnostics": {
+          "vector_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.48065364360809326,
+            "normalized_bm25_score": 0.0886721888905603,
+            "retrieval_score": 0.36305920719283336,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "bm25_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.4753462076187134,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6327423453330994,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "hybrid_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 2,
+            "page_number": 1,
+            "embedding_score": 0.4753462076187134,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.6327423453330994,
+            "matched_evidence_keywords": [],
+            "contains_all_expected_evidence": false
+          },
+          "vector_evidence_completion_candidate": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.48065364360809326,
+            "normalized_bm25_score": 0.0886721888905603,
+            "retrieval_score": 0.36305920719283336,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "bm25_evidence_completion_candidate": {
+            "rank": 3,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.48065364360809326,
+            "normalized_bm25_score": 0.0886721888905603,
+            "retrieval_score": 0.36305920719283336,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_completion_candidate": {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.48065364360809326,
+            "normalized_bm25_score": 0.0886721888905603,
+            "retrieval_score": 0.36305920719283336,
+            "matched_evidence_keywords": [
+              "Computer Science Capstone Project",
+              "32 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_contributing_candidates": [
+            {
+              "rank": 2,
+              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "version": "1",
+              "chunk_index": 1,
+              "page_number": 1,
+              "embedding_score": 0.48065364360809326,
+              "normalized_bm25_score": 0.0886721888905603,
+              "retrieval_score": 0.36305920719283336,
+              "matched_evidence_keywords": [
+                "Computer Science Capstone Project",
+                "32 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            }
+          ]
+        },
+        "hybrid_score_margin": {
+          "top1_score": 0.6327423453330994,
+          "top2_score": 0.36305920719283336,
+          "top1_minus_top2_margin": 0.269683138140266
+        }
+      }
+    },
+    "exact_term_cases_rescued_by_bm25": [
+      {
+        "case_id": "case_011_robotics_elective",
+        "category": "keyword_exact_term",
+        "question": "Is Robotics listed as an elective module?",
+        "expected_evidence_keywords": [
+          "Choose one Elective Module",
+          "Robotics"
+        ],
+        "evidence_match_mode": "single_chunk",
+        "vector_evidence_rank": 2,
+        "bm25_evidence_rank": 1,
+        "hybrid_evidence_rank": 1,
+        "bm25_effect": "HELPFUL",
+        "bm25_promoted_correct_candidate": true,
+        "bm25_promoted_incorrect_candidate": false,
+        "bm25_did_not_materially_affect_ranking": false,
+        "vector_to_hybrid_top1_changed": true,
+        "candidate_diagnostics": {
+          "vector_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.3793955445289612,
+            "normalized_bm25_score": 0.09696104771698771,
+            "retrieval_score": 0.29466519548536907,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          "bm25_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3535757064819336,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5475029945373535,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3535757064819336,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5475029945373535,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "vector_evidence_completion_candidate": {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3535757064819336,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5475029945373535,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "bm25_evidence_completion_candidate": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3535757064819336,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5475029945373535,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_completion_candidate": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.3535757064819336,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.5475029945373535,
+            "matched_evidence_keywords": [
+              "Choose one Elective Module",
+              "Robotics"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_contributing_candidates": [
+            {
+              "rank": 1,
+              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "version": "1",
+              "chunk_index": 0,
+              "page_number": 1,
+              "embedding_score": 0.3535757064819336,
+              "normalized_bm25_score": 1.0,
+              "retrieval_score": 0.5475029945373535,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module",
+                "Robotics"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "version": "1",
+              "chunk_index": 1,
+              "page_number": 1,
+              "embedding_score": 0.3793955445289612,
+              "normalized_bm25_score": 0.09696104771698771,
+              "retrieval_score": 0.29466519548536907,
+              "matched_evidence_keywords": [
+                "Choose one Elective Module"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_score_margin": {
+          "top1_score": 0.5475029945373535,
+          "top2_score": 0.29466519548536907,
+          "top1_minus_top2_margin": 0.25283779905198445
+        }
+      },
+      {
+        "case_id": "case_012_networks_module_details",
+        "category": "keyword_exact_term",
+        "question": "How many credits and how many weeks are assigned to Networks and Web Technology?",
+        "expected_evidence_keywords": [
+          "Networks and Web Technology",
+          "15",
+          "8 weeks"
+        ],
+        "evidence_match_mode": "single_chunk",
+        "vector_evidence_rank": 2,
+        "bm25_evidence_rank": 1,
+        "hybrid_evidence_rank": 1,
+        "bm25_effect": "HELPFUL",
+        "bm25_promoted_correct_candidate": true,
+        "bm25_promoted_incorrect_candidate": false,
+        "bm25_did_not_materially_affect_ranking": false,
+        "vector_to_hybrid_top1_changed": true,
+        "candidate_diagnostics": {
+          "vector_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 1,
+            "page_number": 1,
+            "embedding_score": 0.5410194396972656,
+            "normalized_bm25_score": 0.08447145204797578,
+            "retrieval_score": 0.40405504340247866,
+            "matched_evidence_keywords": [
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": false
+          },
+          "bm25_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.4414519667625427,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.60901637673378,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_top_1": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.4414519667625427,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.60901637673378,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "vector_evidence_completion_candidate": {
+            "rank": 2,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.4414519667625427,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.60901637673378,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "bm25_evidence_completion_candidate": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.4414519667625427,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.60901637673378,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_completion_candidate": {
+            "rank": 1,
+            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "version": "1",
+            "chunk_index": 0,
+            "page_number": 1,
+            "embedding_score": 0.4414519667625427,
+            "normalized_bm25_score": 1.0,
+            "retrieval_score": 0.60901637673378,
+            "matched_evidence_keywords": [
+              "Networks and Web Technology",
+              "15",
+              "8 weeks"
+            ],
+            "contains_all_expected_evidence": true
+          },
+          "hybrid_evidence_contributing_candidates": [
+            {
+              "rank": 1,
+              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
+              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "version": "1",
+              "chunk_index": 0,
+              "page_number": 1,
+              "embedding_score": 0.4414519667625427,
+              "normalized_bm25_score": 1.0,
+              "retrieval_score": 0.60901637673378,
+              "matched_evidence_keywords": [
+                "Networks and Web Technology",
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": true
+            },
+            {
+              "rank": 2,
+              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
+              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "version": "1",
+              "chunk_index": 1,
+              "page_number": 1,
+              "embedding_score": 0.5410194396972656,
+              "normalized_bm25_score": 0.08447145204797578,
+              "retrieval_score": 0.40405504340247866,
+              "matched_evidence_keywords": [
+                "15",
+                "8 weeks"
+              ],
+              "contains_all_expected_evidence": false
+            }
+          ]
+        },
+        "hybrid_score_margin": {
+          "top1_score": 0.60901637673378,
+          "top2_score": 0.40405504340247866,
+          "top1_minus_top2_margin": 0.2049613333313013
+        }
+      }
+    ]
+  }
+}
