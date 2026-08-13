@@ -1,0 +1,110 @@
+{
+  "manifest_version": "1",
+  "corpus_id": "documind-corpus-v2",
+  "documents": [
+    {
+      "document_id": "corpus-v2-study-plan",
+      "file_path": "eval/fixtures/Study Plan - MSc Computer Science.pdf",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "display_name": "Study Plan",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "text",
+      "include_in_text_retrieval": true,
+      "notes": "Original Corpus V1 fixture; retained in Corpus V2 text retrieval."
+    },
+    {
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "display_name": "Admissions Appeals and Complaints Policy",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "text",
+      "include_in_text_retrieval": true
+    },
+    {
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/appendix_L_cop_assess.pdf",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "display_name": "Appendix L COP Assess",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "text",
+      "include_in_text_retrieval": true
+    },
+    {
+      "document_id": "corpus-v2-coding-standards",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/Coding_Standards.pdf",
+      "file_name": "Coding_Standards.pdf",
+      "display_name": "Coding Standards",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "text",
+      "include_in_text_retrieval": true
+    },
+    {
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "display_name": "AI Ethics Chapter 1",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "text",
+      "include_in_text_retrieval": true
+    },
+    {
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "display_name": "UoLO Programme Terms and Conditions",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "text",
+      "include_in_text_retrieval": true
+    },
+    {
+      "document_id": "corpus-v2-serverless-computing",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "display_name": "Serverless Computing",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "text",
+      "include_in_text_retrieval": true
+    },
+    {
+      "document_id": "corpus-v2-asleep-at-the-keyboard",
+      "file_path": "eval/fixtures/corpus_v2/table_benchmark/Asleep_at_the_Keyboard_Assessing_the_Security_of_GitHub_Copilots_Code_Contributions.pdf",
+      "file_name": "Asleep_at_the_Keyboard_Assessing_the_Security_of_GitHub_Copilots_Code_Contributions.pdf",
+      "display_name": "Asleep at the Keyboard",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "table",
+      "include_in_text_retrieval": false,
+      "notes": "Reserved for the table benchmark."
+    },
+    {
+      "document_id": "corpus-v2-insecure-code-with-ai-assistants",
+      "file_path": "eval/fixtures/corpus_v2/table_benchmark/Do users write more insecure code.pdf",
+      "file_name": "Do users write more insecure code.pdf",
+      "display_name": "Do Users Write More Insecure Code",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "table",
+      "include_in_text_retrieval": false,
+      "notes": "Reserved for the table benchmark."
+    },
+    {
+      "document_id": "corpus-v2-reflective-practice-transcript",
+      "file_path": "eval/fixtures/corpus_v2/ocr_multimodal_benchmark/Reflective Practice Transcript.pdf",
+      "file_name": "Reflective Practice Transcript.pdf",
+      "display_name": "Reflective Practice Transcript",
+      "version": "1",
+      "status": "ACTIVE",
+      "benchmark_group": "ocr_multimodal",
+      "include_in_text_retrieval": false,
+      "notes": "Reserved for OCR and multimodal ingestion evaluation."
+    }
+  ]
+}

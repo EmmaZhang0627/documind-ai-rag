@@ -1,0 +1,198 @@
+目前 `corpus_v2` 一共有 9 份 PDF。整体质量不错，但建议分成“普通文本 benchmark”“表格专项”和“OCR/多模态保留”三组。
+
+> Chunk 数量按当前生产 chunking：约 800 字符、100 字符重叠估算。
+
+| 文件 | 页数 | 文本字符 | Chunks | 大致情况 | 建议 |
+|---|---:|---:|---:|---|---|
+| Admissions Appeals and Complaints Policy | 6 | 15,651 | 24 | 政策文档，层级清楚，文本抽取正常 | 普通文本 benchmark |
+| appendix_L_cop_assess | 12 | 36,012 | 57 | 条款/标准型文档，内容重复度较高 | 普通文本 + hard negative |
+| Coding Standards | 5 | 8,782 | 15 | 技术规则、代码和规范 | 普通文本 + exact-term |
+| Reflective Practice Transcript | 4 | 542 | 4 | 视觉上有大量文字，但抽取严重不足 | OCR/多模态保留 |
+| AI Ethics Chapter 1 | 11 | 35,377 | 57 | 学术论述，概念密集 | 普通文本 + semantic/contextual |
+| UoLO Programme T&Cs | 26 | 54,368 | 93 | 长篇合同条款，结构重复、相似条款多 | 普通文本 + hard negative |
+| Asleep at the Keyboard | 15 | 89,869 | 136 | 复杂大型安全统计表格 | 表格专项 |
+| Do Users Write More Insecure Code | 15 | 78,602 | 119 | 多种结构化统计表格 | 表格专项核心文档 |
+| Serverless Computing | 18 | 117,675 | 176 | 双栏技术论文，含架构图，无真正数据表 | 普通文本；图片留给多模态 |
+
+## 一、建议进入普通文本 Corpus V2
+
+### 1. Admissions Appeals and Complaints Policy
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf" purpose="source"}
+
+适合测试：
+
+- 直接事实问题；
+- 政策步骤和申请条件；
+- semantic paraphrase；
+- 相邻条款之间的竞争；
+- 页面和来源过滤。
+
+难度属于容易到中等，适合作为稳定基础样本。
+
+### 2. appendix_L_cop_assess
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\appendix_L_cop_assess.pdf" purpose="source"}
+
+适合测试：
+
+- 评估标准；
+- 相似条款竞争；
+- exact-term 查询；
+- 跨段上下文；
+- hard negative。
+
+工具报告的 11 个“表格”主要可能是版面边框、页眉或结构区域，并不代表它是一份真正的表格型文档。因此仍应放入普通文本组。
+
+### 3. Coding Standards
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\Coding_Standards.pdf" purpose="source"}
+
+适合测试：
+
+- 编程术语和 exact-term；
+- 规则类直接问题；
+- 代码与正文混排；
+- BM25 的词汇优势；
+- 相似编码规则之间的竞争。
+
+文档比较短，容易设计可靠 evidence，但不能单独代表真实长文档。
+
+### 4. AI Ethics Chapter 1
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf" purpose="source"}
+
+适合测试：
+
+- semantic paraphrase；
+- 抽象概念查询；
+- contextual retrieval；
+- 相似概念竞争；
+- 多证据问题。
+
+它能补足原始 Study Plan 主要由具体事实组成的问题，让 benchmark 更能检测 embedding 的语义能力。
+
+需要注意：如果仓库公开发布，最好确认论文或书籍章节的版权和再分发权限。用于本地开发评估通常没有检索技术问题，但不一定适合提交到公开 Git 仓库。
+
+### 5. UoLO Programme T&Cs
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf" purpose="source"}
+
+这是很有价值的长文档，适合测试：
+
+- 合同和政策条款；
+- 相似条款 hard negative；
+- 例外条件；
+- 跨页面检索；
+- “某规则适用于谁、在什么条件下适用”；
+- 多证据组合。
+
+工具在每一页都报告表格，但视觉上更可能是页眉、页脚或布局线条造成的假阳性。它不应被当成表格文档。
+
+### 6. Serverless Computing
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\table\Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf" purpose="source"}
+
+虽然现在放在 `table` 目录，但它没有真正的数据表，主要是：
+
+- 双栏技术正文；
+- Serverless 专业术语；
+- 多个高度相似的技术方案；
+- 架构图和分类图。
+
+建议未来把它逻辑上归到普通文本 benchmark，但目前不需要移动文件。图片独有的信息不能作为当前纯文本 evidence，应留给后续 multimodal benchmark。
+
+## 二、建议进入表格专项 benchmark
+
+### 7. Asleep at the Keyboard
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\table\Asleep_at_the_Keyboard_Assessing_the_Security_of_GitHub_Copilots_Code_Contributions.pdf" purpose="source"}
+
+包含复杂安全统计表格：
+
+- 10～11 列的大表；
+- 两张表并排；
+- CWE、排名、语言和来源字段；
+- ✓ / ✗；
+- 单元格内部的小型图表。
+
+PyMuPDF 能识别主要表格，但固定字符 chunking 很容易切断表头与数据行的关系。
+
+适合测试：
+
+- 某一行、某一列的值；
+- 多字段联合约束；
+- 相邻行竞争；
+- 表格标题和正文描述竞争；
+- 当前 text-only chunking 的表格局限。
+
+### 8. Do Users Write More Insecure Code
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\table\Do users write more insecure code.pdf" purpose="source"}
+
+这是目前最适合做表格专项 benchmark 的文档，包含：
+
+- 人口统计表；
+- Logistic Regression 表；
+- 百分比矩阵；
+- 实验组与对照组比较；
+- 用户行为与修复策略表；
+- 附录统计表。
+
+可以覆盖从简单到复杂的表格问题：
+
+- 单个单元格；
+- 同一行多个字段；
+- 两组数值比较；
+- 多行汇总；
+- 跨表组合。
+
+不过这些问题不应直接混入当前普通文本检索总分，否则测到的可能主要是 chunking 对表格的破坏，而不是 Vector、BM25 或 reranker 的真实能力。
+
+## 三、建议留给 OCR/多模态 benchmark
+
+### 9. Reflective Practice Transcript
+
+:codex-file-citation{path="D:\HuaweiMoveData\Users\Emma\Desktop\codex-career\documind\documind-ai-rag\eval\fixtures\corpus_v2\Reflective Practice Transcript.pdf" purpose="source"}
+
+这是当前唯一明显不适合纯文本 benchmark 的文件：
+
+- 4 页；
+- 视觉页面包含大量内容；
+- PyMuPDF 总共只提取出 542 个字符；
+- 文档包含约 185 个图像对象；
+- 当前只能生成 4 个非常短的 chunks。
+
+这说明主要文字可能被保存为图片或复杂图形对象。现在加入普通文本检索，会导致 evidence-not-found，但根本原因不是检索算法，而是 ingestion 阶段没有获得文本。
+
+不要删除。它正好可以作为以后测试以下能力的真实样本：
+
+- OCR；
+- 扫描件检测；
+- 图片文字识别；
+- multimodal ingestion；
+- OCR 文本与原始页面坐标关联。
+
+## 最终建议分组
+
+普通文本 Corpus V2：6 份
+
+- Admissions Appeals
+- appendix L
+- Coding Standards
+- AI Ethics
+- UoLO Terms
+- Serverless Computing
+
+表格专项 Corpus V2：2 份
+
+- Asleep at the Keyboard
+- Do Users Write More Insecure Code
+
+OCR/多模态保留：1 份
+
+- Reflective Practice Transcript
+
+现在的文件组合已经足够开展下一步评估，不急着继续添加 PDF。下一步更合理的是先为普通文本组建立来源清单和文档级 manifest，然后再设计 grounded evaluation cases；表格和 OCR 两组暂时独立，不进入普通检索总分。
+
+本次没有修改、移动或删除任何文件。原来的 `Study Plan - MSc Computer Science.pdf` 也完全没有改动。

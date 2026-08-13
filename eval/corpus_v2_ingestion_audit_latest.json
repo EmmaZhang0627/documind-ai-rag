@@ -1,0 +1,388 @@
+{
+  "generated_at": "2026-08-12T06:15:31.377063+00:00",
+  "manifest_path": "D:\\HuaweiMoveData\\Users\\Emma\\Desktop\\codex-career\\documind\\documind-ai-rag\\eval\\corpus_v2_manifest.json",
+  "corpus_id": "documind-corpus-v2",
+  "isolation": {
+    "persist_directory": "D:\\HuaweiMoveData\\Users\\Emma\\Desktop\\codex-career\\documind\\documind-ai-rag\\eval\\.chroma_corpus_v2_audit",
+    "collection_name": "documind_corpus_v2_ingestion_audit"
+  },
+  "summary": {
+    "manifest_document_count": 10,
+    "included_text_document_count": 7,
+    "excluded_document_count": 3,
+    "generated_chunk_count": 425,
+    "initial_stored_chunk_count": 425,
+    "reopened_stored_chunk_count": 425,
+    "passed": true
+  },
+  "documents": [
+    {
+      "document_id": "corpus-v2-study-plan",
+      "display_name": "Study Plan",
+      "file_path": "eval/fixtures/Study Plan - MSc Computer Science.pdf",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "version": "1",
+      "status": "ACTIVE",
+      "page_count": 1,
+      "pages_with_extracted_text": 1,
+      "extracted_text_length": 1715,
+      "generated_chunk_count": 3,
+      "stored_chunk_count": 3
+    },
+    {
+      "document_id": "corpus-v2-admissions-appeals",
+      "display_name": "Admissions Appeals and Complaints Policy",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "version": "1",
+      "status": "ACTIVE",
+      "page_count": 6,
+      "pages_with_extracted_text": 6,
+      "extracted_text_length": 15651,
+      "generated_chunk_count": 24,
+      "stored_chunk_count": 24
+    },
+    {
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "display_name": "Appendix L COP Assess",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/appendix_L_cop_assess.pdf",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "version": "1",
+      "status": "ACTIVE",
+      "page_count": 12,
+      "pages_with_extracted_text": 12,
+      "extracted_text_length": 36012,
+      "generated_chunk_count": 57,
+      "stored_chunk_count": 57
+    },
+    {
+      "document_id": "corpus-v2-coding-standards",
+      "display_name": "Coding Standards",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/Coding_Standards.pdf",
+      "file_name": "Coding_Standards.pdf",
+      "version": "1",
+      "status": "ACTIVE",
+      "page_count": 5,
+      "pages_with_extracted_text": 5,
+      "extracted_text_length": 8782,
+      "generated_chunk_count": 15,
+      "stored_chunk_count": 15
+    },
+    {
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "display_name": "AI Ethics Chapter 1",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "version": "1",
+      "status": "ACTIVE",
+      "page_count": 11,
+      "pages_with_extracted_text": 11,
+      "extracted_text_length": 35377,
+      "generated_chunk_count": 57,
+      "stored_chunk_count": 57
+    },
+    {
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "display_name": "UoLO Programme Terms and Conditions",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "version": "1",
+      "status": "ACTIVE",
+      "page_count": 26,
+      "pages_with_extracted_text": 26,
+      "extracted_text_length": 54368,
+      "generated_chunk_count": 93,
+      "stored_chunk_count": 93
+    },
+    {
+      "document_id": "corpus-v2-serverless-computing",
+      "display_name": "Serverless Computing",
+      "file_path": "eval/fixtures/corpus_v2/text_retrieval/Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "version": "1",
+      "status": "ACTIVE",
+      "page_count": 18,
+      "pages_with_extracted_text": 18,
+      "extracted_text_length": 117675,
+      "generated_chunk_count": 176,
+      "stored_chunk_count": 176
+    }
+  ],
+  "excluded_documents": [
+    {
+      "document_id": "corpus-v2-asleep-at-the-keyboard",
+      "file_name": "Asleep_at_the_Keyboard_Assessing_the_Security_of_GitHub_Copilots_Code_Contributions.pdf",
+      "benchmark_group": "table"
+    },
+    {
+      "document_id": "corpus-v2-insecure-code-with-ai-assistants",
+      "file_name": "Do users write more insecure code.pdf",
+      "benchmark_group": "table"
+    },
+    {
+      "document_id": "corpus-v2-reflective-practice-transcript",
+      "file_name": "Reflective Practice Transcript.pdf",
+      "benchmark_group": "ocr_multimodal"
+    }
+  ],
+  "metadata_validation": {
+    "passed": true,
+    "errors": [],
+    "stored_document_ids": [
+      "corpus-v2-admissions-appeals",
+      "corpus-v2-ai-ethics-chapter-1",
+      "corpus-v2-appendix-l-cop-assess",
+      "corpus-v2-coding-standards",
+      "corpus-v2-serverless-computing",
+      "corpus-v2-study-plan",
+      "corpus-v2-uolo-programme-terms"
+    ],
+    "stored_chunks_by_document": {
+      "corpus-v2-admissions-appeals": 24,
+      "corpus-v2-ai-ethics-chapter-1": 57,
+      "corpus-v2-appendix-l-cop-assess": 57,
+      "corpus-v2-coding-standards": 15,
+      "corpus-v2-serverless-computing": 176,
+      "corpus-v2-study-plan": 3,
+      "corpus-v2-uolo-programme-terms": 93
+    },
+    "sampled_chunks": [
+      {
+        "record_id": "corpus-v2-admissions-appeals:1:0",
+        "metadata": {
+          "created_time": "2026-08-12T06:11:02.708558+00:00",
+          "document_id": "corpus-v2-admissions-appeals",
+          "chunk_index": 0,
+          "text": "1 | P a g e  \n \n \n \n \n \n \n \n \n \nADMISSIONS APPEALS AND COMPLAINTS PROCEDURE FOR APPLICANTS \n \n \n1 \nGENERAL PRINCIPLES \n \n1.1 \nThe University of Liverpool welcomes applications from all candidates with the \npotential to succeed in higher education. In line with the University's commitment \nto a policy of equal opportunities, no student will be subjected to less favourable \ntreatment on the grounds of their sex, age, disability, religion, marital or parental \nstatus, social background, sexual orientation, or ethnic or national origin. \n \n1.2 \nOur admissions practices are designed to ensure that applicants are treated wholly \non the basis of their aptitudes, skills and abilities in relation to their programmes of \nstudy, and we are committed to operating admissions procedures that are fair, \n",
+          "source_file": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+          "file_hash": "95799ecaf19dedcd349ce6b3d015e76c593ce5dd210e417e09cde53d6762e7a2",
+          "page_number": 1,
+          "version": "1",
+          "status": "ACTIVE",
+          "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf"
+        }
+      },
+      {
+        "record_id": "corpus-v2-ai-ethics-chapter-1:1:0",
+        "metadata": {
+          "created_time": "2026-08-12T06:12:04.040345+00:00",
+          "file_hash": "0a8f09785518d84b6e558e5a978f12d5a1dce29c56c86778dbb5f64fea55e5d8",
+          "chunk_index": 0,
+          "page_number": 1,
+          "text": "1\nPast\nThe Emergence of AI\n1.0  Summary\nSection 1.1 begins by offering a brief overview of how digital developments have \nled to the current availability and success of AI systems. Section 1.2 interprets the \ndisruptive impact of digital technologies, sciences, practices, products, and \nservices—­in short, the digital—­as being due to its ability to cut and paste realities \nand ideas that we have inherited from modernity. I call this the cleaving power of \nthe digital. I illustrate this cleaving power through some concrete examples. Then \nI use it to interpret AI as a new form of smart agency brought about by the digital \ndecoupling of agency and intelligence, an unprecedented phenomenon that \nhas caused some distractions and misunderstandings such as ‘the Singularity’, for \nexample. Secti",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "version": "1",
+          "status": "ACTIVE",
+          "source_file": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+          "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf"
+        }
+      },
+      {
+        "record_id": "corpus-v2-appendix-l-cop-assess:1:0",
+        "metadata": {
+          "text": " \n \n \n \n \n \n \n \nCODE OF PRACTICE ON ASSESSMENT \nAPPENDIX L \nAcademic Integrity Policy \n2025-26 \nApplicable to all cohorts \n \n \nIn the Code of Practice on Assessment and all Appendices the term “student” \nincludes apprentices on degree apprenticeship programmes\n",
+          "page_number": 1,
+          "source_file": "appendix_L_cop_assess.pdf",
+          "created_time": "2026-08-12T06:11:18.231463+00:00",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "chunk_index": 0,
+          "file_name": "appendix_L_cop_assess.pdf",
+          "file_hash": "80d511c9b6fd2ecbb325aa88b8210dc96e541f7271ecfcb6729747ecb8ee10b3",
+          "version": "1",
+          "status": "ACTIVE"
+        }
+      },
+      {
+        "record_id": "corpus-v2-coding-standards:1:0",
+        "metadata": {
+          "file_name": "Coding_Standards.pdf",
+          "chunk_index": 0,
+          "text": "Coding Standard\nIntroduction\nThis standard defines how your code should be styled for assignments and projects.\nBy\nfollowing these conventions, you will produce code which is more readable and easier for\nyou or someone else to follow. These guidelines apply to all programming languages. The\nexamples are shown in Python. Being able to write clean legible code will also improve your\nemployability.\nThe coding standard guidelines should also help you stay within the word count limits by\nincluding relevant information in your code instead of the written report.\nCertain assignment briefs such as those in Software Development in Practice may ask students\nto follow specific standard such PEP-8. PEP-8 Cheat Sheet (Python PEP Standards Cheat Sheet)\ncan be found near the end of this document.\nIdentif",
+          "file_hash": "5093b663db4a399fe7db783b2eee18a0b5e95622f8bf3f9992d2f4e4a01f3832",
+          "page_number": 1,
+          "version": "1",
+          "source_file": "Coding_Standards.pdf",
+          "status": "ACTIVE",
+          "created_time": "2026-08-12T06:11:54.505960+00:00",
+          "document_id": "corpus-v2-coding-standards"
+        }
+      },
+      {
+        "record_id": "corpus-v2-serverless-computing:1:0",
+        "metadata": {
+          "created_time": "2026-08-12T06:13:38.149316+00:00",
+          "document_id": "corpus-v2-serverless-computing",
+          "file_hash": "0ec88d949812d70c95bd80178018f6836a9c689172c3ec36d030039e4ae6a264",
+          "version": "1",
+          "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+          "chunk_index": 0,
+          "text": "Serverless Computing: State-of-the-Art,\nChallenges and Opportunities\nYongkang Li\n, Yanying Lin\n, Yang Wang\n, Kejiang Ye\n, and Chengzhong Xu\n, Fellow, IEEE\nAbstract—Serverless computing is growing in popularity by virtue of its lightweight and simplicity of management. It achieves these\nmerits by reducing the granularity of the computing unit to the function level. Speciﬁcally, serverless allows users to focus squarely on\nthe function itself while leaving other cumbersome management and scheduling issues to the platform provider, who is responsible for\nstriking a balance between high-performance scheduling and low resource cost. In this article, we conduct a comprehensive survey of\nserverless computing with a particular focus on its infrastructure characteristics. Whereby some existing chal",
+          "page_number": 1,
+          "status": "ACTIVE",
+          "source_file": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf"
+        }
+      },
+      {
+        "record_id": "corpus-v2-study-plan:1:0",
+        "metadata": {
+          "status": "ACTIVE",
+          "chunk_index": 0,
+          "version": "1",
+          "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
+          "file_name": "Study Plan - MSc Computer Science.pdf",
+          "document_id": "corpus-v2-study-plan",
+          "created_time": "2026-08-12T06:10:59.254890+00:00",
+          "page_number": 1,
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "text": " \n \n \n \n \nUniversity of Liverpool Online Programmes  \n1 of 1 \nonline.liverpool.ac.uk  \n \n \n \nIndicative Study Plan  \nProgramme Title \nMSc Computer Science \nIndicative Study Duration \n24 Months* \nCredits \n180 \nModules to be studied: \nModule Title \nCredits \nModule Duration \nGlobal Trends in Computer Science \n15 \n8 weeks \nSoftware Development in Practice \n15  \n8 weeks \nDatabases and Information Systems \n15 \n8 weeks \nNetworks and Web Technology \n15 \n8 weeks \nMulti-Agent Systems \n15 \n8 weeks \nResearch Methods in Computer Science \n15 \n8 weeks \nChoose one Elective Module from the following: \n \n \nMachine Learning in Practice \n15  \n8 weeks \nReasoning and Intelligent Systems \n15 \n8 weeks \nRobotics \n15 \n8 weeks \nChoose one Elective Module from the following: \n \n \nCloud Computing \n15 \n8 weeks \nData Vi"
+        }
+      },
+      {
+        "record_id": "corpus-v2-uolo-programme-terms:1:0",
+        "metadata": {
+          "text": "University of Liverpool Online \n1 \nonline.liverpool.ac.uk \n \n \n \n \n \n \n \n \nUNIVERSITY OF LIVERPOOL \nPROGRAMME TERMS \nAND CONDITIONS \nFOR  ONLINE STUDY \n",
+          "source_file": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+          "version": "1",
+          "created_time": "2026-08-12T06:12:39.389804+00:00",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "status": "ACTIVE",
+          "file_hash": "882ab899a5409f20c446351742056b31b6d8d0990b2fedccc0ae906f14d579b6",
+          "page_number": 1,
+          "chunk_index": 0,
+          "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf"
+        }
+      }
+    ]
+  },
+  "persistence_validation": {
+    "passed": true,
+    "errors": [],
+    "stored_document_ids": [
+      "corpus-v2-admissions-appeals",
+      "corpus-v2-ai-ethics-chapter-1",
+      "corpus-v2-appendix-l-cop-assess",
+      "corpus-v2-coding-standards",
+      "corpus-v2-serverless-computing",
+      "corpus-v2-study-plan",
+      "corpus-v2-uolo-programme-terms"
+    ],
+    "stored_chunks_by_document": {
+      "corpus-v2-admissions-appeals": 24,
+      "corpus-v2-ai-ethics-chapter-1": 57,
+      "corpus-v2-appendix-l-cop-assess": 57,
+      "corpus-v2-coding-standards": 15,
+      "corpus-v2-serverless-computing": 176,
+      "corpus-v2-study-plan": 3,
+      "corpus-v2-uolo-programme-terms": 93
+    },
+    "sampled_chunks": [
+      {
+        "record_id": "corpus-v2-admissions-appeals:1:0",
+        "metadata": {
+          "version": "1",
+          "document_id": "corpus-v2-admissions-appeals",
+          "chunk_index": 0,
+          "page_number": 1,
+          "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+          "source_file": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+          "status": "ACTIVE",
+          "text": "1 | P a g e  \n \n \n \n \n \n \n \n \n \nADMISSIONS APPEALS AND COMPLAINTS PROCEDURE FOR APPLICANTS \n \n \n1 \nGENERAL PRINCIPLES \n \n1.1 \nThe University of Liverpool welcomes applications from all candidates with the \npotential to succeed in higher education. In line with the University's commitment \nto a policy of equal opportunities, no student will be subjected to less favourable \ntreatment on the grounds of their sex, age, disability, religion, marital or parental \nstatus, social background, sexual orientation, or ethnic or national origin. \n \n1.2 \nOur admissions practices are designed to ensure that applicants are treated wholly \non the basis of their aptitudes, skills and abilities in relation to their programmes of \nstudy, and we are committed to operating admissions procedures that are fair, \n",
+          "file_hash": "95799ecaf19dedcd349ce6b3d015e76c593ce5dd210e417e09cde53d6762e7a2",
+          "created_time": "2026-08-12T06:11:02.708558+00:00"
+        }
+      },
+      {
+        "record_id": "corpus-v2-ai-ethics-chapter-1:1:0",
+        "metadata": {
+          "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+          "created_time": "2026-08-12T06:12:04.040345+00:00",
+          "page_number": 1,
+          "chunk_index": 0,
+          "text": "1\nPast\nThe Emergence of AI\n1.0  Summary\nSection 1.1 begins by offering a brief overview of how digital developments have \nled to the current availability and success of AI systems. Section 1.2 interprets the \ndisruptive impact of digital technologies, sciences, practices, products, and \nservices—­in short, the digital—­as being due to its ability to cut and paste realities \nand ideas that we have inherited from modernity. I call this the cleaving power of \nthe digital. I illustrate this cleaving power through some concrete examples. Then \nI use it to interpret AI as a new form of smart agency brought about by the digital \ndecoupling of agency and intelligence, an unprecedented phenomenon that \nhas caused some distractions and misunderstandings such as ‘the Singularity’, for \nexample. Secti",
+          "status": "ACTIVE",
+          "version": "1",
+          "file_hash": "0a8f09785518d84b6e558e5a978f12d5a1dce29c56c86778dbb5f64fea55e5d8",
+          "source_file": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+          "document_id": "corpus-v2-ai-ethics-chapter-1"
+        }
+      },
+      {
+        "record_id": "corpus-v2-appendix-l-cop-assess:1:0",
+        "metadata": {
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "source_file": "appendix_L_cop_assess.pdf",
+          "file_hash": "80d511c9b6fd2ecbb325aa88b8210dc96e541f7271ecfcb6729747ecb8ee10b3",
+          "text": " \n \n \n \n \n \n \n \nCODE OF PRACTICE ON ASSESSMENT \nAPPENDIX L \nAcademic Integrity Policy \n2025-26 \nApplicable to all cohorts \n \n \nIn the Code of Practice on Assessment and all Appendices the term “student” \nincludes apprentices on degree apprenticeship programmes\n",
+          "status": "ACTIVE",
+          "version": "1",
+          "created_time": "2026-08-12T06:11:18.231463+00:00",
+          "chunk_index": 0,
+          "file_name": "appendix_L_cop_assess.pdf",
+          "page_number": 1
+        }
+      },
+      {
+        "record_id": "corpus-v2-coding-standards:1:0",
+        "metadata": {
+          "text": "Coding Standard\nIntroduction\nThis standard defines how your code should be styled for assignments and projects.\nBy\nfollowing these conventions, you will produce code which is more readable and easier for\nyou or someone else to follow. These guidelines apply to all programming languages. The\nexamples are shown in Python. Being able to write clean legible code will also improve your\nemployability.\nThe coding standard guidelines should also help you stay within the word count limits by\nincluding relevant information in your code instead of the written report.\nCertain assignment briefs such as those in Software Development in Practice may ask students\nto follow specific standard such PEP-8. PEP-8 Cheat Sheet (Python PEP Standards Cheat Sheet)\ncan be found near the end of this document.\nIdentif",
+          "chunk_index": 0,
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 1,
+          "created_time": "2026-08-12T06:11:54.505960+00:00",
+          "file_name": "Coding_Standards.pdf",
+          "file_hash": "5093b663db4a399fe7db783b2eee18a0b5e95622f8bf3f9992d2f4e4a01f3832",
+          "version": "1",
+          "source_file": "Coding_Standards.pdf",
+          "status": "ACTIVE"
+        }
+      },
+      {
+        "record_id": "corpus-v2-serverless-computing:1:0",
+        "metadata": {
+          "document_id": "corpus-v2-serverless-computing",
+          "created_time": "2026-08-12T06:13:38.149316+00:00",
+          "version": "1",
+          "source_file": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+          "page_number": 1,
+          "file_hash": "0ec88d949812d70c95bd80178018f6836a9c689172c3ec36d030039e4ae6a264",
+          "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+          "text": "Serverless Computing: State-of-the-Art,\nChallenges and Opportunities\nYongkang Li\n, Yanying Lin\n, Yang Wang\n, Kejiang Ye\n, and Chengzhong Xu\n, Fellow, IEEE\nAbstract—Serverless computing is growing in popularity by virtue of its lightweight and simplicity of management. It achieves these\nmerits by reducing the granularity of the computing unit to the function level. Speciﬁcally, serverless allows users to focus squarely on\nthe function itself while leaving other cumbersome management and scheduling issues to the platform provider, who is responsible for\nstriking a balance between high-performance scheduling and low resource cost. In this article, we conduct a comprehensive survey of\nserverless computing with a particular focus on its infrastructure characteristics. Whereby some existing chal",
+          "chunk_index": 0,
+          "status": "ACTIVE"
+        }
+      },
+      {
+        "record_id": "corpus-v2-study-plan:1:0",
+        "metadata": {
+          "version": "1",
+          "source_file": "Study Plan - MSc Computer Science.pdf",
+          "status": "ACTIVE",
+          "created_time": "2026-08-12T06:10:59.254890+00:00",
+          "page_number": 1,
+          "file_name": "Study Plan - MSc Computer Science.pdf",
+          "document_id": "corpus-v2-study-plan",
+          "chunk_index": 0,
+          "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
+          "text": " \n \n \n \n \nUniversity of Liverpool Online Programmes  \n1 of 1 \nonline.liverpool.ac.uk  \n \n \n \nIndicative Study Plan  \nProgramme Title \nMSc Computer Science \nIndicative Study Duration \n24 Months* \nCredits \n180 \nModules to be studied: \nModule Title \nCredits \nModule Duration \nGlobal Trends in Computer Science \n15 \n8 weeks \nSoftware Development in Practice \n15  \n8 weeks \nDatabases and Information Systems \n15 \n8 weeks \nNetworks and Web Technology \n15 \n8 weeks \nMulti-Agent Systems \n15 \n8 weeks \nResearch Methods in Computer Science \n15 \n8 weeks \nChoose one Elective Module from the following: \n \n \nMachine Learning in Practice \n15  \n8 weeks \nReasoning and Intelligent Systems \n15 \n8 weeks \nRobotics \n15 \n8 weeks \nChoose one Elective Module from the following: \n \n \nCloud Computing \n15 \n8 weeks \nData Vi"
+        }
+      },
+      {
+        "record_id": "corpus-v2-uolo-programme-terms:1:0",
+        "metadata": {
+          "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+          "status": "ACTIVE",
+          "file_hash": "882ab899a5409f20c446351742056b31b6d8d0990b2fedccc0ae906f14d579b6",
+          "page_number": 1,
+          "version": "1",
+          "text": "University of Liverpool Online \n1 \nonline.liverpool.ac.uk \n \n \n \n \n \n \n \n \nUNIVERSITY OF LIVERPOOL \nPROGRAMME TERMS \nAND CONDITIONS \nFOR  ONLINE STUDY \n",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "created_time": "2026-08-12T06:12:39.389804+00:00",
+          "source_file": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+          "chunk_index": 0
+        }
+      }
+    ],
+    "chunk_count_before_restart": 425,
+    "chunk_count_after_restart": 425
+  }
+}

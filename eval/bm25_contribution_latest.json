@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-11T08:55:01.422707+00:00",
+  "generated_at": "2026-08-12T06:19:47.111459+00:00",
   "fixture": {
-    "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+    "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
     "version": "1",
     "status": "ACTIVE",
     "file_hash": "287a0a46827e397a29d8bbf541362d3e392a40cc6d18d17d03ad9688f1a852de",
@@ -417,14 +417,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.6559813618659973,
+          "embedding_score": 0.6559494733810425,
           "normalized_bm25_score": 0.8378114457066327,
-          "retrieval_score": 0.7105303870181878,
+          "retrieval_score": 0.7105080650787194,
           "matched_evidence_keywords": [
             "Indicative Study Duration",
             "24 Months"
@@ -433,14 +433,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.628624677658081,
+          "embedding_score": 0.6280022859573364,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7400372743606567,
+          "retrieval_score": 0.7396016001701354,
           "matched_evidence_keywords": [
             "Indicative Study Duration",
             "24 Months"
@@ -449,14 +449,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.628624677658081,
+          "embedding_score": 0.6280022859573364,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7400372743606567,
+          "retrieval_score": 0.7396016001701354,
           "matched_evidence_keywords": [
             "Indicative Study Duration",
             "24 Months"
@@ -465,14 +465,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.6559813618659973,
+          "embedding_score": 0.6559494733810425,
           "normalized_bm25_score": 0.8378114457066327,
-          "retrieval_score": 0.7105303870181878,
+          "retrieval_score": 0.7105080650787194,
           "matched_evidence_keywords": [
             "Indicative Study Duration",
             "24 Months"
@@ -481,14 +481,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.628624677658081,
+          "embedding_score": 0.6280022859573364,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7400372743606567,
+          "retrieval_score": 0.7396016001701354,
           "matched_evidence_keywords": [
             "Indicative Study Duration",
             "24 Months"
@@ -497,14 +497,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.628624677658081,
+          "embedding_score": 0.6280022859573364,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7400372743606567,
+          "retrieval_score": 0.7396016001701354,
           "matched_evidence_keywords": [
             "Indicative Study Duration",
             "24 Months"
@@ -514,14 +514,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.628624677658081,
+            "embedding_score": 0.6280022859573364,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.7400372743606567,
+            "retrieval_score": 0.7396016001701354,
             "matched_evidence_keywords": [
               "Indicative Study Duration",
               "24 Months"
@@ -530,14 +530,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.6559813618659973,
+            "embedding_score": 0.6559494733810425,
             "normalized_bm25_score": 0.8378114457066327,
-            "retrieval_score": 0.7105303870181878,
+            "retrieval_score": 0.7105080650787194,
             "matched_evidence_keywords": [
               "Indicative Study Duration",
               "24 Months"
@@ -546,14 +546,14 @@
           },
           {
             "rank": 3,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.6460320949554443,
+            "embedding_score": 0.6460603475570679,
             "normalized_bm25_score": 0.2466828134192302,
-            "retrieval_score": 0.52622731049458,
+            "retrieval_score": 0.5262470873157166,
             "matched_evidence_keywords": [
               "Indicative Study Duration"
             ],
@@ -562,9 +562,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.7400372743606567,
-        "top2_score": 0.7105303870181878,
-        "top1_minus_top2_margin": 0.029506887342468868
+        "top1_score": 0.7396016001701354,
+        "top2_score": 0.7105080650787194,
+        "top1_minus_top2_margin": 0.02909353509141599
       }
     },
     {
@@ -587,14 +587,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5922666788101196,
+          "embedding_score": 0.5923218727111816,
           "normalized_bm25_score": 0.42355458968768184,
-          "retrieval_score": 0.5416530520733882,
+          "retrieval_score": 0.5416916878041317,
           "matched_evidence_keywords": [
             "Final Module",
             "Computer Science Capstone Project"
@@ -603,40 +603,40 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5583593249320984,
+          "embedding_score": 0.5584744811058044,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6908515274524689,
+          "retrieval_score": 0.6909321367740631,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5583593249320984,
+          "embedding_score": 0.5584744811058044,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6908515274524689,
+          "retrieval_score": 0.6909321367740631,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5922666788101196,
+          "embedding_score": 0.5923218727111816,
           "normalized_bm25_score": 0.42355458968768184,
-          "retrieval_score": 0.5416530520733882,
+          "retrieval_score": 0.5416916878041317,
           "matched_evidence_keywords": [
             "Final Module",
             "Computer Science Capstone Project"
@@ -645,14 +645,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5922666788101196,
+          "embedding_score": 0.5923218727111816,
           "normalized_bm25_score": 0.42355458968768184,
-          "retrieval_score": 0.5416530520733882,
+          "retrieval_score": 0.5416916878041317,
           "matched_evidence_keywords": [
             "Final Module",
             "Computer Science Capstone Project"
@@ -661,14 +661,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5922666788101196,
+          "embedding_score": 0.5923218727111816,
           "normalized_bm25_score": 0.42355458968768184,
-          "retrieval_score": 0.5416530520733882,
+          "retrieval_score": 0.5416916878041317,
           "matched_evidence_keywords": [
             "Final Module",
             "Computer Science Capstone Project"
@@ -678,14 +678,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5922666788101196,
+            "embedding_score": 0.5923218727111816,
             "normalized_bm25_score": 0.42355458968768184,
-            "retrieval_score": 0.5416530520733882,
+            "retrieval_score": 0.5416916878041317,
             "matched_evidence_keywords": [
               "Final Module",
               "Computer Science Capstone Project"
@@ -695,9 +695,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6908515274524689,
-        "top2_score": 0.5416530520733882,
-        "top1_minus_top2_margin": 0.1491984753790807
+        "top1_score": 0.6909321367740631,
+        "top2_score": 0.5416916878041317,
+        "top1_minus_top2_margin": 0.14924044896993138
       }
     },
     {
@@ -720,14 +720,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5524911284446716,
+          "embedding_score": 0.5525215864181519,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.68674378991127,
+          "retrieval_score": 0.6867651104927063,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -736,14 +736,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5524911284446716,
+          "embedding_score": 0.5525215864181519,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.68674378991127,
+          "retrieval_score": 0.6867651104927063,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -752,14 +752,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5524911284446716,
+          "embedding_score": 0.5525215864181519,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.68674378991127,
+          "retrieval_score": 0.6867651104927063,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -768,14 +768,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5524911284446716,
+          "embedding_score": 0.5525215864181519,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.68674378991127,
+          "retrieval_score": 0.6867651104927063,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -784,14 +784,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5524911284446716,
+          "embedding_score": 0.5525215864181519,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.68674378991127,
+          "retrieval_score": 0.6867651104927063,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -800,14 +800,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.5524911284446716,
+          "embedding_score": 0.5525215864181519,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.68674378991127,
+          "retrieval_score": 0.6867651104927063,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -817,14 +817,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.5524911284446716,
+            "embedding_score": 0.5525215864181519,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.68674378991127,
+            "retrieval_score": 0.6867651104927063,
             "matched_evidence_keywords": [
               "Credits",
               "180"
@@ -834,9 +834,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.68674378991127,
-        "top2_score": 0.37343740750576304,
-        "top1_minus_top2_margin": 0.313306382405507
+        "top1_score": 0.6867651104927063,
+        "top2_score": 0.37341483522678665,
+        "top1_minus_top2_margin": 0.31335027526591963
       }
     },
     {
@@ -859,14 +859,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5910918712615967,
+          "embedding_score": 0.5911270380020142,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7137643098831177,
+          "retrieval_score": 0.7137889266014099,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -875,14 +875,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5910918712615967,
+          "embedding_score": 0.5911270380020142,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7137643098831177,
+          "retrieval_score": 0.7137889266014099,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -891,14 +891,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5910918712615967,
+          "embedding_score": 0.5911270380020142,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7137643098831177,
+          "retrieval_score": 0.7137889266014099,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -907,14 +907,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5910918712615967,
+          "embedding_score": 0.5911270380020142,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7137643098831177,
+          "retrieval_score": 0.7137889266014099,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -923,14 +923,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5910918712615967,
+          "embedding_score": 0.5911270380020142,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7137643098831177,
+          "retrieval_score": 0.7137889266014099,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -939,14 +939,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5910918712615967,
+          "embedding_score": 0.5911270380020142,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.7137643098831177,
+          "retrieval_score": 0.7137889266014099,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -956,14 +956,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5910918712615967,
+            "embedding_score": 0.5911270380020142,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.7137643098831177,
+            "retrieval_score": 0.7137889266014099,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "32 weeks"
@@ -973,9 +973,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.7137643098831177,
-        "top2_score": 0.31475348402003495,
-        "top1_minus_top2_margin": 0.39901082586308273
+        "top1_score": 0.7137889266014099,
+        "top2_score": 0.31477543045024126,
+        "top1_minus_top2_margin": 0.39901349615116866
       }
     },
     {
@@ -999,14 +999,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.610795795917511,
+          "embedding_score": 0.6111724972724915,
           "normalized_bm25_score": 0.7292201185903983,
-          "retrieval_score": 0.6463230927193772,
+          "retrieval_score": 0.6465867836678635,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -1016,40 +1016,40 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4957006573677063,
+          "embedding_score": 0.4956199526786804,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6469904601573944,
+          "retrieval_score": 0.6469339668750762,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4957006573677063,
+          "embedding_score": 0.4956199526786804,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6469904601573944,
+          "retrieval_score": 0.6469339668750762,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.610795795917511,
+          "embedding_score": 0.6111724972724915,
           "normalized_bm25_score": 0.7292201185903983,
-          "retrieval_score": 0.6463230927193772,
+          "retrieval_score": 0.6465867836678635,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -1059,14 +1059,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.610795795917511,
+          "embedding_score": 0.6111724972724915,
           "normalized_bm25_score": 0.7292201185903983,
-          "retrieval_score": 0.6463230927193772,
+          "retrieval_score": 0.6465867836678635,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -1076,14 +1076,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.610795795917511,
+          "embedding_score": 0.6111724972724915,
           "normalized_bm25_score": 0.7292201185903983,
-          "retrieval_score": 0.6463230927193772,
+          "retrieval_score": 0.6465867836678635,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -1094,14 +1094,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.610795795917511,
+            "embedding_score": 0.6111724972724915,
             "normalized_bm25_score": 0.7292201185903983,
-            "retrieval_score": 0.6463230927193772,
+            "retrieval_score": 0.6465867836678635,
             "matched_evidence_keywords": [
               "maximum period",
               "72 months",
@@ -1112,9 +1112,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6469904601573944,
-        "top2_score": 0.6463230927193772,
-        "top1_minus_top2_margin": 0.0006673674380172079
+        "top1_score": 0.6469339668750762,
+        "top2_score": 0.6465867836678635,
+        "top1_minus_top2_margin": 0.0003471832072127201
       }
     },
     {
@@ -1137,14 +1137,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4405413866043091,
+          "embedding_score": 0.4404897689819336,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6083789706230163,
+          "retrieval_score": 0.6083428382873535,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -1153,14 +1153,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4405413866043091,
+          "embedding_score": 0.4404897689819336,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6083789706230163,
+          "retrieval_score": 0.6083428382873535,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -1169,14 +1169,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4405413866043091,
+          "embedding_score": 0.4404897689819336,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6083789706230163,
+          "retrieval_score": 0.6083428382873535,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -1185,14 +1185,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4405413866043091,
+          "embedding_score": 0.4404897689819336,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6083789706230163,
+          "retrieval_score": 0.6083428382873535,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -1201,14 +1201,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4405413866043091,
+          "embedding_score": 0.4404897689819336,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6083789706230163,
+          "retrieval_score": 0.6083428382873535,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -1217,14 +1217,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4405413866043091,
+          "embedding_score": 0.4404897689819336,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6083789706230163,
+          "retrieval_score": 0.6083428382873535,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -1234,14 +1234,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.4405413866043091,
+            "embedding_score": 0.4404897689819336,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6083789706230163,
+            "retrieval_score": 0.6083428382873535,
             "matched_evidence_keywords": [
               "Student Support Team",
               "manage your enrolment"
@@ -1251,9 +1251,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6083789706230163,
-        "top2_score": 0.3644304522305536,
-        "top1_minus_top2_margin": 0.24394851839246268
+        "top1_score": 0.6083428382873535,
+        "top2_score": 0.3643810936242151,
+        "top1_minus_top2_margin": 0.24396174466313836
       }
     },
     {
@@ -1277,14 +1277,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617726445198059,
+          "embedding_score": 0.5619850754737854,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932408511638641,
+          "retrieval_score": 0.6933895528316498,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -1294,14 +1294,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617726445198059,
+          "embedding_score": 0.5619850754737854,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932408511638641,
+          "retrieval_score": 0.6933895528316498,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -1311,14 +1311,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617726445198059,
+          "embedding_score": 0.5619850754737854,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932408511638641,
+          "retrieval_score": 0.6933895528316498,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -1328,14 +1328,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617726445198059,
+          "embedding_score": 0.5619850754737854,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932408511638641,
+          "retrieval_score": 0.6933895528316498,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -1345,14 +1345,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617726445198059,
+          "embedding_score": 0.5619850754737854,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932408511638641,
+          "retrieval_score": 0.6933895528316498,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -1362,14 +1362,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617726445198059,
+          "embedding_score": 0.5619850754737854,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932408511638641,
+          "retrieval_score": 0.6933895528316498,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -1380,14 +1380,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.5617726445198059,
+            "embedding_score": 0.5619850754737854,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6932408511638641,
+            "retrieval_score": 0.6933895528316498,
             "matched_evidence_keywords": [
               "break from your studies",
               "reassessment",
@@ -1397,14 +1397,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.4203198552131653,
+            "embedding_score": 0.4202721118927002,
             "normalized_bm25_score": 0.757600054587248,
-            "retrieval_score": 0.5215039150253901,
+            "retrieval_score": 0.5214704947010644,
             "matched_evidence_keywords": [
               "break from your studies",
               "reassessment"
@@ -1413,14 +1413,14 @@
           },
           {
             "rank": 3,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3382790684700012,
+            "embedding_score": 0.33822113275527954,
             "normalized_bm25_score": 0.3001183905980747,
-            "retrieval_score": 0.32683086510842324,
+            "retrieval_score": 0.3267903101081181,
             "matched_evidence_keywords": [
               "24 months"
             ],
@@ -1429,9 +1429,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6932408511638641,
-        "top2_score": 0.5215039150253901,
-        "top1_minus_top2_margin": 0.17173693613847407
+        "top1_score": 0.6933895528316498,
+        "top2_score": 0.5214704947010644,
+        "top1_minus_top2_margin": 0.1719190581305854
       }
     },
     {
@@ -1454,14 +1454,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.3793955445289612,
+          "embedding_score": 0.37945032119750977,
           "normalized_bm25_score": 0.09696104771698771,
-          "retrieval_score": 0.29466519548536907,
+          "retrieval_score": 0.2947035391533531,
           "matched_evidence_keywords": [
             "Choose one Elective Module"
           ],
@@ -1469,14 +1469,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3535757064819336,
+          "embedding_score": 0.3535432815551758,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5475029945373535,
+          "retrieval_score": 0.547480297088623,
           "matched_evidence_keywords": [
             "Choose one Elective Module",
             "Robotics"
@@ -1485,14 +1485,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3535757064819336,
+          "embedding_score": 0.3535432815551758,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5475029945373535,
+          "retrieval_score": 0.547480297088623,
           "matched_evidence_keywords": [
             "Choose one Elective Module",
             "Robotics"
@@ -1501,14 +1501,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3535757064819336,
+          "embedding_score": 0.3535432815551758,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5475029945373535,
+          "retrieval_score": 0.547480297088623,
           "matched_evidence_keywords": [
             "Choose one Elective Module",
             "Robotics"
@@ -1517,14 +1517,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3535757064819336,
+          "embedding_score": 0.3535432815551758,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5475029945373535,
+          "retrieval_score": 0.547480297088623,
           "matched_evidence_keywords": [
             "Choose one Elective Module",
             "Robotics"
@@ -1533,14 +1533,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3535757064819336,
+          "embedding_score": 0.3535432815551758,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5475029945373535,
+          "retrieval_score": 0.547480297088623,
           "matched_evidence_keywords": [
             "Choose one Elective Module",
             "Robotics"
@@ -1550,14 +1550,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3535757064819336,
+            "embedding_score": 0.3535432815551758,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5475029945373535,
+            "retrieval_score": 0.547480297088623,
             "matched_evidence_keywords": [
               "Choose one Elective Module",
               "Robotics"
@@ -1566,14 +1566,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.3793955445289612,
+            "embedding_score": 0.37945032119750977,
             "normalized_bm25_score": 0.09696104771698771,
-            "retrieval_score": 0.29466519548536907,
+            "retrieval_score": 0.2947035391533531,
             "matched_evidence_keywords": [
               "Choose one Elective Module"
             ],
@@ -1582,9 +1582,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.5475029945373535,
-        "top2_score": 0.29466519548536907,
-        "top1_minus_top2_margin": 0.25283779905198445
+        "top1_score": 0.547480297088623,
+        "top2_score": 0.2947035391533531,
+        "top1_minus_top2_margin": 0.2527767579352699
       }
     },
     {
@@ -1608,14 +1608,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5410194396972656,
+          "embedding_score": 0.5410474538803101,
           "normalized_bm25_score": 0.08447145204797578,
-          "retrieval_score": 0.40405504340247866,
+          "retrieval_score": 0.40407465333060977,
           "matched_evidence_keywords": [
             "15",
             "8 weeks"
@@ -1624,14 +1624,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4414519667625427,
+          "embedding_score": 0.4413836598396301,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.60901637673378,
+          "retrieval_score": 0.6089685618877411,
           "matched_evidence_keywords": [
             "Networks and Web Technology",
             "15",
@@ -1641,14 +1641,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4414519667625427,
+          "embedding_score": 0.4413836598396301,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.60901637673378,
+          "retrieval_score": 0.6089685618877411,
           "matched_evidence_keywords": [
             "Networks and Web Technology",
             "15",
@@ -1658,14 +1658,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4414519667625427,
+          "embedding_score": 0.4413836598396301,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.60901637673378,
+          "retrieval_score": 0.6089685618877411,
           "matched_evidence_keywords": [
             "Networks and Web Technology",
             "15",
@@ -1675,14 +1675,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4414519667625427,
+          "embedding_score": 0.4413836598396301,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.60901637673378,
+          "retrieval_score": 0.6089685618877411,
           "matched_evidence_keywords": [
             "Networks and Web Technology",
             "15",
@@ -1692,14 +1692,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4414519667625427,
+          "embedding_score": 0.4413836598396301,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.60901637673378,
+          "retrieval_score": 0.6089685618877411,
           "matched_evidence_keywords": [
             "Networks and Web Technology",
             "15",
@@ -1710,14 +1710,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.4414519667625427,
+            "embedding_score": 0.4413836598396301,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.60901637673378,
+            "retrieval_score": 0.6089685618877411,
             "matched_evidence_keywords": [
               "Networks and Web Technology",
               "15",
@@ -1727,14 +1727,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5410194396972656,
+            "embedding_score": 0.5410474538803101,
             "normalized_bm25_score": 0.08447145204797578,
-            "retrieval_score": 0.40405504340247866,
+            "retrieval_score": 0.40407465333060977,
             "matched_evidence_keywords": [
               "15",
               "8 weeks"
@@ -1744,9 +1744,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.60901637673378,
-        "top2_score": 0.40405504340247866,
-        "top1_minus_top2_margin": 0.2049613333313013
+        "top1_score": 0.6089685618877411,
+        "top2_score": 0.40407465333060977,
+        "top1_minus_top2_margin": 0.2048939085571313
       }
     },
     {
@@ -1769,53 +1769,53 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38938796520233154,
+          "embedding_score": 0.38856184482574463,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5725715756416321,
+          "retrieval_score": 0.5719932913780212,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38938796520233154,
+          "embedding_score": 0.38856184482574463,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5725715756416321,
+          "retrieval_score": 0.5719932913780212,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38938796520233154,
+          "embedding_score": 0.38856184482574463,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5725715756416321,
+          "retrieval_score": 0.5719932913780212,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "vector_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.3201856017112732,
+          "embedding_score": 0.32011425495147705,
           "normalized_bm25_score": 0.08212280110006659,
-          "retrieval_score": 0.2487667615279112,
+          "retrieval_score": 0.2487168187960539,
           "matched_evidence_keywords": [
             "module availability",
             "consecutively"
@@ -1824,14 +1824,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.3201856017112732,
+          "embedding_score": 0.32011425495147705,
           "normalized_bm25_score": 0.08212280110006659,
-          "retrieval_score": 0.2487667615279112,
+          "retrieval_score": 0.2487168187960539,
           "matched_evidence_keywords": [
             "module availability",
             "consecutively"
@@ -1840,14 +1840,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.3201856017112732,
+          "embedding_score": 0.32011425495147705,
           "normalized_bm25_score": 0.08212280110006659,
-          "retrieval_score": 0.2487667615279112,
+          "retrieval_score": 0.2487168187960539,
           "matched_evidence_keywords": [
             "module availability",
             "consecutively"
@@ -1857,14 +1857,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.3201856017112732,
+            "embedding_score": 0.32011425495147705,
             "normalized_bm25_score": 0.08212280110006659,
-            "retrieval_score": 0.2487667615279112,
+            "retrieval_score": 0.2487168187960539,
             "matched_evidence_keywords": [
               "module availability",
               "consecutively"
@@ -1874,9 +1874,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.5725715756416321,
-        "top2_score": 0.2487667615279112,
-        "top1_minus_top2_margin": 0.32380481411372086
+        "top1_score": 0.5719932913780212,
+        "top2_score": 0.2487168187960539,
+        "top1_minus_top2_margin": 0.32327647258196734
       }
     },
     {
@@ -1900,14 +1900,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.47834205627441406,
+          "embedding_score": 0.47744274139404297,
           "normalized_bm25_score": 0.81774530137028,
-          "retrieval_score": 0.5801630298031738,
+          "retrieval_score": 0.5795335093869141,
           "matched_evidence_keywords": [
             "24 Months",
             "maximum period",
@@ -1917,40 +1917,40 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.42091047763824463,
+          "embedding_score": 0.42094916105270386,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5946373343467712,
+          "retrieval_score": 0.5946644127368927,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.42091047763824463,
+          "embedding_score": 0.42094916105270386,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5946373343467712,
+          "retrieval_score": 0.5946644127368927,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.47834205627441406,
+          "embedding_score": 0.47744274139404297,
           "normalized_bm25_score": 0.81774530137028,
-          "retrieval_score": 0.5801630298031738,
+          "retrieval_score": 0.5795335093869141,
           "matched_evidence_keywords": [
             "24 Months",
             "maximum period",
@@ -1960,14 +1960,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.47834205627441406,
+          "embedding_score": 0.47744274139404297,
           "normalized_bm25_score": 0.81774530137028,
-          "retrieval_score": 0.5801630298031738,
+          "retrieval_score": 0.5795335093869141,
           "matched_evidence_keywords": [
             "24 Months",
             "maximum period",
@@ -1977,14 +1977,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.47834205627441406,
+          "embedding_score": 0.47744274139404297,
           "normalized_bm25_score": 0.81774530137028,
-          "retrieval_score": 0.5801630298031738,
+          "retrieval_score": 0.5795335093869141,
           "matched_evidence_keywords": [
             "24 Months",
             "maximum period",
@@ -1995,14 +1995,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.47834205627441406,
+            "embedding_score": 0.47744274139404297,
             "normalized_bm25_score": 0.81774530137028,
-            "retrieval_score": 0.5801630298031738,
+            "retrieval_score": 0.5795335093869141,
             "matched_evidence_keywords": [
               "24 Months",
               "maximum period",
@@ -2012,14 +2012,14 @@
           },
           {
             "rank": 3,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3481350541114807,
+            "embedding_score": 0.3481213450431824,
             "normalized_bm25_score": 0.9279666293465844,
-            "retrieval_score": 0.5220845266820118,
+            "retrieval_score": 0.5220749303342029,
             "matched_evidence_keywords": [
               "24 Months"
             ],
@@ -2028,9 +2028,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.5946373343467712,
-        "top2_score": 0.5801630298031738,
-        "top1_minus_top2_margin": 0.014474304543597438
+        "top1_score": 0.5946644127368927,
+        "top2_score": 0.5795335093869141,
+        "top1_minus_top2_margin": 0.015130903349978686
       }
     },
     {
@@ -2053,14 +2053,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4970012903213501,
+          "embedding_score": 0.49701106548309326,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.647900903224945,
+          "retrieval_score": 0.6479077458381652,
           "matched_evidence_keywords": [
             "Programme Title",
             "MSc Computer Science"
@@ -2069,14 +2069,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4970012903213501,
+          "embedding_score": 0.49701106548309326,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.647900903224945,
+          "retrieval_score": 0.6479077458381652,
           "matched_evidence_keywords": [
             "Programme Title",
             "MSc Computer Science"
@@ -2085,14 +2085,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4970012903213501,
+          "embedding_score": 0.49701106548309326,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.647900903224945,
+          "retrieval_score": 0.6479077458381652,
           "matched_evidence_keywords": [
             "Programme Title",
             "MSc Computer Science"
@@ -2101,14 +2101,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4970012903213501,
+          "embedding_score": 0.49701106548309326,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.647900903224945,
+          "retrieval_score": 0.6479077458381652,
           "matched_evidence_keywords": [
             "Programme Title",
             "MSc Computer Science"
@@ -2117,14 +2117,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4970012903213501,
+          "embedding_score": 0.49701106548309326,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.647900903224945,
+          "retrieval_score": 0.6479077458381652,
           "matched_evidence_keywords": [
             "Programme Title",
             "MSc Computer Science"
@@ -2133,14 +2133,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.4970012903213501,
+          "embedding_score": 0.49701106548309326,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.647900903224945,
+          "retrieval_score": 0.6479077458381652,
           "matched_evidence_keywords": [
             "Programme Title",
             "MSc Computer Science"
@@ -2150,14 +2150,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.4970012903213501,
+            "embedding_score": 0.49701106548309326,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.647900903224945,
+            "retrieval_score": 0.6479077458381652,
             "matched_evidence_keywords": [
               "Programme Title",
               "MSc Computer Science"
@@ -2167,9 +2167,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.647900903224945,
-        "top2_score": 0.34681979173728106,
-        "top1_minus_top2_margin": 0.3010811114876639
+        "top1_score": 0.6479077458381652,
+        "top2_score": 0.34636659378119583,
+        "top1_minus_top2_margin": 0.3015411520569694
       }
     },
     {
@@ -2192,14 +2192,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.48065364360809326,
+          "embedding_score": 0.48058152198791504,
           "normalized_bm25_score": 0.0886721888905603,
-          "retrieval_score": 0.36305920719283336,
+          "retrieval_score": 0.3630087220587086,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -2208,40 +2208,40 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.4753462076187134,
+          "embedding_score": 0.4748694896697998,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6327423453330994,
+          "retrieval_score": 0.6324086427688598,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.4753462076187134,
+          "embedding_score": 0.4748694896697998,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6327423453330994,
+          "retrieval_score": 0.6324086427688598,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.48065364360809326,
+          "embedding_score": 0.48058152198791504,
           "normalized_bm25_score": 0.0886721888905603,
-          "retrieval_score": 0.36305920719283336,
+          "retrieval_score": 0.3630087220587086,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -2250,14 +2250,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.48065364360809326,
+          "embedding_score": 0.48058152198791504,
           "normalized_bm25_score": 0.0886721888905603,
-          "retrieval_score": 0.36305920719283336,
+          "retrieval_score": 0.3630087220587086,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -2266,14 +2266,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.48065364360809326,
+          "embedding_score": 0.48058152198791504,
           "normalized_bm25_score": 0.0886721888905603,
-          "retrieval_score": 0.36305920719283336,
+          "retrieval_score": 0.3630087220587086,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -2283,14 +2283,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.48065364360809326,
+            "embedding_score": 0.48058152198791504,
             "normalized_bm25_score": 0.0886721888905603,
-            "retrieval_score": 0.36305920719283336,
+            "retrieval_score": 0.3630087220587086,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "32 weeks"
@@ -2300,9 +2300,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6327423453330994,
-        "top2_score": 0.36305920719283336,
-        "top1_minus_top2_margin": 0.269683138140266
+        "top1_score": 0.6324086427688598,
+        "top2_score": 0.3630087220587086,
+        "top1_minus_top2_margin": 0.2693999207101512
       }
     },
     {
@@ -2325,14 +2325,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.35075318813323975,
+          "embedding_score": 0.35066914558410645,
           "normalized_bm25_score": 0.6628118947248492,
-          "retrieval_score": 0.4443708001107226,
+          "retrieval_score": 0.4443119703263293,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform"
@@ -2341,40 +2341,40 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.3412281274795532,
+          "embedding_score": 0.34158164262771606,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5388596892356872,
+          "retrieval_score": 0.5391071498394012,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.3412281274795532,
+          "embedding_score": 0.34158164262771606,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5388596892356872,
+          "retrieval_score": 0.5391071498394012,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.35075318813323975,
+          "embedding_score": 0.35066914558410645,
           "normalized_bm25_score": 0.6628118947248492,
-          "retrieval_score": 0.4443708001107226,
+          "retrieval_score": 0.4443119703263293,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform"
@@ -2383,14 +2383,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.35075318813323975,
+          "embedding_score": 0.35066914558410645,
           "normalized_bm25_score": 0.6628118947248492,
-          "retrieval_score": 0.4443708001107226,
+          "retrieval_score": 0.4443119703263293,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform"
@@ -2399,14 +2399,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.35075318813323975,
+          "embedding_score": 0.35066914558410645,
           "normalized_bm25_score": 0.6628118947248492,
-          "retrieval_score": 0.4443708001107226,
+          "retrieval_score": 0.4443119703263293,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform"
@@ -2416,14 +2416,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.35075318813323975,
+            "embedding_score": 0.35066914558410645,
             "normalized_bm25_score": 0.6628118947248492,
-            "retrieval_score": 0.4443708001107226,
+            "retrieval_score": 0.4443119703263293,
             "matched_evidence_keywords": [
               "Module start dates",
               "learning platform"
@@ -2433,9 +2433,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.5388596892356872,
-        "top2_score": 0.4443708001107226,
-        "top1_minus_top2_margin": 0.09448888912496456
+        "top1_score": 0.5391071498394012,
+        "top2_score": 0.4443119703263293,
+        "top1_minus_top2_margin": 0.09479517951307193
       }
     },
     {
@@ -2459,14 +2459,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.48475128412246704,
+          "embedding_score": 0.4846881628036499,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6393258988857269,
+          "retrieval_score": 0.6392817139625548,
           "matched_evidence_keywords": [
             "Multi-Agent Systems",
             "15",
@@ -2476,14 +2476,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.48475128412246704,
+          "embedding_score": 0.4846881628036499,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6393258988857269,
+          "retrieval_score": 0.6392817139625548,
           "matched_evidence_keywords": [
             "Multi-Agent Systems",
             "15",
@@ -2493,14 +2493,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.48475128412246704,
+          "embedding_score": 0.4846881628036499,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6393258988857269,
+          "retrieval_score": 0.6392817139625548,
           "matched_evidence_keywords": [
             "Multi-Agent Systems",
             "15",
@@ -2510,14 +2510,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.48475128412246704,
+          "embedding_score": 0.4846881628036499,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6393258988857269,
+          "retrieval_score": 0.6392817139625548,
           "matched_evidence_keywords": [
             "Multi-Agent Systems",
             "15",
@@ -2527,14 +2527,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.48475128412246704,
+          "embedding_score": 0.4846881628036499,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6393258988857269,
+          "retrieval_score": 0.6392817139625548,
           "matched_evidence_keywords": [
             "Multi-Agent Systems",
             "15",
@@ -2544,14 +2544,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.48475128412246704,
+          "embedding_score": 0.4846881628036499,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6393258988857269,
+          "retrieval_score": 0.6392817139625548,
           "matched_evidence_keywords": [
             "Multi-Agent Systems",
             "15",
@@ -2562,14 +2562,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.48475128412246704,
+            "embedding_score": 0.4846881628036499,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6393258988857269,
+            "retrieval_score": 0.6392817139625548,
             "matched_evidence_keywords": [
               "Multi-Agent Systems",
               "15",
@@ -2579,14 +2579,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.4311326742172241,
+            "embedding_score": 0.4311375617980957,
             "normalized_bm25_score": 0.05412495818281592,
-            "retrieval_score": 0.3180303594069016,
+            "retrieval_score": 0.31803378071351174,
             "matched_evidence_keywords": [
               "15",
               "8 weeks"
@@ -2596,9 +2596,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6393258988857269,
-        "top2_score": 0.3180303594069016,
-        "top1_minus_top2_margin": 0.3212955394788253
+        "top1_score": 0.6392817139625548,
+        "top2_score": 0.31803378071351174,
+        "top1_minus_top2_margin": 0.3212479332490431
       }
     },
     {
@@ -2622,14 +2622,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5021443963050842,
+          "embedding_score": 0.5021954774856567,
           "normalized_bm25_score": 0.7088887992537074,
-          "retrieval_score": 0.5641677171896712,
+          "retrieval_score": 0.564203474016072,
           "matched_evidence_keywords": [
             "Data Visualisation and Warehousing",
             "15",
@@ -2639,14 +2639,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.40714263916015625,
+          "embedding_score": 0.4070586562156677,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5849998474121094,
+          "retrieval_score": 0.5849410593509674,
           "matched_evidence_keywords": [
             "15",
             "8 weeks"
@@ -2655,14 +2655,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.40714263916015625,
+          "embedding_score": 0.4070586562156677,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5849998474121094,
+          "retrieval_score": 0.5849410593509674,
           "matched_evidence_keywords": [
             "15",
             "8 weeks"
@@ -2671,14 +2671,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5021443963050842,
+          "embedding_score": 0.5021954774856567,
           "normalized_bm25_score": 0.7088887992537074,
-          "retrieval_score": 0.5641677171896712,
+          "retrieval_score": 0.564203474016072,
           "matched_evidence_keywords": [
             "Data Visualisation and Warehousing",
             "15",
@@ -2688,14 +2688,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5021443963050842,
+          "embedding_score": 0.5021954774856567,
           "normalized_bm25_score": 0.7088887992537074,
-          "retrieval_score": 0.5641677171896712,
+          "retrieval_score": 0.564203474016072,
           "matched_evidence_keywords": [
             "Data Visualisation and Warehousing",
             "15",
@@ -2705,14 +2705,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5021443963050842,
+          "embedding_score": 0.5021954774856567,
           "normalized_bm25_score": 0.7088887992537074,
-          "retrieval_score": 0.5641677171896712,
+          "retrieval_score": 0.564203474016072,
           "matched_evidence_keywords": [
             "Data Visualisation and Warehousing",
             "15",
@@ -2723,14 +2723,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.40714263916015625,
+            "embedding_score": 0.4070586562156677,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5849998474121094,
+            "retrieval_score": 0.5849410593509674,
             "matched_evidence_keywords": [
               "15",
               "8 weeks"
@@ -2739,14 +2739,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5021443963050842,
+            "embedding_score": 0.5021954774856567,
             "normalized_bm25_score": 0.7088887992537074,
-            "retrieval_score": 0.5641677171896712,
+            "retrieval_score": 0.564203474016072,
             "matched_evidence_keywords": [
               "Data Visualisation and Warehousing",
               "15",
@@ -2757,9 +2757,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.5849998474121094,
-        "top2_score": 0.5641677171896712,
-        "top1_minus_top2_margin": 0.02083213022243824
+        "top1_score": 0.5849410593509674,
+        "top2_score": 0.564203474016072,
+        "top1_minus_top2_margin": 0.020737585334895448
       }
     },
     {
@@ -2784,14 +2784,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4844018816947937,
+          "embedding_score": 0.48441052436828613,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6390813171863556,
+          "retrieval_score": 0.6390873670578003,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform",
@@ -2802,14 +2802,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4844018816947937,
+          "embedding_score": 0.48441052436828613,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6390813171863556,
+          "retrieval_score": 0.6390873670578003,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform",
@@ -2820,14 +2820,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4844018816947937,
+          "embedding_score": 0.48441052436828613,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6390813171863556,
+          "retrieval_score": 0.6390873670578003,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform",
@@ -2838,14 +2838,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4844018816947937,
+          "embedding_score": 0.48441052436828613,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6390813171863556,
+          "retrieval_score": 0.6390873670578003,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform",
@@ -2856,14 +2856,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4844018816947937,
+          "embedding_score": 0.48441052436828613,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6390813171863556,
+          "retrieval_score": 0.6390873670578003,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform",
@@ -2874,14 +2874,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.4844018816947937,
+          "embedding_score": 0.48441052436828613,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6390813171863556,
+          "retrieval_score": 0.6390873670578003,
           "matched_evidence_keywords": [
             "Module start dates",
             "learning platform",
@@ -2893,14 +2893,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.4844018816947937,
+            "embedding_score": 0.48441052436828613,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6390813171863556,
+            "retrieval_score": 0.6390873670578003,
             "matched_evidence_keywords": [
               "Module start dates",
               "learning platform",
@@ -2912,9 +2912,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6390813171863556,
-        "top2_score": 0.2712006694819568,
-        "top1_minus_top2_margin": 0.3678806477043988
+        "top1_score": 0.6390873670578003,
+        "top2_score": 0.27120534248610717,
+        "top1_minus_top2_margin": 0.36788202457169317
       }
     },
     {
@@ -2938,14 +2938,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38394033908843994,
+          "embedding_score": 0.3831877112388611,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.568758237361908,
+          "retrieval_score": 0.5682313978672027,
           "matched_evidence_keywords": [
             "72 months",
             "start date",
@@ -2955,14 +2955,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38394033908843994,
+          "embedding_score": 0.3831877112388611,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.568758237361908,
+          "retrieval_score": 0.5682313978672027,
           "matched_evidence_keywords": [
             "72 months",
             "start date",
@@ -2972,14 +2972,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38394033908843994,
+          "embedding_score": 0.3831877112388611,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.568758237361908,
+          "retrieval_score": 0.5682313978672027,
           "matched_evidence_keywords": [
             "72 months",
             "start date",
@@ -2989,14 +2989,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38394033908843994,
+          "embedding_score": 0.3831877112388611,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.568758237361908,
+          "retrieval_score": 0.5682313978672027,
           "matched_evidence_keywords": [
             "72 months",
             "start date",
@@ -3006,14 +3006,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38394033908843994,
+          "embedding_score": 0.3831877112388611,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.568758237361908,
+          "retrieval_score": 0.5682313978672027,
           "matched_evidence_keywords": [
             "72 months",
             "start date",
@@ -3023,14 +3023,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.38394033908843994,
+          "embedding_score": 0.3831877112388611,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.568758237361908,
+          "retrieval_score": 0.5682313978672027,
           "matched_evidence_keywords": [
             "72 months",
             "start date",
@@ -3041,14 +3041,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.38394033908843994,
+            "embedding_score": 0.3831877112388611,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.568758237361908,
+            "retrieval_score": 0.5682313978672027,
             "matched_evidence_keywords": [
               "72 months",
               "start date",
@@ -3058,14 +3058,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.3090938329696655,
+            "embedding_score": 0.30899524688720703,
             "normalized_bm25_score": 0.9172417633692009,
-            "retrieval_score": 0.49153821208952614,
+            "retrieval_score": 0.4914692018318052,
             "matched_evidence_keywords": [
               "start date"
             ],
@@ -3074,9 +3074,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.568758237361908,
-        "top2_score": 0.49153821208952614,
-        "top1_minus_top2_margin": 0.07722002527238186
+        "top1_score": 0.5682313978672027,
+        "top2_score": 0.4914692018318052,
+        "top1_minus_top2_margin": 0.07676219603539747
       }
     },
     {
@@ -3101,14 +3101,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.42364728450775146,
+          "embedding_score": 0.4233895540237427,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.596553099155426,
+          "retrieval_score": 0.5963726878166198,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -3119,14 +3119,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.42364728450775146,
+          "embedding_score": 0.4233895540237427,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.596553099155426,
+          "retrieval_score": 0.5963726878166198,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -3137,14 +3137,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.42364728450775146,
+          "embedding_score": 0.4233895540237427,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.596553099155426,
+          "retrieval_score": 0.5963726878166198,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -3155,14 +3155,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.42364728450775146,
+          "embedding_score": 0.4233895540237427,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.596553099155426,
+          "retrieval_score": 0.5963726878166198,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -3173,14 +3173,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.42364728450775146,
+          "embedding_score": 0.4233895540237427,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.596553099155426,
+          "retrieval_score": 0.5963726878166198,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -3191,14 +3191,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.42364728450775146,
+          "embedding_score": 0.4233895540237427,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.596553099155426,
+          "retrieval_score": 0.5963726878166198,
           "matched_evidence_keywords": [
             "break from your studies",
             "reassessment",
@@ -3210,14 +3210,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.42364728450775146,
+            "embedding_score": 0.4233895540237427,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.596553099155426,
+            "retrieval_score": 0.5963726878166198,
             "matched_evidence_keywords": [
               "break from your studies",
               "reassessment",
@@ -3228,14 +3228,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.29730039834976196,
+            "embedding_score": 0.29732823371887207,
             "normalized_bm25_score": 0.7899622472974583,
-            "retrieval_score": 0.4450989530340709,
+            "retrieval_score": 0.445118437792448,
             "matched_evidence_keywords": [
               "break from your studies",
               "reassessment"
@@ -3244,14 +3244,14 @@
           },
           {
             "rank": 3,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.22966402769088745,
+            "embedding_score": 0.22960937023162842,
             "normalized_bm25_score": 0.5893560771917796,
-            "retrieval_score": 0.33757164254115507,
+            "retrieval_score": 0.3375333823196738,
             "matched_evidence_keywords": [
               "24 months"
             ],
@@ -3260,9 +3260,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.596553099155426,
-        "top2_score": 0.4450989530340709,
-        "top1_minus_top2_margin": 0.1514541461213551
+        "top1_score": 0.5963726878166198,
+        "top2_score": 0.445118437792448,
+        "top1_minus_top2_margin": 0.1512542500241718
       }
     },
     {
@@ -3285,14 +3285,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5577982068061829,
+          "embedding_score": 0.5577475428581238,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.690458744764328,
+          "retrieval_score": 0.6904232800006866,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -3301,14 +3301,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5577982068061829,
+          "embedding_score": 0.5577475428581238,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.690458744764328,
+          "retrieval_score": 0.6904232800006866,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -3317,14 +3317,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5577982068061829,
+          "embedding_score": 0.5577475428581238,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.690458744764328,
+          "retrieval_score": 0.6904232800006866,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -3333,14 +3333,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5577982068061829,
+          "embedding_score": 0.5577475428581238,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.690458744764328,
+          "retrieval_score": 0.6904232800006866,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -3349,14 +3349,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5577982068061829,
+          "embedding_score": 0.5577475428581238,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.690458744764328,
+          "retrieval_score": 0.6904232800006866,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -3365,14 +3365,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5577982068061829,
+          "embedding_score": 0.5577475428581238,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.690458744764328,
+          "retrieval_score": 0.6904232800006866,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "32 weeks"
@@ -3382,14 +3382,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5577982068061829,
+            "embedding_score": 0.5577475428581238,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.690458744764328,
+            "retrieval_score": 0.6904232800006866,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "32 weeks"
@@ -3399,9 +3399,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.690458744764328,
-        "top2_score": 0.5013059826927885,
-        "top1_minus_top2_margin": 0.18915276207153953
+        "top1_score": 0.6904232800006866,
+        "top2_score": 0.5012797804909452,
+        "top1_minus_top2_margin": 0.1891434995097414
       }
     },
     {
@@ -3425,14 +3425,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5664231777191162,
+          "embedding_score": 0.5655250549316406,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6964962244033813,
+          "retrieval_score": 0.6958675384521484,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -3442,14 +3442,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5664231777191162,
+          "embedding_score": 0.5655250549316406,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6964962244033813,
+          "retrieval_score": 0.6958675384521484,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -3459,14 +3459,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5664231777191162,
+          "embedding_score": 0.5655250549316406,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6964962244033813,
+          "retrieval_score": 0.6958675384521484,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -3476,14 +3476,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5664231777191162,
+          "embedding_score": 0.5655250549316406,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6964962244033813,
+          "retrieval_score": 0.6958675384521484,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -3493,14 +3493,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5664231777191162,
+          "embedding_score": 0.5655250549316406,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6964962244033813,
+          "retrieval_score": 0.6958675384521484,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -3510,14 +3510,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5664231777191162,
+          "embedding_score": 0.5655250549316406,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6964962244033813,
+          "retrieval_score": 0.6958675384521484,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months",
@@ -3528,14 +3528,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.5664231777191162,
+            "embedding_score": 0.5655250549316406,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6964962244033813,
+            "retrieval_score": 0.6958675384521484,
             "matched_evidence_keywords": [
               "maximum period",
               "72 months",
@@ -3546,9 +3546,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6964962244033813,
-        "top2_score": 0.5095619554791144,
-        "top1_minus_top2_margin": 0.1869342689242669
+        "top1_score": 0.6958675384521484,
+        "top2_score": 0.5095339174542121,
+        "top1_minus_top2_margin": 0.18633362099793638
       }
     },
     {
@@ -3571,14 +3571,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.41142213344573975,
+          "embedding_score": 0.41140663623809814,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5879954934120177,
+          "retrieval_score": 0.5879846453666686,
           "matched_evidence_keywords": [
             "Security Risk Management",
             "Technology Innovation and Change Management"
@@ -3587,14 +3587,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.41142213344573975,
+          "embedding_score": 0.41140663623809814,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5879954934120177,
+          "retrieval_score": 0.5879846453666686,
           "matched_evidence_keywords": [
             "Security Risk Management",
             "Technology Innovation and Change Management"
@@ -3603,14 +3603,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.41142213344573975,
+          "embedding_score": 0.41140663623809814,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5879954934120177,
+          "retrieval_score": 0.5879846453666686,
           "matched_evidence_keywords": [
             "Security Risk Management",
             "Technology Innovation and Change Management"
@@ -3619,14 +3619,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.41142213344573975,
+          "embedding_score": 0.41140663623809814,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5879954934120177,
+          "retrieval_score": 0.5879846453666686,
           "matched_evidence_keywords": [
             "Security Risk Management",
             "Technology Innovation and Change Management"
@@ -3635,14 +3635,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.41142213344573975,
+          "embedding_score": 0.41140663623809814,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5879954934120177,
+          "retrieval_score": 0.5879846453666686,
           "matched_evidence_keywords": [
             "Security Risk Management",
             "Technology Innovation and Change Management"
@@ -3651,14 +3651,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.41142213344573975,
+          "embedding_score": 0.41140663623809814,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5879954934120177,
+          "retrieval_score": 0.5879846453666686,
           "matched_evidence_keywords": [
             "Security Risk Management",
             "Technology Innovation and Change Management"
@@ -3668,14 +3668,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.41142213344573975,
+            "embedding_score": 0.41140663623809814,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5879954934120177,
+            "retrieval_score": 0.5879846453666686,
             "matched_evidence_keywords": [
               "Security Risk Management",
               "Technology Innovation and Change Management"
@@ -3685,9 +3685,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.5879954934120177,
-        "top2_score": 0.2576506489572832,
-        "top1_minus_top2_margin": 0.33034484445473455
+        "top1_score": 0.5879846453666686,
+        "top2_score": 0.25762302816489424,
+        "top1_minus_top2_margin": 0.33036161720177437
       }
     },
     {
@@ -3712,14 +3712,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5275722742080688,
+          "embedding_score": 0.5275395512580872,
           "normalized_bm25_score": 0.39474612199951775,
-          "retrieval_score": 0.4877244285455035,
+          "retrieval_score": 0.48770152248051635,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "60"
@@ -3728,14 +3728,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3906850218772888,
+          "embedding_score": 0.390704870223999,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5734795153141021,
+          "retrieval_score": 0.5734934091567994,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -3744,14 +3744,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3906850218772888,
+          "embedding_score": 0.390704870223999,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5734795153141021,
+          "retrieval_score": 0.5734934091567994,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -3760,14 +3760,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.3906850218772888,
+          "embedding_score": 0.390704870223999,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.5734795153141021,
+          "retrieval_score": 0.5734934091567994,
           "matched_evidence_keywords": [
             "Credits",
             "180"
@@ -3776,14 +3776,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5275722742080688,
+          "embedding_score": 0.5275395512580872,
           "normalized_bm25_score": 0.39474612199951775,
-          "retrieval_score": 0.4877244285455035,
+          "retrieval_score": 0.48770152248051635,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "60"
@@ -3792,14 +3792,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5275722742080688,
+          "embedding_score": 0.5275395512580872,
           "normalized_bm25_score": 0.39474612199951775,
-          "retrieval_score": 0.4877244285455035,
+          "retrieval_score": 0.48770152248051635,
           "matched_evidence_keywords": [
             "Computer Science Capstone Project",
             "60"
@@ -3809,14 +3809,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3906850218772888,
+            "embedding_score": 0.390704870223999,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5734795153141021,
+            "retrieval_score": 0.5734934091567994,
             "matched_evidence_keywords": [
               "Credits",
               "180"
@@ -3825,14 +3825,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5275722742080688,
+            "embedding_score": 0.5275395512580872,
             "normalized_bm25_score": 0.39474612199951775,
-            "retrieval_score": 0.4877244285455035,
+            "retrieval_score": 0.48770152248051635,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "60"
@@ -3842,9 +3842,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.5734795153141021,
-        "top2_score": 0.4877244285455035,
-        "top1_minus_top2_margin": 0.08575508676859861
+        "top1_score": 0.5734934091567994,
+        "top2_score": 0.48770152248051635,
+        "top1_minus_top2_margin": 0.08579188667628301
       }
     },
     {
@@ -3869,14 +3869,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.48897820711135864,
+          "embedding_score": 0.4885558485984802,
           "normalized_bm25_score": 0.7135456360221765,
-          "retrieval_score": 0.556348435784604,
+          "retrieval_score": 0.5560527848255891,
           "matched_evidence_keywords": [
             "24 Months",
             "maximum period",
@@ -3886,40 +3886,40 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.44268667697906494,
+          "embedding_score": 0.44269704818725586,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6098806738853455,
+          "retrieval_score": 0.6098879337310791,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.44268667697906494,
+          "embedding_score": 0.44269704818725586,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6098806738853455,
+          "retrieval_score": 0.6098879337310791,
           "matched_evidence_keywords": [],
           "contains_all_expected_evidence": false
         },
         "vector_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 0,
           "page_number": 1,
-          "embedding_score": 0.40158504247665405,
+          "embedding_score": 0.40160423517227173,
           "normalized_bm25_score": 0.9862400856724057,
-          "retrieval_score": 0.5769815554353795,
+          "retrieval_score": 0.5769949903223119,
           "matched_evidence_keywords": [
             "MSc Computer Science",
             "24 Months"
@@ -3928,14 +3928,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.48897820711135864,
+          "embedding_score": 0.4885558485984802,
           "normalized_bm25_score": 0.7135456360221765,
-          "retrieval_score": 0.556348435784604,
+          "retrieval_score": 0.5560527848255891,
           "matched_evidence_keywords": [
             "24 Months",
             "maximum period",
@@ -3945,14 +3945,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 3,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.48897820711135864,
+          "embedding_score": 0.4885558485984802,
           "normalized_bm25_score": 0.7135456360221765,
-          "retrieval_score": 0.556348435784604,
+          "retrieval_score": 0.5560527848255891,
           "matched_evidence_keywords": [
             "24 Months",
             "maximum period",
@@ -3963,14 +3963,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.40158504247665405,
+            "embedding_score": 0.40160423517227173,
             "normalized_bm25_score": 0.9862400856724057,
-            "retrieval_score": 0.5769815554353795,
+            "retrieval_score": 0.5769949903223119,
             "matched_evidence_keywords": [
               "MSc Computer Science",
               "24 Months"
@@ -3979,14 +3979,14 @@
           },
           {
             "rank": 3,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.48897820711135864,
+            "embedding_score": 0.4885558485984802,
             "normalized_bm25_score": 0.7135456360221765,
-            "retrieval_score": 0.556348435784604,
+            "retrieval_score": 0.5560527848255891,
             "matched_evidence_keywords": [
               "24 Months",
               "maximum period",
@@ -3997,9 +3997,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6098806738853455,
-        "top2_score": 0.5769815554353795,
-        "top1_minus_top2_margin": 0.03289911844996596
+        "top1_score": 0.6098879337310791,
+        "top2_score": 0.5769949903223119,
+        "top1_minus_top2_margin": 0.03289294340876714
       }
     },
     {
@@ -4024,14 +4024,14 @@
       "candidate_diagnostics": {
         "vector_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617399215698242,
+          "embedding_score": 0.5619806051254272,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932179450988769,
+          "retrieval_score": 0.6933864235877991,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months"
@@ -4040,14 +4040,14 @@
         },
         "bm25_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617399215698242,
+          "embedding_score": 0.5619806051254272,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932179450988769,
+          "retrieval_score": 0.6933864235877991,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months"
@@ -4056,14 +4056,14 @@
         },
         "hybrid_top_1": {
           "rank": 1,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 2,
           "page_number": 1,
-          "embedding_score": 0.5617399215698242,
+          "embedding_score": 0.5619806051254272,
           "normalized_bm25_score": 1.0,
-          "retrieval_score": 0.6932179450988769,
+          "retrieval_score": 0.6933864235877991,
           "matched_evidence_keywords": [
             "maximum period",
             "72 months"
@@ -4072,14 +4072,14 @@
         },
         "vector_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5587982535362244,
+          "embedding_score": 0.5587838292121887,
           "normalized_bm25_score": 0.8285450003709107,
-          "retrieval_score": 0.6397222775866303,
+          "retrieval_score": 0.6397121805598053,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -4088,14 +4088,14 @@
         },
         "bm25_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5587982535362244,
+          "embedding_score": 0.5587838292121887,
           "normalized_bm25_score": 0.8285450003709107,
-          "retrieval_score": 0.6397222775866303,
+          "retrieval_score": 0.6397121805598053,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -4104,14 +4104,14 @@
         },
         "hybrid_evidence_completion_candidate": {
           "rank": 2,
-          "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-          "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+          "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+          "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
           "version": "1",
           "chunk_index": 1,
           "page_number": 1,
-          "embedding_score": 0.5587982535362244,
+          "embedding_score": 0.5587838292121887,
           "normalized_bm25_score": 0.8285450003709107,
-          "retrieval_score": 0.6397222775866303,
+          "retrieval_score": 0.6397121805598053,
           "matched_evidence_keywords": [
             "Student Support Team",
             "manage your enrolment"
@@ -4121,14 +4121,14 @@
         "hybrid_evidence_contributing_candidates": [
           {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.5617399215698242,
+            "embedding_score": 0.5619806051254272,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6932179450988769,
+            "retrieval_score": 0.6933864235877991,
             "matched_evidence_keywords": [
               "maximum period",
               "72 months"
@@ -4137,14 +4137,14 @@
           },
           {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5587982535362244,
+            "embedding_score": 0.5587838292121887,
             "normalized_bm25_score": 0.8285450003709107,
-            "retrieval_score": 0.6397222775866303,
+            "retrieval_score": 0.6397121805598053,
             "matched_evidence_keywords": [
               "Student Support Team",
               "manage your enrolment"
@@ -4154,9 +4154,9 @@
         ]
       },
       "hybrid_score_margin": {
-        "top1_score": 0.6932179450988769,
-        "top2_score": 0.6397222775866303,
-        "top1_minus_top2_margin": 0.05349566751224666
+        "top1_score": 0.6933864235877991,
+        "top2_score": 0.6397121805598053,
+        "top1_minus_top2_margin": 0.05367424302799384
       }
     }
   ],
@@ -4182,53 +4182,53 @@
         "candidate_diagnostics": {
           "vector_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.38938796520233154,
+            "embedding_score": 0.38856184482574463,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5725715756416321,
+            "retrieval_score": 0.5719932913780212,
             "matched_evidence_keywords": [],
             "contains_all_expected_evidence": false
           },
           "bm25_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.38938796520233154,
+            "embedding_score": 0.38856184482574463,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5725715756416321,
+            "retrieval_score": 0.5719932913780212,
             "matched_evidence_keywords": [],
             "contains_all_expected_evidence": false
           },
           "hybrid_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.38938796520233154,
+            "embedding_score": 0.38856184482574463,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5725715756416321,
+            "retrieval_score": 0.5719932913780212,
             "matched_evidence_keywords": [],
             "contains_all_expected_evidence": false
           },
           "vector_evidence_completion_candidate": {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.3201856017112732,
+            "embedding_score": 0.32011425495147705,
             "normalized_bm25_score": 0.08212280110006659,
-            "retrieval_score": 0.2487667615279112,
+            "retrieval_score": 0.2487168187960539,
             "matched_evidence_keywords": [
               "module availability",
               "consecutively"
@@ -4237,14 +4237,14 @@
           },
           "bm25_evidence_completion_candidate": {
             "rank": 3,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.3201856017112732,
+            "embedding_score": 0.32011425495147705,
             "normalized_bm25_score": 0.08212280110006659,
-            "retrieval_score": 0.2487667615279112,
+            "retrieval_score": 0.2487168187960539,
             "matched_evidence_keywords": [
               "module availability",
               "consecutively"
@@ -4253,14 +4253,14 @@
           },
           "hybrid_evidence_completion_candidate": {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.3201856017112732,
+            "embedding_score": 0.32011425495147705,
             "normalized_bm25_score": 0.08212280110006659,
-            "retrieval_score": 0.2487667615279112,
+            "retrieval_score": 0.2487168187960539,
             "matched_evidence_keywords": [
               "module availability",
               "consecutively"
@@ -4270,14 +4270,14 @@
           "hybrid_evidence_contributing_candidates": [
             {
               "rank": 2,
-              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+              "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
               "version": "1",
               "chunk_index": 1,
               "page_number": 1,
-              "embedding_score": 0.3201856017112732,
+              "embedding_score": 0.32011425495147705,
               "normalized_bm25_score": 0.08212280110006659,
-              "retrieval_score": 0.2487667615279112,
+              "retrieval_score": 0.2487168187960539,
               "matched_evidence_keywords": [
                 "module availability",
                 "consecutively"
@@ -4287,9 +4287,9 @@
           ]
         },
         "hybrid_score_margin": {
-          "top1_score": 0.5725715756416321,
-          "top2_score": 0.2487667615279112,
-          "top1_minus_top2_margin": 0.32380481411372086
+          "top1_score": 0.5719932913780212,
+          "top2_score": 0.2487168187960539,
+          "top1_minus_top2_margin": 0.32327647258196734
         }
       },
       "case_017_capstone_length_paraphrase": {
@@ -4312,14 +4312,14 @@
         "candidate_diagnostics": {
           "vector_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.48065364360809326,
+            "embedding_score": 0.48058152198791504,
             "normalized_bm25_score": 0.0886721888905603,
-            "retrieval_score": 0.36305920719283336,
+            "retrieval_score": 0.3630087220587086,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "32 weeks"
@@ -4328,40 +4328,40 @@
           },
           "bm25_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.4753462076187134,
+            "embedding_score": 0.4748694896697998,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6327423453330994,
+            "retrieval_score": 0.6324086427688598,
             "matched_evidence_keywords": [],
             "contains_all_expected_evidence": false
           },
           "hybrid_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:2",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:2",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 2,
             "page_number": 1,
-            "embedding_score": 0.4753462076187134,
+            "embedding_score": 0.4748694896697998,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.6327423453330994,
+            "retrieval_score": 0.6324086427688598,
             "matched_evidence_keywords": [],
             "contains_all_expected_evidence": false
           },
           "vector_evidence_completion_candidate": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.48065364360809326,
+            "embedding_score": 0.48058152198791504,
             "normalized_bm25_score": 0.0886721888905603,
-            "retrieval_score": 0.36305920719283336,
+            "retrieval_score": 0.3630087220587086,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "32 weeks"
@@ -4370,14 +4370,14 @@
           },
           "bm25_evidence_completion_candidate": {
             "rank": 3,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.48065364360809326,
+            "embedding_score": 0.48058152198791504,
             "normalized_bm25_score": 0.0886721888905603,
-            "retrieval_score": 0.36305920719283336,
+            "retrieval_score": 0.3630087220587086,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "32 weeks"
@@ -4386,14 +4386,14 @@
           },
           "hybrid_evidence_completion_candidate": {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.48065364360809326,
+            "embedding_score": 0.48058152198791504,
             "normalized_bm25_score": 0.0886721888905603,
-            "retrieval_score": 0.36305920719283336,
+            "retrieval_score": 0.3630087220587086,
             "matched_evidence_keywords": [
               "Computer Science Capstone Project",
               "32 weeks"
@@ -4403,14 +4403,14 @@
           "hybrid_evidence_contributing_candidates": [
             {
               "rank": 2,
-              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+              "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
               "version": "1",
               "chunk_index": 1,
               "page_number": 1,
-              "embedding_score": 0.48065364360809326,
+              "embedding_score": 0.48058152198791504,
               "normalized_bm25_score": 0.0886721888905603,
-              "retrieval_score": 0.36305920719283336,
+              "retrieval_score": 0.3630087220587086,
               "matched_evidence_keywords": [
                 "Computer Science Capstone Project",
                 "32 weeks"
@@ -4420,9 +4420,9 @@
           ]
         },
         "hybrid_score_margin": {
-          "top1_score": 0.6327423453330994,
-          "top2_score": 0.36305920719283336,
-          "top1_minus_top2_margin": 0.269683138140266
+          "top1_score": 0.6324086427688598,
+          "top2_score": 0.3630087220587086,
+          "top1_minus_top2_margin": 0.2693999207101512
         }
       }
     },
@@ -4447,14 +4447,14 @@
         "candidate_diagnostics": {
           "vector_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.3793955445289612,
+            "embedding_score": 0.37945032119750977,
             "normalized_bm25_score": 0.09696104771698771,
-            "retrieval_score": 0.29466519548536907,
+            "retrieval_score": 0.2947035391533531,
             "matched_evidence_keywords": [
               "Choose one Elective Module"
             ],
@@ -4462,14 +4462,14 @@
           },
           "bm25_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3535757064819336,
+            "embedding_score": 0.3535432815551758,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5475029945373535,
+            "retrieval_score": 0.547480297088623,
             "matched_evidence_keywords": [
               "Choose one Elective Module",
               "Robotics"
@@ -4478,14 +4478,14 @@
           },
           "hybrid_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3535757064819336,
+            "embedding_score": 0.3535432815551758,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5475029945373535,
+            "retrieval_score": 0.547480297088623,
             "matched_evidence_keywords": [
               "Choose one Elective Module",
               "Robotics"
@@ -4494,14 +4494,14 @@
           },
           "vector_evidence_completion_candidate": {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3535757064819336,
+            "embedding_score": 0.3535432815551758,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5475029945373535,
+            "retrieval_score": 0.547480297088623,
             "matched_evidence_keywords": [
               "Choose one Elective Module",
               "Robotics"
@@ -4510,14 +4510,14 @@
           },
           "bm25_evidence_completion_candidate": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3535757064819336,
+            "embedding_score": 0.3535432815551758,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5475029945373535,
+            "retrieval_score": 0.547480297088623,
             "matched_evidence_keywords": [
               "Choose one Elective Module",
               "Robotics"
@@ -4526,14 +4526,14 @@
           },
           "hybrid_evidence_completion_candidate": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.3535757064819336,
+            "embedding_score": 0.3535432815551758,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.5475029945373535,
+            "retrieval_score": 0.547480297088623,
             "matched_evidence_keywords": [
               "Choose one Elective Module",
               "Robotics"
@@ -4543,14 +4543,14 @@
           "hybrid_evidence_contributing_candidates": [
             {
               "rank": 1,
-              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+              "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
               "version": "1",
               "chunk_index": 0,
               "page_number": 1,
-              "embedding_score": 0.3535757064819336,
+              "embedding_score": 0.3535432815551758,
               "normalized_bm25_score": 1.0,
-              "retrieval_score": 0.5475029945373535,
+              "retrieval_score": 0.547480297088623,
               "matched_evidence_keywords": [
                 "Choose one Elective Module",
                 "Robotics"
@@ -4559,14 +4559,14 @@
             },
             {
               "rank": 2,
-              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+              "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
               "version": "1",
               "chunk_index": 1,
               "page_number": 1,
-              "embedding_score": 0.3793955445289612,
+              "embedding_score": 0.37945032119750977,
               "normalized_bm25_score": 0.09696104771698771,
-              "retrieval_score": 0.29466519548536907,
+              "retrieval_score": 0.2947035391533531,
               "matched_evidence_keywords": [
                 "Choose one Elective Module"
               ],
@@ -4575,9 +4575,9 @@
           ]
         },
         "hybrid_score_margin": {
-          "top1_score": 0.5475029945373535,
-          "top2_score": 0.29466519548536907,
-          "top1_minus_top2_margin": 0.25283779905198445
+          "top1_score": 0.547480297088623,
+          "top2_score": 0.2947035391533531,
+          "top1_minus_top2_margin": 0.2527767579352699
         }
       },
       {
@@ -4601,14 +4601,14 @@
         "candidate_diagnostics": {
           "vector_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 1,
             "page_number": 1,
-            "embedding_score": 0.5410194396972656,
+            "embedding_score": 0.5410474538803101,
             "normalized_bm25_score": 0.08447145204797578,
-            "retrieval_score": 0.40405504340247866,
+            "retrieval_score": 0.40407465333060977,
             "matched_evidence_keywords": [
               "15",
               "8 weeks"
@@ -4617,14 +4617,14 @@
           },
           "bm25_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.4414519667625427,
+            "embedding_score": 0.4413836598396301,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.60901637673378,
+            "retrieval_score": 0.6089685618877411,
             "matched_evidence_keywords": [
               "Networks and Web Technology",
               "15",
@@ -4634,14 +4634,14 @@
           },
           "hybrid_top_1": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.4414519667625427,
+            "embedding_score": 0.4413836598396301,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.60901637673378,
+            "retrieval_score": 0.6089685618877411,
             "matched_evidence_keywords": [
               "Networks and Web Technology",
               "15",
@@ -4651,14 +4651,14 @@
           },
           "vector_evidence_completion_candidate": {
             "rank": 2,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.4414519667625427,
+            "embedding_score": 0.4413836598396301,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.60901637673378,
+            "retrieval_score": 0.6089685618877411,
             "matched_evidence_keywords": [
               "Networks and Web Technology",
               "15",
@@ -4668,14 +4668,14 @@
           },
           "bm25_evidence_completion_candidate": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.4414519667625427,
+            "embedding_score": 0.4413836598396301,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.60901637673378,
+            "retrieval_score": 0.6089685618877411,
             "matched_evidence_keywords": [
               "Networks and Web Technology",
               "15",
@@ -4685,14 +4685,14 @@
           },
           "hybrid_evidence_completion_candidate": {
             "rank": 1,
-            "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-            "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+            "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+            "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
             "version": "1",
             "chunk_index": 0,
             "page_number": 1,
-            "embedding_score": 0.4414519667625427,
+            "embedding_score": 0.4413836598396301,
             "normalized_bm25_score": 1.0,
-            "retrieval_score": 0.60901637673378,
+            "retrieval_score": 0.6089685618877411,
             "matched_evidence_keywords": [
               "Networks and Web Technology",
               "15",
@@ -4703,14 +4703,14 @@
           "hybrid_evidence_contributing_candidates": [
             {
               "rank": 1,
-              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:0",
-              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:0",
+              "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
               "version": "1",
               "chunk_index": 0,
               "page_number": 1,
-              "embedding_score": 0.4414519667625427,
+              "embedding_score": 0.4413836598396301,
               "normalized_bm25_score": 1.0,
-              "retrieval_score": 0.60901637673378,
+              "retrieval_score": 0.6089685618877411,
               "matched_evidence_keywords": [
                 "Networks and Web Technology",
                 "15",
@@ -4720,14 +4720,14 @@
             },
             {
               "rank": 2,
-              "candidate_identity": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221:1:1",
-              "document_id": "5a34be43-3fdd-4d3c-810c-69fcdd9bc221",
+              "candidate_identity": "9b863daa-07f8-4c93-bad6-ae4ab786bf16:1:1",
+              "document_id": "9b863daa-07f8-4c93-bad6-ae4ab786bf16",
               "version": "1",
               "chunk_index": 1,
               "page_number": 1,
-              "embedding_score": 0.5410194396972656,
+              "embedding_score": 0.5410474538803101,
               "normalized_bm25_score": 0.08447145204797578,
-              "retrieval_score": 0.40405504340247866,
+              "retrieval_score": 0.40407465333060977,
               "matched_evidence_keywords": [
                 "15",
                 "8 weeks"
@@ -4737,9 +4737,9 @@
           ]
         },
         "hybrid_score_margin": {
-          "top1_score": 0.60901637673378,
-          "top2_score": 0.40405504340247866,
-          "top1_minus_top2_margin": 0.2049613333313013
+          "top1_score": 0.6089685618877411,
+          "top2_score": 0.40407465333060977,
+          "top1_minus_top2_margin": 0.2048939085571313
         }
       }
     ]

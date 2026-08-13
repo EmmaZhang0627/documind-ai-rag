@@ -1,0 +1,351 @@
+{
+  "map_version": "1",
+  "corpus_id": "documind-corpus-v2",
+  "summary": {
+    "overlap_topic_count": 9,
+    "high_difficulty_count": 5,
+    "medium_difficulty_count": 4
+  },
+  "overlaps": [
+    {
+      "overlap_id": "hn-001",
+      "topic": "programme duration and time limits",
+      "evidence_ids": [
+        "ev-study-001",
+        "ev-study-007",
+        "ev-terms-004",
+        "ev-terms-005"
+      ],
+      "why_they_could_compete": "Both sources discuss programme duration, maximum registration, breaks, and time-related consequences, but only the Study Plan supplies the MSc's exact 24/72-month figures.",
+      "overlap_type": "both",
+      "difficulty": "high",
+      "relevant_documents": [
+        "corpus-v2-study-plan",
+        "corpus-v2-uolo-programme-terms"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-study-001",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        },
+        {
+          "evidence_id": "ev-study-007",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        },
+        {
+          "evidence_id": "ev-terms-004",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 8,
+          "chunk_index": 22
+        },
+        {
+          "evidence_id": "ev-terms-005",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 10,
+          "chunk_index": 32
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-002",
+      "topic": "admissions appeals and programme complaints",
+      "evidence_ids": [
+        "ev-admissions-001",
+        "ev-admissions-006",
+        "ev-terms-008"
+      ],
+      "why_they_could_compete": "The policy defines applicant appeals and deadlines, while the terms direct enrolled programme complaints to Kaplan; complaint and programme language overlaps strongly.",
+      "overlap_type": "both",
+      "difficulty": "high",
+      "relevant_documents": [
+        "corpus-v2-admissions-appeals",
+        "corpus-v2-uolo-programme-terms"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-admissions-001",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 3,
+          "chunk_index": 10
+        },
+        {
+          "evidence_id": "ev-admissions-006",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 4,
+          "chunk_index": 12
+        },
+        {
+          "evidence_id": "ev-terms-008",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 19,
+          "chunk_index": 64
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-003",
+      "topic": "appeal rights and procedural grounds",
+      "evidence_ids": [
+        "ev-admissions-003",
+        "ev-integrity-009"
+      ],
+      "why_they_could_compete": "Both restrict appeals but concern different decisions: admissions judgement versus academic-integrity procedure.",
+      "overlap_type": "both",
+      "difficulty": "high",
+      "relevant_documents": [
+        "corpus-v2-admissions-appeals",
+        "corpus-v2-appendix-l-cop-assess"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-admissions-003",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 3,
+          "chunk_index": 10
+        },
+        {
+          "evidence_id": "ev-integrity-009",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 12,
+          "chunk_index": 54
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-004",
+      "topic": "assessment and programme rules",
+      "evidence_ids": [
+        "ev-study-003",
+        "ev-integrity-001",
+        "ev-terms-004"
+      ],
+      "why_they_could_compete": "Study scheduling, assessment governance, and registration rules share academic-programme terminology without supporting the same facts.",
+      "overlap_type": "semantic",
+      "difficulty": "medium",
+      "relevant_documents": [
+        "corpus-v2-appendix-l-cop-assess",
+        "corpus-v2-study-plan",
+        "corpus-v2-uolo-programme-terms"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-study-003",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        },
+        {
+          "evidence_id": "ev-integrity-001",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 2,
+          "chunk_index": 4
+        },
+        {
+          "evidence_id": "ev-terms-004",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 8,
+          "chunk_index": 22
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-005",
+      "topic": "AI use and responsibility",
+      "evidence_ids": [
+        "ev-integrity-008",
+        "ev-ethics-003",
+        "ev-ethics-008"
+      ],
+      "why_they_could_compete": "One source regulates student use of generative AI; the other discusses AI methods and responsible societal design.",
+      "overlap_type": "both",
+      "difficulty": "high",
+      "relevant_documents": [
+        "corpus-v2-ai-ethics-chapter-1",
+        "corpus-v2-appendix-l-cop-assess"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-integrity-008",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 4,
+          "chunk_index": 16
+        },
+        {
+          "evidence_id": "ev-ethics-003",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 3,
+          "chunk_index": 12
+        },
+        {
+          "evidence_id": "ev-ethics-008",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 11,
+          "chunk_index": 56
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-006",
+      "topic": "software functions and coding practice",
+      "evidence_ids": [
+        "ev-coding-005",
+        "ev-coding-006",
+        "ev-serverless-001",
+        "ev-serverless-002"
+      ],
+      "why_they_could_compete": "Both documents repeatedly use function, code, programming, and developer vocabulary, but one specifies style while the other explains cloud execution.",
+      "overlap_type": "both",
+      "difficulty": "high",
+      "relevant_documents": [
+        "corpus-v2-coding-standards",
+        "corpus-v2-serverless-computing"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-coding-005",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 2,
+          "chunk_index": 3
+        },
+        {
+          "evidence_id": "ev-coding-006",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 2,
+          "chunk_index": 3
+        },
+        {
+          "evidence_id": "ev-serverless-001",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 1,
+          "chunk_index": 3
+        },
+        {
+          "evidence_id": "ev-serverless-002",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 3,
+          "chunk_index": 24
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-007",
+      "topic": "source attribution and intellectual property",
+      "evidence_ids": [
+        "ev-coding-008",
+        "ev-integrity-004",
+        "ev-terms-007"
+      ],
+      "why_they_could_compete": "Referencing code sources, academic attribution, and ownership of student-created IP are related but legally and academically distinct.",
+      "overlap_type": "semantic",
+      "difficulty": "medium",
+      "relevant_documents": [
+        "corpus-v2-appendix-l-cop-assess",
+        "corpus-v2-coding-standards",
+        "corpus-v2-uolo-programme-terms"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-coding-008",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 3,
+          "chunk_index": 6
+        },
+        {
+          "evidence_id": "ev-integrity-004",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 4,
+          "chunk_index": 12
+        },
+        {
+          "evidence_id": "ev-terms-007",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 17,
+          "chunk_index": 58
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-008",
+      "topic": "information and infrastructure security",
+      "evidence_ids": [
+        "ev-terms-011",
+        "ev-terms-013",
+        "ev-serverless-003",
+        "ev-serverless-007"
+      ],
+      "why_they_could_compete": "The programme terms and serverless paper both contain IT/security vocabulary, while only the technical paper explains patching and isolation.",
+      "overlap_type": "both",
+      "difficulty": "medium",
+      "relevant_documents": [
+        "corpus-v2-serverless-computing",
+        "corpus-v2-uolo-programme-terms"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-terms-011",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 8,
+          "chunk_index": 22
+        },
+        {
+          "evidence_id": "ev-terms-013",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 19,
+          "chunk_index": 66
+        },
+        {
+          "evidence_id": "ev-serverless-003",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 4,
+          "chunk_index": 28
+        },
+        {
+          "evidence_id": "ev-serverless-007",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 6,
+          "chunk_index": 52
+        }
+      ]
+    },
+    {
+      "overlap_id": "hn-009",
+      "topic": "personal data, identity, and institutional processing",
+      "evidence_ids": [
+        "ev-ethics-004",
+        "ev-ethics-005",
+        "ev-terms-010"
+      ],
+      "why_they_could_compete": "The ethics chapter discusses identity and data conceptually, whereas the terms describe institutional processing obligations; semantic proximity can mislead embeddings.",
+      "overlap_type": "semantic",
+      "difficulty": "medium",
+      "relevant_documents": [
+        "corpus-v2-ai-ethics-chapter-1",
+        "corpus-v2-uolo-programme-terms"
+      ],
+      "representative_chunk_identities": [
+        {
+          "evidence_id": "ev-ethics-004",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 4,
+          "chunk_index": 18
+        },
+        {
+          "evidence_id": "ev-ethics-005",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 6,
+          "chunk_index": 25
+        },
+        {
+          "evidence_id": "ev-terms-010",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 16,
+          "chunk_index": 54
+        }
+      ]
+    }
+  ]
+}

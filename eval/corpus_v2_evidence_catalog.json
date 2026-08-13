@@ -1,0 +1,2338 @@
+{
+  "catalog_version": "1",
+  "corpus_id": "documind-corpus-v2",
+  "source_manifest": "eval/corpus_v2_manifest.json",
+  "source_collection": "documind_corpus_v2_ingestion_audit",
+  "stored_chunk_count": 425,
+  "summary": {
+    "evidence_item_count": 66,
+    "text_document_count": 7,
+    "ambiguous_item_count": 2,
+    "multi_chunk_candidate_count": 6,
+    "validation_passed": true
+  },
+  "evidence_distribution": {
+    "corpus-v2-study-plan": {
+      "display_name": "Study Plan",
+      "useful_evidence_item_count": 7,
+      "pages_represented": [
+        1
+      ],
+      "page_count_represented": 1,
+      "chunks_represented": [
+        {
+          "page_number": 1,
+          "chunk_index": 0
+        },
+        {
+          "page_number": 1,
+          "chunk_index": 1
+        },
+        {
+          "page_number": 1,
+          "chunk_index": 2
+        }
+      ],
+      "chunk_count_represented": 3,
+      "major_topics": [
+        "capstone",
+        "elective_choice",
+        "module_schedule",
+        "programme_credits",
+        "programme_duration",
+        "programme_time_limits",
+        "study_breaks"
+      ],
+      "potential_hard_negative_relationship_count": 2
+    },
+    "corpus-v2-admissions-appeals": {
+      "display_name": "Admissions Appeals and Complaints Policy",
+      "useful_evidence_item_count": 9,
+      "pages_represented": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "page_count_represented": 4,
+      "chunks_represented": [
+        {
+          "page_number": 2,
+          "chunk_index": 5
+        },
+        {
+          "page_number": 3,
+          "chunk_index": 10
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 12
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 15
+        },
+        {
+          "page_number": 6,
+          "chunk_index": 21
+        }
+      ],
+      "chunk_count_represented": 5,
+      "major_topics": [
+        "anonymous_complaints",
+        "appeal_deadline",
+        "appeal_definition",
+        "appeal_scope",
+        "appeal_timeline",
+        "complaint_definition",
+        "independent_investigation",
+        "representation",
+        "response_time"
+      ],
+      "potential_hard_negative_relationship_count": 2
+    },
+    "corpus-v2-appendix-l-cop-assess": {
+      "display_name": "Appendix L COP Assess",
+      "useful_evidence_item_count": 10,
+      "pages_represented": [
+        2,
+        4,
+        12
+      ],
+      "page_count_represented": 3,
+      "chunks_represented": [
+        {
+          "page_number": 2,
+          "chunk_index": 4
+        },
+        {
+          "page_number": 2,
+          "chunk_index": 5
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 12
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 13
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 14
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 15
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 16
+        },
+        {
+          "page_number": 12,
+          "chunk_index": 54
+        }
+      ],
+      "chunk_count_represented": 8,
+      "major_topics": [
+        "category_and_appeal_rules",
+        "collusion",
+        "commissioned_work",
+        "extenuating_circumstances",
+        "generative_ai_use",
+        "graduation_restriction",
+        "integrity_appeal",
+        "integrity_categories",
+        "poor_academic_practice",
+        "proofreading"
+      ],
+      "potential_hard_negative_relationship_count": 4
+    },
+    "corpus-v2-coding-standards": {
+      "display_name": "Coding Standards",
+      "useful_evidence_item_count": 9,
+      "pages_represented": [
+        1,
+        2,
+        3
+      ],
+      "page_count_represented": 3,
+      "chunks_represented": [
+        {
+          "page_number": 1,
+          "chunk_index": 0
+        },
+        {
+          "page_number": 1,
+          "chunk_index": 1
+        },
+        {
+          "page_number": 1,
+          "chunk_index": 2
+        },
+        {
+          "page_number": 2,
+          "chunk_index": 3
+        },
+        {
+          "page_number": 2,
+          "chunk_index": 5
+        },
+        {
+          "page_number": 3,
+          "chunk_index": 6
+        }
+      ],
+      "chunk_count_represented": 6,
+      "major_topics": [
+        "class_naming",
+        "code_comments",
+        "coding_standard_purpose",
+        "constant_naming",
+        "function_naming",
+        "identifier_conventions",
+        "public_interface_documentation",
+        "source_attribution",
+        "variable_naming"
+      ],
+      "potential_hard_negative_relationship_count": 2
+    },
+    "corpus-v2-ai-ethics-chapter-1": {
+      "display_name": "AI Ethics Chapter 1",
+      "useful_evidence_item_count": 8,
+      "pages_represented": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        11
+      ],
+      "page_count_represented": 7,
+      "chunks_represented": [
+        {
+          "page_number": 2,
+          "chunk_index": 6
+        },
+        {
+          "page_number": 2,
+          "chunk_index": 8
+        },
+        {
+          "page_number": 3,
+          "chunk_index": 12
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 18
+        },
+        {
+          "page_number": 6,
+          "chunk_index": 25
+        },
+        {
+          "page_number": 7,
+          "chunk_index": 33
+        },
+        {
+          "page_number": 8,
+          "chunk_index": 37
+        },
+        {
+          "page_number": 11,
+          "chunk_index": 56
+        }
+      ],
+      "chunk_count_represented": 8,
+      "major_topics": [
+        "ai_methods",
+        "computing_history",
+        "data_identity",
+        "digital_agency",
+        "digital_reengineering",
+        "internet_use",
+        "responsible_design",
+        "right_to_be_forgotten"
+      ],
+      "potential_hard_negative_relationship_count": 2
+    },
+    "corpus-v2-uolo-programme-terms": {
+      "display_name": "UoLO Programme Terms and Conditions",
+      "useful_evidence_item_count": 13,
+      "pages_represented": [
+        3,
+        6,
+        7,
+        8,
+        10,
+        11,
+        16,
+        17,
+        19,
+        26
+      ],
+      "page_count_represented": 10,
+      "chunks_represented": [
+        {
+          "page_number": 3,
+          "chunk_index": 4
+        },
+        {
+          "page_number": 6,
+          "chunk_index": 14
+        },
+        {
+          "page_number": 7,
+          "chunk_index": 19
+        },
+        {
+          "page_number": 8,
+          "chunk_index": 22
+        },
+        {
+          "page_number": 10,
+          "chunk_index": 32
+        },
+        {
+          "page_number": 11,
+          "chunk_index": 35
+        },
+        {
+          "page_number": 16,
+          "chunk_index": 54
+        },
+        {
+          "page_number": 17,
+          "chunk_index": 58
+        },
+        {
+          "page_number": 19,
+          "chunk_index": 64
+        },
+        {
+          "page_number": 19,
+          "chunk_index": 66
+        },
+        {
+          "page_number": 26,
+          "chunk_index": 92
+        }
+      ],
+      "chunk_count_represented": 11,
+      "major_topics": [
+        "account_security",
+        "cancellation_period",
+        "cancellation_refund",
+        "cancellation_window_and_effect",
+        "fee_default",
+        "fees_and_duration",
+        "governing_law",
+        "maximum_registration",
+        "online_study_it_requirements",
+        "personal_data",
+        "programme_changes",
+        "programme_complaints",
+        "student_intellectual_property"
+      ],
+      "potential_hard_negative_relationship_count": 6
+    },
+    "corpus-v2-serverless-computing": {
+      "display_name": "Serverless Computing",
+      "useful_evidence_item_count": 10,
+      "pages_represented": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        8,
+        14
+      ],
+      "page_count_represented": 7,
+      "chunks_represented": [
+        {
+          "page_number": 1,
+          "chunk_index": 3
+        },
+        {
+          "page_number": 3,
+          "chunk_index": 24
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 28
+        },
+        {
+          "page_number": 4,
+          "chunk_index": 30
+        },
+        {
+          "page_number": 5,
+          "chunk_index": 38
+        },
+        {
+          "page_number": 5,
+          "chunk_index": 39
+        },
+        {
+          "page_number": 6,
+          "chunk_index": 52
+        },
+        {
+          "page_number": 8,
+          "chunk_index": 72
+        },
+        {
+          "page_number": 14,
+          "chunk_index": 124
+        }
+      ],
+      "chunk_count_represented": 9,
+      "major_topics": [
+        "cold_start",
+        "cold_start_context",
+        "faas",
+        "faas_baas",
+        "hostless_operations",
+        "isolation_security",
+        "serverless_benchmarking",
+        "serverless_workflow",
+        "startup_latency",
+        "statelessness"
+      ],
+      "potential_hard_negative_relationship_count": 2
+    }
+  },
+  "ambiguous_evidence_items": [
+    "ev-ethics-005",
+    "ev-serverless-008"
+  ],
+  "excluded_ambiguous_candidates": [
+    {
+      "source": "Serverless Computing figures",
+      "reason": "Diagram-only relationships were not catalogued because the current text pipeline retrieves captions and nearby prose, not the visual structure itself."
+    },
+    {
+      "source": "Study Plan second elective group",
+      "reason": "The full list crosses the c0/c1 character boundary; individual complete facts remain usable, but the split list was not forced into a single-chunk ground truth."
+    },
+    {
+      "source": "PDF headers, download notices, and reference lists",
+      "reason": "Layout artefacts and bibliographic mentions were excluded because they do not provide useful benchmark claims."
+    }
+  ],
+  "multi_chunk_candidates": [
+    "ev-study-007",
+    "ev-admissions-009",
+    "ev-integrity-010",
+    "ev-coding-009",
+    "ev-terms-012",
+    "ev-serverless-010"
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "ev-study-001",
+      "document_id": "corpus-v2-study-plan",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "page_number": 1,
+      "chunk_index": 0,
+      "topic": "programme_duration",
+      "concise_factual_claim": "The MSc Computer Science indicative study duration is 24 months.",
+      "evidence_keywords_or_phrases": [
+        "Indicative Study Duration",
+        "24 Months"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:0",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        },
+        {
+          "record_id": "corpus-v2-study-plan:1:2",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 2
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-study-002",
+      "document_id": "corpus-v2-study-plan",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "page_number": 1,
+      "chunk_index": 0,
+      "topic": "programme_credits",
+      "concise_factual_claim": "The programme carries 180 credits.",
+      "evidence_keywords_or_phrases": [
+        "Credits",
+        "180"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:0",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-study-003",
+      "document_id": "corpus-v2-study-plan",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "page_number": 1,
+      "chunk_index": 0,
+      "topic": "module_schedule",
+      "concise_factual_claim": "Global Trends in Computer Science is a 15-credit, eight-week module.",
+      "evidence_keywords_or_phrases": [
+        "Global Trends in Computer Science",
+        "15",
+        "8 weeks"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:0",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-study-004",
+      "document_id": "corpus-v2-study-plan",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "page_number": 1,
+      "chunk_index": 0,
+      "topic": "elective_choice",
+      "concise_factual_claim": "Machine Learning in Practice, Reasoning and Intelligent Systems, and Robotics appear in one elective choice group.",
+      "evidence_keywords_or_phrases": [
+        "Machine Learning in Practice",
+        "Reasoning and Intelligent Systems",
+        "Robotics"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:0",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-study-005",
+      "document_id": "corpus-v2-study-plan",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "page_number": 1,
+      "chunk_index": 1,
+      "topic": "capstone",
+      "concise_factual_claim": "The final Computer Science Capstone Project is worth 60 credits and lasts 32 weeks.",
+      "evidence_keywords_or_phrases": [
+        "Final Module",
+        "Computer Science Capstone Project",
+        "60",
+        "32 weeks"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:1",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 1
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-study-006",
+      "document_id": "corpus-v2-study-plan",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "page_number": 1,
+      "chunk_index": 2,
+      "topic": "study_breaks",
+      "concise_factual_claim": "A study break or reassessment can prevent completion within the indicative 24 months.",
+      "evidence_keywords_or_phrases": [
+        "break from your studies",
+        "reassessment",
+        "24 months"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:2",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 2
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-study-007",
+      "document_id": "corpus-v2-study-plan",
+      "file_name": "Study Plan - MSc Computer Science.pdf",
+      "page_number": 1,
+      "chunk_index": 0,
+      "topic": "programme_time_limits",
+      "concise_factual_claim": "The indicative duration is 24 months, while the maximum completion period is 72 months.",
+      "evidence_keywords_or_phrases": [
+        "Indicative Study Duration",
+        "24 Months"
+      ],
+      "evidence_type": "multi_chunk_candidate",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:0",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 0
+        },
+        {
+          "record_id": "corpus-v2-study-plan:1:2",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 2
+        }
+      ],
+      "supporting_chunk_refs": [
+        {
+          "record_id": "corpus-v2-study-plan:1:2",
+          "document_id": "corpus-v2-study-plan",
+          "page_number": 1,
+          "chunk_index": 2,
+          "identifying_phrases": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ]
+        }
+      ],
+      "ambiguity": null,
+      "notes": "Requires the headline duration and the separate maximum-period note."
+    },
+    {
+      "evidence_id": "ev-admissions-001",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 3,
+      "chunk_index": 10,
+      "topic": "appeal_definition",
+      "concise_factual_claim": "An admissions appeal is a formal request to reconsider an application decision.",
+      "evidence_keywords_or_phrases": [
+        "appeal is a formal request",
+        "reconsideration of a decision"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:9",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 3,
+          "chunk_index": 9
+        },
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:10",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 3,
+          "chunk_index": 10
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-002",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 3,
+      "chunk_index": 10,
+      "topic": "complaint_definition",
+      "concise_factual_claim": "A complaint expresses dissatisfaction with admissions procedures, implementation, actions, or inaction.",
+      "evidence_keywords_or_phrases": [
+        "complaint is defined",
+        "expression of dissatisfaction",
+        "admissions procedures"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:10",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 3,
+          "chunk_index": 10
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-003",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 3,
+      "chunk_index": 10,
+      "topic": "appeal_scope",
+      "concise_factual_claim": "The procedure cannot be used merely to dispute admissions staff's academic or professional judgement.",
+      "evidence_keywords_or_phrases": [
+        "may not make an Appeal or Complaint",
+        "academic or professional judgement"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:10",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 3,
+          "chunk_index": 10
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-004",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 2,
+      "chunk_index": 5,
+      "topic": "representation",
+      "concise_factual_claim": "A third party may submit an appeal or complaint only with the applicant's explicit written consent.",
+      "evidence_keywords_or_phrases": [
+        "third party",
+        "explicit consent",
+        "in writing"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:5",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 2,
+          "chunk_index": 5
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-005",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 2,
+      "chunk_index": 5,
+      "topic": "anonymous_complaints",
+      "concise_factual_claim": "Anonymous complaints are not handled under this procedure.",
+      "evidence_keywords_or_phrases": [
+        "Anonymous complaints",
+        "will not be dealt with"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:5",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 2,
+          "chunk_index": 5
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-006",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 4,
+      "chunk_index": 12,
+      "topic": "appeal_deadline",
+      "concise_factual_claim": "Applicants should normally appeal within one month of the application decision.",
+      "evidence_keywords_or_phrases": [
+        "make an appeal within one month",
+        "receiving the decision"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:12",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 4,
+          "chunk_index": 12
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-007",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 4,
+      "chunk_index": 15,
+      "topic": "response_time",
+      "concise_factual_claim": "The formal appeal review normally aims for a response within fifteen working days after receipt and acknowledgement.",
+      "evidence_keywords_or_phrases": [
+        "fifteen working days",
+        "receipt and acknowledgement"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:14",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 4,
+          "chunk_index": 14
+        },
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:15",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 4,
+          "chunk_index": 15
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-008",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 6,
+      "chunk_index": 21,
+      "topic": "independent_investigation",
+      "concise_factual_claim": "The Executive Pro-Vice-Chancellor acknowledges an escalated complaint within ten working days and appoints investigators with no material interest.",
+      "evidence_keywords_or_phrases": [
+        "within ten working days",
+        "no material interest",
+        "carry out an investigation"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:21",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 6,
+          "chunk_index": 21
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-admissions-009",
+      "document_id": "corpus-v2-admissions-appeals",
+      "file_name": "AdmissionsAppealsandComplaintsPolicy 2022 FINAL.pdf",
+      "page_number": 4,
+      "chunk_index": 12,
+      "topic": "appeal_timeline",
+      "concise_factual_claim": "A normal appeal should be made within one month, while the later Executive Pro-Vice-Chancellor stage has a ten-working-day acknowledgement target.",
+      "evidence_keywords_or_phrases": [
+        "appeal within one month",
+        "receiving the decision"
+      ],
+      "evidence_type": "multi_chunk_candidate",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:12",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 4,
+          "chunk_index": 12
+        }
+      ],
+      "supporting_chunk_refs": [
+        {
+          "record_id": "corpus-v2-admissions-appeals:1:21",
+          "document_id": "corpus-v2-admissions-appeals",
+          "page_number": 6,
+          "chunk_index": 21,
+          "identifying_phrases": [
+            "within ten working days",
+            "acknowledge receipt"
+          ]
+        }
+      ],
+      "ambiguity": null,
+      "notes": "Combines deadlines from different stages of the procedure."
+    },
+    {
+      "evidence_id": "ev-integrity-001",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 2,
+      "chunk_index": 4,
+      "topic": "integrity_categories",
+      "concise_factual_claim": "The policy distinguishes four academic-integrity categories with increasing levels of dishonesty.",
+      "evidence_keywords_or_phrases": [
+        "Category 1 is determined",
+        "Category 2 captures",
+        "Category 4 covers"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:4",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 2,
+          "chunk_index": 4
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-002",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 2,
+      "chunk_index": 5,
+      "topic": "graduation_restriction",
+      "concise_factual_claim": "A student with an unresolved academic-integrity matter cannot graduate, including while an appeal is registered.",
+      "evidence_keywords_or_phrases": [
+        "No student with an unresolved academic integrity matter",
+        "graduate",
+        "registered an appeal"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:5",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 2,
+          "chunk_index": 5
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-003",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 2,
+      "chunk_index": 5,
+      "topic": "extenuating_circumstances",
+      "concise_factual_claim": "Personal Extenuating Circumstances are not accepted as a reason for committing academic misconduct.",
+      "evidence_keywords_or_phrases": [
+        "Personal Extenuating Circumstances",
+        "will not be accepted",
+        "academic misconduct"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:5",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 2,
+          "chunk_index": 5
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-004",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 4,
+      "chunk_index": 12,
+      "topic": "poor_academic_practice",
+      "concise_factual_claim": "Poor academic practice can include poor paraphrasing or inadequate referencing.",
+      "evidence_keywords_or_phrases": [
+        "Poor academic practice",
+        "poor paraphrasing",
+        "inadequate referencing"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:12",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 4,
+          "chunk_index": 12
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-005",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 4,
+      "chunk_index": 13,
+      "topic": "collusion",
+      "concise_factual_claim": "Collusion involves conscious collaboration on work later submitted as individual work without official approval.",
+      "evidence_keywords_or_phrases": [
+        "official approval",
+        "consciously collaborate",
+        "individual efforts"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:13",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 4,
+          "chunk_index": 13
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-006",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 4,
+      "chunk_index": 14,
+      "topic": "commissioned_work",
+      "concise_factual_claim": "Commissioned or procured work includes asking a third party to prepare all or part of an assignment, paid or unpaid.",
+      "evidence_keywords_or_phrases": [
+        "Commissioned or Procured",
+        "third parties",
+        "with or without payment"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:14",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 4,
+          "chunk_index": 14
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-007",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 4,
+      "chunk_index": 15,
+      "topic": "proofreading",
+      "concise_factual_claim": "Acceptable proofreading identifies presentation errors; adding, rewriting, or fact-checking content is unacceptable.",
+      "evidence_keywords_or_phrases": [
+        "Acceptable proof-reading",
+        "Unacceptable proof-reading",
+        "rewriting any content"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:15",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 4,
+          "chunk_index": 15
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-008",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 4,
+      "chunk_index": 16,
+      "topic": "generative_ai_use",
+      "concise_factual_claim": "Submitting GAI-generated assessment work contrary to assignment guidance is treated as dishonest practice.",
+      "evidence_keywords_or_phrases": [
+        "Generative Artificial Intelligence",
+        "contrary to the guidance",
+        "assignment brief"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:16",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 4,
+          "chunk_index": 16
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-009",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 12,
+      "chunk_index": 54,
+      "topic": "integrity_appeal",
+      "concise_factual_claim": "Category 2–4 decisions may be appealed only on procedural-error grounds in the investigation.",
+      "evidence_keywords_or_phrases": [
+        "Right of Appeal",
+        "Category 2, 3 or 4",
+        "procedural error"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:54",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 12,
+          "chunk_index": 54
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-integrity-010",
+      "document_id": "corpus-v2-appendix-l-cop-assess",
+      "file_name": "appendix_L_cop_assess.pdf",
+      "page_number": 2,
+      "chunk_index": 4,
+      "topic": "category_and_appeal_rules",
+      "concise_factual_claim": "The policy defines escalating integrity categories, while appeals against Category 2–4 decisions are limited to procedural-error grounds.",
+      "evidence_keywords_or_phrases": [
+        "Category 2 captures",
+        "Category 4 covers"
+      ],
+      "evidence_type": "multi_chunk_candidate",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:4",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 2,
+          "chunk_index": 4
+        }
+      ],
+      "supporting_chunk_refs": [
+        {
+          "record_id": "corpus-v2-appendix-l-cop-assess:1:54",
+          "document_id": "corpus-v2-appendix-l-cop-assess",
+          "page_number": 12,
+          "chunk_index": 54,
+          "identifying_phrases": [
+            "Category 2, 3 or 4",
+            "procedural error"
+          ]
+        }
+      ],
+      "ambiguity": null,
+      "notes": "The category definitions and appeal restriction are separated by several pages."
+    },
+    {
+      "evidence_id": "ev-coding-001",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 1,
+      "chunk_index": 0,
+      "topic": "coding_standard_purpose",
+      "concise_factual_claim": "The coding standard aims to make assignment and project code more readable and easier to follow.",
+      "evidence_keywords_or_phrases": [
+        "assignments and projects",
+        "more readable",
+        "easier"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:0",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 1,
+          "chunk_index": 0
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-002",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 1,
+      "chunk_index": 1,
+      "topic": "variable_naming",
+      "concise_factual_claim": "Variable and attribute identifiers should be meaningful, start lowercase, and use camel case.",
+      "evidence_keywords_or_phrases": [
+        "Variables/Attributes",
+        "meaningful",
+        "lower case",
+        "camel case"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:1",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 1,
+          "chunk_index": 1
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-003",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 1,
+      "chunk_index": 1,
+      "topic": "class_naming",
+      "concise_factual_claim": "Class identifiers start uppercase and should be nouns.",
+      "evidence_keywords_or_phrases": [
+        "Class identifiers",
+        "uppercase letter",
+        "noun"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:1",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 1,
+          "chunk_index": 1
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-004",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 1,
+      "chunk_index": 2,
+      "topic": "constant_naming",
+      "concise_factual_claim": "Constant identifiers are normally uppercase with underscores between words.",
+      "evidence_keywords_or_phrases": [
+        "Identifiers of constants",
+        "uppercase",
+        "underscores"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:2",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 1,
+          "chunk_index": 2
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-005",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 2,
+      "chunk_index": 3,
+      "topic": "function_naming",
+      "concise_factual_claim": "Method names start lowercase, use camel case, and should be verbs.",
+      "evidence_keywords_or_phrases": [
+        "Method / Function Names",
+        "camel case",
+        "verbs"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:3",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 2,
+          "chunk_index": 3
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-006",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 2,
+      "chunk_index": 3,
+      "topic": "code_comments",
+      "concise_factual_claim": "Comments should explain a code section's intention and outline its algorithm.",
+      "evidence_keywords_or_phrases": [
+        "explain what the intention",
+        "outline of the algorithm"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:3",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 2,
+          "chunk_index": 3
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-007",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 2,
+      "chunk_index": 5,
+      "topic": "public_interface_documentation",
+      "concise_factual_claim": "Public methods should be commented, including input variables and returned values.",
+      "evidence_keywords_or_phrases": [
+        "public method",
+        "input variables",
+        "returned values"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:5",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 2,
+          "chunk_index": 5
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-008",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 3,
+      "chunk_index": 6,
+      "topic": "source_attribution",
+      "concise_factual_claim": "Online or textbook code ideas and fragments must be precisely referenced in comments.",
+      "evidence_keywords_or_phrases": [
+        "On-line Resources and Textbooks",
+        "include references",
+        "comments"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:6",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 3,
+          "chunk_index": 6
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-coding-009",
+      "document_id": "corpus-v2-coding-standards",
+      "file_name": "Coding_Standards.pdf",
+      "page_number": 1,
+      "chunk_index": 1,
+      "topic": "identifier_conventions",
+      "concise_factual_claim": "Variables use lowercase-leading camel case, classes begin uppercase, and constants are normally uppercase with underscores.",
+      "evidence_keywords_or_phrases": [
+        "Variables/Attributes",
+        "camel case",
+        "Class identifiers"
+      ],
+      "evidence_type": "multi_chunk_candidate",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:1",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 1,
+          "chunk_index": 1
+        }
+      ],
+      "supporting_chunk_refs": [
+        {
+          "record_id": "corpus-v2-coding-standards:1:2",
+          "document_id": "corpus-v2-coding-standards",
+          "page_number": 1,
+          "chunk_index": 2,
+          "identifying_phrases": [
+            "Identifiers of constants",
+            "uppercase",
+            "underscores"
+          ]
+        }
+      ],
+      "ambiguity": null,
+      "notes": "Combines separate identifier rules rather than treating one naming rule as sufficient."
+    },
+    {
+      "evidence_id": "ev-ethics-001",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 2,
+      "chunk_index": 6,
+      "topic": "computing_history",
+      "concise_factual_claim": "The Apollo Guidance Computer is described as having 32,768 bits of RAM and 72 KB of ROM.",
+      "evidence_keywords_or_phrases": [
+        "Apollo Guidance Computer",
+        "32,768 bits",
+        "72 KB"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:6",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 2,
+          "chunk_index": 6
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-ethics-002",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 2,
+      "chunk_index": 8,
+      "topic": "internet_use",
+      "concise_factual_claim": "A cited 2018 UK estimate reports 25.3 hours of internet use per week, 15.4 hours more than in 2005.",
+      "evidence_keywords_or_phrases": [
+        "25.3 hours per week",
+        "15.4 hours",
+        "2005"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:8",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 2,
+          "chunk_index": 8
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-ethics-003",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 3,
+      "chunk_index": 12,
+      "topic": "ai_methods",
+      "concise_factual_claim": "The chapter characterises modern AI's main approach as statistical inference and correlation rather than logical deduction.",
+      "evidence_keywords_or_phrases": [
+        "no longer logical deduction",
+        "statistical inference and correlation"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:11",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 3,
+          "chunk_index": 11
+        },
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:12",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 3,
+          "chunk_index": 12
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-ethics-004",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 4,
+      "chunk_index": 18,
+      "topic": "data_identity",
+      "concise_factual_claim": "The chapter describes self-identity and personal data as increasingly coupled.",
+      "evidence_keywords_or_phrases": [
+        "Self-identity and personal data",
+        "glued together"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:17",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 4,
+          "chunk_index": 17
+        },
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:18",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 4,
+          "chunk_index": 18
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-ethics-005",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 6,
+      "chunk_index": 25,
+      "topic": "right_to_be_forgotten",
+      "concise_factual_claim": "Removing links in only one search-engine jurisdiction may not effectively implement the right to be forgotten.",
+      "evidence_keywords_or_phrases": [
+        "right to be forgotten",
+        "remove links",
+        "all versions"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:25",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 6,
+          "chunk_index": 25
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": "This is a jurisdiction-specific example in the chapter; do not generalize it into a universal legal rule.",
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-ethics-006",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 7,
+      "chunk_index": 33,
+      "topic": "digital_reengineering",
+      "concise_factual_claim": "Re-ontologizing means re-engineering that transforms a system's intrinsic nature, not merely its structure.",
+      "evidence_keywords_or_phrases": [
+        "re-ontologizing",
+        "intrinsic nature",
+        "ontology"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:33",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 7,
+          "chunk_index": 33
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-ethics-007",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 8,
+      "chunk_index": 37,
+      "topic": "digital_agency",
+      "concise_factual_claim": "The chapter connects digitally transformed political agency with direct democracy and artificial agency with AI.",
+      "evidence_keywords_or_phrases": [
+        "political agency as direct democracy",
+        "artificial agency as AI"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:37",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 8,
+          "chunk_index": 37
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-ethics-008",
+      "document_id": "corpus-v2-ai-ethics-chapter-1",
+      "file_name": "The ethics of artificial intelligence principles, challenges, and opportunities-chapter-1.pdf",
+      "page_number": 11,
+      "chunk_index": 56,
+      "topic": "responsible_design",
+      "concise_factual_claim": "The chapter argues for information societies that are open, tolerant, equitable, just, environmentally supportive, and respectful of human dignity.",
+      "evidence_keywords_or_phrases": [
+        "open, tolerant, equitable, just",
+        "human dignity",
+        "better design"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-ai-ethics-chapter-1:1:56",
+          "document_id": "corpus-v2-ai-ethics-chapter-1",
+          "page_number": 11,
+          "chunk_index": 56
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-001",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 3,
+      "chunk_index": 4,
+      "topic": "cancellation_period",
+      "concise_factual_claim": "The Cancellation Period runs until 21 days from a programme's Start Date.",
+      "evidence_keywords_or_phrases": [
+        "Cancellation Period",
+        "21 days",
+        "Start Date"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:4",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 3,
+          "chunk_index": 4
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-002",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 6,
+      "chunk_index": 14,
+      "topic": "cancellation_refund",
+      "concise_factual_claim": "During the Cancellation Period a student may end the contract without Net Tuition Fees, or receive a full refund if already paid.",
+      "evidence_keywords_or_phrases": [
+        "end this contract",
+        "full refund",
+        "Cancellation Period"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:14",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 6,
+          "chunk_index": 14
+        },
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:39",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 12,
+          "chunk_index": 39
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-003",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 7,
+      "chunk_index": 19,
+      "topic": "programme_changes",
+      "concise_factual_claim": "Students are normally consulted in advance about significant programme changes, subject to regulatory, legal, or external-event exceptions.",
+      "evidence_keywords_or_phrases": [
+        "significant change",
+        "consulted with in advance",
+        "regulatory or legal reasons"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:19",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 7,
+          "chunk_index": 19
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-004",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 8,
+      "chunk_index": 22,
+      "topic": "maximum_registration",
+      "concise_factual_claim": "There is no automatic right to study beyond the Maximum Period of Registration, though an extension may be granted at the University's discretion.",
+      "evidence_keywords_or_phrases": [
+        "no automatic right",
+        "Maximum Period of Registration",
+        "grant an extension"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:22",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 8,
+          "chunk_index": 22
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-005",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 10,
+      "chunk_index": 32,
+      "topic": "fees_and_duration",
+      "concise_factual_claim": "Taking longer than the indicative duration does not add fees beyond the stated Net Tuition Fees, subject to specified increases.",
+      "evidence_keywords_or_phrases": [
+        "longer than the Indicative Study Duration",
+        "no additional fees",
+        "Net Tuition Fees"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:32",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 10,
+          "chunk_index": 32
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-006",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 11,
+      "chunk_index": 35,
+      "topic": "fee_default",
+      "concise_factual_claim": "Kaplan gives five working days' written notice to settle an outstanding account balance.",
+      "evidence_keywords_or_phrases": [
+        "five (5) working days",
+        "settle your outstanding account balance"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:35",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 11,
+          "chunk_index": 35
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-007",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 17,
+      "chunk_index": 58,
+      "topic": "student_intellectual_property",
+      "concise_factual_claim": "Students generally own IP created during the programme, subject to listed exceptions.",
+      "evidence_keywords_or_phrases": [
+        "you will own all Intellectual Property",
+        "subject to the exceptions"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:58",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 17,
+          "chunk_index": 58
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-008",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 19,
+      "chunk_index": 64,
+      "topic": "programme_complaints",
+      "concise_factual_claim": "Kaplan is the initial contact for complaints relating to an online programme.",
+      "evidence_keywords_or_phrases": [
+        "Kaplan will be your initial point of contact",
+        "complaint relating to your Programme"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:64",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 19,
+          "chunk_index": 64
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-009",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 26,
+      "chunk_index": 92,
+      "topic": "governing_law",
+      "concise_factual_claim": "The programme terms are governed by English law and submit to the English courts' jurisdiction.",
+      "evidence_keywords_or_phrases": [
+        "governed by English law",
+        "exclusive jurisdiction of the English courts"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:92",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 26,
+          "chunk_index": 92
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-010",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 16,
+      "chunk_index": 54,
+      "topic": "personal_data",
+      "concise_factual_claim": "The University and Kaplan collect and process personal data, including listed sensitive categories, for programme-related responsibilities.",
+      "evidence_keywords_or_phrases": [
+        "collect, retain and process",
+        "sensitive personal data",
+        "education and support obligations"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:54",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 16,
+          "chunk_index": 54
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-011",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 8,
+      "chunk_index": 22,
+      "topic": "account_security",
+      "concise_factual_claim": "Students must not make their online passwords available to third parties.",
+      "evidence_keywords_or_phrases": [
+        "online passwords",
+        "third parties"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:22",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 8,
+          "chunk_index": 22
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-terms-012",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 3,
+      "chunk_index": 4,
+      "topic": "cancellation_window_and_effect",
+      "concise_factual_claim": "The cancellation window lasts 21 days from the Start Date and permits ending the contract without Net Tuition Fees or with a full refund if already paid.",
+      "evidence_keywords_or_phrases": [
+        "Cancellation Period",
+        "21 days",
+        "Start Date"
+      ],
+      "evidence_type": "multi_chunk_candidate",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:4",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 3,
+          "chunk_index": 4
+        }
+      ],
+      "supporting_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:14",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 6,
+          "chunk_index": 14,
+          "identifying_phrases": [
+            "end this contract",
+            "full refund",
+            "Cancellation Period"
+          ]
+        }
+      ],
+      "ambiguity": null,
+      "notes": "Definition and financial consequence occur on different pages."
+    },
+    {
+      "evidence_id": "ev-terms-013",
+      "document_id": "corpus-v2-uolo-programme-terms",
+      "file_name": "UoLO Programme T&Cs for Online Programmes - Updated Mar 2026.pdf",
+      "page_number": 19,
+      "chunk_index": 66,
+      "topic": "online_study_it_requirements",
+      "concise_factual_claim": "Online study requires specified equipment and connectivity, including a computer, headset, broadband, current browser, and office software.",
+      "evidence_keywords_or_phrases": [
+        "IT and information security",
+        "PC or laptop",
+        "broadband connection",
+        "up-to-date web browser"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-uolo-programme-terms:1:66",
+          "document_id": "corpus-v2-uolo-programme-terms",
+          "page_number": 19,
+          "chunk_index": 66
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-001",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 1,
+      "chunk_index": 3,
+      "topic": "faas",
+      "concise_factual_claim": "FaaS lets developers run functions without building and managing the underlying infrastructure.",
+      "evidence_keywords_or_phrases": [
+        "FaaS",
+        "without incurring the complexity",
+        "underlying infrastructure"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:3",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 1,
+          "chunk_index": 3
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-002",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 3,
+      "chunk_index": 24,
+      "topic": "serverless_workflow",
+      "concise_factual_claim": "The serverless workflow is divided into function programming and function serving.",
+      "evidence_keywords_or_phrases": [
+        "two phases",
+        "function programming",
+        "function serving"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:24",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 3,
+          "chunk_index": 24
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-003",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 4,
+      "chunk_index": 28,
+      "topic": "hostless_operations",
+      "concise_factual_claim": "The hostless model reduces server-management and patching work but requires application-level resource and execution monitoring.",
+      "evidence_keywords_or_phrases": [
+        "do not need to upgrade the servers",
+        "security patches",
+        "resource occupation",
+        "execution time"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:28",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 4,
+          "chunk_index": 28
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-004",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 4,
+      "chunk_index": 30,
+      "topic": "statelessness",
+      "concise_factual_claim": "Serverless functions commonly run in short-lived stateless containers without persisting ephemeral state.",
+      "evidence_keywords_or_phrases": [
+        "stateless container",
+        "short period",
+        "ephemeral state"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:30",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 4,
+          "chunk_index": 30
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-005",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 5,
+      "chunk_index": 38,
+      "topic": "startup_latency",
+      "concise_factual_claim": "Startup latency is the period from function invocation to execution and includes warm and cold starts.",
+      "evidence_keywords_or_phrases": [
+        "Startup latency",
+        "warm start",
+        "cold start",
+        "period from a function"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:38",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 5,
+          "chunk_index": 38
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-006",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 5,
+      "chunk_index": 39,
+      "topic": "cold_start",
+      "concise_factual_claim": "Cold-start cost is generally significantly higher than warm-start cost.",
+      "evidence_keywords_or_phrases": [
+        "cost of the cold start",
+        "higher than that of the warm start"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:39",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 5,
+          "chunk_index": 39
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-007",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 6,
+      "chunk_index": 52,
+      "topic": "isolation_security",
+      "concise_factual_claim": "The paper describes containers as having weaker isolation because they rely on kernel security mechanisms.",
+      "evidence_keywords_or_phrases": [
+        "container has weak isolation",
+        "kernel security mechanism"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:52",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 6,
+          "chunk_index": 52
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-008",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 8,
+      "chunk_index": 72,
+      "topic": "faas_baas",
+      "concise_factual_claim": "The paper presents a serverless platform as a combination of FaaS and BaaS, with BaaS supporting infrastructure and auto-scaling policy.",
+      "evidence_keywords_or_phrases": [
+        "FaaS",
+        "BaaS",
+        "auto-scaling policy"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:72",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 8,
+          "chunk_index": 72
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": "The extracted phrase 'combination' is broken by PDF line hyphenation, so shorter identifying phrases are used.",
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-009",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 14,
+      "chunk_index": 124,
+      "topic": "serverless_benchmarking",
+      "concise_factual_claim": "Serverless benchmarks help deployments and framework selection and can measure memory, CPU, and language effects.",
+      "evidence_keywords_or_phrases": [
+        "serverless benchmarking",
+        "selection of the best suitable framework",
+        "memory, CPU, and language"
+      ],
+      "evidence_type": "single_chunk",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:124",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 14,
+          "chunk_index": 124
+        }
+      ],
+      "supporting_chunk_refs": [],
+      "ambiguity": null,
+      "notes": ""
+    },
+    {
+      "evidence_id": "ev-serverless-010",
+      "document_id": "corpus-v2-serverless-computing",
+      "file_name": "Serverless_Computing_State-of-the-Art_Challenges_and_Opportunities.pdf",
+      "page_number": 5,
+      "chunk_index": 38,
+      "topic": "cold_start_context",
+      "concise_factual_claim": "Startup latency spans invocation to execution, and cold starts generally cost more than warm starts.",
+      "evidence_keywords_or_phrases": [
+        "Startup latency",
+        "warm start",
+        "cold start"
+      ],
+      "evidence_type": "multi_chunk_candidate",
+      "acceptable_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:38",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 5,
+          "chunk_index": 38
+        },
+        {
+          "record_id": "corpus-v2-serverless-computing:1:39",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 5,
+          "chunk_index": 39
+        },
+        {
+          "record_id": "corpus-v2-serverless-computing:1:98",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 11,
+          "chunk_index": 98
+        }
+      ],
+      "supporting_chunk_refs": [
+        {
+          "record_id": "corpus-v2-serverless-computing:1:39",
+          "document_id": "corpus-v2-serverless-computing",
+          "page_number": 5,
+          "chunk_index": 39,
+          "identifying_phrases": [
+            "cost of the cold start",
+            "higher than that of the warm start"
+          ]
+        }
+      ],
+      "ambiguity": null,
+      "notes": "The definition and comparative cost are split across adjacent overlapping chunks."
+    }
+  ],
+  "evaluation_coverage_proposal": {
+    "target_case_count": 54,
+    "status": "proposal_only_no_questions_generated",
+    "categories": {
+      "direct_factual": 10,
+      "semantic_paraphrase": 10,
+      "keyword_exact_term": 8,
+      "contextual": 9,
+      "cross_document_hard_negative": 11,
+      "multi_evidence": 6
+    },
+    "by_document_and_category": {
+      "corpus-v2-study-plan": {
+        "direct_factual": 2,
+        "semantic_paraphrase": 1,
+        "keyword_exact_term": 1,
+        "contextual": 1,
+        "cross_document_hard_negative": 1,
+        "multi_evidence": 1
+      },
+      "corpus-v2-admissions-appeals": {
+        "direct_factual": 2,
+        "semantic_paraphrase": 1,
+        "keyword_exact_term": 1,
+        "contextual": 1,
+        "cross_document_hard_negative": 2,
+        "multi_evidence": 1
+      },
+      "corpus-v2-appendix-l-cop-assess": {
+        "direct_factual": 1,
+        "semantic_paraphrase": 2,
+        "keyword_exact_term": 1,
+        "contextual": 1,
+        "cross_document_hard_negative": 2,
+        "multi_evidence": 1
+      },
+      "corpus-v2-coding-standards": {
+        "direct_factual": 1,
+        "semantic_paraphrase": 1,
+        "keyword_exact_term": 2,
+        "contextual": 1,
+        "cross_document_hard_negative": 1,
+        "multi_evidence": 1
+      },
+      "corpus-v2-ai-ethics-chapter-1": {
+        "direct_factual": 1,
+        "semantic_paraphrase": 2,
+        "keyword_exact_term": 1,
+        "contextual": 2,
+        "cross_document_hard_negative": 2,
+        "multi_evidence": 0
+      },
+      "corpus-v2-uolo-programme-terms": {
+        "direct_factual": 2,
+        "semantic_paraphrase": 1,
+        "keyword_exact_term": 1,
+        "contextual": 1,
+        "cross_document_hard_negative": 2,
+        "multi_evidence": 1
+      },
+      "corpus-v2-serverless-computing": {
+        "direct_factual": 1,
+        "semantic_paraphrase": 2,
+        "keyword_exact_term": 1,
+        "contextual": 2,
+        "cross_document_hard_negative": 1,
+        "multi_evidence": 1
+      }
+    },
+    "version_sensitive_future_cases": {
+      "supported": true,
+      "current_limit": "The manifest currently contains one version per document, so true cross-version retrieval cannot yet be scored.",
+      "candidates": [
+        "Academic Integrity Policy 2025-26",
+        "UoLO Programme Terms updated March 2026",
+        "Admissions policy dated October 2022"
+      ]
+    }
+  }
+}
