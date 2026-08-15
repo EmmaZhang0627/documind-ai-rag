@@ -45,6 +45,8 @@ class AppSettings:
     chat_model_name: str = "gpt-4.1-mini"
     openai_timeout_seconds: float = 100.0
 
+    query_rewrite_enabled: bool = True
+
     retrieval_top_k_default: int = 10
     answer_top_k_default: int = 3
     confidence_threshold: float = 0.6
@@ -78,6 +80,10 @@ class AppSettings:
             openai_timeout_seconds=_get_float(
                 "OPENAI_TIMEOUT_SECONDS",
                 cls.openai_timeout_seconds,
+            ),
+            query_rewrite_enabled=_get_bool(
+                "QUERY_REWRITE_ENABLED",
+                cls.query_rewrite_enabled,
             ),
             retrieval_top_k_default=_get_int(
                 "RETRIEVAL_TOP_K_DEFAULT",

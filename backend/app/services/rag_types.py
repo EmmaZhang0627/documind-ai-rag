@@ -91,6 +91,8 @@ class DecisionTrace(TypedDict):
 class RAGTrace(TypedDict):
     trace_id: str
     query: str
+    original_query: str
+    retrieval_query: str
     retrieval: RetrievalTrace
     rerank: RerankTrace
     decision: DecisionTrace

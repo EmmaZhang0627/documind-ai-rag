@@ -4,6 +4,10 @@ from app.config.settings import AppSettings
 from app.services.embedding import create_openai_embedding_model
 from app.services.embedding_service import EmbeddingService
 from app.services.llm_service import LLMService, create_openai_llm
+from app.services.query_rewrite_service import (
+    QueryRewriteService,
+    create_openai_query_rewriter,
+)
 from app.services.rag import RAGService
 from app.services.rerank_service import RerankService
 from app.services.retrieval_service import InMemoryVectorStore, RetrievalService
@@ -52,12 +56,17 @@ def build_rag_service(settings: AppSettings) -> RAGService:
     retrieval_service = RetrievalService(vector_store)
     rerank_service = RerankService(rerank)
     llm_service = LLMService(create_openai_llm(settings))
+    query_rewrite_service = QueryRewriteService(
+        create_openai_query_rewriter(settings),
+        enabled=settings.query_rewrite_enabled,
+    )
 
     return RAGService(
         embedder=embedding_service,
         retriever=retrieval_service,
         reranker=rerank_service,
         llm=llm_service,
+        query_rewriter=query_rewrite_service,
         retrieval_top_k_default=settings.retrieval_top_k_default,
         answer_top_k_default=settings.answer_top_k_default,
         confidence_threshold=settings.confidence_threshold,

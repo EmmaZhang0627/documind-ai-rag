@@ -18,6 +18,7 @@ from app.services.rag_types import (
 )
 from app.services.rerank_service import RerankService
 from app.services.retrieval_service import RetrievalService
+from app.services.query_rewrite_service import QueryRewriteService
 from app.services.vector_db import is_confident
 
 
@@ -59,6 +60,7 @@ class RAGService:
         retriever: RetrievalService,
         reranker: RerankService,
         llm: LLMService,
+        query_rewriter: QueryRewriteService | None = None,
         retrieval_top_k_default: int = RETRIEVAL_TOP_K,
         answer_top_k_default: int = ANSWER_TOP_K,
         confidence_threshold: float = CONFIDENCE_THRESHOLD,
@@ -67,6 +69,7 @@ class RAGService:
         self.retriever = retriever
         self.reranker = reranker
         self.llm = llm
+        self.query_rewriter = query_rewriter
         self.retrieval_top_k_default = retrieval_top_k_default
         self.answer_top_k_default = answer_top_k_default
         self.confidence_threshold = confidence_threshold
@@ -114,20 +117,26 @@ class RAGService:
         self,
         query: str,
         retrieval_top_k: int,
-    ) -> tuple[list[Candidate], list[Candidate]]:
-        query_embedding = self.embedder.embed(query)
+    ) -> tuple[list[Candidate], list[Candidate], str]:
+        retrieval_query = (
+            self.query_rewriter.rewrite(query)
+            if self.query_rewriter is not None
+            else query
+        )
+        query_embedding = self.embedder.embed(retrieval_query)
         candidates = self.retriever.retrieve(
             query_embedding,
-            query,
+            retrieval_query,
             top_k=retrieval_top_k,
         )
-        ranked = self.reranker.rerank(query, candidates)
-        return candidates, ranked
+        ranked = self.reranker.rerank(retrieval_query, candidates)
+        return candidates, ranked, retrieval_query
 
     def _build_trace(
         self,
         trace_id: str,
         query: str,
+        retrieval_query: str,
         candidates: list[Candidate],
         ranked: list[Candidate],
         top_k: int,
@@ -144,6 +153,8 @@ class RAGService:
         return {
             "trace_id": trace_id,
             "query": query,
+            "original_query": query,
+            "retrieval_query": retrieval_query,
             "retrieval": {
                 "top1_score": before_rerank_score,
                 "top_k_scores": [
@@ -290,6 +301,7 @@ class RAGService:
         self._log_observability_trace(
             trace_id=trace_id,
             query=query,
+            retrieval_query=trace["retrieval_query"],
             retrieval_top_k=retrieval_top_k,
             candidates=candidates,
             ranked=ranked,
@@ -318,6 +330,7 @@ class RAGService:
         self,
         trace_id: str,
         query: str,
+        retrieval_query: str,
         retrieval_top_k: int,
         candidates: list[Candidate],
         ranked: list[Candidate],
@@ -337,6 +350,8 @@ class RAGService:
             "trace_id": trace_id,
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "query": query,
+            "original_query": query,
+            "retrieval_query": retrieval_query,
             "query_length": len(query),
             "retrieval_top_k": retrieval_top_k,
             "retrieved_candidate_count": len(candidates),
@@ -363,6 +378,7 @@ class RAGService:
         self,
         trace_id: str,
         query: str,
+        retrieval_query: str,
         retrieval_top_k: int,
         candidates: list[Candidate],
         ranked: list[Candidate],
@@ -382,6 +398,7 @@ class RAGService:
             self._build_observability_trace(
                 trace_id=trace_id,
                 query=query,
+                retrieval_query=retrieval_query,
                 retrieval_top_k=retrieval_top_k,
                 candidates=candidates,
                 ranked=ranked,
@@ -416,6 +433,7 @@ class RAGService:
         sensitive_input_detected = False
         out_of_scope_detected = False
         conflict_detected = False
+        retrieval_query = query
 
         try:
             sensitive_input_detected = self._detect_sensitive_input(query)
@@ -427,6 +445,7 @@ class RAGService:
                 trace = self._build_trace(
                     trace_id,
                     query,
+                    retrieval_query,
                     candidates,
                     ranked,
                     top_k=answer_top_k,
@@ -456,6 +475,7 @@ class RAGService:
                 trace = self._build_trace(
                     trace_id,
                     query,
+                    retrieval_query,
                     candidates,
                     ranked,
                     top_k=answer_top_k,
@@ -481,7 +501,7 @@ class RAGService:
                     conflict_detected=False,
                 )
 
-            candidates, ranked = self._retrieve_and_rank(
+            candidates, ranked, retrieval_query = self._retrieve_and_rank(
                 query,
                 retrieval_top_k,
             )
@@ -494,6 +514,7 @@ class RAGService:
             trace = self._build_trace(
                 trace_id,
                 query,
+                retrieval_query,
                 candidates,
                 ranked,
                 top_k=answer_top_k,
@@ -589,6 +610,7 @@ class RAGService:
             self._log_observability_trace(
                 trace_id=trace_id,
                 query=query,
+                retrieval_query=retrieval_query,
                 retrieval_top_k=retrieval_top_k,
                 candidates=candidates,
                 ranked=ranked,
@@ -618,6 +640,7 @@ class RAGService:
             self._log_observability_trace(
                 trace_id=trace_id,
                 query=query,
+                retrieval_query=retrieval_query,
                 retrieval_top_k=retrieval_top_k,
                 candidates=candidates,
                 ranked=ranked,

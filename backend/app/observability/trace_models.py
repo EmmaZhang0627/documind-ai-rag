@@ -46,6 +46,8 @@ class RAGTraceRecord(TypedDict):
     trace_id: str
     timestamp: str
     query: str
+    original_query: str
+    retrieval_query: str
     query_length: int
     retrieval_top_k: int
     retrieved_candidate_count: int
