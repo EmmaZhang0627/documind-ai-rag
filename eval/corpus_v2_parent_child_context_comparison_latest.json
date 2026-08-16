@@ -1,0 +1,1288 @@
+{
+  "generated_at": "2026-08-15T09:29:15.393120+00:00",
+  "status": "complete",
+  "configuration": {
+    "flat_collection": "documind_corpus_v2_ingestion_audit",
+    "parent_child_collection": "documind_corpus_v2_parent_child_eval",
+    "retrieval_top_k": 10,
+    "answer_top_k": 5,
+    "parent_chunk_size": 1600,
+    "child_chunk_size": 600,
+    "child_chunk_overlap": 100,
+    "embedding_score_weight": 0.7,
+    "bm25_score_weight": 0.3,
+    "query_rewrite_disabled_for_control": true
+  },
+  "parent_child_ingestion": {
+    "document_count": 7,
+    "parent_count": 214,
+    "child_count": 538,
+    "reused_persisted_collection": true,
+    "per_document": [
+      {
+        "document_id": "corpus-v2-study-plan",
+        "parent_count": 2,
+        "child_count": 4
+      },
+      {
+        "document_id": "corpus-v2-admissions-appeals",
+        "parent_count": 13,
+        "child_count": 32
+      },
+      {
+        "document_id": "corpus-v2-appendix-l-cop-assess",
+        "parent_count": 29,
+        "child_count": 74
+      },
+      {
+        "document_id": "corpus-v2-coding-standards",
+        "parent_count": 9,
+        "child_count": 19
+      },
+      {
+        "document_id": "corpus-v2-ai-ethics-chapter-1",
+        "parent_count": 29,
+        "child_count": 72
+      },
+      {
+        "document_id": "corpus-v2-uolo-programme-terms",
+        "parent_count": 51,
+        "child_count": 111
+      },
+      {
+        "document_id": "corpus-v2-serverless-computing",
+        "parent_count": 81,
+        "child_count": 226
+      }
+    ]
+  },
+  "multi_evidence_metrics": {
+    "flat": {
+      "case_count": 6,
+      "required_evidence_available_top10_count": 5,
+      "all_required_evidence_in_context_count": 5,
+      "average_context_character_count": 3807.5,
+      "average_context_token_proxy": 952.0,
+      "total_duplicate_parent_reduction": 0
+    },
+    "parent_child": {
+      "case_count": 6,
+      "required_evidence_available_top10_count": 3,
+      "all_required_evidence_in_context_count": 2,
+      "average_context_character_count": 4568.166666666667,
+      "average_context_token_proxy": 1142.1666666666667,
+      "total_duplicate_parent_reduction": 11
+    }
+  },
+  "single_evidence_metrics": {
+    "flat": {
+      "case_count": 6,
+      "required_evidence_available_top10_count": 6,
+      "all_required_evidence_in_context_count": 6,
+      "average_context_character_count": 3739.3333333333335,
+      "average_context_token_proxy": 935.0,
+      "total_duplicate_parent_reduction": 0
+    },
+    "parent_child": {
+      "case_count": 6,
+      "required_evidence_available_top10_count": 4,
+      "all_required_evidence_in_context_count": 5,
+      "average_context_character_count": 5757.5,
+      "average_context_token_proxy": 1439.3333333333333,
+      "total_duplicate_parent_reduction": 5
+    }
+  },
+  "per_case_results": [
+    {
+      "case_id": "v2_case_007_study_duration_and_maximum",
+      "category": "multi_evidence",
+      "question": "What are both the indicative study duration and the maximum permitted completion period for this MSc?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Indicative Study Duration",
+            "24 Months"
+          ]
+        },
+        {
+          "component": "supporting_1",
+          "phrases": [
+            "maximum period",
+            "72 months",
+            "6 years"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3523,
+          "context_token_proxy": 881,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 0,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 10,
+              "chunk_index": 32,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 1,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 3,
+              "chunk_index": 4,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": null,
+        "required_evidence_available_top10": false,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 3,
+          "duplicate_parent_reduction": 2,
+          "context_character_count": 4804,
+          "context_token_proxy": 1201,
+          "all_required_evidence_in_context": false,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": "corpus-v2-study-plan:1:page-1:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 3,
+              "chunk_index": 6,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-3:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 10,
+              "chunk_index": 38,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-10:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_015_appeal_stage_timelines",
+      "category": "multi_evidence",
+      "question": "What are the normal initial appeal deadline and the acknowledgement target at the later Executive Pro-Vice-Chancellor complaint stage?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "appeal within one month",
+            "receiving the decision"
+          ]
+        },
+        {
+          "component": "supporting_1",
+          "phrases": [
+            "within ten working days",
+            "acknowledge receipt"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": null,
+        "required_evidence_available_top10": false,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3672,
+          "context_token_proxy": 918,
+          "all_required_evidence_in_context": false,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 6,
+              "chunk_index": 21,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 6,
+              "chunk_index": 22,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 4,
+              "chunk_index": 15,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 5,
+              "chunk_index": 20,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 4,
+              "chunk_index": 14,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": null,
+        "required_evidence_available_top10": false,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 2,
+          "duplicate_parent_reduction": 3,
+          "context_character_count": 2755,
+          "context_token_proxy": 689,
+          "all_required_evidence_in_context": false,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 6,
+              "chunk_index": 28,
+              "parent_id": "corpus-v2-admissions-appeals:1:page-6:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 4,
+              "chunk_index": 19,
+              "parent_id": "corpus-v2-admissions-appeals:1:page-4:parent-1600-2753"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_023_integrity_categories_and_appeal",
+      "category": "multi_evidence",
+      "question": "How do the integrity categories distinguish escalating dishonesty, and what procedural limit applies to appeals against Category 2–4 decisions?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Category 2 captures",
+            "Category 4 covers"
+          ]
+        },
+        {
+          "component": "supporting_1",
+          "phrases": [
+            "Category 2, 3 or 4",
+            "procedural error"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 2,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 4008,
+          "context_token_proxy": 1002,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 2,
+              "chunk_index": 4,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 12,
+              "chunk_index": 54,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 2,
+              "chunk_index": 5,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 2,
+              "chunk_index": 3,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 6,
+              "chunk_index": 24,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": 2,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 4,
+          "duplicate_parent_reduction": 1,
+          "context_character_count": 6406,
+          "context_token_proxy": 1602,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 2,
+              "chunk_index": 5,
+              "parent_id": "corpus-v2-appendix-l-cop-assess:1:page-2:parent-1600-3200"
+            },
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 12,
+              "chunk_index": 70,
+              "parent_id": "corpus-v2-appendix-l-cop-assess:1:page-12:parent-1600-3200"
+            },
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 6,
+              "chunk_index": 31,
+              "parent_id": "corpus-v2-appendix-l-cop-assess:1:page-6:parent-1600-3200"
+            },
+            {
+              "document_id": "corpus-v2-appendix-l-cop-assess",
+              "page_number": 11,
+              "chunk_index": 63,
+              "parent_id": "corpus-v2-appendix-l-cop-assess:1:page-11:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_030_combined_identifier_rules",
+      "category": "multi_evidence",
+      "question": "How do the naming conventions differ for variables, classes, and constants?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Variables/Attributes",
+            "camel case",
+            "Class identifiers"
+          ]
+        },
+        {
+          "component": "supporting_1",
+          "phrases": [
+            "Identifiers of constants",
+            "uppercase",
+            "underscores"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 3,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3659,
+          "context_token_proxy": 915,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 5,
+              "chunk_index": 12,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 1,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 2,
+              "chunk_index": 3,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 4,
+              "chunk_index": 10,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": 3,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 4,
+          "duplicate_parent_reduction": 1,
+          "context_character_count": 4869,
+          "context_token_proxy": 1217,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 3,
+              "parent_id": "corpus-v2-coding-standards:1:page-1:parent-1600-1851"
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 5,
+              "chunk_index": 16,
+              "parent_id": "corpus-v2-coding-standards:1:page-5:parent-0-1412"
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": "corpus-v2-coding-standards:1:page-1:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 2,
+              "chunk_index": 4,
+              "parent_id": "corpus-v2-coding-standards:1:page-2:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_046_cancellation_definition_effect",
+      "category": "multi_evidence",
+      "question": "What is the length of the Cancellation Period and what fee or refund consequence applies when ending the contract within it?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Cancellation Period",
+            "21 days",
+            "Start Date"
+          ]
+        },
+        {
+          "component": "supporting_1",
+          "phrases": [
+            "end this contract",
+            "full refund",
+            "Cancellation Period"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 4,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3975,
+          "context_token_proxy": 994,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 12,
+              "chunk_index": 39,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 14,
+              "chunk_index": 46,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 14,
+              "chunk_index": 47,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 13,
+              "chunk_index": 43,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 12,
+              "chunk_index": 40,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": 9,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 3,
+          "duplicate_parent_reduction": 2,
+          "context_character_count": 3771,
+          "context_token_proxy": 943,
+          "all_required_evidence_in_context": false,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 14,
+              "chunk_index": 54,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-14:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 12,
+              "chunk_index": 48,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-12:parent-1600-2167"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 12,
+              "chunk_index": 47,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-12:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_054_startup_and_cold_start",
+      "category": "multi_evidence",
+      "question": "How is startup latency defined, and how does the cold-start component compare with a warm start?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Startup latency",
+            "warm start",
+            "cold start"
+          ]
+        },
+        {
+          "component": "supporting_1",
+          "phrases": [
+            "cost of the cold start",
+            "higher than that of the warm start"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 2,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 4008,
+          "context_token_proxy": 1002,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 38,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 39,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 11,
+              "chunk_index": 98,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 6,
+              "chunk_index": 48,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 6,
+              "chunk_index": 49,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": null,
+        "required_evidence_available_top10": false,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 3,
+          "duplicate_parent_reduction": 2,
+          "context_character_count": 4804,
+          "context_token_proxy": 1201,
+          "all_required_evidence_in_context": false,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 49,
+              "parent_id": "corpus-v2-serverless-computing:1:page-5:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 11,
+              "chunk_index": 126,
+              "parent_id": "corpus-v2-serverless-computing:1:page-11:parent-1600-3200"
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 6,
+              "chunk_index": 63,
+              "parent_id": "corpus-v2-serverless-computing:1:page-6:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_001_study_duration",
+      "category": "direct_factual",
+      "question": "What is the indicative duration of the MSc Computer Science programme?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Indicative Study Duration",
+            "24 Months"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3523,
+          "context_token_proxy": 881,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 0,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 1,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 3,
+              "chunk_index": 4,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 10,
+              "chunk_index": 32,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 4,
+          "duplicate_parent_reduction": 1,
+          "context_character_count": 4921,
+          "context_token_proxy": 1230,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 0,
+              "parent_id": "corpus-v2-study-plan:1:page-1:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 3,
+              "chunk_index": 5,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-3:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 3,
+              "parent_id": "corpus-v2-study-plan:1:page-1:parent-1600-1715"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 10,
+              "chunk_index": 38,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-10:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_008_appeal_definition",
+      "category": "direct_factual",
+      "question": "How does the admissions procedure define an appeal?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "appeal is a formal request",
+            "reconsideration of a decision"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3715,
+          "context_token_proxy": 929,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 3,
+              "chunk_index": 10,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 3,
+              "chunk_index": 11,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 3,
+              "chunk_index": 9,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 1,
+              "chunk_index": 1,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": null,
+        "required_evidence_available_top10": false,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 4,
+          "duplicate_parent_reduction": 1,
+          "context_character_count": 5232,
+          "context_token_proxy": 1308,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": "corpus-v2-admissions-appeals:1:page-1:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 4,
+              "chunk_index": 18,
+              "parent_id": "corpus-v2-admissions-appeals:1:page-4:parent-1600-2753"
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 1,
+              "chunk_index": 3,
+              "parent_id": "corpus-v2-admissions-appeals:1:page-1:parent-1600-2473"
+            },
+            {
+              "document_id": "corpus-v2-admissions-appeals",
+              "page_number": 3,
+              "chunk_index": 13,
+              "parent_id": "corpus-v2-admissions-appeals:1:page-3:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_024_constant_names",
+      "category": "direct_factual",
+      "question": "How should constant identifiers normally be formatted?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Identifiers of constants",
+            "uppercase",
+            "underscores"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3659,
+          "context_token_proxy": 915,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 1,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 2,
+              "chunk_index": 3,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 2,
+              "chunk_index": 4,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 6,
+              "chunk_index": 26,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": 3,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 3,
+          "duplicate_parent_reduction": 2,
+          "context_character_count": 3455,
+          "context_token_proxy": 864,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": "corpus-v2-coding-standards:1:page-1:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 1,
+              "chunk_index": 3,
+              "parent_id": "corpus-v2-coding-standards:1:page-1:parent-1600-1851"
+            },
+            {
+              "document_id": "corpus-v2-coding-standards",
+              "page_number": 2,
+              "chunk_index": 5,
+              "parent_id": "corpus-v2-coding-standards:1:page-2:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_031_apollo_memory",
+      "category": "direct_factual",
+      "question": "What RAM and ROM capacities does the chapter report for the Apollo Guidance Computer?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Apollo Guidance Computer",
+            "32,768 bits",
+            "72 KB"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 4008,
+          "context_token_proxy": 1002,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 2,
+              "chunk_index": 6,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 2,
+              "chunk_index": 5,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 3,
+              "chunk_index": 9,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 9,
+              "chunk_index": 77,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 15,
+              "chunk_index": 146,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 8008,
+          "context_token_proxy": 2002,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 2,
+              "chunk_index": 7,
+              "parent_id": "corpus-v2-ai-ethics-chapter-1:1:page-2:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 2,
+              "chunk_index": 8,
+              "parent_id": "corpus-v2-ai-ethics-chapter-1:1:page-2:parent-1600-3200"
+            },
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 3,
+              "chunk_index": 12,
+              "parent_id": "corpus-v2-ai-ethics-chapter-1:1:page-3:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 9,
+              "chunk_index": 99,
+              "parent_id": "corpus-v2-serverless-computing:1:page-9:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-ai-ethics-chapter-1",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": "corpus-v2-ai-ethics-chapter-1:1:page-1:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_039_cancellation_period",
+      "category": "direct_factual",
+      "question": "How long does the defined Cancellation Period last from the Programme Start Date?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "Cancellation Period",
+            "21 days",
+            "Start Date"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 3523,
+          "context_token_proxy": 881,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 3,
+              "chunk_index": 4,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 2,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 13,
+              "chunk_index": 43,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 14,
+              "chunk_index": 47,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 14,
+              "chunk_index": 46,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 4,
+          "duplicate_parent_reduction": 1,
+          "context_character_count": 4921,
+          "context_token_proxy": 1230,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 3,
+              "chunk_index": 5,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-3:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 13,
+              "chunk_index": 51,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-13:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-study-plan",
+              "page_number": 1,
+              "chunk_index": 3,
+              "parent_id": "corpus-v2-study-plan:1:page-1:parent-1600-1715"
+            },
+            {
+              "document_id": "corpus-v2-uolo-programme-terms",
+              "page_number": 14,
+              "chunk_index": 56,
+              "parent_id": "corpus-v2-uolo-programme-terms:1:page-14:parent-0-1600"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    },
+    {
+      "case_id": "v2_case_047_cold_start_cost",
+      "category": "direct_factual",
+      "question": "How does cold-start cost generally compare with warm-start cost?",
+      "evidence_components": [
+        {
+          "component": "canonical",
+          "phrases": [
+            "cost of the cold start",
+            "higher than that of the warm start"
+          ]
+        }
+      ],
+      "flat": {
+        "reranked_evidence_rank": 1,
+        "required_evidence_available_top10": true,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 4008,
+          "context_token_proxy": 1002,
+          "all_required_evidence_in_context": true,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 39,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 38,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 11,
+              "chunk_index": 98,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 43,
+              "parent_id": null
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 6,
+              "chunk_index": 49,
+              "parent_id": null
+            }
+          ]
+        }
+      },
+      "parent_child": {
+        "reranked_child_evidence_rank": null,
+        "required_evidence_available_top10": false,
+        "context": {
+          "selected_child_count": 5,
+          "context_unit_count": 5,
+          "duplicate_parent_reduction": 0,
+          "context_character_count": 8008,
+          "context_token_proxy": 2002,
+          "all_required_evidence_in_context": false,
+          "context_identities": [
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 50,
+              "parent_id": "corpus-v2-serverless-computing:1:page-5:parent-0-1600"
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 6,
+              "chunk_index": 64,
+              "parent_id": "corpus-v2-serverless-computing:1:page-6:parent-1600-3200"
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 15,
+              "chunk_index": 184,
+              "parent_id": "corpus-v2-serverless-computing:1:page-15:parent-4800-6400"
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 5,
+              "chunk_index": 57,
+              "parent_id": "corpus-v2-serverless-computing:1:page-5:parent-4800-6400"
+            },
+            {
+              "document_id": "corpus-v2-serverless-computing",
+              "page_number": 1,
+              "chunk_index": 6,
+              "parent_id": "corpus-v2-serverless-computing:1:page-1:parent-3200-4800"
+            }
+          ]
+        }
+      },
+      "final_answer_correctness": "not_run_no_answer_labels"
+    }
+  ]
+}

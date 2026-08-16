@@ -4,7 +4,10 @@ import logging
 import hashlib
 from datetime import datetime, timezone
 
-from app.services.chunker import split_pages_into_chunks
+from app.services.chunker import (
+    split_pages_into_chunks,
+    split_pages_into_parent_child_chunks,
+)
 from app.dependencies.rag_dependencies import get_rag_service
 from app.services.errors import ServiceConfigurationError
 from app.services.rag import RAGService
@@ -191,15 +194,24 @@ async def parse_pdf(
     document_id = resolved_document_id
 
     # 6. 按页切块，使每个 chunk 保留 page_number
-    chunks = split_pages_into_chunks(
-        pages=pages,
-        document_id=document_id,
-        source_file=file.filename,
-        version=normalized_version,
-        status=normalized_status,
-        created_time=created_time,
-        file_hash=file_hash,
-    )
+    chunk_arguments = {
+        "pages": pages,
+        "document_id": document_id,
+        "source_file": file.filename,
+        "version": normalized_version,
+        "status": normalized_status,
+        "created_time": created_time,
+        "file_hash": file_hash,
+    }
+    if getattr(rag_service, "parent_child_retrieval_enabled", False):
+        chunks = split_pages_into_parent_child_chunks(
+            **chunk_arguments,
+            parent_size=rag_service.parent_chunk_size,
+            child_size=rag_service.child_chunk_size,
+            child_overlap=rag_service.child_chunk_overlap,
+        )
+    else:
+        chunks = split_pages_into_chunks(**chunk_arguments)
     try:
         await run_in_threadpool(rag_service.ingest_document, chunks)
     except ServiceConfigurationError as error:

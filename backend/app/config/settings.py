@@ -46,6 +46,10 @@ class AppSettings:
     openai_timeout_seconds: float = 100.0
 
     query_rewrite_enabled: bool = True
+    parent_child_retrieval_enabled: bool = False
+    parent_chunk_size: int = 1600
+    child_chunk_size: int = 600
+    child_chunk_overlap: int = 100
 
     retrieval_top_k_default: int = 10
     answer_top_k_default: int = 3
@@ -84,6 +88,19 @@ class AppSettings:
             query_rewrite_enabled=_get_bool(
                 "QUERY_REWRITE_ENABLED",
                 cls.query_rewrite_enabled,
+            ),
+            parent_child_retrieval_enabled=_get_bool(
+                "PARENT_CHILD_RETRIEVAL_ENABLED",
+                cls.parent_child_retrieval_enabled,
+            ),
+            parent_chunk_size=_get_int(
+                "PARENT_CHUNK_SIZE", cls.parent_chunk_size
+            ),
+            child_chunk_size=_get_int(
+                "CHILD_CHUNK_SIZE", cls.child_chunk_size
+            ),
+            child_chunk_overlap=_get_int(
+                "CHILD_CHUNK_OVERLAP", cls.child_chunk_overlap
             ),
             retrieval_top_k_default=_get_int(
                 "RETRIEVAL_TOP_K_DEFAULT",

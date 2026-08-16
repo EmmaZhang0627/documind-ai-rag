@@ -146,6 +146,16 @@ class ChromaPersistentVectorStore:
             page_number = chunk.get("page_number")
             if page_number is not None:
                 metadata["page_number"] = page_number
+            for key in (
+                "parent_id",
+                "child_index",
+                "parent_text",
+                "parent_start_char",
+                "parent_end_char",
+            ):
+                value = chunk.get(key)
+                if value is not None:
+                    metadata[key] = value
 
             ids.append(
                 f"{chunk['document_id']}:{version}:{chunk['chunk_index']}"
@@ -182,6 +192,11 @@ class ChromaPersistentVectorStore:
             "file_hash": stored.get("file_hash"),
             "chunk_index": stored.get("chunk_index"),
             "page_number": stored.get("page_number"),
+            "parent_id": stored.get("parent_id"),
+            "child_index": stored.get("child_index"),
+            "parent_text": stored.get("parent_text"),
+            "parent_start_char": stored.get("parent_start_char"),
+            "parent_end_char": stored.get("parent_end_char"),
         }
 
     def search(

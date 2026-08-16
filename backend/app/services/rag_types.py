@@ -42,6 +42,11 @@ class ChunkMetadata(TypedDict):
     created_time: NotRequired[str | None]
     file_hash: NotRequired[str]
     source_snippet: NotRequired[str]
+    parent_id: NotRequired[str]
+    child_index: NotRequired[int]
+    parent_text: NotRequired[str]
+    parent_start_char: NotRequired[int]
+    parent_end_char: NotRequired[int]
 
 
 class Chunk(TypedDict):
@@ -56,6 +61,11 @@ class Chunk(TypedDict):
     created_time: NotRequired[str]
     file_hash: NotRequired[str]
     embedding: NotRequired[list[float]]
+    parent_id: NotRequired[str]
+    child_index: NotRequired[int]
+    parent_text: NotRequired[str]
+    parent_start_char: NotRequired[int]
+    parent_end_char: NotRequired[int]
 
 
 class Candidate(TypedDict):

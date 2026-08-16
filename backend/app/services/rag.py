@@ -19,6 +19,7 @@ from app.services.rag_types import (
 from app.services.rerank_service import RerankService
 from app.services.retrieval_service import RetrievalService
 from app.services.query_rewrite_service import QueryRewriteService
+from app.services.parent_child_retrieval import resolve_parent_context
 from app.services.vector_db import is_confident
 
 
@@ -61,6 +62,10 @@ class RAGService:
         reranker: RerankService,
         llm: LLMService,
         query_rewriter: QueryRewriteService | None = None,
+        parent_child_retrieval_enabled: bool = False,
+        parent_chunk_size: int = 1600,
+        child_chunk_size: int = 600,
+        child_chunk_overlap: int = 100,
         retrieval_top_k_default: int = RETRIEVAL_TOP_K,
         answer_top_k_default: int = ANSWER_TOP_K,
         confidence_threshold: float = CONFIDENCE_THRESHOLD,
@@ -70,6 +75,10 @@ class RAGService:
         self.reranker = reranker
         self.llm = llm
         self.query_rewriter = query_rewriter
+        self.parent_child_retrieval_enabled = parent_child_retrieval_enabled
+        self.parent_chunk_size = parent_chunk_size
+        self.child_chunk_size = child_chunk_size
+        self.child_chunk_overlap = child_chunk_overlap
         self.retrieval_top_k_default = retrieval_top_k_default
         self.answer_top_k_default = answer_top_k_default
         self.confidence_threshold = confidence_threshold
@@ -508,6 +517,11 @@ class RAGService:
             if _evaluation_candidate_sink is not None:
                 _evaluation_candidate_sink.extend(ranked)
             top_chunks = ranked[:answer_top_k]
+            context_chunks = (
+                resolve_parent_context(top_chunks)
+                if self.parent_child_retrieval_enabled
+                else top_chunks
+            )
             confidence_score = (
                 top_chunks[0]["retrieval_score"] if top_chunks else 0.0
             )
@@ -553,7 +567,7 @@ class RAGService:
                     conflict_detected=True,
                 )
 
-            if candidates and not self._has_usable_evidence(top_chunks):
+            if candidates and not self._has_usable_evidence(context_chunks):
                 return self._build_fallback_response(
                     trace_id=trace_id,
                     query=query,
@@ -595,7 +609,7 @@ class RAGService:
                     conflict_detected=conflict_detected,
                 )
 
-            context = "\n\n".join([chunk["document"] for chunk in top_chunks])
+            context = "\n\n".join([chunk["document"] for chunk in context_chunks])
             llm_called = True
             answer = self.llm.generate(query, context)
             self._annotate_trace_decision(
@@ -630,7 +644,7 @@ class RAGService:
                 "answer": answer,
                 "sources": [
                     self._candidate_to_source(chunk)
-                    for chunk in top_chunks
+                    for chunk in context_chunks
                 ],
                 "trace": trace,
                 "status": "answered",

@@ -154,6 +154,11 @@ def add_chunks_to_db(chunks):
                 "file_hash": chunk.get("file_hash"),
                 "chunk_index": chunk["chunk_index"],
                 "page_number": chunk.get("page_number"),
+                "parent_id": chunk.get("parent_id"),
+                "child_index": chunk.get("child_index"),
+                "parent_text": chunk.get("parent_text"),
+                "parent_start_char": chunk.get("parent_start_char"),
+                "parent_end_char": chunk.get("parent_end_char"),
             },
         }
         existing_index = next(
