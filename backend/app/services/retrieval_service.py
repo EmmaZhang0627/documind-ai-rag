@@ -11,6 +11,7 @@ from app.services.vector_db import (
     retrieve_candidates,
     vector_store,
 )
+from app.services.metadata_permissions import AccessContext
 
 
 class InMemoryVectorStore:
@@ -22,8 +23,11 @@ class InMemoryVectorStore:
         query_embedding: list[float],
         query_text: str,
         top_k: int = 10,
+        access_context: AccessContext | None = None,
     ) -> list[Candidate]:
-        return retrieve_candidates(query_embedding, query_text)[:top_k]
+        return retrieve_candidates(
+            query_embedding, query_text, access_context=access_context
+        )[:top_k]
 
     def count(self) -> int:
         return len(vector_store)
@@ -96,8 +100,13 @@ class RetrievalService:
         query_embedding: list[float],
         query_text: str,
         top_k: int = 10,
+        access_context: AccessContext | None = None,
     ) -> list[Candidate]:
-        return self.vector_store.search(query_embedding, query_text, top_k)
+        if access_context is None:
+            return self.vector_store.search(query_embedding, query_text, top_k)
+        return self.vector_store.search(
+            query_embedding, query_text, top_k, access_context=access_context
+        )
 
     def count(self) -> int:
         return self.vector_store.count()

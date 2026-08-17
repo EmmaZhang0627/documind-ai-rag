@@ -8,6 +8,13 @@ import chromadb
 from rank_bm25 import BM25Okapi
 
 from app.services.rag_types import Candidate, Chunk, StoredDocumentIdentity
+from app.services.metadata_permissions import (
+    AccessContext,
+    chroma_permission_filter,
+    is_metadata_accessible,
+    normalized_permission_metadata,
+    validate_permission_metadata,
+)
 
 
 logger = logging.getLogger(__name__)
@@ -66,6 +73,7 @@ class ChromaPersistentVectorStore:
         self._validate_collection_identity()
         self._corpus_ids: list[str] = []
         self._corpus: list[str] = []
+        self._corpus_metadata: list[dict[str, Any]] = []
         self._bm25_model: BM25Okapi | None = None
         self._rebuild_bm25_index()
 
@@ -95,12 +103,13 @@ class ChromaPersistentVectorStore:
         documents = records.get("documents") or []
         metadatas = records.get("metadatas") or []
         active_records = [
-            (record_id, document or "")
+            (record_id, document or "", metadata or {})
             for record_id, document, metadata in zip(ids, documents, metadatas)
             if _is_active_metadata(metadata)
         ]
-        self._corpus_ids = [record_id for record_id, _ in active_records]
-        self._corpus = [document for _, document in active_records]
+        self._corpus_ids = [record_id for record_id, _, _ in active_records]
+        self._corpus = [document for _, document, _ in active_records]
+        self._corpus_metadata = [metadata for _, _, metadata in active_records]
         tokenized_corpus = [_tokenize(document) for document in self._corpus]
         self._bm25_model = (
             BM25Okapi(tokenized_corpus)
@@ -118,6 +127,7 @@ class ChromaPersistentVectorStore:
         metadatas: list[dict[str, str | int | float | bool]] = []
 
         for chunk in chunks:
+            validate_permission_metadata(chunk)
             embedding = chunk.get("embedding")
             if embedding is None:
                 raise ValueError("Each chunk must contain an embedding before storage.")
@@ -136,6 +146,7 @@ class ChromaPersistentVectorStore:
                 "status": status,
                 "chunk_index": chunk["chunk_index"],
                 "text": content,
+                **normalized_permission_metadata(chunk),
             }
             created_time = chunk.get("created_time")
             if created_time is not None:
@@ -197,6 +208,9 @@ class ChromaPersistentVectorStore:
             "parent_text": stored.get("parent_text"),
             "parent_start_char": stored.get("parent_start_char"),
             "parent_end_char": stored.get("parent_end_char"),
+            "tenant_id": stored.get("tenant_id"),
+            "department": stored.get("department"),
+            "access_level": stored.get("access_level"),
         }
 
     def search(
@@ -204,28 +218,50 @@ class ChromaPersistentVectorStore:
         query_embedding: list[float],
         query_text: str,
         top_k: int = 10,
+        access_context: AccessContext | None = None,
     ) -> list[Candidate]:
         record_count = self.count()
         if record_count == 0 or top_k <= 0:
             return []
 
-        results = self.collection.query(
-            query_embeddings=[query_embedding],
-            n_results=record_count,
-            include=["documents", "metadatas", "distances"],
-        )
+        eligible_corpus = [
+            (record_id, document, metadata)
+            for record_id, document, metadata in zip(
+                self._corpus_ids, self._corpus, self._corpus_metadata
+            )
+            if is_metadata_accessible(metadata, access_context)
+        ]
+        if not eligible_corpus:
+            return []
+        query_arguments: dict[str, Any] = {
+            "query_embeddings": [query_embedding],
+            "n_results": (
+                record_count if access_context is None else len(eligible_corpus)
+            ),
+            "include": ["documents", "metadatas", "distances"],
+        }
+        if access_context is not None:
+            query_arguments["where"] = chroma_permission_filter(access_context)
+
+        results = self.collection.query(**query_arguments)
         documents = (results.get("documents") or [[]])[0]
         metadatas = (results.get("metadatas") or [[]])[0]
         distances = (results.get("distances") or [[]])[0]
 
-        if self._bm25_model is not None and query_text.strip():
-            raw_bm25_scores = self._bm25_model.get_scores(_tokenize(query_text))
+        eligible_ids = [record_id for record_id, _, _ in eligible_corpus]
+        eligible_documents = [document for _, document, _ in eligible_corpus]
+        eligible_bm25 = (
+            BM25Okapi([_tokenize(document) for document in eligible_documents])
+            if eligible_documents else None
+        )
+        if eligible_bm25 is not None and query_text.strip():
+            raw_bm25_scores = eligible_bm25.get_scores(_tokenize(query_text))
             normalized_bm25_scores = _normalize_scores(
                 [float(score) for score in raw_bm25_scores]
             )
             bm25_by_document = {
                 record_id: normalized_bm25_scores[index]
-                for index, record_id in enumerate(self._corpus_ids)
+                for index, record_id in enumerate(eligible_ids)
             }
         else:
             bm25_by_document = {}
@@ -233,7 +269,10 @@ class ChromaPersistentVectorStore:
         result_ids = (results.get("ids") or [[]])[0]
         candidates: list[Candidate] = []
         for index, record_id in enumerate(result_ids):
-            if not _is_active_metadata(metadatas[index]):
+            if (
+                not _is_active_metadata(metadatas[index])
+                or not is_metadata_accessible(metadatas[index], access_context)
+            ):
                 continue
             document = documents[index] or ""
             distance = float(distances[index])

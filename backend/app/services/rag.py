@@ -20,6 +20,7 @@ from app.services.rerank_service import RerankService
 from app.services.retrieval_service import RetrievalService
 from app.services.query_rewrite_service import QueryRewriteService
 from app.services.parent_child_retrieval import resolve_parent_context
+from app.services.metadata_permissions import AccessContext
 from app.services.vector_db import is_confident
 
 
@@ -126,6 +127,7 @@ class RAGService:
         self,
         query: str,
         retrieval_top_k: int,
+        access_context: AccessContext | None = None,
     ) -> tuple[list[Candidate], list[Candidate], str]:
         retrieval_query = (
             self.query_rewriter.rewrite(query)
@@ -133,11 +135,19 @@ class RAGService:
             else query
         )
         query_embedding = self.embedder.embed(retrieval_query)
-        candidates = self.retriever.retrieve(
-            query_embedding,
-            retrieval_query,
-            top_k=retrieval_top_k,
-        )
+        if access_context is None:
+            candidates = self.retriever.retrieve(
+                query_embedding,
+                retrieval_query,
+                top_k=retrieval_top_k,
+            )
+        else:
+            candidates = self.retriever.retrieve(
+                query_embedding,
+                retrieval_query,
+                top_k=retrieval_top_k,
+                access_context=access_context,
+            )
         ranked = self.reranker.rerank(retrieval_query, candidates)
         return candidates, ranked, retrieval_query
 
@@ -429,6 +439,7 @@ class RAGService:
         self,
         query: str,
         top_k: int | None = None,
+        access_context: AccessContext | None = None,
         _evaluation_candidate_sink: list[Candidate] | None = None,
     ) -> RAGResponse:
         trace_id = str(uuid4())
@@ -513,6 +524,7 @@ class RAGService:
             candidates, ranked, retrieval_query = self._retrieve_and_rank(
                 query,
                 retrieval_top_k,
+                access_context=access_context,
             )
             if _evaluation_candidate_sink is not None:
                 _evaluation_candidate_sink.extend(ranked)

@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-08-16T03:50:17.176535+00:00",
+  "benchmark": "evaluation-only metadata permission filtering MVP",
+  "scenario_count": 6,
+  "unauthorized_evidence_leakage_count": 0,
+  "correct_accessible_source_count": 6,
+  "source_accuracy": 1.0,
+  "passed": true,
+  "scenarios": [
+    {
+      "scenario_id": "allowed_public_document",
+      "access_context": "a_public",
+      "candidates_before_permission_filter": 4,
+      "candidates_after_permission_filter": 1,
+      "candidate_document_ids": [
+        "tenant-a-handbook"
+      ],
+      "expected_top1_document_id": "tenant-a-handbook",
+      "top1_source_correct": true,
+      "unauthorized_document_ids": []
+    },
+    {
+      "scenario_id": "unauthorized_confidential_document",
+      "access_context": "a_public",
+      "candidates_before_permission_filter": 4,
+      "candidates_after_permission_filter": 1,
+      "candidate_document_ids": [
+        "tenant-a-handbook"
+      ],
+      "expected_top1_document_id": "tenant-a-handbook",
+      "top1_source_correct": true,
+      "unauthorized_document_ids": []
+    },
+    {
+      "scenario_id": "finance_context_changes_candidates",
+      "access_context": "a_finance",
+      "candidates_before_permission_filter": 4,
+      "candidates_after_permission_filter": 2,
+      "candidate_document_ids": [
+        "tenant-a-finance",
+        "tenant-a-handbook"
+      ],
+      "expected_top1_document_id": "tenant-a-finance",
+      "top1_source_correct": true,
+      "unauthorized_document_ids": []
+    },
+    {
+      "scenario_id": "strongest_restricted_match_excluded",
+      "access_context": "a_engineering",
+      "candidates_before_permission_filter": 4,
+      "candidates_after_permission_filter": 2,
+      "candidate_document_ids": [
+        "tenant-a-engineering",
+        "tenant-a-handbook"
+      ],
+      "expected_top1_document_id": "tenant-a-engineering",
+      "top1_source_correct": true,
+      "unauthorized_document_ids": []
+    },
+    {
+      "scenario_id": "archived_and_unauthorized_compose",
+      "access_context": "a_finance",
+      "candidates_before_permission_filter": 4,
+      "candidates_after_permission_filter": 2,
+      "candidate_document_ids": [
+        "tenant-a-finance",
+        "tenant-a-handbook"
+      ],
+      "expected_top1_document_id": "tenant-a-finance",
+      "top1_source_correct": true,
+      "unauthorized_document_ids": []
+    },
+    {
+      "scenario_id": "tenant_b_isolation",
+      "access_context": "b_finance",
+      "candidates_before_permission_filter": 4,
+      "candidates_after_permission_filter": 1,
+      "candidate_document_ids": [
+        "tenant-b-finance"
+      ],
+      "expected_top1_document_id": "tenant-b-finance",
+      "top1_source_correct": true,
+      "unauthorized_document_ids": []
+    }
+  ],
+  "notes": [
+    "The benchmark uses deterministic synthetic chunks and the production in-memory Hybrid retrieval path.",
+    "Authentication and identity verification are intentionally outside this MVP."
+  ]
+}

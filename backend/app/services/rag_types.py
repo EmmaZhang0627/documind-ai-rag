@@ -47,6 +47,9 @@ class ChunkMetadata(TypedDict):
     parent_text: NotRequired[str]
     parent_start_char: NotRequired[int]
     parent_end_char: NotRequired[int]
+    tenant_id: NotRequired[str]
+    department: NotRequired[str]
+    access_level: NotRequired[str]
 
 
 class Chunk(TypedDict):
@@ -66,6 +69,9 @@ class Chunk(TypedDict):
     parent_text: NotRequired[str]
     parent_start_char: NotRequired[int]
     parent_end_char: NotRequired[int]
+    tenant_id: NotRequired[str]
+    department: NotRequired[str]
+    access_level: NotRequired[str]
 
 
 class Candidate(TypedDict):
@@ -126,6 +132,7 @@ class VectorStore(Protocol):
         query_embedding: list[float],
         query_text: str,
         top_k: int = 10,
+        access_context: object | None = None,
     ) -> list[Candidate]:
         ...
 

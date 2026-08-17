@@ -4,6 +4,13 @@ from uuid import uuid4
 
 from rank_bm25 import BM25Okapi
 
+from app.services.metadata_permissions import (
+    AccessContext,
+    is_metadata_accessible,
+    normalized_permission_metadata,
+    validate_permission_metadata,
+)
+
 logger = logging.getLogger(__name__)
 
 vector_store = []
@@ -135,6 +142,7 @@ def _rebuild_bm25_index():
 
 def add_chunks_to_db(chunks):
     for chunk in chunks:
+        validate_permission_metadata(chunk)
         version = chunk.get("version", "1")
         status = str(chunk.get("status", "ACTIVE")).upper()
         if status not in {"ACTIVE", "ARCHIVED"}:
@@ -159,6 +167,10 @@ def add_chunks_to_db(chunks):
                 "parent_text": chunk.get("parent_text"),
                 "parent_start_char": chunk.get("parent_start_char"),
                 "parent_end_char": chunk.get("parent_end_char"),
+                "tenant_id": chunk.get("tenant_id"),
+                "department": chunk.get("department"),
+                "access_level": chunk.get("access_level"),
+                **normalized_permission_metadata(chunk),
             },
         }
         existing_index = next(
@@ -193,23 +205,39 @@ def archive_document_version(document_id: str, version: str) -> int:
     return matched_count
 
 
-def retrieve_candidates(query_embedding, query_text: str = ""):
+def retrieve_candidates(
+    query_embedding,
+    query_text: str = "",
+    access_context: AccessContext | None = None,
+):
+    eligible_items = [
+        item
+        for item in vector_store
+        if _is_active_metadata(item["metadata"])
+        and is_metadata_accessible(item["metadata"], access_context)
+    ]
+    eligible_ids = [item["id"] for item in eligible_items]
+    eligible_corpus = [item["document"] for item in eligible_items]
+    eligible_bm25 = (
+        BM25Okapi([_tokenize(document) for document in eligible_corpus])
+        if eligible_corpus else None
+    )
     bm25_scores = []
-    if bm25_model is not None and query_text.strip():
-        bm25_scores = _normalize_scores(bm25_model.get_scores(_tokenize(query_text)))
+    if eligible_bm25 is not None and query_text.strip():
+        bm25_scores = _normalize_scores(
+            eligible_bm25.get_scores(_tokenize(query_text))
+        )
     else:
-        bm25_scores = [0.0 for _ in corpus_ids]
+        bm25_scores = [0.0 for _ in eligible_ids]
 
     bm25_by_document = {
         record_id: float(bm25_scores[index])
-        for index, record_id in enumerate(corpus_ids)
+        for index, record_id in enumerate(eligible_ids)
     }
 
     candidates = []
 
-    for index, item in enumerate(vector_store):
-        if not _is_active_metadata(item["metadata"]):
-            continue
+    for item in eligible_items:
         embedding_score = _cosine_similarity(
             query_embedding,
             item["embedding"],

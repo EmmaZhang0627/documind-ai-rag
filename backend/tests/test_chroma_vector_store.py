@@ -12,6 +12,7 @@ if str(BACKEND_ROOT) not in sys.path:
     sys.path.insert(0, str(BACKEND_ROOT))
 
 from app.services.chroma_vector_store import ChromaPersistentVectorStore
+from app.services.metadata_permissions import AccessContext
 from app.services.rag import RAGService
 from app.services.retrieval_service import RetrievalService
 from chromadb.api.shared_system_client import SharedSystemClient
@@ -28,6 +29,49 @@ class ChromaPersistentVectorStoreTest(unittest.TestCase):
     def _stop_store(self, store: ChromaPersistentVectorStore) -> None:
         store.client._system.stop()
         SharedSystemClient.clear_system_cache()
+
+    def test_permission_filter_is_applied_before_candidates_are_returned(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            store = self._build_store(directory)
+            store.add([
+                {
+                    "document_id": "allowed",
+                    "chunk_index": 0,
+                    "source_file": "allowed.pdf",
+                    "page_number": 1,
+                    "content": "General policy.",
+                    "embedding": [0.8, 0.2, 0.0],
+                    "tenant_id": "Tenant-A",
+                    "department": "ALL",
+                    "access_level": "PUBLIC",
+                },
+                {
+                    "document_id": "restricted",
+                    "chunk_index": 0,
+                    "source_file": "restricted.pdf",
+                    "page_number": 1,
+                    "content": "Secret acquisition policy.",
+                    "embedding": [1.0, 0.0, 0.0],
+                    "tenant_id": "tenant-b",
+                    "department": "finance",
+                    "access_level": "confidential",
+                },
+            ])
+
+            results = store.search(
+                [1.0, 0.0, 0.0],
+                "secret acquisition policy",
+                top_k=10,
+                access_context=AccessContext(
+                    "tenant-a", frozenset({"general"}), "public"
+                ),
+            )
+
+            self.assertEqual(
+                [item["metadata"]["document_id"] for item in results],
+                ["allowed"],
+            )
+            self._stop_store(store)
 
     def test_records_survive_store_recreation(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

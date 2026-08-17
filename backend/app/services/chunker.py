@@ -17,6 +17,9 @@ def _document_metadata(
     status: str,
     created_time: str | None,
     file_hash: str | None,
+    tenant_id: str | None = None,
+    department: str | None = None,
+    access_level: str | None = None,
 ) -> dict[str, str]:
     metadata = {
         "source_file": source_file,
@@ -27,6 +30,12 @@ def _document_metadata(
     }
     if file_hash is not None:
         metadata["file_hash"] = file_hash
+    if tenant_id is not None:
+        metadata["tenant_id"] = tenant_id
+    if department is not None:
+        metadata["department"] = department
+    if access_level is not None:
+        metadata["access_level"] = access_level
     return metadata
 
 
@@ -41,10 +50,14 @@ def split_text_into_chunks(
     status: str = "ACTIVE",
     created_time: str | None = None,
     file_hash: str | None = None,
+    tenant_id: str | None = None,
+    department: str | None = None,
+    access_level: str | None = None,
 ):
     chunks = []
     document_metadata = _document_metadata(
-        source_file, version, status, created_time, file_hash
+        source_file, version, status, created_time, file_hash,
+        tenant_id, department, access_level,
     )
 
     start = 0
@@ -79,10 +92,14 @@ def split_pages_into_chunks(
     status: str = "ACTIVE",
     created_time: str | None = None,
     file_hash: str | None = None,
+    tenant_id: str | None = None,
+    department: str | None = None,
+    access_level: str | None = None,
 ):
     chunks = []
     document_metadata = _document_metadata(
-        source_file, version, status, created_time, file_hash
+        source_file, version, status, created_time, file_hash,
+        tenant_id, department, access_level,
     )
     global_chunk_index = 0
     for page in pages:
@@ -124,6 +141,9 @@ def split_pages_into_parent_child_chunks(
     status: str = "ACTIVE",
     created_time: str | None = None,
     file_hash: str | None = None,
+    tenant_id: str | None = None,
+    department: str | None = None,
+    access_level: str | None = None,
 ):
     if parent_size <= 0 or child_size <= 0:
         raise ValueError("Parent and child chunk sizes must be positive.")
@@ -134,7 +154,8 @@ def split_pages_into_parent_child_chunks(
 
     chunks = []
     document_metadata = _document_metadata(
-        source_file, version, status, created_time, file_hash
+        source_file, version, status, created_time, file_hash,
+        tenant_id, department, access_level,
     )
     global_chunk_index = 0
     child_step = child_size - child_overlap
