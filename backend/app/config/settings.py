@@ -9,6 +9,7 @@ BACKEND_ROOT = Path(__file__).resolve().parents[2]
 PROJECT_ROOT = BACKEND_ROOT.parent
 DEFAULT_CHROMA_PERSIST_DIRECTORY = str(BACKEND_ROOT / "data" / "chroma")
 DEFAULT_OPENAI_BASE_URL = "https://www.dmxapi.cn/v1"
+DEFAULT_TESSDATA_DIRECTORY = str(BACKEND_ROOT / "app" / "assets" / "tessdata")
 
 load_dotenv(PROJECT_ROOT / ".env.local", override=False)
 
@@ -50,6 +51,15 @@ class AppSettings:
     parent_chunk_size: int = 1600
     child_chunk_size: int = 600
     child_chunk_overlap: int = 100
+
+    ocr_fallback_enabled: bool = False
+    table_aware_ingestion_enabled: bool = False
+    ocr_minimum_text_characters: int = 200
+    ocr_minimum_image_coverage: float = 0.5
+    ocr_minimum_image_count: int = 3
+    ocr_language: str = "eng"
+    ocr_dpi: int = 150
+    tessdata_directory: str = DEFAULT_TESSDATA_DIRECTORY
 
     retrieval_top_k_default: int = 10
     answer_top_k_default: int = 3
@@ -101,6 +111,26 @@ class AppSettings:
             ),
             child_chunk_overlap=_get_int(
                 "CHILD_CHUNK_OVERLAP", cls.child_chunk_overlap
+            ),
+            ocr_fallback_enabled=_get_bool(
+                "OCR_FALLBACK_ENABLED", cls.ocr_fallback_enabled
+            ),
+            table_aware_ingestion_enabled=_get_bool(
+                "TABLE_AWARE_INGESTION_ENABLED", cls.table_aware_ingestion_enabled
+            ),
+            ocr_minimum_text_characters=_get_int(
+                "OCR_MINIMUM_TEXT_CHARACTERS", cls.ocr_minimum_text_characters
+            ),
+            ocr_minimum_image_coverage=_get_float(
+                "OCR_MINIMUM_IMAGE_COVERAGE", cls.ocr_minimum_image_coverage
+            ),
+            ocr_minimum_image_count=_get_int(
+                "OCR_MINIMUM_IMAGE_COUNT", cls.ocr_minimum_image_count
+            ),
+            ocr_language=os.getenv("OCR_LANGUAGE", cls.ocr_language),
+            ocr_dpi=_get_int("OCR_DPI", cls.ocr_dpi),
+            tessdata_directory=os.getenv(
+                "TESSDATA_DIRECTORY", cls.tessdata_directory
             ),
             retrieval_top_k_default=_get_int(
                 "RETRIEVAL_TOP_K_DEFAULT",

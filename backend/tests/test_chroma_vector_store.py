@@ -73,6 +73,32 @@ class ChromaPersistentVectorStoreTest(unittest.TestCase):
             )
             self._stop_store(store)
 
+    def test_table_extraction_metadata_survives_storage_round_trip(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            store = self._build_store(directory)
+            store.add([{
+                "document_id": "table-paper",
+                "chunk_index": 4,
+                "source_file": "table-paper.pdf",
+                "page_number": 5,
+                "content": "| Question | Value |\n| --- | --- |\n| Q1 | 21% |",
+                "embedding": [1.0, 0.0, 0.0],
+                "extraction_method": "text",
+                "content_type": "table",
+                "table_index": 2,
+                "table_caption": "Table 3: Results",
+            }])
+
+            result = store.search([1.0, 0.0, 0.0], "Q1 value", top_k=1)[0]
+
+            self.assertEqual(result["metadata"]["page_number"], 5)
+            self.assertEqual(result["metadata"]["content_type"], "table")
+            self.assertEqual(result["metadata"]["table_index"], 2)
+            self.assertEqual(
+                result["metadata"]["table_caption"], "Table 3: Results"
+            )
+            self._stop_store(store)
+
     def test_records_survive_store_recreation(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             first_store = self._build_store(directory)

@@ -170,6 +170,10 @@ def add_chunks_to_db(chunks):
                 "tenant_id": chunk.get("tenant_id"),
                 "department": chunk.get("department"),
                 "access_level": chunk.get("access_level"),
+                "extraction_method": chunk.get("extraction_method"),
+                "content_type": chunk.get("content_type"),
+                "table_index": chunk.get("table_index"),
+                "table_caption": chunk.get("table_caption"),
                 **normalized_permission_metadata(chunk),
             },
         }

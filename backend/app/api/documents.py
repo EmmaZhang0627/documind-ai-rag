@@ -7,7 +7,9 @@ from datetime import datetime, timezone
 from app.services.chunker import (
     split_pages_into_chunks,
     split_pages_into_parent_child_chunks,
+    split_pages_into_table_aware_chunks,
 )
+from app.services.document_extraction import extract_document_pages
 from app.dependencies.rag_dependencies import get_rag_service
 from app.services.errors import ServiceConfigurationError
 from app.services.rag import RAGService
@@ -178,18 +180,43 @@ async def parse_pdf(
     # )
 
     # 5. 按页提取文本，并保留页码
-    pages = []
-    full_text = ""
-
-    for page_index, page in enumerate(doc):
-        page_text = page.get_text()
-        if page_text.strip():
-            pages.append({
+    ocr_enabled = getattr(rag_service, "ocr_fallback_enabled", False)
+    table_enabled = getattr(rag_service, "table_aware_ingestion_enabled", False)
+    if ocr_enabled or table_enabled:
+        pages = extract_document_pages(
+            doc,
+            ocr_enabled=ocr_enabled,
+            table_enabled=table_enabled,
+            tessdata_directory=getattr(rag_service, "tessdata_directory", None),
+            ocr_language=getattr(rag_service, "ocr_language", "eng"),
+            ocr_dpi=getattr(rag_service, "ocr_dpi", 150),
+            minimum_text_characters=getattr(
+                rag_service, "ocr_minimum_text_characters", 200
+            ),
+            minimum_image_coverage=getattr(
+                rag_service, "ocr_minimum_image_coverage", 0.5
+            ),
+            minimum_image_count=getattr(
+                rag_service, "ocr_minimum_image_count", 3
+            ),
+        )
+    else:
+        pages = [
+            {
                 "page_number": page_index + 1,
                 "text": page_text,
-            })
-
-        full_text += page_text
+                "native_text": page_text,
+                "extraction_method": "text",
+                "ocr_attempted": False,
+                "ocr_error": None,
+                "image_coverage": 0.0,
+                "image_count": 0,
+                "tables": [],
+            }
+            for page_index, page in enumerate(doc)
+            if (page_text := page.get_text()).strip()
+        ]
+    full_text = "\n\n".join(page["text"] for page in pages if page["text"])
 
     document_id = resolved_document_id
 
@@ -210,6 +237,8 @@ async def parse_pdf(
             child_size=rag_service.child_chunk_size,
             child_overlap=rag_service.child_chunk_overlap,
         )
+    elif getattr(rag_service, "table_aware_ingestion_enabled", False):
+        chunks = split_pages_into_table_aware_chunks(**chunk_arguments)
     else:
         chunks = split_pages_into_chunks(**chunk_arguments)
     try:
@@ -250,6 +279,19 @@ async def parse_pdf(
         "text_preview": full_text[:1500],
         "page_count": len(pages),
         "chunk_count": len(chunks),
+        "extraction_summary": {
+            "text_pages": sum(
+                page["extraction_method"] == "text" for page in pages
+            ),
+            "ocr_pages": sum(
+                page["extraction_method"] == "ocr" for page in pages
+            ),
+            "ocr_failures": sum(bool(page["ocr_error"]) for page in pages),
+            "detected_tables": sum(len(page["tables"]) for page in pages),
+            "table_chunks": sum(
+                chunk.get("content_type") == "table" for chunk in chunks
+            ),
+        },
         "chunks_preview": chunks_preview,
         "status": "parsed_chunked_and_indexed",
     }

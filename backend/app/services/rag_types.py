@@ -50,6 +50,10 @@ class ChunkMetadata(TypedDict):
     tenant_id: NotRequired[str]
     department: NotRequired[str]
     access_level: NotRequired[str]
+    extraction_method: NotRequired[str]
+    content_type: NotRequired[str]
+    table_index: NotRequired[int]
+    table_caption: NotRequired[str]
 
 
 class Chunk(TypedDict):
@@ -72,6 +76,10 @@ class Chunk(TypedDict):
     tenant_id: NotRequired[str]
     department: NotRequired[str]
     access_level: NotRequired[str]
+    extraction_method: NotRequired[str]
+    content_type: NotRequired[str]
+    table_index: NotRequired[int]
+    table_caption: NotRequired[str]
 
 
 class Candidate(TypedDict):

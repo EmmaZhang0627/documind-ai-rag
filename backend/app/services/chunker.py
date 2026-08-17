@@ -123,6 +123,8 @@ def split_pages_into_chunks(
                     "page_number": page_number,
                     "start_char": start,
                     "end_char": min(end, text_length),
+                    "extraction_method": page.get("extraction_method", "text"),
+                    "content_type": "text",
                 })
             global_chunk_index += 1
             start = end - overlap
@@ -189,10 +191,106 @@ def split_pages_into_parent_child_chunks(
                         "parent_text": parent_text,
                         "parent_start_char": parent_start,
                         "parent_end_char": parent_end,
+                        "extraction_method": page.get("extraction_method", "text"),
+                        "content_type": "text",
                     })
                     global_chunk_index += 1
                     child_index += 1
                 if relative_end >= len(parent_text):
                     break
 
+    return chunks
+
+
+def _markdown_cell(value: str) -> str:
+    return " ".join(str(value).split()).replace("|", "\\|")
+
+
+def _table_prefix(caption: str, headers: list[str]) -> list[str]:
+    header = "| " + " | ".join(_markdown_cell(value) for value in headers) + " |"
+    separator = "| " + " | ".join("---" for _ in headers) + " |"
+    return [f"Table: {caption}", header, separator]
+
+
+def serialize_table_chunks(
+    table: dict,
+    *,
+    maximum_characters: int = 1600,
+) -> list[str]:
+    caption = str(table.get("caption") or "Untitled table")
+    headers = [str(value) for value in table.get("headers") or []]
+    if not headers:
+        return []
+    prefix = _table_prefix(caption, headers)
+    chunks: list[str] = []
+    current = prefix.copy()
+    for row in table.get("rows") or []:
+        padded = list(row) + [""] * max(0, len(headers) - len(row))
+        row_line = "| " + " | ".join(
+            _markdown_cell(value) for value in padded[: len(headers)]
+        ) + " |"
+        proposed = "\n".join([*current, row_line])
+        if len(proposed) > maximum_characters and len(current) > len(prefix):
+            chunks.append("\n".join(current))
+            current = [*prefix, row_line]
+        else:
+            current.append(row_line)
+    if len(current) > len(prefix):
+        chunks.append("\n".join(current))
+    return chunks
+
+
+def split_pages_into_table_aware_chunks(
+    pages: list[dict],
+    document_id: str,
+    source_file: str,
+    chunk_size: int = 800,
+    overlap: int = 100,
+    table_chunk_size: int = 1600,
+    version: str = "1",
+    status: str = "ACTIVE",
+    created_time: str | None = None,
+    file_hash: str | None = None,
+    tenant_id: str | None = None,
+    department: str | None = None,
+    access_level: str | None = None,
+):
+    chunks = split_pages_into_chunks(
+        pages=pages,
+        document_id=document_id,
+        source_file=source_file,
+        chunk_size=chunk_size,
+        overlap=overlap,
+        version=version,
+        status=status,
+        created_time=created_time,
+        file_hash=file_hash,
+        tenant_id=tenant_id,
+        department=department,
+        access_level=access_level,
+    )
+    document_metadata = _document_metadata(
+        source_file, version, status, created_time, file_hash,
+        tenant_id, department, access_level,
+    )
+    next_chunk_index = max(
+        (int(chunk["chunk_index"]) for chunk in chunks), default=-1
+    ) + 1
+    for page in pages:
+        for table in page.get("tables") or []:
+            for serialized in serialize_table_chunks(
+                table, maximum_characters=table_chunk_size
+            ):
+                chunks.append({
+                    "document_id": document_id,
+                    "chunk_index": next_chunk_index,
+                    "content": serialized,
+                    **document_metadata,
+                    "page_number": page["page_number"],
+                    "extraction_method": page.get("extraction_method", "text"),
+                    "content_type": "table",
+                    "table_index": int(table["table_index"]),
+                    "table_caption": str(table.get("caption") or "Untitled table"),
+                })
+                next_chunk_index += 1
     return chunks

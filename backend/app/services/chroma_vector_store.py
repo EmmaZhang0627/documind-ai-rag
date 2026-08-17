@@ -163,6 +163,10 @@ class ChromaPersistentVectorStore:
                 "parent_text",
                 "parent_start_char",
                 "parent_end_char",
+                "extraction_method",
+                "content_type",
+                "table_index",
+                "table_caption",
             ):
                 value = chunk.get(key)
                 if value is not None:
@@ -211,6 +215,10 @@ class ChromaPersistentVectorStore:
             "tenant_id": stored.get("tenant_id"),
             "department": stored.get("department"),
             "access_level": stored.get("access_level"),
+            "extraction_method": stored.get("extraction_method"),
+            "content_type": stored.get("content_type"),
+            "table_index": stored.get("table_index"),
+            "table_caption": stored.get("table_caption"),
         }
 
     def search(
