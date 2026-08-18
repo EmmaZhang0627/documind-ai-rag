@@ -521,6 +521,120 @@ The metrics make those failures more specific:
 - answer-content regressions lower `average_keyword_coverage`
 - refusal or confidence-threshold regressions lower `refusal_accuracy_rate`
 
+## OCR Fallback And Table-Aware Ingestion Evaluation
+
+### Why this belongs before retrieval
+
+Retrieval can only rank text that ingestion recovered. If a scanned page
+contains pixels but no useful PDF text layer, missing evidence is an
+`ingestion_failure`, not a retrieval failure. Likewise, if fixed-character
+chunking separates table headers from their rows, retrieval may return text
+whose values no longer have a reliable column meaning.
+
+The evaluation-only document-intelligence path is:
+
+```text
+PDF page
+-> native PyMuPDF extraction
+-> selective page-level OCR fallback
+-> optional structured table extraction
+-> page-aware chunks
+-> existing embedding and storage
+```
+
+OCR and table processing are feature-gated and disabled by default, preserving
+the existing Corpus V2 text benchmark and production-compatible flat chunk
+boundaries.
+
+### OCR decision and fallback
+
+The current deterministic OCR trigger is:
+
+```text
+native non-whitespace characters < 200
+AND
+(estimated image coverage >= 0.5 OR image object count >= 3)
+```
+
+PyMuPDF's `page.get_textpage_ocr()` invokes local Tesseract using bundled
+English language data. OCR output replaces native text only when it is
+materially larger. Empty, invalid, or failed OCR safely retains native text so
+one problematic page does not crash the complete document.
+
+Important PyMuPDF relationships:
+
+- `fitz.Document` represents the PDF;
+- `fitz.Page` represents one page and owns `get_image_info()` and
+  `get_textpage_ocr()`;
+- `fitz.Rect` represents a rectangular page region;
+- `fitz.Rect(image_bbox) & page.rect` computes the image/page intersection,
+  preventing out-of-page coordinates from inflating coverage.
+
+### Table representation
+
+Detected tables are serialized into deterministic retrieval text containing a
+caption or stable fallback label, a header, and rows. If a large table is split,
+every resulting table chunk repeats its header. This keeps values connected to
+their column meanings when a chunk is retrieved independently.
+
+Table chunks preserve `content_type=table`, `table_index`, `table_caption`,
+`page_number`, `source_file`, `document_id`, and `extraction_method` metadata.
+They coexist with ordinary text chunks in the current MVP, improving structural
+evidence availability but also creating duplicate evidence and ranking
+competition.
+
+### Focused verification
+
+The reserved OCR document produced:
+
+- 4 pages;
+- 542 raw characters from ordinary PyMuPDF extraction;
+- 11,321 characters after local OCR;
+- 4 improved pages;
+- 4 native fragments versus 18 OCR chunks;
+- representative visible-text evidence ranks of 1, 3, and 1 after previously
+  being evidence-not-found.
+
+For the two table papers, 20 useful tables were detected in total. All six
+focused table cases preserved the expected header/row evidence in structured
+chunks. Evaluation-only BM25 ranking improved one case, left four unchanged,
+and worsened one nearby-row case. Structural preservation therefore passed, but
+the experiment does not support claiming general ranking improvement.
+
+### Parent-Child compatibility limitation
+
+Current chunk construction is mutually exclusive:
+
+```text
+Parent-Child enabled -> Parent-Child chunks
+else table enabled   -> flat text plus structured table chunks
+else                 -> existing flat chunks
+```
+
+If both flags are enabled, Parent-Child takes precedence and structured table
+chunks are not created. A proper combined version needs typed text/table
+children connected to deterministic parents. Simply appending both outputs
+would risk duplicate evidence, conflicting identities, repeated LLM context,
+and one fact occupying several TopK positions.
+
+### Diagnosis and future adjustments
+
+- inaccurate OCR triggering: add text-quality signals or maximum single-image
+  coverage before considering exact geometric image union;
+- multilingual scans: configure OCR languages per manifest/document;
+- OCR noise: retain raw text and apply conservative normalization without
+  guessing factual corrections;
+- complex or cross-page tables: preserve structured cells and join pages only
+  when caption, column geometry, and boundary signals agree;
+- table candidate competition: remove duplicated flat table regions or
+  deduplicate candidates by table identity;
+- oversized parent context: reconstruct a window around matched children and
+  enforce a context budget.
+
+These improvements should be introduced only after failures are classified as
+extraction, chunking, retrieval, ranking, or context-composition problems.
+Changing several stages together would hide the cause of regressions.
+
 ## Current Limitations
 
 - JSONL logging is a lightweight MVP observability solution.
@@ -528,3 +642,7 @@ The metrics make those failures more specific:
 - The eval dataset currently contains placeholder and seed cases.
 - Evaluation is rule-based and does not measure semantic quality deeply.
 - Future upgrades can include RAGAS, LLM-as-judge, CI integration, dashboards, and domain-expert review workflows.
+- OCR currently uses English language data and heuristic image/text signals.
+- Table detection is strongest for practical ruled tables; merged cells,
+  borderless tables, charts, and cross-page structures remain limited.
+- Parent-Child and structured table chunk construction are not yet composable.

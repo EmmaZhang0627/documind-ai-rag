@@ -15,7 +15,7 @@ from app.services.errors import ServiceConfigurationError
 from app.services.rag import RAGService
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from fastapi.concurrency import run_in_threadpool
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
 from openai import OpenAIError
 import fitz
 
@@ -24,6 +24,43 @@ logger = logging.getLogger(__name__)
 
 UPLOAD_DIR = Path("uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
+EVIDENCE_PDF_DIR = UPLOAD_DIR / "evidence"
+EVIDENCE_PDF_DIR.mkdir(exist_ok=True)
+
+
+def _evidence_pdf_path(document_id: str, version: str) -> Path:
+    identity = f"{document_id}\0{version}".encode("utf-8")
+    safe_name = hashlib.sha256(identity).hexdigest()
+    return EVIDENCE_PDF_DIR / f"{safe_name}.pdf"
+
+
+def _store_evidence_pdf(document_id: str, version: str, content: bytes) -> None:
+    target_path = _evidence_pdf_path(document_id, version)
+    temporary_path = target_path.with_suffix(".tmp")
+    temporary_path.write_bytes(content)
+    temporary_path.replace(target_path)
+
+
+@router.get("/evidence-pdf")
+async def get_evidence_pdf(document_id: str, version: str = "1"):
+    normalized_document_id = document_id.strip()
+    normalized_version = version.strip()
+    if not normalized_document_id or not normalized_version:
+        raise HTTPException(
+            status_code=422,
+            detail="Document ID and version are required.",
+        )
+
+    pdf_path = _evidence_pdf_path(normalized_document_id, normalized_version)
+    if not pdf_path.is_file():
+        raise HTTPException(status_code=404, detail="Source PDF is unavailable.")
+
+    return FileResponse(
+        path=pdf_path,
+        media_type="application/pdf",
+        filename="source.pdf",
+        content_disposition_type="inline",
+    )
 
 
 @router.post("/upload")
@@ -266,6 +303,19 @@ async def parse_pdf(
         for chunk in chunks[:3]
     ]
     doc.close()
+    try:
+        await run_in_threadpool(
+            _store_evidence_pdf,
+            document_id,
+            normalized_version,
+            content,
+        )
+    except OSError as error:
+        logger.warning(
+            "evidence_pdf_persistence_failed document_id=%s error=%s",
+            document_id,
+            error.__class__.__name__,
+        )
     # 6. 返回 preview
     return {
         "document_id": document_id,

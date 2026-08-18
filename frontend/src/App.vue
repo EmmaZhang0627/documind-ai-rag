@@ -1,32 +1,36 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { healthCheck, uploadDocument } from './services/api'
+import CitationList from './components/CitationList.vue'
+import PdfEvidenceViewer from './components/PdfEvidenceViewer.vue'
+import {
+  askQuestion,
+  healthCheck,
+  uploadDocument,
+  type ChatResponse,
+  type SourceMetadata,
+} from './services/api'
 
-const backendStatus = ref<string>('checking...')
-
+const backendStatus = ref('checking...')
 const selectedFile = ref<File | null>(null)
-const uploadResult = ref<any>(null)
-const uploading = ref<boolean>(false)
-const errorMessage = ref<string>('')
+const uploadResult = ref<Record<string, unknown> | null>(null)
+const uploading = ref(false)
+const question = ref('')
+const chatResult = ref<ChatResponse | null>(null)
+const asking = ref(false)
+const selectedCitation = ref<SourceMetadata | null>(null)
+const errorMessage = ref('')
 
 onMounted(async () => {
   try {
-    const data = await healthCheck()
-    backendStatus.value = data.status
-  } catch (error) {
+    backendStatus.value = (await healthCheck()).status
+  } catch {
     backendStatus.value = 'error'
   }
 })
 
 const handleFileChange = (event: Event) => {
   const input = event.target as HTMLInputElement
-
-  if (!input.files || input.files.length === 0) {
-    selectedFile.value = null
-    return
-  }
-
-  selectedFile.value = input.files[0]
+  selectedFile.value = input.files?.[0] ?? null
   uploadResult.value = null
   errorMessage.value = ''
 }
@@ -38,105 +42,93 @@ const handleUpload = async () => {
   }
 
   uploading.value = true
-  uploadResult.value = null
   errorMessage.value = ''
-
   try {
-    const result = await uploadDocument(selectedFile.value)
-    uploadResult.value = result
+    uploadResult.value = await uploadDocument(selectedFile.value)
   } catch (error: any) {
-    errorMessage.value =
-      error.response?.data?.detail || 'Upload failed. Please try again.'
+    errorMessage.value = error.response?.data?.detail || 'Upload failed. Please try again.'
   } finally {
     uploading.value = false
+  }
+}
+
+const handleAsk = async () => {
+  const normalizedQuestion = question.value.trim()
+  if (!normalizedQuestion) return
+
+  asking.value = true
+  errorMessage.value = ''
+  selectedCitation.value = null
+  try {
+    chatResult.value = await askQuestion(normalizedQuestion)
+  } catch (error: any) {
+    errorMessage.value = error.response?.data?.detail || 'Chat request failed.'
+  } finally {
+    asking.value = false
   }
 }
 </script>
 
 <template>
-  <main class="app">
-    <header>
-      <h1>DocuMind</h1>
-      <p>RAG-based Enterprise Document Q&A System</p>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Enterprise document intelligence</p>
+        <h1>DocuMind</h1>
+        <p>Ask a question, inspect its citations, and verify the evidence in the PDF.</p>
+      </div>
+      <span class="status" :class="{ offline: backendStatus !== 'ok' }">
+        API {{ backendStatus }}
+      </span>
     </header>
 
-    <section class="status-card">
-      <h2>Backend Status</h2>
-      <p>{{ backendStatus }}</p>
-    </section>
+    <div class="workspace">
+      <div class="primary-column">
+        <section class="panel upload-panel">
+          <h2>1. Add a PDF</h2>
+          <input type="file" accept="application/pdf" @change="handleFileChange" />
+          <p v-if="selectedFile" class="muted">{{ selectedFile.name }}</p>
+          <button :disabled="!selectedFile || uploading" @click="handleUpload">
+            {{ uploading ? 'Indexing…' : 'Upload and index' }}
+          </button>
+          <p v-if="uploadResult" class="success">
+            Indexed {{ uploadResult.source_file }} · {{ uploadResult.chunk_count }} chunks
+          </p>
+        </section>
 
-    <section class="upload-card">
-      <h2>Upload PDF Document</h2>
+        <section class="panel chat-panel">
+          <h2>2. Ask DocuMind</h2>
+          <form @submit.prevent="handleAsk">
+            <textarea
+              v-model="question"
+              rows="3"
+              placeholder="Ask a question grounded in your indexed documents…"
+            />
+            <button :disabled="asking || !question.trim()" type="submit">
+              {{ asking ? 'Finding evidence…' : 'Ask question' }}
+            </button>
+          </form>
 
-      <input type="file" accept="application/pdf" @change="handleFileChange" />
+          <p v-if="errorMessage" class="error" role="alert">{{ errorMessage }}</p>
 
-      <div v-if="selectedFile" class="file-info">
-        <p><strong>Selected file:</strong> {{ selectedFile.name }}</p>
-        <p><strong>Size:</strong> {{ selectedFile.size }} bytes</p>
+          <article v-if="chatResult" class="answer-card">
+            <p class="eyebrow">AI answer</p>
+            <p class="answer-text">{{ chatResult.answer }}</p>
+            <p class="trace">Trace ID: {{ chatResult.trace_id }}</p>
+            <CitationList
+              :sources="chatResult.sources"
+              @select="selectedCitation = $event"
+            />
+          </article>
+        </section>
       </div>
 
-      <button :disabled="!selectedFile || uploading" @click="handleUpload">
-        {{ uploading ? 'Uploading...' : 'Upload' }}
-      </button>
-
-      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
-
-      <div v-if="uploadResult" class="result">
-        <h3>Upload Result</h3>
-        <pre>{{ uploadResult }}</pre>
-      </div>
-    </section>
+      <PdfEvidenceViewer v-if="selectedCitation" :source="selectedCitation" />
+      <aside v-else class="evidence-placeholder panel">
+        <p class="eyebrow">Evidence viewer</p>
+        <h2>Select a citation</h2>
+        <p>The cited PDF page and supporting preview will appear here.</p>
+      </aside>
+    </div>
   </main>
 </template>
-
-<style scoped>
-.app {
-  max-width: 960px;
-  margin: 80px auto;
-  padding: 24px;
-  font-family: Arial, sans-serif;
-}
-
-.status-card,
-.upload-card {
-  margin-top: 24px;
-  padding: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.file-info {
-  margin-top: 16px;
-  padding: 12px;
-  background: #f7f7f7;
-  border-radius: 6px;
-}
-
-button {
-  margin-top: 16px;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.error {
-  margin-top: 16px;
-  color: #c00;
-}
-
-.result {
-  margin-top: 16px;
-  padding: 12px;
-  background: #f7f7f7;
-  border-radius: 6px;
-}
-
-pre {
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-</style>
